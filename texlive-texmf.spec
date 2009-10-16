@@ -27,7 +27,7 @@ Release:	0.1
 License:	distributable
 Group:		Applications/Publishing/TeX
 Source0:	ftp://tug.org/texlive/historic/2008/texlive-%{version}-texmf.tar.lzma
-# Source1-md5:	fa74072e1344e8390eb156bcda61a8b2
+# Source0-md5:	fa74072e1344e8390eb156bcda61a8b2
 Source10:	http://tug.ctan.org/get/macros/latex/contrib/floatflt.zip
 # Source10-md5:	5d9fe14d289aa81ebb6b4761169dd5f2
 Source11:	http://carme.pld-linux.org/~uzsolt/sources/texlive-fonts-larm.tar.bz2
