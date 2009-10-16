@@ -124,15 +124,15 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXmu-devel
 BuildRequires:	xorg-lib-libXpm-devel
 BuildRequires:	zlib-devel >= 1.2.1
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-cm = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-misc = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
+Requires:	%{shortname}-fonts-cm
+Requires:	%{shortname}-fonts-misc
 Requires:	awk
 Requires:	dialog
-Requires:	kpathsea = %{epoch}:%{version}-%{release}
+Requires:	kpathsea
 Requires:	sed
 Requires:	sh-utils
-Requires:	texconfig = %{epoch}:%{version}-%{release}
+Requires:	texconfig
 Requires:	textutils
 Suggests:	tmpwatch
 Provides:	tetex = %{epoch}:%{version}-%{release}
@@ -238,9 +238,9 @@ Other utilities.
 Summary:	LaTeX macros for converting Jade TeX output into DVI/PS/PDF
 Summary(pl.UTF-8):	Makra LaTeXa do konwersji Jade TeXa do DVI/PS/PDF
 Group:		Applications/Publishing/TeX
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-pdftex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
+Requires:	%{shortname}-latex
+Requires:	%{shortname}-pdftex
 Provides:	jadetex = %{epoch}:%{version}-%{release}
 Obsoletes:	jadetex
 
@@ -426,7 +426,7 @@ Summary(hu.UTF-8):	Az alap LaTeX csomagok dokumentációja
 Summary(pl.UTF-8):	Podstawowa dokumentacja do pakietów LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-doc-latex
 
 %description -n texlive-doc-latex
@@ -443,7 +443,7 @@ Summary:	Array data structures for (La)TeX
 Summary(hu.UTF-8):	Tömb adatstruktúra (La)TeX-hez
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-arrayjob
 Array data structures for (La)TeX.
@@ -456,7 +456,7 @@ Summary:	Commands to produce dots in math that respect font size
 Summary(hu.UTF-8):	Pontok előállítása matematikai módban a font méret figyelmbevételével
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-mathdots
 Commands to produce dots in math that respect font size.
@@ -469,7 +469,7 @@ Summary:	A set of useful macro tools
 Summary(hu.UTF-8):	Hasznos makrók gyűjteménye
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-midnight
 A set of useful macro tools.
@@ -481,7 +481,7 @@ Hasznos makrók gyűjteménye.
 Summary:	Convert numbers into binary, octal and hexadecimal
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-kastrup
 Convert numbers into binary, octal and hexadecimal.
@@ -490,7 +490,7 @@ Convert numbers into binary, octal and hexadecimal.
 Summary:	Olsak's Font System
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-ofs
 Olsak's Font System.
@@ -500,7 +500,7 @@ Summary:	The PHYSE format
 Summary(hu.UTF-8):	PHYSE formátum
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-physe
 The PHYSE format.
@@ -513,7 +513,7 @@ Summary:	This package provides support for typesetting texts in Devanagari scrip
 Summary(hu.UTF-8):	Ezzel a csomaggal lehetőséged nyílik Devanagari szövegek szedésére (Sanskrit és Hindi)
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-velthuis
 This package provides support for typesetting texts in Devanagari
@@ -528,7 +528,7 @@ Summary:	Macro package developed at MIT
 Summary(hu.UTF-8):	MIT-en fejlesztett makrócsomag
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-ytex
 Macro package developed at MIT.
@@ -542,7 +542,7 @@ Summary(hu.UTF-8):	MetaPost
 Summary(pl.UTF-8):	Zestaw narzędzi MetaPost
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-metapost
 
 %description -n texlive-metapost
@@ -559,7 +559,7 @@ Summary:	Various MetaPost utils
 Summary(hu.UTF-8):	Különböző MetaPost eszközök
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-metapost-other
 Various MetaPost utils.
@@ -573,7 +573,7 @@ Summary(hu.UTF-8):	MetaPost-ból PDF-be konvertáló
 Summary(pl.UTF-8):	Konwerter MetaPost do PDF
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-metapost = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-metapost
 Obsoletes:	tetex-mptopdf
 
 %description -n texlive-mptopdf
@@ -590,7 +590,7 @@ Summary:	Easy access to TeX documentation
 Summary(pl.UTF-8):	Łatwy dostęp do dokumentacji TeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-texdoctk
 
 %description -n texlive-texdoctk
@@ -1104,7 +1104,7 @@ Summary:	A TeX format for physicists
 Summary(hu.UTF-8):	TeX formátum fizikusoknak
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-phyzzx
 A TeX format for physicists.
@@ -1117,9 +1117,9 @@ Summary:	Extended unicode TeX
 Summary(pl.UTF-8):	Omega - TeX ze wsparciem dla unikodu
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-omega = %{epoch}:%{version}-%{release}
-Requires:	%{name}-plain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
+Requires:	%{shortname}-fonts-omega
+Requires:	%{shortname}-plain
 Obsoletes:	tetex-omega
 
 %description -n texlive-omega
@@ -1141,7 +1141,7 @@ Summary:	Plain TeX format basic files
 Summary(pl.UTF-8):	Podstawowe pliki dla formatu Plain TeX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Provides:	tetex-format-plain
 Provides:	tetex-plain
 Obsoletes:	tetex-cyrplain
@@ -1162,9 +1162,9 @@ Summary:	MeX Plain Format basic files
 Summary(pl.UTF-8):	Podstawowe pliki dla format MeX Plain
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	texlive-fonts-pl = %{epoch}:%{version}-%{release}
-Requires:	texlive-plain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
+Requires:	texlive-fonts-pl
+Requires:	texlive-plain
 Obsoletes:	tetex-mex
 
 %description -n texlive-mex
@@ -1178,7 +1178,7 @@ Summary:	MeX Plain Format
 Summary(pl.UTF-8):	Format MeX Plain
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	texlive-mex = %{epoch}:%{version}-%{release}
+Requires:	texlive-mex
 Obsoletes:	tetex-format-mex
 
 %description -n texlive-format-mex
@@ -1192,8 +1192,8 @@ Summary:	PDFMeX Plain Format
 Summary(pl.UTF-8):	Format PDFMeX Plain
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-mex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-pdftex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-mex
+Requires:	%{shortname}-pdftex
 Obsoletes:	tetex-format-pdfmex
 
 %description -n texlive-format-pdfmex
@@ -1207,7 +1207,7 @@ Summary:	MeX Plain Format with UTF-8 encoded source files
 Summary(pl.UTF-8):	Format MeX Plain z plikami źródłowymi kodowanymi UTF-8
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-mex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-mex
 Obsoletes:	tetex-format-utf8mex
 
 %description -n texlive-format-utf8mex
@@ -1223,9 +1223,9 @@ Summary:	AMS macros for Plain TeX basic files
 Summary(pl.UTF-8):	Podstawowe pliki makr AMS dla formatu Plain TeX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-ams = %{epoch}:%{version}-%{release}
-Requires:	%{name}-format-amstex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-plain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-ams
+Requires:	%{shortname}-format-amstex
+Requires:	%{shortname}-plain
 Provides:	tetex-ams
 Obsoletes:	tetex-ams
 Obsoletes:	tetex-amstex
@@ -1243,7 +1243,7 @@ Summary:	AMS macros for Plain TeX
 Summary(pl.UTF-8):	Makra AMS dla formatu Plain TeX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-amstex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-amstex
 Obsoletes:	tetex-format-amstex
 Obsoletes:	tetex-format-cyramstex
 
@@ -1260,8 +1260,8 @@ Summary:	TeX CSPlain format basic files
 Summary(pl.UTF-8):	Podstawowe pliki dla formatu TeX CSPlain
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-cs = %{epoch}:%{version}-%{release}
-Requires:	%{name}-plain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-cs
+Requires:	%{shortname}-plain
 Provides:	tetex-csplain
 Obsoletes:	tetex-csplain
 
@@ -1276,7 +1276,7 @@ Summary:	TeX CSPlain format
 Summary(pl.UTF-8):	Format TeX CSPlain
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-csplain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-csplain
 Obsoletes:	tetex-format-csplain
 
 %description -n texlive-format-csplain
@@ -1290,7 +1290,7 @@ Summary:	PDFTeX CSPlain format
 Summary(pl.UTF-8):	Format PDFTeX CSPlain
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-csplain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-csplain
 Obsoletes:	tetex-format-pdfcsplain
 
 %description -n texlive-format-pdfcsplain
@@ -1306,8 +1306,8 @@ Summary:	CSLaTeX format basic files
 Summary(pl.UTF-8):	Podstawowe pliki dla formatu CSLaTeX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-cs = %{epoch}:%{version}-%{release}
-Requires:	%{name}-plain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-cs
+Requires:	%{shortname}-plain
 Provides:	tetex-cslatex
 Obsoletes:	tetex-cslatex
 
@@ -1322,7 +1322,7 @@ Summary:	CSLaTeX format
 Summary(pl.UTF-8):	Format CSLaTeX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-cslatex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-cslatex
 Obsoletes:	tetex-format-cslatex
 
 %description -n texlive-format-cslatex
@@ -1336,7 +1336,7 @@ Summary:	PDF CSLaTeX format
 Summary(pl.UTF-8):	Format PDF CSLaTeX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-cslatex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-cslatex
 Obsoletes:	tetex-format-pdfcslatex
 
 %description -n texlive-format-pdfcslatex
@@ -1352,7 +1352,7 @@ Summary:	EPlain format basic files
 Summary(pl.UTF-8):	Podstawowe pliki dla formatu EPlain
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-plain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-plain
 Obsoletes:	tetex-eplain
 Obsoletes:	tetex-etex
 
@@ -1367,7 +1367,7 @@ Summary:	EPlain format
 Summary(pl.UTF-8):	Format EPlain
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-eplain = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-eplain
 Obsoletes:	tetex-format-eplain
 
 %description -n texlive-format-eplain
@@ -1383,7 +1383,7 @@ Summary:	ConTeXt macro package basic files
 Summary(pl.UTF-8):	Podstawowe pliki pakietu makr ConTeXt
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Provides:	tetex-context
 Obsoletes:	tetex-context
 
@@ -1406,7 +1406,7 @@ Summary:	German ConTeXt format
 Summary(pl.UTF-8):	Niemiecka wersja formatu ConTeXt
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-context = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-context
 Obsoletes:	tetex-format-context-de
 
 %description -n texlive-format-context-de
@@ -1420,7 +1420,7 @@ Summary:	English ConTeXt format
 Summary(pl.UTF-8):	Angielska wersja formatu ConTeXt
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-context = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-context
 Obsoletes:	tetex-format-context-en
 
 %description -n texlive-format-context-en
@@ -1434,7 +1434,7 @@ Summary:	Dutch ConTeXt format
 Summary(pl.UTF-8):	Holenderska wersja formatu ConTeXt
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-context = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-context
 Obsoletes:	tetex-format-context-nl
 
 %description -n texlive-format-context-nl
@@ -1451,17 +1451,17 @@ Summary:	LaTeX macro package basic files
 Summary(pl.UTF-8):	Podstawowe pliki pakietu makr LaTeX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-latex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-tex-ruhyphen = %{epoch}:%{version}-%{release}
-Requires:	%{name}-tex-ukrhyph = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
+Requires:	%{shortname}-fonts-latex
+Requires:	%{shortname}-tex-ruhyphen
+Requires:	%{shortname}-tex-ukrhyph
 # for misc/eurosym:
-Requires:	%{name}-fonts-eurosym = %{epoch}:%{version}-%{release}
-Requires:	%{name}-pdftex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-tex-babel = %{epoch}:%{version}-%{release}
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
-Suggests:	%{name}-fonts-jknappen
-Suggests:	%{name}-latex-ucs = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-eurosym
+Requires:	%{shortname}-pdftex
+Requires:	%{shortname}-tex-babel
+Requires:	%{shortname}-tex-pstricks
+Suggests:	%{shortname}-fonts-jknappen
+Suggests:	%{shortname}-latex-ucs = %{epoch}:%{version}-%{release}
 Provides:	tetex-format-latex = %{epoch}:%{version}-%{release}
 Provides:	tetex-latex = %{epoch}:%{version}-%{release}
 Obsoletes:	tetex-bibtex-koma-script
@@ -1523,7 +1523,7 @@ Ten pakiet zawiera podstawowe pliki.
 Summary:	Shade cells of tables and halign
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-colortab
 Shade cells of tables and halign.
@@ -1533,7 +1533,7 @@ Summary:	Generalising mathematical index sets
 Summary(hu.UTF-8):	A matematikai halmazok indexelésének általánosítása
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-12many
 Generalising mathematical index sets.
@@ -1546,7 +1546,7 @@ Summary:	Control the typesetting of the abstract environment
 Summary(hu.UTF-8):	Az "abstract" környezet szedésének irányítása
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-abstract
 Control the typesetting of the abstract environment.
@@ -1571,7 +1571,7 @@ Summary:	BibTeX styles to implement an address database
 Summary(hu.UTF-8):	BibTeX stílusok cím-adatbázis megvalósításához
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-adrconv
 BibTeX styles to implement an address database.
@@ -1584,8 +1584,8 @@ Summary:	Virtual fonts for PDF-files with T1 encoded CMR-fonts
 Summary(pl.UTF-8):	Wirtualne fonty dla plików PDF z fontami CMR o kodowaniu T1
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-ae = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-ae
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-ae
 Obsoletes:	tetex-latex-ae
 
@@ -1607,7 +1607,7 @@ Summary:	Floating algorithm environment
 Summary(pl.UTF-8):	Pływające środowisko dla algorytmów
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-algorith
 Obsoletes:	tetex-latex-algorithms
 
@@ -1624,8 +1624,8 @@ Summary:	AMS math facilities for LaTeX
 Summary(pl.UTF-8):	Udogodnienia matematyczne AMS dla LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-ams = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-ams
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-ams
 Obsoletes:	tetex-latex-ams
 Obsoletes:	tetex-latex-amscls
@@ -1646,8 +1646,8 @@ Summary:	Antykwa Poltawskiego, a Type 1 family of Polish traditional type
 Summary(pl.UTF-8):	Antykwa Półtawskiego - rodzina tradycyjnych czcionek polskich jako Type 1
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-antp = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-antp
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-antp
 
 %description -n texlive-latex-antp
@@ -1673,8 +1673,8 @@ Summary:	Antykwa Torunska, a Type 1 family of a Polish traditional type
 Summary(pl.UTF-8):	Antykwa Turuńska - rodzina tradycyjnych czcionek polskich jako Type 1
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-antt = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-antt
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-antt
 
 %description -n texlive-latex-antt
@@ -1692,7 +1692,7 @@ Summary:	Extra control of appendices
 Summary(hu.UTF-8):	Az appendixek nagyobb irányítása
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-appendix
 Extra control of appendices.
@@ -1705,8 +1705,8 @@ Summary:	Blackboard variant fonts for Computer Modern, with LaTeX support
 Summary(pl.UTF-8):	Tablicowy wariant fontów Computer Modern z obsługą LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-bbm = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-bbm
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-bbm
 
 %description -n texlive-latex-bbm
@@ -1732,8 +1732,8 @@ Summary:	Sans serif blackboard bold for LaTeX
 Summary(pl.UTF-8):	Tablicowy tłusty font sans serif dla LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-bbold = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-bbold
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-bbold
 
 %description -n texlive-latex-bbold
@@ -1748,7 +1748,7 @@ Summary:	Bibliography management for LaTeX
 Summary(pl.UTF-8):	Zarządzenie bibliografią dla LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-bibtex
 Obsoletes:	tetex-bibtex
 Obsoletes:	tetex-latex-bibtex
@@ -1766,7 +1766,7 @@ Summary:	A LaTeX class for producing presentations and slides
 Summary(hu.UTF-8):	LaTeX dokumentumosztály prezentációk és fóliák készítéséhez
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-beamer
 
 %description -n texlive-latex-beamer
@@ -1780,7 +1780,7 @@ Summary:	Packages by Javier Bezos (additional math tools)
 Summary(hu.UTF-8):	Javier Bezos csomagjai (további matematikai eszközök)
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-bezos
 Packages by Javier Bezos (additional math tools).
@@ -1793,8 +1793,8 @@ Summary:	BibTeX style files for American Mathematical Society publications
 Summary(pl.UTF-8):	Pliki stylów BibTeXa do publikacji American Mathematical Society
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex-ams = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-bibtex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-ams
+Requires:	%{shortname}-latex-bibtex
 Obsoletes:	tetex-bibtex-ams
 Obsoletes:	tetex-latex-bibtex-ams
 
@@ -1809,7 +1809,7 @@ Summary:	Danish variants of the standard BibTeX styles
 Summary(pl.UTF-8):	Duńskie warianty standardowych stylów BibTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex-bibtex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-bibtex
 Obsoletes:	tetex-latex-bibtex-dk
 
 
@@ -1830,7 +1830,7 @@ Summary:	Polish bibliography management for LaTeX
 Summary(pl.UTF-8):	Polska wersja zarządzania bibliografią dla LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex-bibtex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-bibtex
 Obsoletes:	tetex-bibtex-plbib
 Obsoletes:	tetex-latex-bibtex-pl
 
@@ -1845,7 +1845,7 @@ Summary:	German variants of standard BibTeX styles
 Summary(pl.UTF-8):	Niemieckie wersje standardowych stylów BibTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex-bibtex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-bibtex
 Obsoletes:	tetex-bibtex-germbib
 Obsoletes:	tetex-latex-bibtex-german
 
@@ -1860,7 +1860,7 @@ Summary:	BibTeX styles for REVTeX4
 Summary(pl.UTF-8):	Style BibTeXa dla REVTeX4
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-bibtex-revtex4
 Obsoletes:	tetex-latex-bibtex-revtex4
 
@@ -1875,7 +1875,7 @@ Summary:	Extended BibTeX citation support for the humanities and legal texts
 Summary(pl.UTF-8):	Rozszerzona obsługa cytowania BibTeXa do tekstów humanistycznych i prawniczych
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-bibtex-jurabib
 Obsoletes:	tetex-latex-bibtex-jurabib
 
@@ -1891,7 +1891,7 @@ Summary:	Various BibTeX styles
 Summary(hu.UTF-8):	Vegyes BibTeX stílusok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex-bibtex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-bibtex
 
 %description -n texlive-latex-bibtex-styles
 Various BibTeX styles.
@@ -1904,7 +1904,7 @@ Summary:	Bibliographic style file for Biomedical Journals
 Summary(hu.UTF-8):	Irodalomjegyzék-stílus a Biomedical Journal-hoz
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex-bibtex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-bibtex
 
 %description -n texlive-latex-bibtex-vancouver
 Bibliographic style file for Biomedical Journals.
@@ -1917,7 +1917,7 @@ Summary:	Publication quality tables in LaTeX
 Summary(hu.UTF-8):	Nyomdai minőségű táblázatok LaTeX-ben
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-booktabs
 Publication quality tables in LaTeX.
@@ -1930,7 +1930,7 @@ Summary:	Customising captions in floating environments
 Summary(hu.UTF-8):	Feliratok testreszabása úszó környezetekben
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-caption
 Customising captions in floating environments.
@@ -1943,7 +1943,7 @@ Summary:	Miscellaneous small packages by David Carlisle
 Summary(pl.UTF-8):	Różne małe pakiety autorstwa Davida Carlisle
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-carlisle
 Obsoletes:	tetex-latex-carlisle
 
@@ -1958,7 +1958,7 @@ Summary:	Support for Concrete text and math fonts in LaTeX
 Summary(pl.UTF-8):	Obsługa fontów tekstowych i matematycznych Concrete w LaTeXu
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-ccfonts
 
 %description -n texlive-latex-ccfonts
@@ -1978,7 +1978,7 @@ Summary:	Supports compressed, sorted lists of numerical citations
 Summary(pl.UTF-8):	Obsługa kompresowanych, sortowanych list numerowanych cytatów
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-cite
 
 %description -n texlive-latex-cite
@@ -1992,8 +1992,8 @@ Summary:	Support for CM Bright fonts in LaTeX
 Summary(pl.UTF-8):	Obsługa fontów CM Bright w LaTeXu
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-cmbright = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-cmbright
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-cmbright
 
 %description -n texlive-latex-cmbright
@@ -2015,7 +2015,7 @@ Summary:	Selectively include/excludes portions of text
 Summary(hu.UTF-8):	A szöveg részeinek beillesztése/kihagyása
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-comment
 Selectively include/excludes portions of text.
@@ -2028,8 +2028,8 @@ Summary:	LaTeX package and font definition files to access the Concrete math fon
 Summary(pl.UTF-8):	Pakiet LaTeXa i pliki definicji fontów udostępniające fonty matematyczne Concrete
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-concmath = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-concmath
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-concmath
 
 %description -n texlive-latex-concmath
@@ -2048,7 +2048,7 @@ Summary:	Typeset a curriculum vitae
 Summary(hu.UTF-8):	Önéletrajzok írása
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-currvita
 Typeset a curriculum vitae.
@@ -2061,7 +2061,7 @@ Summary:	Curves for LaTeX picture environment
 Summary(hu.UTF-8):	Görbék LaTeX picture környezetébe
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-curves
 Curves for LaTeX picture environment.
@@ -2074,7 +2074,7 @@ Summary:	Customized BibTeX styles for LaTeX
 Summary(pl.UTF-8):	Dostosowywanie stylów BibTeXa dla LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-custom-bib
 
 %description -n texlive-latex-custom-bib
@@ -2090,7 +2090,7 @@ Summary:	LaTeX Cyrillic support
 Summary(pl.UTF-8):	Obsługa cyrylicy dla LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-cyrillic
 Obsoletes:	tetex-latex-cyrillic
 
@@ -2105,7 +2105,7 @@ Summary:	A package to customize the three basic lists
 Summary(hu.UTF-8):	Egy csomag, amivel testreszabhatod a három alapvető listát
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-enumitem
 A package to customize the three basic lists (enumerate, itemize and
@@ -2120,7 +2120,7 @@ Summary:	Various document classes to typeset exams
 Summary(hu.UTF-8):	Különböző dokumentumosztályok vizsgák, feladatsorok szedésére
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-exams
 Various document classes to typeset exams.
@@ -2133,7 +2133,7 @@ Summary:	Tools to manipulate float objects
 Summary(hu.UTF-8):	Eszközök úszó objektuomok kezeléséhez
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-float
 Tools to manipulate float objects.
@@ -2146,7 +2146,7 @@ Summary:	The FoilTeX is a collection of LaTeX files for making foils
 Summary(hu.UTF-8):	A FoilTeX a LaTeX fájlok gyűjteménye fóliák készítéséhez
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-foiltex
 The FoilTeX is a collection of LaTeX files for making foils.
@@ -2159,7 +2159,7 @@ Summary:	Letters to multiple recipients
 Summary(hu.UTF-8):	Levél több címzettnek ("körlevél")
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-formlett
 Letters to multiple recipients.
@@ -2172,7 +2172,7 @@ Summary:	Create forms containing field for manual entry
 Summary(hu.UTF-8):	Kézzel kitöltendő űrlapok készítése
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-formular
 Create forms containing field for manual entry.
@@ -2185,7 +2185,7 @@ Summary:	Letter document class
 Summary(hu.UTF-8):	Levél dokumentumosztály
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-gbrief
 Letter document class.
@@ -2198,7 +2198,7 @@ Summary:	Graphical representation of keys on keyboard
 Summary(hu.UTF-8):	A billentyűk grafikus megjelenítése
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-keystroke
 Graphical representation of keys on keyboard.
@@ -2211,7 +2211,7 @@ Summary:	Typeset laboratory journals
 Summary(hu.UTF-8):	Laborjegyzőkönyvek szedése
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-labbook
 Typeset laboratory journals.
@@ -2224,7 +2224,7 @@ Summary:	Alphanumerical LCD-style displays
 Summary(hu.UTF-8):	Alfanumerikus LCD-szerű kijelzés
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-lcd
 Alphanumerical LCD-style displays.
@@ -2237,7 +2237,7 @@ Summary:	Create small handouts (flyers)
 Summary(hu.UTF-8):	Kis "kézikönyvek" készítése (brossúrák)
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-leaflet
 Create small handouts (flyers).
@@ -2250,7 +2250,7 @@ Summary:	Left and right subscripts and superscripts in math mode
 Summary(hu.UTF-8):	Bal és jobboldali alsó és felső indexek matematikai módban
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-leftidx
 Left and right subscripts and superscripts in math mode.
@@ -2263,7 +2263,7 @@ Summary:	Draw Lewis structures (chemistry)
 Summary(hu.UTF-8):	Lewis struktúrák készítése (kémia)
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-lewis
 Draw Lewis structures (chemistry).
@@ -2276,8 +2276,8 @@ Summary:	LaTeX styles for Latin Modern family fonts
 Summary(pl.UTF-8):	Style LaTeXa dla fontów z rodziny Latin Modern
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-fonts-lm = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-lm
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-lm
 Obsoletes:	texlive-fonts-type1-lm
 
@@ -2320,7 +2320,7 @@ Summary:	Line numbers on paragraphs
 Summary(pl.UTF-8):	Numery linii dla paragrafów
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-lineno
 
 %description -n texlive-latex-lineno
@@ -2339,7 +2339,7 @@ możliwością tworzenia odnośników poprzez mechanizm odnośników LaTeXa
 Summary:	Support for the work of classicists
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-metre
 Support for the work of classicists.
@@ -2349,7 +2349,7 @@ Summary:	Packages for typesetting games
 Summary(hu.UTF-8):	Játékok szedése
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-games
 Chess, chinese chess, crosswords, go, backgammon and more.
@@ -2362,7 +2362,7 @@ Summary:	Extensions, patches, improvements of main LaTeX styles, environments
 Summary(hu.UTF-8):	Az alap LaTeX stílusok, környezetek, stb. bővítései, foltjai
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-ltablex
 Obsoletes:	tetex-latex-ltablex
 
@@ -2477,7 +2477,7 @@ Summary:	Additional effects to fonts, texts
 Summary(hu.UTF-8):	További effektek betűkhöz, szövegekhez,...
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-effects
 This package contains:
@@ -2533,17 +2533,17 @@ Summary:	Mathematical packages
 Summary(hu.UTF-8):	Matematikai csomagok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-bbm = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-stmaryrd = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-ams = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-carlisle = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-psnfss = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-pst-3dplot = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-wasysym = %{epoch}:%{version}-%{release}
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
-Requires:	%{name}-tex-xkeyval = %{epoch}:%{version}-%{release}
-Requires:	%{name}-tex-xypic = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-bbm
+Requires:	%{shortname}-fonts-stmaryrd
+Requires:	%{shortname}-latex
+Requires:	%{shortname}-latex-ams
+Requires:	%{shortname}-latex-carlisle
+Requires:	%{shortname}-latex-psnfss
+Requires:	%{shortname}-latex-pst-3dplot
+Requires:	%{shortname}-latex-wasysym
+Requires:	%{shortname}-tex-pstricks
+Requires:	%{shortname}-tex-xkeyval
+Requires:	%{shortname}-tex-xypic
 # gnuplottex needs gnuplot
 Requires:	gnuplot
 
@@ -2645,7 +2645,7 @@ Summary:	Misc packages
 Summary(hu.UTF-8):	Vegyes csomagok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-misc
 This packages contains:
@@ -2668,7 +2668,7 @@ Summary:	Musical packages
 Summary(hu.UTF-8):	Zenei csomagok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-music
 This package contains:
@@ -2687,10 +2687,10 @@ Summary:	Physical packages
 Summary(hu.UTF-8):	Fizikai csomagok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
-Suggests:	%{name}-latex-SIstyle
-Suggests:	%{name}-latex-SIunits
-Suggests:	%{name}-latex-siunitx
+Requires:	%{shortname}-latex
+Suggests:	%{shortname}-latex-SIstyle
+Suggests:	%{shortname}-latex-SIunits
+Suggests:	%{shortname}-latex-siunitx
 
 %description -n texlive-latex-physics
 This package contains:
@@ -2721,8 +2721,8 @@ Summary:	Biological packages
 Summary(hu.UTF-8):	Biológiai csomagok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-xetex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
+Requires:	%{shortname}-xetex
 
 %description -n texlive-latex-biology
 This package contains:
@@ -2739,8 +2739,8 @@ Summary:	Presentations in LaTeX
 Summary(hu.UTF-8):	Prezentációk LaTeX-ben
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex-foiltex = %{epoch}:%{version}-%{release}
-Suggests:	%{name}-latex-prosper = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-foiltex
+Suggests:	%{shortname}-latex-prosper = %{epoch}:%{version}-%{release}
 
 %description -n texlive-latex-presentation
 This package contains:
@@ -2761,8 +2761,8 @@ Summary:	Chemical packages
 Summary(hu.UTF-8):	Kémiai csomagok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
-Suggests:	%{name}-latex-lewis
+Requires:	%{shortname}-latex
+Suggests:	%{shortname}-latex-lewis
 
 %description -n texlive-latex-chem
 This package contains:
@@ -2790,7 +2790,7 @@ Summary:	Informatical packages
 Summary(hu.UTF-8):	Informatikai csomagok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-informatic
 This package contains:
@@ -2822,7 +2822,7 @@ Summary:	Various tools to pdf output
 Summary(hu.UTF-8):	Különböző eszközök pdf output-hoz
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-pdftools
 This package contains:
@@ -2852,7 +2852,7 @@ Summary:	An interface to the micro-typographic extensions of pdfTeX
 Summary(pl.UTF-8):	Interfejs do rozszerzeń mikrotypograficznych pdfTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-microtype
 
 %description -n texlive-latex-microtype
@@ -2876,7 +2876,7 @@ Summary:	Typesetting music with TeX
 Summary(hu.UTF-8):	Zenék szedése TeX-hel
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-musictex
 Typesetting music with TeX.
@@ -2889,7 +2889,7 @@ Summary:	Package to make Lucida Bright fonts usable with LaTeX
 Summary(pl.UTF-8):	Pakiet umożliwiający używanie fontów Lucida Bright w LaTeXu
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-lucidabr
 
 %description -n texlive-latex-lucidabr
@@ -2903,8 +2903,8 @@ Summary:	Styles for Martin Vogel's Symbol (marvosym) font
 Summary(pl.UTF-8):	Style dla fontu Symbol Martina Vogela (marvosym)
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-fonts-marvosym = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-marvosym
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-marvosym
 Obsoletes:	tetex-latex-marvosym
 
@@ -2929,8 +2929,8 @@ Summary:	LaTeX support for MetaFont and logo fonts
 Summary(pl.UTF-8):	Obsługa LaTeXa dla MetaFonta i fontów logo
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-mflogo = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-mflogo
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-mflogo
 
 %description -n texlive-latex-mflogo
@@ -2948,7 +2948,7 @@ Summary:	Font description files to use extra fonts like yinit and ygoth
 Summary(pl.UTF-8):	Pliki opisów fontów udostępniające dodatkowe fonty, jak yinit i ygoth
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-mfnfss
 
 %description -n texlive-latex-mfnfss
@@ -2962,7 +2962,7 @@ Summary:	Produce a table of contents for each chapter
 Summary(pl.UTF-8):	Tworzenie spisów treści dla każdego rozdziału
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-minitoc
 
 %description -n texlive-latex-minitoc
@@ -2976,7 +2976,7 @@ Summary:	Support for MLTeX
 Summary(pl.UTF-8):	Wsparcie dla MLTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-mltex
 
 %description -n texlive-latex-mltex
@@ -2992,7 +2992,7 @@ Summary:	Multi-column enumerated lists
 Summary(hu.UTF-8):	Többoszlopos számozott listák
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-multienum
 Multi-column enumerated lists.
@@ -3006,7 +3006,7 @@ Summary:	Extended verbatim
 Summary(hu.UTF-8):	Kiterjesztett verbatim
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-moreverb
 Extended verbatim.
@@ -3019,7 +3019,7 @@ Summary:	Enhanced theorem environment
 Summary(hu.UTF-8):	Bővített tétel környezet
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-ntheorem
 Enhanced theorem environment.
@@ -3032,7 +3032,7 @@ Summary:	Other LaTeX packages
 Summary(hu.UTF-8):	Néhány további LaTeX csomag
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-platex
 
 %description -n texlive-latex-other
@@ -3046,7 +3046,7 @@ Summary:	Other LaTeX packages documentation
 Summary(hu.UTF-8):	Néhány további LaTeX csomag dokumentációja
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-other-doc
 Other LaTeX packages documentation.
@@ -3059,7 +3059,7 @@ Summary:	Presentation slides using pdftex
 Summary(hu.UTF-8):	Prezentáció készítése pdftex-hel
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-pdfslide
 Presentation slides using pdftex.
@@ -3073,8 +3073,8 @@ Summary(hu.UTF-8):	TeX Portable Graphic Formátum
 Summary(pl.UTF-8):	Przenośny format grafiki dla TeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-xcolor = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
+Requires:	%{shortname}-latex-xcolor
 Obsoletes:	tetex-pgf
 
 %description -n texlive-latex-pgf
@@ -3091,7 +3091,7 @@ Summary:	Macros for manipulating polynomials
 Summary(hu.UTF-8):	Makrók polinomokkal való műveletekre
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-polynom
 Macros for manipulating polynomials.
@@ -3104,7 +3104,7 @@ Summary:	Typeset (univariate) polynomials
 Summary(hu.UTF-8):	Egyváltozós polinomok szedése
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-polynomial
 Typeset (univariate) polynomials.
@@ -3117,7 +3117,7 @@ Summary:	Additional utilities to programming LaTeX
 Summary(hu.UTF-8):	További eszközök LaTeX programozásához
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-programming
 This package contains:
@@ -3194,8 +3194,8 @@ Summary:	LaTeX class for high quality slides
 Summary(hu.UTF-8):	LaTeX osztály jó minőségű fóliák készítéséhez
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-xetex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
+Requires:	%{shortname}-xetex
 
 %description -n texlive-latex-prosper
 LaTeX class for high quality slides.
@@ -3208,7 +3208,7 @@ Summary:	LaTeX enviroment for specifying algorithms in a natural way
 Summary(hu.UTF-8):	LaTeX környezet algoritmusok bevitelére
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-pseudocode
 LaTeX enviroment for specifying algorithms in a natural way.
@@ -3221,8 +3221,8 @@ Summary:	LaTeX font support for common PostScript fonts
 Summary(pl.UTF-8):	Obsługa popularnych fontów postscriptowych w LaTeXu
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-adobe = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-adobe
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-psnfss
 Obsoletes:	tetex-latex-mathptm
 Obsoletes:	tetex-latex-mathptmx
@@ -3241,7 +3241,7 @@ Summary:	A PSTricks package for drawing 2D curves
 Summary(hu.UTF-8):	PSTricks csomag kétdimenziós görbék rajzolásához
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-2dplot
 A PSTricks package for drawing 2D curves.
@@ -3254,7 +3254,7 @@ Summary:	Draw 3d curves and graphs using PSTricks
 Summary(hu.UTF-8):	3D-s görbék és grafikonok PSTricks-szel
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-3dplot
 Draw 3d curves and graphs using PSTricks.
@@ -3268,7 +3268,7 @@ Summary:	Produces bar charts using pstricks
 Summary(hu.UTF-8):	Oszlopdiagramok pstricks-szel
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-bar
 Produces bar charts using pstricks.
@@ -3281,7 +3281,7 @@ Summary:	PSTricks package for drawing electric circuits
 Summary(hu.UTF-8):	PSTricks csomag elektromos áramkörök rajzolásához
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-circ
 PSTricks package for drawing electric circuits.
@@ -3294,7 +3294,7 @@ Summary:	Print diffraction patterns from various apertures
 Summary(hu.UTF-8):	Diffrakciós képek különböző eszközökön
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-diffraction
 Print diffraction patterns from various apertures.
@@ -3307,7 +3307,7 @@ Summary:	Euclidian geometry with pstricks
 Summary(hu.UTF-8):	Euklidészi geometria a pstricks használatával
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-eucl
 Euclidian geometry with pstricks.
@@ -3321,7 +3321,7 @@ Summary:	Draw "funny" objects with PSTricks
 Summary(hu.UTF-8):	"Vicces" rajzok PSTricks-szel
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-fun
 Draw "funny" objects with PSTricks.
@@ -3334,7 +3334,7 @@ Summary:	PSTricks package for plotting mathematical functions
 Summary(hu.UTF-8):	PSTricks csomag matematikai függvények ábrázolásához
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-func
 PSTricks package for plotting mathematical functions.
@@ -3347,7 +3347,7 @@ Summary:	Draw 3-dimensional framed boxes using PSTricks
 Summary(hu.UTF-8):	Háromdimenziós dobozok PSTricks segítségével
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-fr3d
 Draw 3-dimensional framed boxes using PSTricks.
@@ -3360,7 +3360,7 @@ Summary:	Draw fractal sets using PSTricks
 Summary(hu.UTF-8):	Fraktálok rajzolása PSTricks segítségével
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-fractal
 Draw fractal sets using PSTricks.
@@ -3373,7 +3373,7 @@ Summary:	Using pstricks plotting capacities with infix expressions rather than R
 Summary(hu.UTF-8):	Infix kifejezések ábrázolása
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-infixplot
 Using pstricks plotting capacities with infix expressions rather than
@@ -3387,7 +3387,7 @@ Summary:	Enhancement of PostScript math operators to use with pstricks
 Summary(hu.UTF-8):	PostScript matematikai operátorok bővítése pstricks-szel
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-math
 Enhancement of PostScript math operators to use with pstricks.
@@ -3400,7 +3400,7 @@ Summary:	Three dimensional objects using PSTricks
 Summary(hu.UTF-8):	Háromdimenziós objektumok PSTricks-szel
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-ob3d
 Three dimensional objects using PSTricks.
@@ -3413,7 +3413,7 @@ Summary:	Drawing optical experimental setups
 Summary(hu.UTF-8):	Optikai összeállítások rajzolása
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-optexp
 Drawing optical experimental setups.
@@ -3426,7 +3426,7 @@ Summary:	Drawing optics diagrams
 Summary(hu.UTF-8):	Optikai ábrák rajzolása
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-optic
 Drawing optics diagrams.
@@ -3439,7 +3439,7 @@ Summary:	Text and character manipulation in PSTricks
 Summary(hu.UTF-8):	Szöveg és karakter manipulációk PSTricks-szel
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-text
 Text and character manipulation in PSTricks.
@@ -3452,7 +3452,7 @@ Summary:	Other uncategorized PSTricks packages
 Summary(hu.UTF-8):	Néhány kategorizálatlan PSTricks csomag
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-tex-pstricks = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-tex-pstricks
 
 %description -n texlive-latex-pst-uncategorized
 Other uncategorized PSTricks packages.
@@ -3465,8 +3465,8 @@ Summary:	PX fonts LaTeX support
 Summary(pl.UTF-8):	Obsługa fontów PX w LaTeXu
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-px = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-px
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-pxfonts
 
 %description -n texlive-latex-pxfonts
@@ -3480,7 +3480,7 @@ Summary:	Package to typeset SI units, numbers and angles
 Summary(hu.UTF-8):	Csomag SI egységek, számok és szögek szedésére
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex-ams = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-ams
 
 %description -n texlive-latex-SIstyle
 Package to typeset SI units, numbers and angles.
@@ -3493,7 +3493,7 @@ Summary:	The SIunits package can be used to standardise the use of units in your
 Summary(hu.UTF-8):	Az SIunits csomag a mennyiségek egységes írásában nyújt segítséget
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex-ams = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex-ams
 
 %description -n texlive-latex-SIunits
 The SIunits package can be used to standardise the use of units in
@@ -3507,7 +3507,7 @@ Summary:	A comprehensive (SI) units package
 Summary(hu.UTF-8):	Egy minden részletre kiterjedő (SI) egységek kezelését végző csomag
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-siunitx
 A comprehensive (SI) units package.
@@ -3531,7 +3531,7 @@ Summary:	Various LaTeX styles
 Summary(hu.UTF-8):	Különböző LaTeX stílusok
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-styles
 Various LaTeX styles.
@@ -3544,7 +3544,7 @@ Summary:	LaTeX support for non-english languages
 Summary(hu.UTF-8):	LaTeX támogatás nem-angol nyelvekhez
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-lang
 LaTeX support for non-english languages.
@@ -3569,8 +3569,8 @@ Summary:	TX fonts LaTeX support
 Summary(pl.UTF-8):	Obsługa fontów TX w LaTeXu
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-tx = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-tx
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-txfonts
 
 %description -n texlive-latex-txfonts
@@ -3584,7 +3584,7 @@ Summary:	This package contains support for using UTF-8 as input encoding in LaTe
 Summary(hu.UTF-8):	Ez a csomag lehetővé teszi UTF-8 kódolást a LaTeX dokumentumokban
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 
 %description -n texlive-latex-ucs
 This package contains support for using UTF-8 as input encoding in
@@ -3598,7 +3598,7 @@ Summary:	An interface to inputenc for using alternate input encodings
 Summary(pl.UTF-8):	Interfejs inputenc do używania alternatywnych kodowań wejściowych
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex
 Obsoletes:	tetex-latex-umlaute
 
 %description -n texlive-latex-umlaute
@@ -3612,8 +3612,8 @@ Summary:	Extra characters from the Waldis symbol fonts
 Summary(pl.UTF-8):	Dodatkowe znaki z fontów Waldis symbol
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-fonts-wasy = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-wasy
+Requires:	%{shortname}-latex
 Provides:	tetex-latex-wasysym
 Obsoletes:	tetex-latex-wasysym
 
@@ -3669,12 +3669,12 @@ Summary:	PDF LaTeX macro package
 Summary(pl.UTF-8):	Pakiet makr PDF LaTeX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-jknappen = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-type1-urw = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-psnfss = %{epoch}:%{version}-%{release}
-Requires:	%{name}-pdftex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
+Requires:	%{shortname}-fonts-jknappen
+Requires:	%{shortname}-fonts-type1-urw
+Requires:	%{shortname}-latex
+Requires:	%{shortname}-latex-psnfss
+Requires:	%{shortname}-pdftex
 Provides:	tetex-format-pdflatex
 Obsoletes:	tetex-format-pdflatex
 
@@ -3697,7 +3697,7 @@ Summary:	Various scripts
 Summary(hu.UTF-8):	Néhány szkript
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-scripts
 Various scripts.
@@ -3727,7 +3727,7 @@ Summary:	Multilingual support for TeX
 Summary(pl.UTF-8):	Obsługa wielu języków dla TeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Provides:	tetex-tex-babel
 Obsoletes:	tetex-tex-babel
 
@@ -3742,7 +3742,7 @@ Summary:	Supports the new German orthography (neue deutsche Rechtschreibung)
 Summary(pl.UTF-8):	Obsługa nowej ortografii niemieckiej (neue deutsche Rechtschreibung)
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Provides:	tetex-tex-german
 Obsoletes:	tetex-tex-german
 
@@ -3757,7 +3757,7 @@ Summary:	A TeX macro for inserting pictures/boxes into paragraphs
 Summary(hu.UTF-8):	TeX makró képek/dobozok beszúrására bekezdésekbe
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-insbox
 A TeX macro for inserting pictures/boxes into paragraphs.
@@ -3770,7 +3770,7 @@ Summary:	Macros which generate Metafont or Metapost for drawing pictures
 Summary(pl.UTF-8):	Makra generujące Metafont lub Metapost do rysowania obrazków
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-tex-mfpic
 
 %description -n texlive-tex-mfpic
@@ -3784,7 +3784,7 @@ Summary:	Miscellaneous TeX macros
 Summary(pl.UTF-8):	Różne makra TeXowe
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Provides:	tetex-tex-misc
 Obsoletes:	tetex-tex-eijkhout
 Obsoletes:	tetex-tex-misc
@@ -3800,7 +3800,7 @@ Summary:	Picture drawing macros for TeX and LaTeX
 Summary(pl.UTF-8):	Makra do rysowania obrazków dla TeXa i LaTeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-tex-pictex
 
 %description -n texlive-tex-pictex
@@ -3814,7 +3814,7 @@ Summary:	A TeX format for physics papers
 Summary(hu.UTF-8):	TeX formátum fizikai kiadványokhoz
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-psizzl
 A TeX format for physics papers.
@@ -3827,8 +3827,8 @@ Summary:	PostScript macros for TeX
 Summary(pl.UTF-8):	Makra postscriptowe dla TeXa
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name}-dvips = %{epoch}:%{version}-%{release}
-Requires:	%{name}-tex-misc = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dvips
+Requires:	%{shortname}-tex-misc
 Provides:	tetex-tex-pstricks
 Obsoletes:	tetex-tex-pstricks
 
@@ -3854,8 +3854,8 @@ Summary:	QuasiTimes and TX fonts typesetting support
 Summary(pl.UTF-8):	Wsparcie dla składu fontami QuasiTimes i TX
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-qpxqtx = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
+Requires:	%{shortname}-fonts-qpxqtx
 Obsoletes:	tetex-tex-qpx
 Obsoletes:	tetex-tex-qtx
 
@@ -3870,7 +3870,7 @@ Summary:	Hungarian hyphenation
 Summary(hu.UTF-8):	Magyar elválasztás
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-tex-huhyphen
 Hungarian hyphenation.
@@ -3883,7 +3883,7 @@ Summary:	Russian hyphenation
 Summary(pl.UTF-8):	Rosyjskie reguły przenoszenia wyrazów
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Provides:	tetex-tex-ruhyphen
 Obsoletes:	tetex-tex-ruhyphen
 
@@ -3902,7 +3902,7 @@ Summary:	Various TeX related files for typesetting documents written in Spanish
 Summary(pl.UTF-8):	Różne pliki TeXowe służące do składu dokumentów w języku hiszpańskim
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-tex-spanish
 Obsoletes:	tetex-tex-spanishb
 
@@ -3919,7 +3919,7 @@ Summary:	Graphical macros, using embedded PostScript
 Summary(pl.UTF-8):	Makra graficzne używające osadzanego PostScriptu
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-tex-texdraw
 
 %description -n texlive-tex-texdraw
@@ -3933,7 +3933,7 @@ Summary:	Thumbnails for PDFTeX and dvips/ps2pdf
 Summary(pl.UTF-8):	Ikonki dla PDFTeXa i dvips/ps2pdf
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-tex-thumbpdf
 
 %description -n texlive-tex-thumbpdf
@@ -3954,7 +3954,7 @@ Summary:	Ukranian hyphenation
 Summary(pl.UTF-8):	Ukraińskie zasady przenoszenia wyrazów
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Provides:	tetex-tex-ukrhyph
 Obsoletes:	tetex-tex-ukrhyph
 
@@ -3974,7 +3974,7 @@ Zawiera pakiety z implementacją reguł tradycyjnych, współczesnych i
 Summary:	Typeset tables of variations of functions
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 
 %description -n texlive-latex-variations
 Typeset tables of variations of functions.
@@ -3984,7 +3984,7 @@ Summary:	Vietnamese language support
 Summary(pl.UTF-8):	Wsparcie dla języka wietnamskiego
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-latex-urwvn
 Obsoletes:	tetex-latex-vietnam
 Obsoletes:	tetex-tex-vietnam
@@ -4000,8 +4000,8 @@ Summary:	Package for typesetting a variety of graphs and diagrams with TeX
 Summary(pl.UTF-8):	Pakiet do składania w TeXu różnych wykresów i diagramów
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-xypic = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
+Requires:	%{shortname}-fonts-xypic
 Obsoletes:	tetex-tex-xypic
 Obsoletes:	tetex-xypic
 
@@ -4021,7 +4021,7 @@ Summary:	Extension to keyval package
 Summary(pl.UTF-8):	Rozszerzenie do pakietu keyval
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}
 Obsoletes:	tetex-tex-xkeyval
 
 %description -n texlive-tex-xkeyval
@@ -4049,7 +4049,7 @@ Katalogi fontów TeXa.
 Summary:	Adobe fonts
 Summary(pl.UTF-8):	Fonty Adobe
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-adobe
 Obsoletes:	tetex-fonts-adobe
 
@@ -4062,7 +4062,7 @@ Fonty Adobe.
 %package -n texlive-fonts-larm
 Summary:	Larm (cyrillic) fonts
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-larm
 Larm (cyrillic) fonts.
@@ -4071,7 +4071,7 @@ Larm (cyrillic) fonts.
 Summary:	Virtual fonts for PDF-files with T1 encoded CMR-fonts
 Summary(pl.UTF-8):	Wirtualne fonty do plików PDF z fontami CMR o kodowaniu T1
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-ae
 
 %description -n texlive-fonts-ae
@@ -4084,8 +4084,8 @@ Wirtualne fonty do plików PDF z fontami CMR o kodowaniu T1.
 Summary:	AMS fonts
 Summary(pl.UTF-8):	Fonty AMS
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex-bibtex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
+Requires:	%{shortname}-latex-bibtex
 Provides:	tetex-fonts-ams
 Obsoletes:	tetex-fonts-ams
 
@@ -4099,7 +4099,7 @@ Fonty AMS.
 Summary:	Antykwa Poltawskiego, a Type 1 family of Polish traditional type
 Summary(pl.UTF-8):	Antykwa Półtawskiego - rodzina tradycyjnych polskich czcionek jako Type 1
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-antp
 
 %description -n texlive-fonts-antp
@@ -4113,7 +4113,7 @@ Type 1.
 Summary:	Antykwa Torunska, a Type 1 family of a Polish traditional type
 Summary(pl.UTF-8):	Antykwa Toruńska - rodzina tradycyjnych polskich czcionek jako Type 1
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-antt
 
 %description -n texlive-fonts-antt
@@ -4125,7 +4125,7 @@ Antykwa Toruńska - rodzina tradycyjnych polskich czcionek jako Type 1.
 %package -n texlive-fonts-arphic
 Summary:	Arphic fonts
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-arphic
 Arphic fonts.
@@ -4134,7 +4134,7 @@ Arphic fonts.
 Summary:	Blackboard variant fonts for Computer Modern, with LaTeX support
 Summary(pl.UTF-8):	Tablicowy wariant fontów Computer Modern ze wsparciem dla LaTeXa
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-bbm
 
 %description -n texlive-fonts-bbm
@@ -4147,7 +4147,7 @@ Tablicowy wariant fontów Computer Modern ze wsparciem dla LaTeXa.
 Summary:	Sans serif blackboard bold for LaTeX
 Summary(pl.UTF-8):	Tablicowy tłusty font sans serif dla LaTeXa
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-bbold
 
 %description -n texlive-fonts-bbold
@@ -4160,7 +4160,7 @@ Tablicowy tłusty font sans serif dla LaTeXa.
 Summary:	Bitstream fonts
 Summary(pl.UTF-8):	Fonty Bitstream
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-bitstrea
 
 %description -n texlive-fonts-bitstream
@@ -4173,7 +4173,7 @@ Fonty Bitstream.
 Summary:	Polish version of Computer Concrete fonts
 Summary(pl.UTF-8):	Polska wersja fontów Computer Concrete
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-cc-pl
 
 %description -n texlive-fonts-cc-pl
@@ -4186,7 +4186,7 @@ Polska wersja fontów Computer Concrete.
 Summary:	Compugraphic fonts
 Summary(pl.UTF-8):	Fonty Compugraphic
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-cg
 
 %description -n texlive-fonts-cg
@@ -4199,7 +4199,7 @@ Fonty Compugraphic.
 Summary:	Computer Modern fonts
 Summary(pl.UTF-8):	Fonty Computer Modern
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-cm
 Obsoletes:	tetex-fonts-cm
 
@@ -4213,7 +4213,7 @@ Fonty Computer Modern.
 Summary:	CM Bright fonts
 Summary(pl.UTF-8):	Fonty CM Bright
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-cmbright
 
 %description -n texlive-fonts-cmbright
@@ -4226,7 +4226,7 @@ Fonty CM Bright.
 Summary:	CM Super fonts
 Summary(hu.UTF-8):	CM Super betűtípus
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-cmsuper
 CM Super fonts.
@@ -4239,7 +4239,7 @@ CM Super betűtípus
 Summary:	Computer Modern fonts extended with Russian letters
 Summary(pl.UTF-8):	Fonty Computer Modern rozszerzone o litery rosyjskie
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-cmcyr
 Obsoletes:	tetex-fonts-cmcyr
 Obsoletes:	texlive-fonts-type1-cmcyr
@@ -4254,7 +4254,7 @@ Fonty Computer Modern rozszerzone o litery rosyjskie.
 Summary:	Extra Computer Modern fonts, from the American Mathematical Society
 Summary(pl.UTF-8):	Dodatkowe fonty Computer Modern z AMS
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-cmextra
 Obsoletes:	tetex-fonts-cmextra
 
@@ -4268,7 +4268,7 @@ Dodatkowe fonty Computer Modern z AMS (American Mathematical Society).
 Summary:	Concrete Math fonts
 Summary(pl.UTF-8):	Fonty matematyczne Concrete Math
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-concmath
 
 %description -n texlive-fonts-concmath
@@ -4281,7 +4281,7 @@ Fonty matematyczne Concrete Math.
 Summary:	Concrete Roman fonts
 Summary(pl.UTF-8):	Fonty Concrete Roman
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-concrete
 
 %description -n texlive-fonts-concrete
@@ -4296,7 +4296,7 @@ przeznaczone do używania z fontami matematycznymi Euler.
 Summary:	Czech/Slovak-tuned MetaFont Computer Modern fonts
 Summary(pl.UTF-8):	Fonty MetaFont Computer Modern dla języków czeskiego i słowackiego
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-cs
 
 %description -n texlive-fonts-cs
@@ -4310,7 +4310,7 @@ czeskiego i słowackiego.
 Summary:	Sources for the European Concrete fonts
 Summary(pl.UTF-8):	Źródła dla fontów European Concrete
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-ecc
 
 %description -n texlive-fonts-ecc
@@ -4327,7 +4327,7 @@ tekstowymi fontami towarzyszącymi.
 Summary:	The new European currency symbol for the Euro
 Summary(pl.UTF-8):	Symbol nowej europejskiej waluty Euro
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-eurosym
 
 %description -n texlive-fonts-eurosym
@@ -4344,7 +4344,7 @@ różnych kształtów (normalnego, pochylonego, tłustego, szkicowanego).
 Summary:	The Virtual Euler Math fonts
 Summary(pl.UTF-8):	Fonty Virtual Euler Math
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-eulervm
 
 %description -n texlive-fonts-eulervm
@@ -4365,7 +4365,7 @@ matematycznych i może być dostępny używalny symbol \hslash.
 Summary:	Fonts similar to EUSM but with two more characters
 Summary(pl.UTF-8):	Fonty podobne do EUSM, ale z dwoma dodatkowymi znakami
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-euxm
 
 %description -n texlive-fonts-euxm
@@ -4380,7 +4380,7 @@ dla Concrete Math dołączonego w fonts3 dystrybucji TeXLive.
 Summary:	Gothic and ornamental initial fonts by Yannis Haralambous
 Summary(pl.UTF-8):	Początkowe fonty gotyckie i ornamentowe Yannisa Haralambousa
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-gothic
 
 %description -n texlive-fonts-gothic
@@ -4393,7 +4393,7 @@ Początkowe fonty gotyckie i ornamentowe Yannisa Haralambousa.
 Summary:	Converted mflogo font
 Summary(pl.UTF-8):	Przekonwertowany font mflogo
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-hoekwater
 
 %description -n texlive-fonts-hoekwater
@@ -4410,8 +4410,8 @@ stmaryrd, wasy, wasy2, xipa.
 Summary:	Miscellaneous packages by Joerg Knappen
 Summary(pl.UTF-8):	Różne pakiety autorstwa Joerga Knappena
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
-Requires:	%{name}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
+Requires:	%{shortname}-latex
 Provides:	tetex-fonts-jknappen
 Obsoletes:	tetex-fonts-jknappen
 Obsoletes:	tetex-latex-jknappen
@@ -4429,7 +4429,7 @@ Knappena. Zawiera sgmlcmpt.
 Summary:	A complete set of fonts for text and mathematics
 Summary(hu.UTF-8):	Betűtípusok teljes készlete (matematikai) szövegekhez
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-kpfonts
 A complete set of fonts for text and mathematics.
@@ -4441,7 +4441,7 @@ Betűtípusok teljes készlete (matematikai) szövegekhez.
 Summary:	Basic LaTeX fonts
 Summary(pl.UTF-8):	Podstawowe fonty dla LaTeXa
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-latex
 Obsoletes:	tetex-fonts-latex
 
@@ -4455,7 +4455,7 @@ Podstawowe fonty dla LaTeXa.
 Summary:	Olga Lapko's LH fonts
 Summary(pl.UTF-8):	Fonty LH Olgi Lapko
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-lh
 
 %description -n texlive-fonts-lh
@@ -4468,7 +4468,7 @@ Fonty lh dla kodowań `T2'/X2 (dla języków zapisywanych cyrylicą).
 Summary:	Latin Modern family fonts
 Summary(pl.UTF-8):	Fonty z rodziny Latin Modern
 Group:		Applications/Publishing/TeX
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-lm
 
 %description -n texlive-fonts-lm
@@ -4497,7 +4497,7 @@ tymi wszystkimi plikami. Autorem jest Bogusław Jackowski.
 Summary:	Martin Vogel's Symbol (marvosym) font
 Summary(pl.UTF-8):	Font Symbol Martina Vogela (marvosym)
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-marvosym
 
 %description -n texlive-fonts-marvosym
@@ -4520,7 +4520,7 @@ krawieckie; znak CE i inne.
 Summary:	Logo fonts
 Summary(pl.UTF-8):	Fonty logo
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-mflogo
 
 %description -n texlive-fonts-mflogo
@@ -4533,7 +4533,7 @@ Fonty logo.
 Summary:	Miscellaneous fonts
 Summary(pl.UTF-8):	Różne fonty
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-misc
 
 %description -n texlive-fonts-misc
@@ -4546,7 +4546,7 @@ Fonty różne.
 Summary:	Monotype fonts
 Summary(pl.UTF-8):	Fonty Monotype
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-monotype
 
 %description -n texlive-fonts-monotype
@@ -4559,7 +4559,7 @@ Fonty Monotype.
 Summary:	Fonts for Omega - extended unicode TeX
 Summary(pl.UTF-8):	Fonty dla Omegi - TeXa ze wsparciem dla unikodu
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-omega
 
 %description -n texlive-fonts-omega
@@ -4572,7 +4572,7 @@ Fonty dla Omegi - TeXa ze wsparciem dla unikodu.
 Summary:	Other fonts
 Summary(hu.UTF-8):	További betűtípusok
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-cbgreek
 Obsoletes:	tetex-fonts-dstroke
 Obsoletes:	tetex-fonts-pazo
@@ -4591,7 +4591,7 @@ További betűtípusok.
 Summary:	Polish fonts
 Summary(pl.UTF-8):	Polskie fonty
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-pl
 
 %description -n texlive-fonts-pl
@@ -4604,7 +4604,7 @@ Polskie fonty.
 Summary:	PX fonts
 Summary(pl.UTF-8):	Fonty PX
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-px
 
 %description -n texlive-fonts-px
@@ -4617,10 +4617,10 @@ Fonty PX.
 Summary:	Additional fonts for QTX package
 Summary(pl.UTF-8):	Dodatkowe fonty dla pakietu QTX
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 # I hope qpxqtx doesn't need qfonts
-# Requires:	%{name}-fonts-qfonts = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-tx = %{epoch}:%{version}-%{release}
+# Requires:	%{shortname}-fonts-qfonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-fonts-tx
 Obsoletes:	tetex-fonts-qpx
 Obsoletes:	tetex-fonts-qtx
 
@@ -4634,7 +4634,7 @@ Dodatkowe fonty dla pakietu QTX.
 Summary:	Fonts of uppercase script letters for scientific and mathematical typesetting
 Summary(pl.UTF-8):	Fonty wielkich liter pisanych do składania dokumentów naukowych i matematycznych
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-rsfs
 
 %description -n texlive-fonts-rsfs
@@ -4653,7 +4653,7 @@ matematycznym foncie TeXowym symbol.
 Summary:	St Mary Road symbols for functional programming
 Summary(pl.UTF-8):	Symbole St Mary Road do programowania funkcyjnego
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-stmaryrd
 Obsoletes:	tetex-fonts-stmaryrd
 
@@ -4667,7 +4667,7 @@ Symbole St Mary Road do programowania funkcyjnego.
 Summary:	TX fonts
 Summary(pl.UTF-8):	Fonty TX
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-tx
 
 %description -n texlive-fonts-tx
@@ -4679,7 +4679,7 @@ Fonty TX.
 %package -n texlive-fonts-uhc
 Summary:	UHC fonts
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-uhc
 UHC fonts.
@@ -4688,7 +4688,7 @@ UHC fonts.
 Summary:	URW fonts
 Summary(pl.UTF-8):	Fonty URW
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-urw
 
 %description -n texlive-fonts-urw
@@ -4701,7 +4701,7 @@ Fonty URW.
 Summary:	URWVN fonts
 Summary(pl.UTF-8):	Fonty URWVN
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-urwvn
 
 %description -n texlive-fonts-urwvn
@@ -4714,7 +4714,7 @@ Fonty URWVN.
 Summary:	VNR fonts
 Summary(pl.UTF-8):	Fonty VNR
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-vnr
 
 %description -n texlive-fonts-vnr
@@ -4728,7 +4728,7 @@ Summary:	urw35vf fonts
 Summary(hu.UTF-8):	urw35vf betűtípus
 Summary(pl.UTF-8):	Fonty urw35vf
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-urw35vf
 urw35vf fonts.
@@ -4739,7 +4739,7 @@ urw35vf betűtípus.
 %package -n texlive-fonts-wadalab
 Summary:	Wadalab fonts
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-wadalab
 Wadalab fonts.
@@ -4748,7 +4748,7 @@ Wadalab fonts.
 Summary:	Waldis symbol fonts
 Summary(pl.UTF-8):	Fonty Waldis symbol
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-wasy
 Obsoletes:	tetex-fonts-wasy
 
@@ -4762,7 +4762,7 @@ Fonty Waldis symbol.
 Summary:	Xy-pic fonts
 Summary(pl.UTF-8):	Fonty Xy-pic
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-xypic
 
 %description -n texlive-fonts-xypic
@@ -4775,7 +4775,7 @@ Fonty Xy-pic.
 Summary:	European Modern fonts from Y&Y
 Summary(pl.UTF-8):	Fonty European Modern od Y&Y
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-yandy
 
 %description -n texlive-fonts-yandy
@@ -4788,7 +4788,7 @@ Fonty European Modern od Y&Y.
 Summary:	Antykwa Poltawskiego, a Type 1 family of Polish traditional type
 Summary(pl.UTF-8):	Antykwa Półtawskiego - rodzina tradycyjnych polskich czcionek jako Type 1
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-antp
 
 %description -n texlive-fonts-type1-antp
@@ -4802,7 +4802,7 @@ Type 1.
 Summary:	Antykwa Torunska, a Type 1 family of a Polish traditional type
 Summary(pl.UTF-8):	Antykwa Toruńska - rodzina tradycyjnych polskich czcionek jako Type 1
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-antt
 
 %description -n texlive-fonts-type1-antt
@@ -4814,7 +4814,7 @@ Antykwa Toruńska - rodzina tradycyjnych polskich czcionek jako Type 1.
 %package -n texlive-fonts-type1-arphic
 Summary:	Type1 Arphic fonts
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-type1-arphic
 Type1 Arphic fonts.
@@ -4823,7 +4823,7 @@ Type1 Arphic fonts.
 Summary:	Free replacement for basic MathTime fonts
 Summary(pl.UTF-8):	Wolnodostępny zamiennik podstawowych fontów MathTime
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-belleek
 
 %description -n texlive-fonts-type1-belleek
@@ -4836,7 +4836,7 @@ Wolnodostępny zamiennik podstawowych fontów MathTime.
 Summary:	Bitstream fonts
 Summary(pl.UTF-8):	Fonty Bitstream
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-bitstrea
 
 %description -n texlive-fonts-type1-bitstream
@@ -4849,7 +4849,7 @@ Fonty Bitstream.
 Summary:	Computer Modern family fonts
 Summary(pl.UTF-8):	Fonty z rodziny Computer Modern
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-type1-bluesky
 Obsoletes:	tetex-fonts-type1-bluesky
 
@@ -4863,7 +4863,7 @@ Fonty z rodzony Computer Modern.
 Summary:	Polish version of Computer Concrete fonts
 Summary(pl.UTF-8):	Polska wersja fontów Computer Concrete
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-cc-pl
 
 %description -n texlive-fonts-type1-cc-pl
@@ -4876,7 +4876,7 @@ Polska wersja fontów Computer Concrete.
 Summary:	Computer Modern fonts extended with Russian letters
 Summary(pl.UTF-8):	Fonty Computer Modern rozszerzone o litery rosyjskie
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-cmcyr
 
 %description -n texlive-fonts-type1-cmcyr
@@ -4889,7 +4889,7 @@ Fonty Computer Modern rozszerzone o litery rosyjskie.
 Summary:	Czech/Slovak-tuned MetaFont Computer Modern fonts
 Summary(pl.UTF-8):	Fonty MetaFont Computer Modern dla języków czeskiego i słowackiego
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-cs
 
 %description -n texlive-fonts-type1-cs
@@ -4903,7 +4903,7 @@ czeskiego i słowackiego.
 Summary:	The new European currency symbol for the Euro
 Summary(pl.UTF-8):	Symbol nowej europejskiej waluty Euro
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-eurosym
 
 %description -n texlive-fonts-type1-eurosym
@@ -4920,7 +4920,7 @@ różnych kształtów (normalnego, pochylonego, tłustego, szkicowanego).
 Summary:	Converted mflogo font
 Summary(pl.UTF-8):	Przekonwertowany font mflogo
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-hoekwater
 
 %description -n texlive-fonts-type1-hoekwater
@@ -4937,7 +4937,7 @@ stmaryrd, wasy, wasy2, xipa.
 Summary:	SC/OsF fonts for URW Palladio L
 Summary(pl.UTF-8):	Fonty SC/OsF dla URW Palladio L
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-fpl
 
 %description -n texlive-fonts-type1-fpl
@@ -4970,7 +4970,7 @@ Palatino Waltera Schmidta.
 Summary:	Type1 Latin Modern family fonts
 Summary(pl.UTF-8):	Fonty Type1 z rodziny Latin Modern
 Group:		Applications/Publishing/TeX
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-lm
 
 %description -n texlive-fonts-type1-lm
@@ -4999,7 +4999,7 @@ tymi wszystkimi plikami. Autorem jest Bogusław Jackowski.
 Summary:	Martin Vogel's Symbol (marvosym) font
 Summary(pl.UTF-8):	Font Symbol Martina Vogela (marvosym)
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-marvosym
 
 %description -n texlive-fonts-type1-marvosym
@@ -5022,7 +5022,7 @@ krawieckie; znak CE i inne.
 Summary:	Pazo Math fonts
 Summary(pl.UTF-8):	Fonty matematyczne Pazo Math
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-mathpazo
 
 %description -n texlive-fonts-type1-mathpazo
@@ -5035,7 +5035,7 @@ Fonty matematyczne Pazo Math.
 Summary:	Type1 fonts for Omega - extended unicode TeX
 Summary(pl.UTF-8):	Fonty Type1 dla Omegi - TeXa ze wsparciem dla unikodu
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-omega
 
 %description -n texlive-fonts-type1-omega
@@ -5048,8 +5048,8 @@ Fonty Type1 dla Omegi - TeXa ze wsparciem dla unikodu.
 Summary:	Polish fonts
 Summary(pl.UTF-8):	Polskie fonty
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
-Requires:	%{name}-fonts-type1-bluesky = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
+Requires:	%{shortname}-fonts-type1-bluesky
 Obsoletes:	tetex-fonts-type1-pl
 
 %description -n texlive-fonts-type1-pl
@@ -5062,7 +5062,7 @@ Polskie fonty.
 Summary:	PX fonts
 Summary(pl.UTF-8):	Fonty PX
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-px
 
 %description -n texlive-fonts-type1-px
@@ -5075,7 +5075,7 @@ Fonty PX.
 Summary:	TX fonts
 Summary(pl.UTF-8):	Fonty TX
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-tx
 
 %description -n texlive-fonts-type1-tx
@@ -5087,7 +5087,7 @@ Fonty TX.
 %package -n texlive-fonts-type1-uhc
 Summary:	Type1 UHC fonts
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-type1-uhc
 Type1 UHC fonts.
@@ -5096,7 +5096,7 @@ Type1 UHC fonts.
 Summary:	URW fonts
 Summary(pl.UTF-8):	Fonty URW
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Provides:	tetex-fonts-type1-urw
 Obsoletes:	tetex-fonts-type1-urw
 
@@ -5110,7 +5110,7 @@ Fonty URW.
 Summary:	Type1 VNR fonts
 Summary(pl.UTF-8):	Fonty Type1 VNR
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-vnr
 
 %description -n texlive-fonts-type1-vnr
@@ -5122,7 +5122,7 @@ Fonty Type1 VNR.
 %package -n texlive-fonts-type1-wadalab
 Summary:	Type1 Wadalab fonts
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 
 %description -n texlive-fonts-type1-wadalab
 Type1 Wadalab fonts.
@@ -5131,7 +5131,7 @@ Type1 Wadalab fonts.
 Summary:	Xy-pic fonts
 Summary(pl.UTF-8):	Fonty Xy-pic
 Group:		Fonts
-Requires:	%{name}-dirs-fonts = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-dirs-fonts
 Obsoletes:	tetex-fonts-type1-xypic
 
 %description -n texlive-fonts-type1-xypic
@@ -5204,32 +5204,6 @@ A converter from TeX and LaTeX to hypertext (HTML, XML, etc.),
 providing a configurable (La)TeX-based authoring system for hypertext.
 When converting to XML, you can use MathML instead of images for
 equation representation.
-
-%package -n texlive-xetex
-Summary:	Extended TeX / LaTeX version for unicode
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	/usr/bin/texhash
-Requires:	%{name}-fonts-misc = %{epoch}:%{version}-%{release}
-
-%description -n texlive-xetex
-XeTeX extends the TeX typesetting system (and macro packages such as
-LaTeX and ConTeXt) to have native support for the Unicode character
-set, including complex Asian scripts, and for OpenType and TrueType
-fonts.
-
-%package -n texlive-xmltex
-Summary:	TeX package for processing XML files
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	/usr/bin/texhash
-Provides:	passivetex = 1.26
-Provides:	xmltex
-Obsoletes:	passivetex
-Obsoletes:	xmltex
-
-%description -n texlive-xmltex
-XMLTeX is a non-validating, namespace-aware XML parser written in TeX.
-It allows TeX to directly process XML files.
-
 
 %prep
 
@@ -12547,35 +12521,3 @@ fi
 %{texmfdist}/tex/generic/tex4ht
 %{texmfdist}/tex4ht
 %{texmf}/scripts/tex4ht
-
-%files -n texlive-xetex
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/xdvipdfmx
-%attr(755,root,root) %{_bindir}/xelatex
-%attr(755,root,root) %{_bindir}/xetex
-%dir %{fmtdir}/xetex
-%doc %{texmfdist}/doc/generic/ifxetex
-%doc %{texmfdist}/doc/generic/xetex-pstricks
-%doc %{texmfdist}/doc/xelatex
-%doc %{texmfdist}/doc/xetex
-%{texmfdist}/scripts/xetex
-%{texmfdist}/tex/generic/ifxetex
-%{texmfdist}/tex/generic/xetexconfig
-%{texmfdist}/tex/latex/latexconfig/xelatex.ini
-%{texmfdist}/tex/plain/config/xetex.ini
-%{texmfdist}/tex/xelatex
-%{texmfdist}/tex/xetex
-%{texmf}/fmtutil/format.xetex.cnf
-%{fmtdir}/xetex/xetex.fmt
-%{fmtdir}/xetex/xelatex.fmt
-
-%files -n texlive-xmltex
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/pdfxmltex
-%attr(755,root,root) %{_bindir}/xmltex
-%doc %{texmfdist}/doc/xmltex
-%{texmfdist}/source/xmltex
-%{texmfdist}/tex/xmltex
-%{texmf}/fmtutil/format.xmltex.cnf
-%{fmtdir}/pdftex/pdfxmltex.fmt
-%{fmtdir}/pdftex/xmltex.fmt
