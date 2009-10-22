@@ -174,39 +174,6 @@ aygıtından bağımsız bir çıktı (DeVice Independent - DVI) oluşturur.
 TeX'in becerileri ve dizgi dili, dili geliştiren Knuth'un 'The
 TeXbook' başlıklı kitabında anlatılmaktadır.
 
-%package -n texlive-other-utils
-Summary:	Other utilities
-Group:		Applications/Publishing/TeX
-Obsoletes:	tetex-format-cyrtexinfo
-
-%description -n texlive-other-utils
-Other utilities.
-
-%package -n texlive-jadetex
-Summary:	LaTeX macros for converting Jade TeX output into DVI/PS/PDF
-Summary(pl.UTF-8):	Makra LaTeXa do konwersji Jade TeXa do DVI/PS/PDF
-Group:		Applications/Publishing/TeX
-Requires:	%{shortname}
-Requires:	%{shortname}-latex
-Requires:	%{shortname}-pdftex
-Provides:	jadetex = %{epoch}:%{version}-%{release}
-Obsoletes:	jadetex
-
-%description -n texlive-jadetex
-JadeTeX contains the additional LaTeX macros necessary for taking Jade
-TeX output files and processing them as LaTeX files.
-
-%description -n texlive-jadetex -l pl.UTF-8
-JadeTeX zawiera dodatkowe makra LaTeXa potrzebne do konwersji plików
-otrzymanych z Jade TeXa i przetworzenia ich jako plików LaTeXa.
-
-%package -n texlive-other-utils-doc
-Summary:	Other utilities documentation
-Group:		Applications/Publishing/TeX
-
-%description -n texlive-other-utils-doc
-Other utilities documentation.
-
 %package -n texlive-doc
 Summary:	Documentation for TeX Live
 Group:		Documentation
@@ -981,25 +948,18 @@ Xindy vietnamese language
 %description -n xindy-vietnamese -l hu.UTF-8
 Xindy vietnám nyelv
 
-%package -n texlive-omega
-Summary:	Extended unicode TeX
-Summary(pl.UTF-8):	Omega - TeX ze wsparciem dla unikodu
+%package -n texlive-scripts
+Summary:	Various scripts
+Summary(hu.UTF-8):	Néhány szkript
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
 Requires:	%{shortname}
-Requires:	%{shortname}-fonts-omega
-Requires:	%{shortname}-plain
-Obsoletes:	tetex-omega
 
-%description -n texlive-omega
-Omega is a version of the TeX program modified for multilingual
-typesetting. It uses unicode, and has additional primitives for (among
-other things) bidirectional typesetting.
+%description -n texlive-scripts
+Various scripts.
 
-%description -n texlive-omega -l pl.UTF-8
-Omega to wersja TeXa zmodyfikowana dla potrzeb składu wielojęzycznego.
-Używa unikodu i ma dodatkowe prymitywy do (między innymi) składania
-tekstu pisanego w obu kierunkach.
+%description -n texlive-scripts -l hu.UTF-8
+Néhány szkript.
 
 # # formats #
 
@@ -1042,49 +1002,6 @@ MeX Plain Format basic files.
 %description -n texlive-mex -l pl.UTF-8
 Podstawowe pliki dla formatu MeX Plain.
 
-%package -n texlive-format-mex
-Summary:	MeX Plain Format
-Summary(pl.UTF-8):	Format MeX Plain
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	texlive-mex
-Obsoletes:	tetex-format-mex
-
-%description -n texlive-format-mex
-MeX Plain Format.
-
-%description -n texlive-format-mex -l pl.UTF-8
-Format MeX Plain.
-
-%package -n texlive-format-pdfmex
-Summary:	PDFMeX Plain Format
-Summary(pl.UTF-8):	Format PDFMeX Plain
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-mex
-Requires:	%{shortname}-pdftex
-Obsoletes:	tetex-format-pdfmex
-
-%description -n texlive-format-pdfmex
-PDFMeX Plain Format.
-
-%description -n texlive-format-pdfmex -l pl.UTF-8
-Format PDFMeX Plain.
-
-%package -n texlive-format-utf8mex
-Summary:	MeX Plain Format with UTF-8 encoded source files
-Summary(pl.UTF-8):	Format MeX Plain z plikami źródłowymi kodowanymi UTF-8
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-mex
-Obsoletes:	tetex-format-utf8mex
-
-%description -n texlive-format-utf8mex
-MeX Plain Format with UTF-8 encoded source files.
-
-%description -n texlive-format-utf8mex -l pl.UTF-8
-Format MeX Plain z plikami źródłowymi kodowanymi UTF-8.
-
 # AMS TeX format
 
 %package -n texlive-amstex
@@ -1107,38 +1024,7 @@ American Mathematical Society macros for Plain TeX basic files.
 Podstawowe pliki makr AMS (American Mathematical Society) dla formatu
 Plain TeX.
 
-%package -n texlive-format-amstex
-Summary:	AMS macros for Plain TeX
-Summary(pl.UTF-8):	Makra AMS dla formatu Plain TeX
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-amstex
-Obsoletes:	tetex-format-amstex
-Obsoletes:	tetex-format-cyramstex
-
-%description -n texlive-format-amstex
-American Mathematical Society macros for Plain TeX.
-
-%description -n texlive-format-amstex -l pl.UTF-8
-Makra AMS (American Mathematical Society) dla formatu Plain TeX.
-
 # CSPlain format
-
-%package -n texlive-csplain
-Summary:	TeX CSPlain format basic files
-Summary(pl.UTF-8):	Podstawowe pliki dla formatu TeX CSPlain
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-fonts-cs
-Requires:	%{shortname}-plain
-Provides:	tetex-csplain
-Obsoletes:	tetex-csplain
-
-%description -n texlive-csplain
-TeX CSPlain format basic files.
-
-%description -n texlive-csplain -l pl.UTF-8
-Podstawowe pliki dla formatu TeX CSPlain.
 
 %package -n texlive-format-csplain
 Summary:	TeX CSPlain format
@@ -1153,20 +1039,6 @@ TeX CSPlain format.
 
 %description -n texlive-format-csplain -l pl.UTF-8
 Format TeX CSPlain.
-
-%package -n texlive-format-pdfcsplain
-Summary:	PDFTeX CSPlain format
-Summary(pl.UTF-8):	Format PDFTeX CSPlain
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-csplain
-Obsoletes:	tetex-format-pdfcsplain
-
-%description -n texlive-format-pdfcsplain
-PDFTeX CSPlain format.
-
-%description -n texlive-format-pdfcsplain -l pl.UTF-8
-Format PDFTeX CSPlain.
 
 # CSLaTeX format
 
@@ -1186,34 +1058,6 @@ CSLaTeX format basic files.
 %description -n texlive-cslatex -l pl.UTF-8
 Podstawowe pliki dla formatu CSLaTeX.
 
-%package -n texlive-format-cslatex
-Summary:	CSLaTeX format
-Summary(pl.UTF-8):	Format CSLaTeX
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-cslatex
-Obsoletes:	tetex-format-cslatex
-
-%description -n texlive-format-cslatex
-CSLaTeX format.
-
-%description -n texlive-format-cslatex -l pl.UTF-8
-Format CSLaTeX.
-
-%package -n texlive-format-pdfcslatex
-Summary:	PDF CSLaTeX format
-Summary(pl.UTF-8):	Format PDF CSLaTeX
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-cslatex
-Obsoletes:	tetex-format-pdfcslatex
-
-%description -n texlive-format-pdfcslatex
-PDF CSLaTeX format.
-
-%description -n texlive-format-pdfcslatex -l pl.UTF-8
-Format PDF CSLaTeX.
-
 # EPlain format
 
 %package -n texlive-eplain
@@ -1231,44 +1075,9 @@ EPlain format basic files.
 %description -n texlive-eplain -l pl.UTF-8
 Podstawowe pliki dla formatu EPlain.
 
-%package -n texlive-format-eplain
-Summary:	EPlain format
-Summary(pl.UTF-8):	Format EPlain
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-eplain
-Obsoletes:	tetex-format-eplain
-
-%description -n texlive-format-eplain
-EPlain format.
-
-%description -n texlive-format-eplain -l pl.UTF-8
-Format EPlain.
-
 # ConTeXt format.
 
-%package -n texlive-context
-Summary:	ConTeXt macro package basic files
-Summary(pl.UTF-8):	Podstawowe pliki pakietu makr ConTeXt
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}
-Provides:	tetex-context
-Obsoletes:	tetex-context
-
 %define		_noautoreq	'perl(path_tre)'
-
-%description -n texlive-context
-A full featured, parameter driven macro package, which fully supports
-advanced interactive documents.
-
-This package contains basic files.
-
-%description -n texlive-context -l pl.UTF-8
-Pakiet makr sterowanych przez parametry o pełnych możliwościach,
-całkowicie obsługujący zaawansowane dokumenty interaktywne.
-
-Ten pakiet zawiera podstawowe pliki.
 
 %package -n texlive-format-context-de
 Summary:	German ConTeXt format
@@ -1611,24 +1420,6 @@ A geometric sans serif blackboard bold font, for use in mathematics.
 %description -n texlive-latex-bbold -l pl.UTF-8
 Geometryczny tablicowy tłusty font sans serif, do używania w
 matematyce.
-
-%package -n texlive-latex-bibtex
-Summary:	Bibliography management for LaTeX
-Summary(pl.UTF-8):	Zarządzenie bibliografią dla LaTeXa
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-latex
-Provides:	tetex-latex-bibtex
-Obsoletes:	tetex-bibtex
-Obsoletes:	tetex-latex-bibtex
-Obsoletes:	tetex-natbib
-Obsoletes:	tetex-rubibtex
-
-%description -n texlive-latex-bibtex
-Bibliography management for LaTeX.
-
-%description -n texlive-latex-bibtex -l pl.UTF-8
-Zarządzanie bibliografią dla LaTeXa.
 
 %package -n texlive-latex-beamer
 Summary:	A LaTeX class for producing presentations and slides
@@ -3533,62 +3324,6 @@ na wybór modelu koloru dla całego dokumentu i oferuje narzędzia dla
 schematów kolorów, konwersji między ośmioma modelami kolorów oraz
 naprzemiennych kolorów w tabelach.
 
-%package -n texlive-format-pdflatex
-Summary:	PDF LaTeX macro package
-Summary(pl.UTF-8):	Pakiet makr PDF LaTeX
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}
-Requires:	%{shortname}-fonts-jknappen
-Requires:	%{shortname}-fonts-type1-urw
-Requires:	%{shortname}-latex
-Requires:	%{shortname}-latex-psnfss
-Requires:	%{shortname}-pdftex
-Provides:	tetex-format-pdflatex
-Obsoletes:	tetex-format-pdflatex
-
-%description -n texlive-format-pdflatex
-LaTeX is a front end for the TeX text formatting system. Easier to use
-than TeX, LaTeX is essentially a set of TeX macros which provide
-convenient, predefined document formats for users.
-
-This package contains PDF LaTeX format.
-
-%description -n texlive-format-pdflatex -l pl.UTF-8
-LaTeX jest frontendem do systemu formatującego tekst TeX. Jest
-łatwiejszy w użyciu niż TeX. Jest właściwie zestawem makr TeXowych,
-dających użytkownikom wygodne, predefiniowane formaty dokumentów.
-
-Ten pakiet zawiera format PDF LaTeX.
-
-%package -n texlive-scripts
-Summary:	Various scripts
-Summary(hu.UTF-8):	Néhány szkript
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}
-
-%description -n texlive-scripts
-Various scripts.
-
-%description -n texlive-scripts -l hu.UTF-8
-Néhány szkript.
-
-%package -n texlive-tlmgr
-Summary:	TeXLive manager
-Summary(hu.UTF-8):	TeXLive manager
-Group:		Applications/Publishing/TeX
-
-%description -n texlive-tlmgr
-tlmgr manages an existing TeX Live installation, both packages and
-configuration options. It performs many of the same actions as
-texconfig, and more besides.
-
-%description -n texlive-tlmgr -l hu.UTF-8
-tlmgr egy létező TeX Live telepítést tart karban, csomag és beállítás
-tekintetében is. Hasonló műveleteket végez, mint a texconfig, sőt,
-többet is.
-
 # # TeX generic macros #
 
 %package -n texlive-tex-babel
@@ -3898,19 +3633,6 @@ Extension to keyval package.
 
 %description -n texlive-tex-xkeyval -l pl.UTF-8
 Rozszerzenie do pakietu keyval.
-
-%package -n texlive-dirs-fonts
-Summary:	TeX font directories
-Summary(pl.UTF-8):	Katalogi fontów TeXa
-Group:		Fonts
-Provides:	tetex-dirs-fonts
-Obsoletes:	tetex-dirs-fonts
-
-%description -n texlive-dirs-fonts
-TeX font directories.
-
-%description -n texlive-dirs-fonts -l pl.UTF-8
-Katalogi fontów TeXa.
 
 # # Fonts packages #
 
@@ -5009,30 +4731,6 @@ Xy-pic fonts.
 %description -n texlive-fonts-type1-xypic -l pl.UTF-8
 Fonty Xy-pic.
 
-# TeXLive-specific packages - there wasn't before...
-%package -n texlive-afm2pl
-Summary:	Convert an Adobe font metric file to a TeX font property list
-Group:		Fonts
-
-%description -n texlive-afm2pl
-Convert an Adobe font metric file to a TeX font property list.
-
-%package -n texlive-bbox
-Summary:	bbox prints the bounding box of images
-Group:		Applications/Publishing/TeX
-
-%description -n texlive-bbox
-bbox reads a rawppm or rawpbm file and prints out the bounding box of
-the image.
-
-%package -n texlive-cefutils
-Summary:	In cefutils there are CEF-compatible utils
-Group:		Applications/Publishing/TeX
-
-%description -n texlive-cefutils
-In cefutils there are CEF-compatible (Chinese Encoding Framework)
-utils.
-
 %prep
 
 %build
@@ -5043,6 +4741,7 @@ install -d $RPM_BUILD_ROOT%{_datadir} \
 	$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_pixmapsdir} \
 	$RPM_BUILD_ROOT%{_mandir}/man5 \
+	$RPM_BUILD_ROOT%{_bindir} \
 	$RPM_BUILD_ROOT/var/cache/fonts \
 	$RPM_BUILD_ROOT/etc/cron.daily\
 	$RPM_BUILD_ROOT/etc/sysconfig/tetex-updmap\
@@ -5215,6 +4914,11 @@ done
 # We don't need the log files
 rm -f $(find $RPM_BUILD_ROOT%{fmtdir} -name "*.log")
 
+cd $RPM_BUILD_ROOT%{_bindir}
+ln -sf ../share/texmf/scripts/a2ping/a2ping.pl a2ping
+ln -sf ../share/texmf/scripts/tetex/e2pall.pl e2pall
+ln -sf ../share/texmf-dist/scripts/thumbpdf/thumbpdf.pl thumbpdf
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -5227,12 +4931,6 @@ rm -rf $RPM_BUILD_ROOT
 if [ "$1" = "1" ]; then
 	%texhash
 fi
-
-%post -n texlive-other-utils
-%texhash
-
-%postun -n texlive-other-utils
-%texhash
 
 %post -n texlive-scripts
 %texhash
@@ -5300,12 +4998,6 @@ fi
 %postun -n texlive-metapost-other
 %texhash
 
-%post -n texlive-omega
-%texhash
-
-%postun -n texlive-omega
-%texhash
-
 %post -n texlive-plain
 %texhash
 
@@ -5318,37 +5010,7 @@ fi
 %postun -n texlive-mex
 %texhash
 
-%post -n texlive-format-mex
-%texhash
-
-%postun -n texlive-format-mex
-%texhash
-
-%post -n texlive-format-pdfmex
-%texhash
-
-%postun -n texlive-format-pdfmex
-%texhash
-
-%postun -n texlive-format-utf8mex
-%texhash
-
-%post -n texlive-amstex
-%texhash
-
 %postun -n texlive-amstex
-%texhash
-
-%post -n texlive-format-amstex
-%texhash
-
-%postun -n texlive-format-amstex
-%texhash
-
-%post -n texlive-csplain
-%texhash
-
-%postun -n texlive-csplain
 %texhash
 
 %post -n texlive-format-csplain
@@ -5357,28 +5019,10 @@ fi
 %postun -n texlive-format-csplain
 %texhash
 
-%post -n texlive-format-pdfcsplain
-%texhash
-
-%postun -n texlive-format-pdfcsplain
-%texhash
-
 %post -n texlive-cslatex
 %texhash
 
 %postun -n texlive-cslatex
-%texhash
-
-%post -n texlive-format-cslatex
-%texhash
-
-%postun -n texlive-format-cslatex
-%texhash
-
-%post -n texlive-format-pdfcslatex
-%texhash
-
-%postun -n texlive-format-pdfcslatex
 %texhash
 
 %post -n texlive-eplain
@@ -5387,19 +5031,7 @@ fi
 %postun -n texlive-eplain
 %texhash
 
-%post -n texlive-format-eplain
-%texhash
-
-%postun -n texlive-format-eplain
-%texhash
-
 # ConTeXt format
-
-%post -n texlive-context
-%texhash
-
-%postun -n texlive-context
-%texhash
 
 %post -n texlive-format-context-de
 %texhash
@@ -5605,12 +5237,6 @@ fi
 %texhash
 
 %postun -n texlive-latex-bezos
-%texhash
-
-%post -n texlive-latex-bibtex
-%texhash
-
-%postun -n texlive-latex-bibtex
 %texhash
 
 %post -n texlive-latex-bibtex-ams
@@ -6097,12 +5723,6 @@ fi
 %texhash
 
 %postun -n texlive-latex-xcolor
-%texhash
-
-%post -n texlive-format-pdflatex
-%texhash
-
-%postun -n texlive-format-pdflatex
 %texhash
 
 %post -n texlive-tex-babel
@@ -6639,7 +6259,6 @@ fi
 
 %attr(1777,root,root) /var/cache/fonts
 
-%{_datadir}/info/web2c.info*
 
 # ***********
 # Directories
@@ -6907,10 +6526,9 @@ fi
 %attr(755,root,root) %{texmf}/scripts/tetex/*
 %attr(755,root,root) %{_bindir}/a2ping
 %attr(755,root,root) %{_bindir}/e2pall
-%{_mandir}/man1/e2pall.1*
+# %{_mandir}/man1/e2pall.1*
 %dir %{texmf}/texdoc
 %doc %{texmf}/doc/texdoc
-%attr(755,root,root) %{_bindir}/texdoc
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/texdoc/texdoc.cnf
 
 %files -n texlive-tex-arrayjob
@@ -7177,22 +6795,6 @@ fi
 %{texmf}/fmtutil/format.mex.cnf
 %{texmf}/fmtutil/format.utf8mex.cnf
 
-%files -n texlive-format-mex
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/mex
-%{texmfdist}/tex/mex/config/mex.ini
-%{fmtdir}/pdftex/mex.fmt
-
-%files -n texlive-format-pdfmex
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/pdfmex
-%{texmfdist}/tex/mex/config/pdfmex.ini
-
-%files -n texlive-format-utf8mex
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/utf8mex
-%{texmfdist}/tex/mex/utf8mex
-
 %files -n texlive-amstex
 %defattr(644,root,root,755)
 %{texmfdist}/tex/amstex/config
@@ -7201,11 +6803,6 @@ fi
 %files -n texlive-format-csplain
 %defattr(644,root,root,755)
 %{fmtdir}/pdftex/csplain.fmt
-
-%files -n texlive-format-pdfcsplain
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/pdfcsplain
-%{fmtdir}/pdftex/pdfcsplain.fmt
 
 %files -n texlive-cslatex
 %defattr(644,root,root,755)
@@ -7874,41 +7471,6 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/bezos
 %{texmfdist}/tex/latex/bezos
-
-%files -n texlive-latex-bibtex
-%defattr(644,root,root,755)
-%dir %{texmfdist}/bibtex
-%dir %{texmfdist}/bibtex/bib
-%dir %{texmfdist}/bibtex/bst
-%dir %{texmfdist}/bibtex/csf
-%dir %{texmfdist}/doc/bibtex
-%dir %{texmf}/bibtex
-%doc %{texmfdist}/doc/bibtex/base
-%doc %{texmfdist}/doc/latex/bibtopic
-%doc %{texmfdist}/doc/latex/bibunits
-%doc %{texmfdist}/doc/latex/footbib
-%doc %{texmfdist}/doc/latex/natbib
-%doc %{texmf}/doc/bibtex8
-%{_mandir}/man1/bibtex.1*
-%{_mandir}/man1/rubibtex.1*
-
-%attr(755,root,root) %{_bindir}/bibtex
-%attr(755,root,root) %{_bindir}/rubibtex
-%{texmfdist}/bibtex/bib/adrconv
-%{texmfdist}/bibtex/bib/base
-%{texmfdist}/bibtex/bst/adrconv
-%{texmfdist}/bibtex/bst/base
-%{texmfdist}/bibtex/bst/natbib
-%{texmfdist}/bibtex/csf/base
-%{texmfdist}/source/latex/adrconv
-%{texmfdist}/source/latex/bibtopic
-%{texmfdist}/source/latex/bibunits
-%{texmfdist}/source/latex/footbib
-%{texmfdist}/tex/latex/bibtopic
-%{texmfdist}/tex/latex/bibunits
-%{texmfdist}/tex/latex/footbib
-%{texmfdist}/tex/latex/natbib
-%{texmf}/bibtex/csf
 
 %files -n texlive-latex-bibtex-ams
 %defattr(644,root,root,755)
@@ -9737,8 +9299,6 @@ fi
 
 %files -n texlive-latex-presentation
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/ppower4
-%attr(755,root,root) %{_bindir}/pdfthumb
 %doc %{texmfdist}/doc/latex/powerdot
 %doc %{texmfdist}/doc/latex/ppower4
 %doc %{texmfdist}/doc/latex/sciposter
@@ -10688,12 +10248,6 @@ fi
 %doc %{texmfdist}/doc/latex/xcolor
 %{texmfdist}/source/latex/xcolor
 
-%files -n texlive-format-pdflatex
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/pdflatex
-%{fmtdir}/pdftex/pdflatex.fmt
-%{_mandir}/man1/pdflatex.1*
-
 %files -n texlive-tex-babel
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/babel
@@ -10797,7 +10351,7 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/thumbpdf
 %attr(755,root,root) %{_bindir}/thumbpdf
-%{_mandir}/man1/thumbpdf.1*
+# %{_mandir}/man1/thumbpdf.1*
 %{texmfdist}/tex/generic/thumbpdf
 %{texmfdist}/scripts/thumbpdf
 
@@ -11105,7 +10659,7 @@ fi
 %doc %{texmfdist}/doc/fonts/yi4latex
 %{texmf}/fonts/sfd
 %{texmfdist}/fonts/afm/itc
-%{texmf}/fonts/map/glyphlist
+# %{texmf}/fonts/map/glyphlist
 %{texmfdist}/fonts/map/glyphlist
 %{texmfdist}/fonts/source/public/knuthotherfonts
 %{texmfdist}/fonts/source/public/yi4latex
@@ -12170,27 +11724,3 @@ fi
 %files -n texlive-fonts-type1-xypic
 %defattr(644,root,root,755)
 %{texmfdist}/fonts/type1/public/xypic
-
-%files -n texlive-afm2pl
-%defattr(644,root,root,755)
-%dir %{texmf}/tex/latex
-%attr(755,root,root) %{_bindir}/afm2pl
-%{_mandir}/man1/afm2pl*
-%dir %{texmf}/fonts/lig
-%{texmf}/fonts/lig/afm2pl
-%{texmf}/tex/latex/afm2pl
-
-%files -n texlive-bbox
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/bbox
-%{_mandir}/man1/bbox*
-
-%files -n texlive-cefutils
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/cef*
-%dir %{texmfdist}/tex/latex/cjk
-%dir %{texmfdist}/doc/latex/cjk
-%doc %{texmfdist}/doc/latex/cjk/doc
-%doc %{texmfdist}/doc/latex/cjk/examples
-%{texmfdist}/source/latex/cjk
-%{texmfdist}/tex/latex/cjk/CEF
