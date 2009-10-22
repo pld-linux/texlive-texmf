@@ -3,12 +3,6 @@
 
 %include	/usr/lib/rpm/macros.perl
 # Conditional build:
-%bcond_with	bootstrap	# bootstrap build
-%bcond_without	xindy		# do not build xindy packages
-
-%if %{with bootstrap}
-%undefine	with_xindy
-%endif
 
 %define shortname texlive
 
@@ -61,43 +55,13 @@ Source61:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/Te
 Source62:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/waitVariableX.pm
 # Source62-md5:	f0fa0f2fc7aacb1e9b40eb65891a24c8
 URL:		http://www.tug.org/texlive/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	bison
-%if %{with xindy}
-BuildRequires:	clisp
-%endif
-BuildRequires:	ed
-BuildRequires:	expat-devel
-BuildRequires:	ffcall-devel
-BuildRequires:	flex
-BuildRequires:	fontconfig-devel
-BuildRequires:	freetype-devel
-BuildRequires:	freetype1-devel
-BuildRequires:	gd-devel >= 2.0.33
-BuildRequires:	libpng-devel >= 1.2.8
-BuildRequires:	libtool
-# should this be somewhere in clisp?
-BuildRequires:	libsigsegv
-BuildRequires:	libstdc++-devel
-BuildRequires:	ncurses-devel
-BuildRequires:	readline-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
-BuildRequires:	t1lib-devel >= 5.0.2
 BuildRequires:	texinfo
-%if %{with bootstrap}
-BuildRequires:	tetex-format-latex
-BuildRequires:	tetex-format-pdflatex
-BuildRequires:	tetex-latex-cyrillic
-BuildRequires:	tetex-tex-babel
-%else
 BuildRequires:	%{shortname}-context
 BuildRequires:	%{shortname}-csplain
 BuildRequires:	%{shortname}-fonts-cmsuper
-#BuildRequires:	%{shortname}-format-amstex
-#BuildRequires:	%{shortname}-format-cslatex
 BuildRequires:	%{shortname}-format-eplain
 BuildRequires:	%{shortname}-format-mex
 BuildRequires:	%{shortname}-format-pdflatex
@@ -114,27 +78,11 @@ BuildRequires:	%{shortname}-tex-babel
 BuildRequires:	%{shortname}-tex-physe
 BuildRequires:	%{shortname}-xetex
 BuildRequires:	%{shortname}-xmltex
-# fill with future texlive BR. guesses ones for now
-%endif
 BuildRequires:	/usr/bin/latex
 BuildRequires:	unzip
-BuildRequires:	xorg-lib-libICE-devel
-BuildRequires:	xorg-lib-libXaw-devel
-BuildRequires:	xorg-lib-libXext-devel
-BuildRequires:	xorg-lib-libXmu-devel
-BuildRequires:	xorg-lib-libXpm-devel
-BuildRequires:	zlib-devel >= 1.2.1
 Requires:	%{shortname}-dirs-fonts
 Requires:	%{shortname}-fonts-cm
 Requires:	%{shortname}-fonts-misc
-Requires:	awk
-Requires:	dialog
-Requires:	kpathsea
-Requires:	sed
-Requires:	sh-utils
-Requires:	texconfig
-Requires:	textutils
-Suggests:	tmpwatch
 Provides:	tetex = %{epoch}:%{version}-%{release}
 Provides:	tetex-format-pdfetex = %{epoch}:%{version}-%{release}
 Provides:	tetex-metafont
@@ -536,24 +484,6 @@ Macro package developed at MIT.
 %description -n texlive-tex-ytex -l hu.UTF-8
 MIT-en fejlesztett makrócsomag.
 
-%package -n texlive-metapost
-Summary:	MetaPost
-Summary(hu.UTF-8):	MetaPost
-Summary(pl.UTF-8):	Zestaw narzędzi MetaPost
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}
-Obsoletes:	tetex-metapost
-
-%description -n texlive-metapost
-MetaPost.
-
-%description -n texlive-metapost -l hu.UTF-8
-MetaPost.
-
-%description -n texlive-metapost -l pl.UTF-8
-Zestaw narzędzi MetaPost.
-
 %package -n texlive-metapost-other
 Summary:	Various MetaPost utils
 Summary(hu.UTF-8):	Különböző MetaPost eszközök
@@ -566,54 +496,6 @@ Various MetaPost utils.
 
 %description -n texlive-metapost-other -l hu.UTF-8
 Különböző MetaPost eszközök.
-
-%package -n texlive-mptopdf
-Summary:	MetaPost to PDF converter
-Summary(hu.UTF-8):	MetaPost-ból PDF-be konvertáló
-Summary(pl.UTF-8):	Konwerter MetaPost do PDF
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-metapost
-Obsoletes:	tetex-mptopdf
-
-%description -n texlive-mptopdf
-MetaPost to PDF converter.
-
-%description -n texlive-mptopdf -l hu.UTF-8
-MetaPost-ból PDF-be konvertáló.
-
-%description -n texlive-mptopdf -l pl.UTF-8
-Konwerter MetaPost do PDF.
-
-%package -n texlive-texdoctk
-Summary:	Easy access to TeX documentation
-Summary(pl.UTF-8):	Łatwy dostęp do dokumentacji TeXa
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}
-Obsoletes:	tetex-texdoctk
-
-%description -n texlive-texdoctk
-A Perl/Tk-based GUI for easy access to package documentation for TeX
-on Unix platforms; the databases it uses are based on the texmf/doc
-subtrees of teTeX v.1.0.x, but database files for local configurations
-with modified/extended directories can be derived from them. Note that
-texdoctk is not a viewer itself, but an interface for finding
-documentation files and opening them with the appropriate viewer; so
-it relies on appropriate programs to be installed on the system.
-However, the choice of these programs can be configured by the
-sysadmin or user.
-
-%description -n texlive-texdoctk -l pl.UTF-8
-Oparty na Perlu i Tk graficzny interfejs dający łatwy dostęp do
-dokumentacji pakietów TeXowych na platformach uniksowych; używa baz
-danych opartych na poddrzewach texmf/doc z teTeXa 1.0.x, ale może
-używać konfiguracji ze zmodyfikowanymi lub rozszerzonymi katalogami.
-Należy zauważyć, że texdoctk sam w sobie nie jest przeglądarką, ale
-interfejsem do wyszukiwania plików dokumentacji i otwierania ich we
-właściwej przeglądarce; tak więc wymaga on odpowiednich programów
-zainstalowanych w systemie. Wybór tych programów może być dokonany
-przez administratora lub użytkownika.
 
 %package -n xindy-albanian
 Summary:	Xindy albanian language
@@ -1098,19 +980,6 @@ Xindy vietnamese language
 
 %description -n xindy-vietnamese -l hu.UTF-8
 Xindy vietnám nyelv
-
-%package -n texlive-phyzzx
-Summary:	A TeX format for physicists
-Summary(hu.UTF-8):	TeX formátum fizikusoknak
-Group:		Applications/Publishing/TeX
-Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}
-
-%description -n texlive-phyzzx
-A TeX format for physicists.
-
-%description -n texlive-phyzzx -l hu.UTF-8
-TeX formátum fizikusoknak.
 
 %package -n texlive-omega
 Summary:	Extended unicode TeX
@@ -5164,47 +5033,6 @@ Group:		Applications/Publishing/TeX
 In cefutils there are CEF-compatible (Chinese Encoding Framework)
 utils.
 
-%package -n texlive-detex
-Summary:	A filter to strip TeX commands from a .tex file
-Summary(hu.UTF-8):	Egy szűrő, amely .tex fájlokból szűri ki a TeX parancsokat
-Group:		Applications/Publishing/TeX
-
-%description -n texlive-detex
-A filter to strip TeX commands from a .tex file.
-
-%description -n texlive-detex -l hu.UTF-8
-Egy szűrő, amely .tex fájlokból szűri ki a TeX parancsokat.
-
-%package -n texlive-dviutils
-Summary:	Various DVI utils
-Summary(hu.UTF-8):	Vegyes DVI eszközök
-Group:		Applications/Publishing/TeX
-Provides:	dvi2tty
-Obsoletes:	dvi2tty
-
-%description -n texlive-dviutils
-This package contains various DVI utils.
-
-%description -n texlive-dviutils -l hu.UTF-8
-Ez a csomag mindenféle DVI eszközt tartalmaz.
-
-%package -n texlive-uncategorized-utils
-Summary:	Uncategorized utils
-Group:		Applications/Publishing/TeX
-
-%description -n texlive-uncategorized-utils
-Uncategorized utilities. Needs check and categorizing.
-
-%package -n texlive-tex4ht
-Summary:	LaTeX and TeX for hypertext
-Group:		Applications/Publishing/TeX
-
-%description -n texlive-tex4ht
-A converter from TeX and LaTeX to hypertext (HTML, XML, etc.),
-providing a configurable (La)TeX-based authoring system for hypertext.
-When converting to XML, you can use MathML instead of images for
-equation representation.
-
 %prep
 
 %build
@@ -5382,17 +5210,8 @@ for format in \
 	xetex \
 	xelatex \
 	xmltex; do
-%if %{with bootstrap}
-	install -d $RPM_BUILD_ROOT%{fmtdir}/${format}
-	touch $RPM_BUILD_ROOT%{fmtdir}/${format}/${format}.fmt
-	touch $RPM_BUILD_ROOT%{fmtdir}/pdftex/${format}.fmt
-%else
 	fmtutil --fmtdir $RPM_BUILD_ROOT%{fmtdir} --byfmt=${format}
-%endif
 done
-%if %{with bootstrap}
-touch $RPM_BUILD_ROOT%{fmtdir}/xetex/xelatex.fmt
-%endif
 # We don't need the log files
 rm -f $(find $RPM_BUILD_ROOT%{fmtdir} -name "*.log")
 
@@ -5475,34 +5294,10 @@ fi
 %postun -n texlive-tex-ytex
 %texhash
 
-%post -n texlive-metapost
-%texhash
-
-%postun -n texlive-metapost
-%texhash
-
 %post -n texlive-metapost-other
 %texhash
 
 %postun -n texlive-metapost-other
-%texhash
-
-%post -n texlive-mptopdf
-%texhash
-
-%postun -n texlive-mptopdf
-%texhash
-
-%post -n texlive-texdoctk
-%texhash
-
-%postun -n texlive-texdoctk
-%texhash
-
-%post -n texlive-phyzzx
-%texhash
-
-%postun -n texlive-phyzzx
 %texhash
 
 %post -n texlive-omega
@@ -6808,18 +6603,6 @@ fi
 %postun -n texlive-fonts-type1-xypic
 %texhash
 
-%post -n texlive-xetex
-%texhash
-
-%postun -n texlive-xetex
-%texhash
-
-%post -n texlive-xmltex
-%texhash
-
-%postun -n texlive-xmltex
-%texhash
-
 %files
 %defattr(644,root,root,755)
 # There isn't doc/fonts directory
@@ -7172,22 +6955,6 @@ fi
 %defattr(644,root,root,755)
 %{texmfdist}/tex/ytex
 
-%files -n texlive-metapost
-%defattr(644,root,root,755)
-%dir %{texmfdist}/metapost
-%doc %{texmfdist}/doc/metapost
-%attr(755,root,root) %{_bindir}/mpost
-%attr(755,root,root) %{_bindir}/mpto
-%{texmfdist}/metapost/base
-%{texmfdist}/metapost/config
-%{texmfdist}/metapost/mfpic
-%{texmfdist}/metapost/misc
-%{texmfdist}/metapost/support
-%{texmfdist}/source/metapost
-%{_mandir}/man1/mpost.1*
-%{_mandir}/man1/mpto.1*
-%{texmf}/fmtutil/format.metapost.cnf
-
 %files -n texlive-metapost-other
 %defattr(644,root,root,755)
 %{texmfdist}/metapost/automata
@@ -7214,19 +6981,6 @@ fi
 %{texmfdist}/metapost/tabvar
 %{texmfdist}/metapost/textpath
 %{texmfdist}/metapost/venn
-
-%files -n texlive-mptopdf
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/mptopdf
-%{_mandir}/man1/mptopdf.1*
-%{texmfdist}/tex/mptopdf
-%{fmtdir}/pdftex/mptopdf.fmt
-
-%files -n texlive-texdoctk
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/texdoctk
-%{texmf}/texdoctk
-%{_mandir}/man1/texdoctk.1*
 
 %if %{with xindy}
 %files -n xindy-albanian
@@ -7405,17 +7159,6 @@ fi
 %defattr(644,root,root,755)
 %{texmf}/xindy/lang/vietnamese/
 %endif
-
-%files -n texlive-phyzzx
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/phyzzx
-%dir %{texmfdist}/doc/phyzzx
-%dir %{texmfdist}/tex/phyzzx
-%doc %{texmfdist}/doc/phyzzx/base
-%{texmfdist}/tex/phyzzx/base
-%{texmfdist}/tex/phyzzx/config
-%{texmf}/fmtutil/format.phyzzx.cnf
-%{fmtdir}/pdftex/phyzzx.fmt
 
 %files -n texlive-plain
 %defattr(644,root,root,755)
@@ -12451,73 +12194,3 @@ fi
 %doc %{texmfdist}/doc/latex/cjk/examples
 %{texmfdist}/source/latex/cjk
 %{texmfdist}/tex/latex/cjk/CEF
-
-%files -n texlive-detex
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/detex
-%{_mandir}/man1/detex*
-
-%files -n texlive-dviutils
-%defattr(644,root,root,755)
-%dir %{texmfdist}/scripts/dviasm
-%dir %{texmf}/fonts/cmap
-%doc %{texmf}/fonts/cmap/README
-%attr(755,root,root) %{_bindir}/disdvi
-%attr(755,root,root) %{_bindir}/dt2dv
-%attr(755,root,root) %{_bindir}/dv2dt
-%attr(755,root,root) %{_bindir}/dvi2tty
-%attr(755,root,root) %{_bindir}/dviasm
-%attr(755,root,root) %{_bindir}/dvibook
-%attr(755,root,root) %{_bindir}/dviconcat
-%attr(755,root,root) %{_bindir}/dvidvi
-%attr(755,root,root) %{_bindir}/dvigif
-%attr(755,root,root) %{_bindir}/dvipdfmx
-%attr(755,root,root) %{_bindir}/dvipos
-%attr(755,root,root) %{_bindir}/dviselect
-%attr(755,root,root) %{_bindir}/dvitodvi
-%attr(755,root,root) %{texmfdist}/scripts/dviasm/dviasm*
-%{_mandir}/man1/dt2dv*
-%{_mandir}/man1/dv2dt*
-%{_mandir}/man1/dvi2tty*
-%{_mandir}/man1/dvibook*
-%{_mandir}/man1/dviconcat*
-%{_mandir}/man1/dvidvi*
-%{_mandir}/man1/dvigif*
-%{_mandir}/man1/dvipos*
-%{_mandir}/man1/dviselect*
-%{_mandir}/man1/dvitodvi*
-%{texmf}/dvipdfmx
-%{texmf}/fonts/cmap/dvipdfmx
-%{texmf}/fonts/map/dvipdfmx
-
-%files -n texlive-uncategorized-utils
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/devnag
-
-%files -n texlive-tex4ht
-%defattr(644,root,root,755)
-%dir %{texmfdist}/scripts/tex4ht
-%doc %{texmfdist}/doc/generic/tex4ht
-%attr(755,root,root) %{_bindir}/ht
-%attr(755,root,root) %{_bindir}/htcontext
-%attr(755,root,root) %{_bindir}/htlatex
-%attr(755,root,root) %{_bindir}/htmex
-%attr(755,root,root) %{_bindir}/httex
-%attr(755,root,root) %{_bindir}/httexi
-%attr(755,root,root) %{_bindir}/htxelatex
-%attr(755,root,root) %{_bindir}/htxetex
-%attr(755,root,root) %{_bindir}/mk4ht
-%attr(755,root,root) %{_bindir}/t4ht
-%attr(755,root,root) %{_bindir}/tex4ht
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/ht.sh
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/htcontext.sh
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/htlatex.sh
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/htmex.sh
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/httex.sh
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/httexi.sh
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/htxelatex.sh
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/htxetex.sh
-%attr(755,root,root) %{texmfdist}/scripts/tex4ht/mk4ht.pl
-%{texmfdist}/tex/generic/tex4ht
-%{texmfdist}/tex4ht
-%{texmf}/scripts/tex4ht
