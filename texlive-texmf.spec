@@ -17,7 +17,8 @@ Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
 Version:	20080822
-Release:	0.1
+Release:	0.2
+Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
 Source0:	ftp://tug.org/texlive/historic/2008/texlive-%{version}-texmf.tar.lzma
