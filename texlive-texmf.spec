@@ -1781,7 +1781,7 @@ Summary:	Various document classes to typeset exams
 Summary(hu.UTF-8):	Különböző dokumentumosztályok vizsgák, feladatsorok szedésére
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
-Requires:	%{shortname}-latex
+Requires:	%{shortname}-latex-ams
 
 %description -n texlive-latex-exams
 Various document classes to typeset exams.
@@ -4985,6 +4985,12 @@ fi
 %texhash
 
 %postun -n texlive-tex-velthuis
+%texhash
+
+%post -n texlive-tex-xkeyval
+%texhash
+
+%postun -n texlive-tex-xkeyval
 %texhash
 
 %post -n texlive-tex-ytex
