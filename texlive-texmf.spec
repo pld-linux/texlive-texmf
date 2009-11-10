@@ -19,7 +19,7 @@ Summary(pl.UTF-8):	System składu publikacji TeX oraz formater fontów MetaFont
 Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
-Version:	%year%monthday
+Version:	%{year}%{monthday}
 Release:	0.2
 Epoch:		1
 License:	distributable
