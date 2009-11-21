@@ -20,7 +20,7 @@ Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
 Version:	%{year}%{monthday}
-Release:	0.2
+Release:	0.3
 Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
@@ -6265,6 +6265,7 @@ fi
 %files
 %defattr(644,root,root,755)
 # There isn't doc/fonts directory
+%dir %{texmfdist}/doc
 %dir %{texmfdist}/doc/fonts
 # %doc %{texmfdist}/doc/fontname
 
@@ -6891,11 +6892,10 @@ fi
 
 %files -n texlive-latex-data
 %defattr(644,root,root,755)
+%dir %{texmfdist}/source/latex
 %dir %{texmfdist}/scripts/pst-pdf
-%dir %{texmfdist}/source/generic
 %dir %{texmfdist}/tex/latex
 %dir %{texmfdist}/tex/latex/latexconfig
-%dir %{texmfdist}/tex/plain
 %dir %{texmf}/tex/latex
 # %{texmf}/fmtutil/format.latex.cnf
 %{texmfdist}/tex/latex/floatflt
@@ -10671,7 +10671,6 @@ fi
 %defattr(644,root,root,755)
 %dir %{texmfdist}/source/fonts/eurofont
 %dir %{texmfdist}/source/fonts/eurofont/marvosym
-%dir %{texmfdist}/tex/latex
 # %doc %{texmfdist}/doc/latex/marvosym
 %{texmfdist}/fonts/type1/public/marvosym
 %{texmfdist}/fonts/afm/public/marvosym
