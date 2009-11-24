@@ -1,6 +1,7 @@
 # TODO:
 # - latex subpackage (maybe rename latex-base and texlive-latex requires latex-base)
 # - maybe tex4ht-data splitting
+# - consider format-files where to create (texlive or texlive-texmf)
 
 %include	/usr/lib/rpm/macros.perl
 # Conditional build:
@@ -20,7 +21,7 @@ Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
 Version:	%{year}%{monthday}
-Release:	0.3
+Release:	0.4
 Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
@@ -177,6 +178,19 @@ TeX, içinde metin ve komutların yer aldığı bir dosyayı okur ve dizgi
 aygıtından bağımsız bir çıktı (DeVice Independent - DVI) oluşturur.
 TeX'in becerileri ve dizgi dili, dili geliştiren Knuth'un 'The
 TeXbook' başlıklı kitabında anlatılmaktadır.
+
+%package -n texlive-dirs-fonts
+Summary:	TeX font directories
+Summary(pl.UTF-8):	Katalogi fontów TeXa
+Group:		Fonts
+Provides:	tetex-dirs-fonts
+Obsoletes:	tetex-dirs-fonts
+
+%description -n texlive-dirs-fonts
+TeX font directories.
+
+%description -n texlive-dirs-fonts -l pl.UTF-8
+Katalogi fontów TeXa.
 
 %package -n texlive-doc
 Summary:	Documentation for TeX Live
@@ -3706,6 +3720,7 @@ Summary(pl.UTF-8):	Fonty AMS
 Group:		Fonts
 Requires:	%{shortname}-dirs-fonts
 Requires:	%{shortname}-latex-bibtex
+Provides:	texlive-fonts-type1-bluesky
 Provides:	tetex-fonts-ams
 Obsoletes:	tetex-fonts-ams
 
@@ -4669,7 +4684,7 @@ Summary:	Polish fonts
 Summary(pl.UTF-8):	Polskie fonty
 Group:		Fonts
 Requires:	%{shortname}-dirs-fonts
-Requires:	%{shortname}-fonts-type1-bluesky
+Requires:	%{shortname}-fonts-ams
 Obsoletes:	tetex-fonts-type1-pl
 
 %description -n texlive-fonts-type1-pl
@@ -5866,6 +5881,12 @@ fi
 %postun -n texlive-fonts-adobe
 %texhash
 
+%post -n texlive-fonts-ams
+%texhash
+
+%postun -n texlive-fonts-ams
+%texhash
+
 %post -n texlive-fonts-larm
 %texhash
 
@@ -5876,12 +5897,6 @@ fi
 %texhash
 
 %postun -n texlive-fonts-ae
-%texhash
-
-%post -n texlive-fonts-ams
-%texhash
-
-%postun -n texlive-fonts-ams
 %texhash
 
 %post -n texlive-fonts-antp
@@ -6350,6 +6365,50 @@ fi
 %{fmtdir}/pdftex/pdfetex.fmt
 %{fmtdir}/tex/tex.fmt
 
+%files -n texlive-dirs-fonts
+%defattr(644,root,root,755)
+%dir %{texmfdist}/fonts
+%dir %{texmfdist}/fonts/afm
+%dir %{texmfdist}/fonts/afm/public
+%dir %{texmfdist}/fonts/afm/vntex
+%dir %{texmfdist}/fonts/enc
+%dir %{texmfdist}/fonts/enc/dvips
+%dir %{texmfdist}/fonts/enc/dvips/vntex
+%dir %{texmfdist}/fonts/map
+%dir %{texmfdist}/fonts/map/dvipdfm
+%dir %{texmfdist}/fonts/map/dvips
+%dir %{texmfdist}/fonts/map/dvips/vntex
+%dir %{texmfdist}/fonts/map/fontname
+# %dir %{texmfdist}/fonts/map/public
+%dir %{texmfdist}/fonts/map/vtex
+%dir %{texmfdist}/fonts/ofm
+%dir %{texmfdist}/fonts/ofm/public
+%dir %{texmfdist}/fonts/ovf
+%dir %{texmfdist}/fonts/ovf/public
+%dir %{texmfdist}/fonts/ovp
+%dir %{texmfdist}/fonts/ovp/public
+%dir %{texmfdist}/fonts/opentype
+%dir %{texmfdist}/fonts/opentype/public
+%dir %{texmfdist}/fonts/pk
+%dir %{texmfdist}/fonts/pk/ljfour
+%dir %{texmfdist}/fonts/source
+%dir %{texmfdist}/fonts/source/public
+%dir %{texmfdist}/fonts/source/vntex
+%dir %{texmfdist}/fonts/tfm
+%dir %{texmfdist}/fonts/tfm/public
+%dir %{texmfdist}/fonts/tfm/vntex
+%dir %{texmfdist}/fonts/truetype
+%dir %{texmfdist}/fonts/type1
+%dir %{texmfdist}/fonts/type1/public
+%dir %{texmfdist}/fonts/type1/vntex
+%dir %{texmfdist}/fonts/vf
+%dir %{texmfdist}/fonts/vf/public
+%dir %{texmfdist}/fonts/vf/vntex
+%dir %{texmfdist}/source/fonts
+%dir %{texmf}/fonts
+%dir %{texmf}/fonts/opentype
+%dir %{texmf}/fonts/opentype/public
+
 %files -n texlive-doc
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/dehyph-exptl
@@ -6365,6 +6424,7 @@ fi
 # %{texmfdoc}/doc/bulgarian
 # 
 %define	texlivedoc	%{texmf}/doc/texlive/texlive-
+
 %files -n texlive-doc-cs
 %defattr(644,root,root,755)
 %{texlivedoc}cz
@@ -10443,11 +10503,11 @@ fi
 %{texmfdist}/fonts/vf/public/ae
 %{texmfdist}/source/fonts/ae
 
-# %files -n texlive-fonts-ams
-# %defattr(644,root,root,755)
-# %{texmfdist}/fonts/source/public/ams
-# %{texmfdist}/fonts/tfm/public/ams
-# %{texmfdist}/fonts/map/dvips/ams
+%files -n texlive-fonts-ams
+%defattr(644,root,root,755)
+%{texmfdist}/fonts/source/public/amsfonts
+%{texmfdist}/fonts/tfm/public/amsfonts
+%{texmfdist}/fonts/map/dvips/amsfonts
 
 %files -n texlive-fonts-antp
 %defattr(644,root,root,755)
