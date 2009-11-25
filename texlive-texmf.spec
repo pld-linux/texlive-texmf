@@ -21,7 +21,7 @@ Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
 Version:	%{year}%{monthday}
-Release:	0.4
+Release:	0.5.2
 Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
@@ -91,30 +91,6 @@ Requires:	%{shortname}-fonts-misc
 Provides:	tetex = %{epoch}:%{version}-%{release}
 Provides:	tetex-format-pdfetex = %{epoch}:%{version}-%{release}
 Provides:	tetex-metafont
-Obsoletes:	tetex
-Obsoletes:	tetex-afm
-Obsoletes:	tetex-doc
-Obsoletes:	tetex-doc-latex2e-html
-Obsoletes:	tetex-fontinst
-Obsoletes:	tetex-fontname
-Obsoletes:	tetex-fonts
-Obsoletes:	tetex-fonts-pandora
-Obsoletes:	tetex-fonts-vcm
-Obsoletes:	tetex-format-elatex
-Obsoletes:	tetex-format-pdfelatex
-Obsoletes:	tetex-format-pdfemex
-Obsoletes:	tetex-format-pdfetex
-Obsoletes:	tetex-latex-vnps
-Obsoletes:	tetex-latex-vnr
-Obsoletes:	tetex-metafont
-Obsoletes:	tetex-oxdvi
-Obsoletes:	tetex-plain-dvips
-Obsoletes:	tetex-plain-mathtime
-Obsoletes:	tetex-plain-misc
-Obsoletes:	tetex-plain-plnfss
-Obsoletes:	tetex-tex-hyphen
-Obsoletes:	tetex-tex-vietnam
-Obsoletes:	texlive-metafont
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -4934,33 +4910,33 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/xindy
 rm -rf $RPM_BUILD_ROOT%{_datadir}/doc
 
 # Create format files
-for format in \
-	aleph \
-	csplain \
-	etex \
-	lambda \
-	lamed \
-	latex \
-	mex \
-	mllatex \
-	mptopdf \
-	omega \
-	pdfcsplain \
-	pdfetex \
-	pdflatex \
-	pdftex \
-	pdfxmltex \
-	physe \
-	phyzzx \
-	tex \
-	texsis \
-	xetex \
-	xelatex \
-	xmltex; do
-	fmtutil --fmtdir $RPM_BUILD_ROOT%{fmtdir} --byfmt=${format}
-done
-# We don't need the log files
-rm -f $(find $RPM_BUILD_ROOT%{fmtdir} -name "*.log")
+#  for format in \
+#  	aleph \
+#  	csplain \
+#  	etex \
+#  	lambda \
+#  	lamed \
+#  	latex \
+#  	mex \
+#  	mllatex \
+#  	mptopdf \
+#  	omega \
+#  	pdfcsplain \
+#  	pdfetex \
+#  	pdflatex \
+#  	pdftex \
+#  	pdfxmltex \
+#  	physe \
+#  	phyzzx \
+#  	tex \
+#  	texsis \
+#  	xetex \
+#  	xelatex \
+#  	xmltex; do
+#  	fmtutil --fmtdir $RPM_BUILD_ROOT%{fmtdir} --byfmt=${format}
+#  done
+#  # We don't need the log files
+#  rm -f $(find $RPM_BUILD_ROOT%{fmtdir} -name "*.log")
 
 cd $RPM_BUILD_ROOT%{_bindir}
 ln -sf ../share/texmf/scripts/a2ping/a2ping.pl a2ping
@@ -6362,8 +6338,8 @@ fi
 %{texmf}/fonts/map/dvips/updmap/*
 %{texmf}/web2c/*.tcx
 
-%{fmtdir}/pdftex/pdfetex.fmt
-%{fmtdir}/tex/tex.fmt
+#fmt %{fmtdir}/pdftex/pdfetex.fmt
+#fmt %{fmtdir}/tex/tex.fmt
 
 %files -n texlive-dirs-fonts
 %defattr(644,root,root,755)
@@ -6640,10 +6616,10 @@ fi
 
 %files -n texlive-xetex-data
 %defattr(644,root,root,755)
-%dir %{fmtdir}/xetex
+#fmt %dir %{fmtdir}/xetex
 %{texmfdist}/tex/xetex
 %{texmfdist}/tex/xelatex
-%{fmtdir}/xetex/*.fmt
+#fmt %{fmtdir}/xetex/*.fmt
 
 %files -n texlive-tex-arrayjob
 %defattr(644,root,root,755)
@@ -6676,7 +6652,7 @@ fi
 %defattr(644,root,root,755)
 %{texmfdist}/tex/physe
 # %{texmf}/fmtutil/format.physe.cnf
-%{fmtdir}/pdftex/physe.fmt
+#fmt %{fmtdir}/pdftex/physe.fmt
 
 %files -n texlive-tex-velthuis
 %defattr(644,root,root,755)
@@ -6919,7 +6895,7 @@ fi
 
 %files -n texlive-format-csplain
 %defattr(644,root,root,755)
-%{fmtdir}/pdftex/csplain.fmt
+#fmt %{fmtdir}/pdftex/csplain.fmt
 
 %files -n texlive-cslatex
 %defattr(644,root,root,755)
@@ -7485,8 +7461,8 @@ fi
 %{texmfdist}/tex/plain/etex
 # %{texmf}/tex/latex/config
 %{texmf}/tex/latex/dvipdfm
-%{fmtdir}/pdftex/latex.fmt
-%{fmtdir}/pdftex/mllatex.fmt
+#fmt %{fmtdir}/pdftex/latex.fmt
+#fmt %{fmtdir}/pdftex/mllatex.fmt
 
 %files -n texlive-latex-12many
 %defattr(644,root,root,755)
