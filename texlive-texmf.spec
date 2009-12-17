@@ -21,7 +21,7 @@ Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
 Version:	%{year}%{monthday}
-Release:	0.5.2
+Release:	0.5.4
 Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
@@ -1392,6 +1392,20 @@ Extra control of appendices.
 %description -n texlive-latex-appendix -l hu.UTF-8
 Az appendixek nagyobb irányítása.
 
+%package -n texlive-latex-asyfig
+Summary:	Commands for using Asymptote figures
+Summary(hu.UTF-8):	Parancsok Asymptote alakzatok használatához
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+Requires:	%{shortname}-latex
+Requires:	asymptote
+
+%description -n texlive-latex-asyfig
+Commands for using Asymptote figures.
+
+%description -n texlive-latex-asyfig -l hu.UTF-8
+Parancsok Asymptote alakzatok használatához.
+
 %package -n texlive-latex-bbm
 Summary:	Blackboard variant fonts for Computer Modern, with LaTeX support
 Summary(pl.UTF-8):	Tablicowy wariant fontów Computer Modern z obsługą LaTeXa
@@ -1598,6 +1612,19 @@ Publication quality tables in LaTeX.
 
 %description -n texlive-latex-booktabs -l hu.UTF-8
 Nyomdai minőségű táblázatok LaTeX-ben.
+
+%package -n texlive-latex-bosisio
+Summary:	A collection of packages by Francesco Bosisio
+Summary(hu.UTF-8):	Francesco Bosisio csomaggyűjteménye
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+Requires:	%{shortname}-latex
+
+%description -n texlive-latex-bosisio
+A collection of packages by Francesco Bosisio.
+
+%description -n texlive-latex-bosisio -l hu.UTF-8
+Francesco Bosisio csomaggyűjteménye.
 
 %package -n texlive-latex-caption
 Summary:	Customising captions in floating environments
@@ -5239,6 +5266,12 @@ fi
 %postun -n texlive-latex-appendix
 %texhash
 
+%post -n texlive-latex-asyfig
+%texhash
+
+%postun -n texlive-latex-asyfig
+%texhash
+
 %post -n texlive-latex-bardiag
 %texhash
 
@@ -5309,6 +5342,12 @@ fi
 %texhash
 
 %postun -n texlive-latex-booktabs
+%texhash
+
+%post -n texlive-latex-bosisio
+%texhash
+
+%postun -n texlive-latex-bosisio
 %texhash
 
 %post -n texlive-latex-caption
@@ -6961,7 +7000,6 @@ fi
 %{texmfdist}/tex/latex/amsaddr
 %{texmfdist}/tex/latex/amsrefs
 %{texmfdist}/tex/latex/animate
-%{texmfdist}/tex/latex/answers
 %{texmfdist}/tex/latex/antiqua
 %{texmfdist}/tex/latex/anyfontsize
 %{texmfdist}/tex/latex/anysize
@@ -7525,6 +7563,11 @@ fi
 %{texmfdist}/tex/latex/appendix
 %{texmfdist}/source/latex/appendix
 
+%files -n texlive-latex-asyfig
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/asyfig
+%{texmfdist}/tex/latex/asyfig
+
 %files -n texlive-latex-bardiag
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/bardiag
@@ -7712,6 +7755,12 @@ fi
 %{texmfdist}/source/latex/booktabs
 %{texmfdist}/tex/latex/booktabs
 
+%files -n texlive-latex-bosisio
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/bosisio
+%{texmfdist}/tex/latex/bosisio
+%{texmfdist}/source/latex/bosisio
+
 %files -n texlive-latex-caption
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/caption
@@ -7795,16 +7844,23 @@ fi
 
 %files -n texlive-latex-exams
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/alterqcm
+%doc %{texmfdist}/doc/latex/answers
+%doc %{texmfdist}/doc/latex/eqexam
 %doc %{texmfdist}/doc/latex/exam
 %doc %{texmfdist}/doc/latex/examdesign
 %doc %{texmfdist}/doc/latex/mathexam
 %doc %{texmfdist}/doc/latex/probsoln
 %doc %{texmfdist}/doc/latex/qcm
 %doc %{texmfdist}/doc/latex/uebungsblatt
+%{texmfdist}/source/latex/eqexam
 %{texmfdist}/source/latex/examdesign
 %{texmfdist}/source/latex/mathexam
 %{texmfdist}/source/latex/probsoln
 %{texmfdist}/source/latex/qcm
+%{texmfdist}/tex/latex/alterqcm
+%{texmfdist}/tex/latex/answers
+%{texmfdist}/tex/latex/eqexam
 %{texmfdist}/tex/latex/exam
 %{texmfdist}/tex/latex/examdesign
 %{texmfdist}/tex/latex/mathexam
@@ -8010,7 +8066,6 @@ fi
 %doc %{texmfdist}/doc/latex/amsaddr
 %doc %{texmfdist}/doc/latex/amsrefs
 %doc %{texmfdist}/doc/latex/animate
-%doc %{texmfdist}/doc/latex/answers
 %doc %{texmfdist}/doc/latex/anyfontsize
 %doc %{texmfdist}/doc/latex/apa
 %doc %{texmfdist}/doc/latex/ar
@@ -8518,6 +8573,7 @@ fi
 %{texmfdist}/source/latex/sseq
 %{texmfdist}/source/latex/trsym
 %{texmfdist}/source/latex/petri-nets
+%{texmfdist}/source/latex/mattens
 %{texmfdist}/source/latex/mlist
 %{texmfdist}/source/latex/numprint
 
@@ -8544,6 +8600,7 @@ fi
 %doc %{texmfdist}/doc/latex/logpap
 %doc %{texmfdist}/doc/latex/makeplot
 %doc %{texmfdist}/doc/latex/maybemath
+%doc %{texmfdist}/doc/latex/mattens
 %doc %{texmfdist}/doc/latex/mfpic4ode
 %doc %{texmfdist}/doc/latex/mhequ
 %doc %{texmfdist}/doc/latex/mlist
@@ -8608,6 +8665,7 @@ fi
 %{texmfdist}/tex/latex/logpap
 %{texmfdist}/tex/latex/makeplot
 %{texmfdist}/tex/latex/maybemath
+%{texmfdist}/tex/latex/mattens
 %{texmfdist}/tex/latex/mfpic4ode
 %{texmfdist}/tex/latex/mhequ
 %{texmfdist}/tex/latex/mhs
@@ -8801,7 +8859,6 @@ fi
 %{texmfdist}/source/latex/acronym
 %{texmfdist}/source/latex/adrlist
 %{texmfdist}/source/latex/altfont
-# %{texmfdist}/source/latex/answers
 %{texmfdist}/source/latex/ascii
 %{texmfdist}/source/latex/augie
 %{texmfdist}/source/latex/barcodes
@@ -10484,6 +10541,7 @@ fi
 %{texmfdist}/fonts/source/public/amsfonts
 %{texmfdist}/fonts/tfm/public/amsfonts
 %{texmfdist}/fonts/map/dvips/amsfonts
+%{texmfdist}/fonts/type1/public/amsfonts
 
 %files -n texlive-fonts-antp
 %defattr(644,root,root,755)
