@@ -27,6 +27,8 @@ License:	distributable
 Group:		Applications/Publishing/TeX
 Source0:	ftp://tug.org/texlive/historic/%{year}/texlive-%{version}-texmf.tar.xz
 # Source0-md5:	5c6b33235ab3330626f58ca665d53a3c
+Source1:	http://mirror.ctan.org/language/hungarian/babel/magyar.ldf
+# Source1-md5:	3a5792398d46e6a6e70ef5006c4a2e55
 Source10:	http://tug.ctan.org/get/macros/latex/contrib/floatflt.zip
 # Source10-md5:	5d9fe14d289aa81ebb6b4761169dd5f2
 Source11:	http://carme.pld-linux.org/~uzsolt/sources/texlive-fonts-larm.tar.bz2
@@ -4821,6 +4823,9 @@ install -d $RPM_BUILD_ROOT%{texmf}/fonts/opentype/public
 %{__rm} $RPM_BUILD_ROOT%{texmf}/scripts/texlive/uninstall-win32.pl
 
 CURDIR=$(pwd)
+
+# install magyar.ldf
+install %{SOURCE1} $RPM_BUILD_ROOT%{texmfdist}/tex/generic/babel
 
 install -d $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
 install %{SOURCE50} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
