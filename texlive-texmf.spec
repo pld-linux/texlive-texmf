@@ -1096,6 +1096,18 @@ Podstawowe pliki dla formatu EPlain.
 
 %define		_noautoreq	'perl(path_tre)'
 
+%package -n texlive-context-data
+Summary:	Files for ConTeXt
+Summary(pl.UTF-8):	Pliki dla ConTeXt
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+
+%description -n texlive-context-data
+Files for ConTeXt.
+
+%description -n texlive-context-data -l pl.UTF-8
+Pliki dla ConTeXt.
+
 %package -n texlive-format-context-de
 Summary:	German ConTeXt format
 Summary(pl.UTF-8):	Niemiecka wersja formatu ConTeXt
@@ -5095,6 +5107,12 @@ fi
 
 # ConTeXt format
 
+%post -n texlive-context-data
+%texhash
+
+%postun -n texlive-context-data
+%texhash
+
 %post -n texlive-format-context-de
 %texhash
 
@@ -6439,7 +6457,18 @@ fi
 # %dir %{texmfdoc}/doc
 # %{texmfdoc}/README
 # %{texmfdoc}/ls-R
+%{texmfdist}/doc/generic/FAQ-en
+%{texmfdist}/doc/latex/guide-to-latex
+%{texmfdist}/doc/latex/l2tabu-english
+%{texmfdist}/doc/latex/latex-course
+%{texmfdist}/doc/latex/latex-doc-ptr
+%{texmfdist}/doc/latex/latex-graphics-companion
+%{texmfdist}/doc/latex/latex-veryshortguide
+%{texmfdist}/doc/latex/latex-web-companion
 %{texmfdist}/doc/latex/lshort-english
+%{texmfdist}/doc/latex/pdf-forms-tutorial-en
+%{texmfdist}/doc/latex/tlc2
+%{texlivedoc}en
 # %{texmfdist}/doc/fontinst
 
 %files -n texlive-doc-bg
@@ -6452,7 +6481,12 @@ fi
  
 %files -n texlive-doc-de
 %defattr(644,root,root,755)
+%{texmfdist}/doc/latex/kopka
+%{texmfdist}/doc/latex/l2picfaq
+%{texmfdist}/doc/latex/l2tabu
+%{texmfdist}/doc/latex/latex-tipps-und-tricks
 %{texmfdist}/doc/latex/lshort-german
+%{texmfdist}/doc/latex/pdf-forms-tutorial-de
 %{texlivedoc}de
 # 
 # %files -n texlive-doc-el
@@ -6462,6 +6496,7 @@ fi
 # 
 %files -n texlive-doc-es
 %defattr(644,root,root,755)
+%{texmfdist}/doc/latex/l2tabu-spanish
 %{texmfdist}/doc/latex/lshort-spanish
  
 %files -n texlive-doc-fi
@@ -6470,11 +6505,13 @@ fi
  
 %files -n texlive-doc-fr
 %defattr(644,root,root,755)
+%{texmfdist}/doc/latex/l2tabu-french
 %{texmfdist}/doc/latex/lshort-french
 %{texlivedoc}fr
  
 %files -n texlive-doc-it
 %defattr(644,root,root,755)
+%{texmfdist}/doc/latex/l2tabu-it
 %{texmfdist}/doc/latex/lshort-italian
 %{texlivedoc}it
 
@@ -6963,6 +7000,22 @@ fi
 %{texmfdist}/tex/eplain
 %dir %{texmfdist}/source/eplain
 # %{texmfdist}/source/eplain/eplain-source-3.2.zip
+
+%files -n texlive-context-data
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/context
+%{texmfdist}/bibtex/bst/context
+%{texmfdist}/context/data
+%{texmfdist}/fonts/enc/dvips/context
+%{texmfdist}/fonts/fea/context
+%{texmfdist}/fonts/map/dvips/context
+%{texmfdist}/fonts/map/luatex/context
+%{texmfdist}/fonts/map/pdftex/context
+%{texmfdist}/metapost/context
+%{texmfdist}/scripts/context
+%{texmfdist}/tex/context
+%{texmfdist}/tex/generic/context
+%{texmf}/web2c/context.cnf
 
 %files -n texlive-format-context-de
 %defattr(644,root,root,755)
@@ -10865,6 +10918,13 @@ fi
 %{texmfdist}/fonts/tfm/vntex/arevvn
 %{texmfdist}/fonts/type1/vntex/arevvn
 
+%{texmfdist}/fonts/afm/arkandis
+%{texmfdist}/fonts/opentype/arkandis
+%{texmfdist}/fonts/vf/arkandis
+%{texmfdist}/fonts/tfm/arkandis
+%{texmfdist}/fonts/truetype/arkandis
+%{texmfdist}/fonts/type1/arkandis
+
 %{texmfdist}/fonts/source/public/ar
 %{texmfdist}/fonts/tfm/public/ar
 
@@ -10933,6 +10993,9 @@ fi
 %{texmfdist}/fonts/type1/public/bera
 %{texmfdist}/fonts/vf/public/bera
 
+%{texmfdist}/fonts/tfm/public/bgreek
+%{texmfdist}/fonts/vf/public/bgreek
+
 %doc %{texmfdist}/doc/fonts/blacklettert1
 %{texmfdist}/fonts/tfm/public/blacklettert1
 %{texmfdist}/fonts/vf/public/blacklettert1
@@ -10940,6 +11003,7 @@ fi
 
 %doc %{texmfdist}/doc/fonts/boisik
 %{texmfdist}/fonts/source/public/boisik
+%{texmfdist}/fonts/tfm/public/boisik
 
 %doc %{texmfdist}/doc/fonts/bookhands
 %{texmfdist}/fonts/source/public/bookhands
@@ -11662,6 +11726,10 @@ fi
 %{texmfdist}/fonts/tfm/urw35vf
 
 %{texmfdist}/fonts/map/dvips/zapfding
+
+%doc %{texmfdist}/doc/fonts/zhmetrics
+%{texmfdist}/fonts/tfm/zhmetrics
+%{texmfdist}/source/fonts/zhmetrics
 
 %{texmfdist}/fonts/map/dvips/zefonts
 %{texmfdist}/fonts/tfm/public/zefonts
