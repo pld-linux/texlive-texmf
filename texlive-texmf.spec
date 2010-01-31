@@ -21,7 +21,7 @@ Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
 Version:	%{year}%{monthday}
-Release:	0.5.4
+Release:	1
 Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
@@ -6328,7 +6328,8 @@ fi
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/mktex.opt
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/mktexdir.opt
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/mktexnam.opt
-%config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/texmf.cnf
+# conflicts with texlive
+#%config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/texmf.cnf
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/updmap.cfg
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/updmap-hdr.cfg
 
