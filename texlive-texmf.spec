@@ -461,18 +461,16 @@ Macro package developed at MIT.
 %description -n texlive-tex-ytex -l hu.UTF-8
 MIT-en fejlesztett makrócsomag.
 
-%package -n texlive-metapost-other
-Summary:	Various MetaPost utils
-Summary(hu.UTF-8):	Különböző MetaPost eszközök
+%package -n texlive-metapost-data
+Summary:	Texmf files needed for texlive-metapost
 Group:		Applications/Publishing/TeX
 Requires(post,postun):	%{_bindir}/texhash
 Requires:	%{shortname}
+Provides:	texlive-metapost-other
+Obsoletes:	texlive-metapost-other
 
-%description -n texlive-metapost-other
-Various MetaPost utils.
-
-%description -n texlive-metapost-other -l hu.UTF-8
-Különböző MetaPost eszközök.
+%description -n texlive-metapost-data
+Texmf files needed for texlive-metapost.
 
 %package -n xindy-data
 Summary:	Xindy data files
@@ -964,6 +962,22 @@ Xindy vietnamese language
 
 %description -n xindy-vietnamese -l hu.UTF-8
 Xindy vietnám nyelv
+
+%package -n texlive-dvips-data
+Summary:	Texmf files needed for texlive-dvips
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+
+%description -n texlive-dvips-data
+Texmf files needed for texlive-dvips.
+
+%package -n texlive-omega-data
+Summary:	Texmf files needed for texlive-omega
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+
+%description -n texlive-omega-data
+Texmf files needed for texlive-omega.
 
 %package -n texlive-scripts
 Summary:	Various scripts
@@ -5000,6 +5014,18 @@ if [ "$1" = "1" ]; then
 	%texhash
 fi
 
+%post -n texlive-dvips-data
+%texhash
+
+%postun -n texlive-dvips-data
+%texhash
+
+%post -n texlive-omega-data
+%texhash
+
+%postun -n texlive-omega-data
+%texhash
+
 %post -n texlive-scripts
 %texhash
 
@@ -5066,10 +5092,10 @@ fi
 %postun -n texlive-tex-ytex
 %texhash
 
-%post -n texlive-metapost-other
+%post -n texlive-metapost-data
 %texhash
 
-%postun -n texlive-metapost-other
+%postun -n texlive-metapost-data
 %texhash
 
 %post -n texlive-plain
@@ -6505,6 +6531,7 @@ fi
  
 %files -n texlive-doc-fr
 %defattr(644,root,root,755)
+%{texmfdist}/doc/latex/epslatex-fr
 %{texmfdist}/doc/latex/l2tabu-french
 %{texmfdist}/doc/latex/lshort-french
 %{texlivedoc}fr
@@ -6663,6 +6690,19 @@ fi
 %doc %{texmfdist}/doc/latex/yfonts
 %doc %{texmf}/doc/dvipdfm
 
+%files -n texlive-dvips-data
+%defattr(644,root,root,755)
+%{texmfdist}/dvips
+%{texmfdist}/fonts/enc/dvips/base
+%{texmf}/dvips
+
+%files -n texlive-omega-data
+%defattr(644,root,root,755)
+%{texmfdist}/omega
+%{texmfdist}/tex/generic/omegahyph
+%{texmfdist}/tex/lambda
+%{texmfdist}/tex/plain/omega
+
 %files -n texlive-scripts
 %defattr(644,root,root,755)
 %dir %{texmfdist}/scripts/bengali
@@ -6705,9 +6745,16 @@ fi
 
 %files -n texlive-xetex-data
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/xelatex
+%doc %{texmfdist}/doc/xetex
 #fmt %dir %{fmtdir}/xetex
+%{texmfdist}/tex/generic/ifxetex
+%{texmfdist}/tex/generic/xetexconfig
+%{texmfdist}/tex/latex/latexconfig/xelatex.ini
 %{texmfdist}/tex/xetex
 %{texmfdist}/tex/xelatex
+%{texmfdist}/scripts/xetex
+%{texmfdist}/source/xelatex
 #fmt %{fmtdir}/xetex/*.fmt
 
 %files -n texlive-tex-arrayjob
@@ -6752,29 +6799,41 @@ fi
 %defattr(644,root,root,755)
 %{texmfdist}/tex/ytex
 
-%files -n texlive-metapost-other
+%files -n texlive-metapost-data
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/metapost
 %{texmfdist}/metapost/automata
+%{texmfdist}/metapost/base
 %{texmfdist}/metapost/bbcard
 %{texmfdist}/metapost/blockdraw_mp
 %{texmfdist}/metapost/bpolynomial
 %{texmfdist}/metapost/cmarrows
+%{texmfdist}/metapost/config
+%{texmfdist}/metapost/drv
 %{texmfdist}/metapost/dviincl
 %{texmfdist}/metapost/epsincl
 %{texmfdist}/metapost/expressg
 %{texmfdist}/metapost/exteps
 %{texmfdist}/metapost/featpost
 %{texmfdist}/metapost/frcursive
+%{texmfdist}/metapost/garrigues
 %{texmfdist}/metapost/hatching
+%{texmfdist}/metapost/latexmp
+%{texmfdist}/metapost/makecirc
+%{texmfdist}/metapost/metago
 %{texmfdist}/metapost/metaobj
 %{texmfdist}/metapost/metaplot
 %{texmfdist}/metapost/metauml
+%{texmfdist}/metapost/mfpic
+%{texmfdist}/metapost/misc
 %{texmfdist}/metapost/mp3d
 %{texmfdist}/metapost/mpattern
 %{texmfdist}/metapost/nkarta
 %{texmfdist}/metapost/piechartmp
 %{texmfdist}/metapost/slideshow
 %{texmfdist}/metapost/splines
+%{texmfdist}/metapost/suanpan
+%{texmfdist}/metapost/support
 %{texmfdist}/metapost/tabvar
 %{texmfdist}/metapost/textpath
 %{texmfdist}/metapost/venn
@@ -9661,8 +9720,6 @@ fi
 # I don't sort them, because maybe can splitting and grouping them
 %files -n texlive-latex-other
 %defattr(644,root,root,755)
-%{texmfdist}/metapost/latexmp
-%{texmfdist}/metapost/makecirc
 %dir %{texmfdist}/source/alatex
 %{texmfdist}/source/alatex/base
 %dir %{texmfdist}/source/cslatex
@@ -9684,7 +9741,6 @@ fi
 %{texmfdist}/source/latex/wnri
 %dir %{texmfdist}/source/plain
 %{texmfdist}/source/plain/jsmisc
-%{texmfdist}/source/xelatex
 %{texmfdist}/tex/alatex
 %{texmfdist}/tex/generic/enctex
 # Create a calendar, in German.
@@ -10605,6 +10661,7 @@ fi
 %files -n texlive-fonts-ams
 %defattr(644,root,root,755)
 %{texmfdist}/fonts/source/public/amsfonts
+%{texmfdist}/fonts/afm/public/amsfonts
 %{texmfdist}/fonts/tfm/public/amsfonts
 %{texmfdist}/fonts/map/dvips/amsfonts
 %{texmfdist}/fonts/type1/public/amsfonts
@@ -10783,7 +10840,8 @@ fi
 %dir %{texmfdist}/doc/fonts
 %doc %{texmfdist}/doc/fonts/kpfonts
 %{texmfdist}/fonts/afm/public/kpfonts
-# %{texmfdist}/fonts/map/public/kpfonts
+%{texmfdist}/fonts/enc/dvips/kpfonts
+%{texmfdist}/fonts/enc/pdftex/kpfonts
 %{texmfdist}/fonts/source/public/kpfonts
 %{texmfdist}/fonts/tfm/public/kpfonts
 %{texmfdist}/fonts/type1/public/kpfonts
@@ -10870,11 +10928,14 @@ fi
 # %{texmfdist}/fonts/source/public/yi4latex
 # %{texmfdist}/fonts/tfm/public/yi4latex
 
+%{texmfdist}/fonts/cid
+
 %{texmfdist}/fonts/tfm/public/pslatex
 %{texmfdist}/fonts/map/dvips/pslatex
 %{texmfdist}/fonts/vf/public/pslatex
 
 %doc %{texmfdist}/doc/fonts/allrunes
+%{texmfdist}/fonts/map/dvips/allrunes
 %{texmfdist}/fonts/source/public/allrunes
 %{texmfdist}/fonts/tfm/public/allrunes
 %{texmfdist}/fonts/type1/public/allrunes
@@ -11147,13 +11208,19 @@ fi
 
 # %doc %{texmfdist}/doc/fonts/dingbat
 %{texmfdist}/fonts/tfm/public/dingbat
-# %{texmfdist}/source/fonts/dingbat
+%{texmfdist}/fonts/source/public/dingbat
 
 %doc %{texmfdist}/doc/fonts/doublestroke
 %{texmfdist}/fonts/map/dvips/doublestroke
 %{texmfdist}/fonts/source/public/doublestroke
 %{texmfdist}/fonts/tfm/public/doublestroke
 %{texmfdist}/fonts/type1/public/doublestroke
+
+%{texmfdist}/fonts/map/dvips/dozenal
+%{texmfdist}/fonts/source/public/dozenal
+%{texmfdist}/fonts/tfm/public/dozenal
+%{texmfdist}/fonts/type1/public/dozenal
+%{texmfdist}/fonts/vf/public/dozenal
 
 %doc %{texmfdist}/doc/fonts/duerer
 %{texmfdist}/fonts/source/public/duerer
@@ -11212,7 +11279,11 @@ fi
 %doc %{texmfdist}/doc/fonts/fge
 %{texmfdist}/fonts/source/public/fge
 %{texmfdist}/fonts/tfm/public/fge
+%{texmfdist}/fonts/type1/public/fge
 %{texmfdist}/source/fonts/fge
+
+%{texmfdist}/fonts/afm/public/figbas
+%{texmfdist}/fonts/type1/public/figbas
 
 %{texmfdist}/fonts/map/dvips/foekfont
 %{texmfdist}/fonts/tfm/public/foekfont
@@ -11248,7 +11319,7 @@ fi
 
 # %{texmfdist}/fonts/afm/public/garuda
 # %{texmfdist}/fonts/map/dvips/garuda
-# %{texmfdist}/fonts/tfm/public/garuda
+%{texmfdist}/fonts/tfm/public/garuda-c90
 # %{texmfdist}/fonts/type1/public/garuda
 
 %doc %{texmfdist}/doc/fonts/genealogy
@@ -11384,6 +11455,9 @@ fi
 %{texmfdist}/fonts/source/public/ifsym
 %{texmfdist}/fonts/tfm/public/ifsym
 
+%{texmfdist}/fonts/tfm/public/inconsolata
+%{texmfdist}/fonts/type1/public/inconsolata
+
 %doc %{texmfdist}/doc/fonts/initials
 %{texmfdist}/fonts/afm/public/initials
 %{texmfdist}/fonts/map/dvips/initials
@@ -11453,6 +11527,8 @@ fi
 %{texmfdist}/fonts/type1/public/linearA
 %{texmfdist}/source/fonts/linearA
 
+%{texmfdist}/fonts/tfm/public/lithuanian
+
 %{texmfdist}/fonts/source/public/logic
 %{texmfdist}/fonts/tfm/public/logic
 
@@ -11474,6 +11550,8 @@ fi
 
 %{texmfdist}/fonts/tfm/public/mathpazo
 %{texmfdist}/fonts/vf/public/mathpazo
+
+%{texmfdist}/fonts/tfm/public/mathabx
 
 %{texmfdist}/fonts/afm/mathdesign
 %{texmfdist}/fonts/tfm/mathdesign
@@ -11518,7 +11596,7 @@ fi
 # %{texmfdist}/fonts/afm/public/norasi
 # %{texmfdist}/fonts/map/dvips/norasi
 # %{texmfdist}/fonts/tfm/public/norasi
-# %{texmfdist}/fonts/type1/public/norasi
+%{texmfdist}/fonts/tfm/public/norasi-c90
 
 # %{texmfdist}/fonts/source/public/oca
 
@@ -11539,6 +11617,8 @@ fi
 %{texmfdist}/fonts/ovf/public/oinuit
 %{texmfdist}/fonts/tfm/public/oinuit
 %{texmfdist}/fonts/type1/public/oinuit
+
+%{texmfdist}/fonts/tfm/public/orkhun
 
 %{texmfdist}/fonts/source/public/osmanian
 
@@ -11573,15 +11653,23 @@ fi
 %{texmfdist}/fonts/tfm/public/phonetic
 # %{texmfdist}/source/fonts/phonetic
 
+%{texmfdist}/fonts/tfm/public/pigpen
+%{texmfdist}/fonts/type1/public/pigpen
+
 %{texmfdist}/source/fonts/malayalam
 
 %{texmfdist}/fonts/source/public/punk
 %{texmfdist}/fonts/tfm/public/punk
 
+%{texmfdist}/fonts/tfm/public/recycle
+%{texmfdist}/fonts/type1/public/recycle
+
 %{texmfdist}/fonts/tfm/public/relenc
 %{texmfdist}/fonts/vf/public/relenc
 
 %doc %{texmfdist}/doc/fonts/rsfs
+%{texmfdist}/fonts/afm/public/rsfs
+%{texmfdist}/fonts/type1/public/rsfs
 %{texmfdist}/fonts/map/dvips/rsfs
 
 %{texmfdist}/fonts/map/dvips/sanskrit
@@ -11649,8 +11737,10 @@ fi
 %{texmfdist}/fonts/tfm/public/tex-gyre
 %{texmfdist}/fonts/type1/public/tex-gyre
 
-%{texmfdist}/fonts/map/dvips/times
+%{texmfdist}/fonts/afm/public/thailatex
+%{texmfdist}/fonts/type1/public/thailatex
 
+%{texmfdist}/fonts/map/dvips/times
 
 %doc %{texmfdist}/doc/fonts/timing
 %{texmfdist}/fonts/source/public/timing
@@ -11737,19 +11827,12 @@ fi
 
 %files -n texlive-fonts-omega
 %defattr(644,root,root,755)
-%dir %{texmfdist}/omega
-%dir %{texmfdist}/omega/ocp
-%dir %{texmfdist}/omega/otp
 %{texmfdist}/fonts/ofm/public/omega
-%{texmfdist}/fonts/type1/public/omega
 %{texmfdist}/fonts/afm/public/omega
 %{texmfdist}/fonts/ovp/public/omega
 %{texmfdist}/fonts/tfm/public/omega
 %{texmfdist}/fonts/ovf/public/omega
 %{texmfdist}/fonts/map/dvips/omega
-%{texmfdist}/omega/ocp/omega
-%{texmfdist}/omega/otp/omega
-%{texmfdist}/tex/plain/omega
 
 %files -n texlive-fonts-pl
 %defattr(644,root,root,755)
