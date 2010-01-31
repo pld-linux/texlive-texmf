@@ -6429,6 +6429,8 @@ fi
 %dir %{texmf}/fonts/opentype
 %dir %{texmf}/fonts/opentype/public
 
+%define	texlivedoc	%{texmf}/doc/texlive/texlive-
+
 %files -n texlive-doc
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/dehyph-exptl
@@ -6436,14 +6438,12 @@ fi
 # %dir %{texmfdoc}/doc
 # %{texmfdoc}/README
 # %{texmfdoc}/ls-R
-# %{texmfdoc}/doc/english
+%{texmfdist}/doc/latex/lshort-english
 # %{texmfdist}/doc/fontinst
 
-# %files -n texlive-doc-bg
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/bulgarian
-# 
-%define	texlivedoc	%{texmf}/doc/texlive/texlive-
+%files -n texlive-doc-bg
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-bulgarian
 
 %files -n texlive-doc-cs
 %defattr(644,root,root,755)
@@ -6451,6 +6451,7 @@ fi
  
 %files -n texlive-doc-de
 %defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-german
 %{texlivedoc}de
 # 
 # %files -n texlive-doc-el
@@ -6458,76 +6459,82 @@ fi
 # %{texmfdoc}/doc/greek
 # %{texmf}/doc/generic/elhyphen
 # 
-# %files -n texlive-doc-es
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/spanish
-# 
-# %files -n texlive-doc-fi
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/finnish
+%files -n texlive-doc-es
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-spanish
+ 
+%files -n texlive-doc-fi
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-finnish
  
 %files -n texlive-doc-fr
 %defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-french
 %{texlivedoc}fr
  
 %files -n texlive-doc-it
 %defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-italian
 %{texlivedoc}it
-# 
-# %files -n texlive-doc-ja
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/japanese
-# 
-# %files -n texlive-doc-ko
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/korean
-# 
-# %files -n texlive-doc-mn
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/mongolian
-# 
-# %files -n texlive-doc-nl
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/dutch
+
+%files -n texlive-doc-ja
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-japanese
+
+%files -n texlive-doc-ko
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-korean
+
+%files -n texlive-doc-mn
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-mongol
+
+%files -n texlive-doc-nl
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-dutch
  
 %files -n texlive-doc-pl
 %defattr(644,root,root,755)
+%{texmfdist}/doc/generic/tex-virtual-academy-pl
+%{texmfdist}/doc/latex/lshort-polish
 %{texlivedoc}pl
- 
-# %files -n texlive-doc-pt
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/portuguese
+
+%files -n texlive-doc-pt
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-portuguese
 
 %files -n texlive-doc-ru
 %defattr(644,root,root,755)
 %{texlivedoc}ru
 
-# %files -n texlive-doc-sk
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/slovak
-# 
-# %files -n texlive-doc-sl
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/slovenian
-# 
-# %files -n texlive-doc-th
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/thai
-# 
-# %files -n texlive-doc-tr
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/turkish
-# 
-# %files -n texlive-doc-uk
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/ukrainian
-# 
-# %files -n texlive-doc-vi
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/vietnamese
+%files -n texlive-doc-sk
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-slovak
+
+%files -n texlive-doc-sl
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-slovenian
+
+%files -n texlive-doc-th
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-thai
+
+%files -n texlive-doc-tr
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-turkish
+
+%files -n texlive-doc-uk
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-ukr
+
+%files -n texlive-doc-vi
+%defattr(644,root,root,755)
+%{texmfdist}/doc/latex/lshort-vietnamese
 
 %files -n texlive-doc-zh_CN
 %defattr(644,root,root,755)
+%{texmfdist}/doc/generic/latex-notes-zh-cn
+%{texmfdist}/doc/latex/lshort-chinese
 %{texlivedoc}zh-cn
 
 %files -n texlive-doc-latex
