@@ -5,6 +5,7 @@
 
 %include	/usr/lib/rpm/macros.perl
 # Conditional build:
+%bcond_with	bootstrap	# bootstrap build
 
 %define shortname texlive
 
@@ -66,6 +67,7 @@ BuildRequires:	rpm-perlprov
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 BuildRequires:	texinfo
+%if %{without bootstrap}
 BuildRequires:	%{shortname}-context
 BuildRequires:	%{shortname}-csplain
 BuildRequires:	%{shortname}-fonts-cmsuper
@@ -86,13 +88,11 @@ BuildRequires:	%{shortname}-tex-physe
 BuildRequires:	%{shortname}-xetex
 BuildRequires:	%{shortname}-xmltex
 BuildRequires:	/usr/bin/latex
+%endif
 BuildRequires:	unzip
 Requires:	%{shortname}-dirs-fonts
 Requires:	%{shortname}-fonts-cm
 Requires:	%{shortname}-fonts-misc
-Provides:	tetex = %{epoch}:%{version}-%{release}
-Provides:	tetex-format-pdfetex = %{epoch}:%{version}-%{release}
-Provides:	tetex-metafont
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -4870,6 +4870,7 @@ install %{SOURCE62} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
 
 cd $RPM_BUILD_ROOT%{texmfdist}/tex/latex
 
+%if %{without bootstrap}
 # floatflt
 unzip %{SOURCE10}
 cd floatflt
@@ -4888,12 +4889,6 @@ install -d $RPM_BUILD_ROOT%{texmfdist}/doc/latex/foiltex
 %{__mv} *.tex *.pdf README $RPM_BUILD_ROOT%{texmfdist}/doc/latex/foiltex
 cd ..
 
-# larm fonts
-cd $RPM_BUILD_ROOT%{texmfdist}
-tar xvf %{SOURCE11}
-cd fonts/tfm/la
-for i in larm?00.tfm; do ln -s $i $(echo $i | sed "s@larm\(.\).*@larm0\100.tfm@") ; done
-
 # wrong dvi in formlett, should be regenerate
 cd $RPM_BUILD_ROOT%{texmfdist}/doc/latex/formlett
 cp $RPM_BUILD_ROOT%{texmfdist}/tex/latex/formlett/formlett.sty .
@@ -4902,6 +4897,13 @@ yes | tex prog_manual.tex
 tex example1.tex
 tex example2.tex
 rm formlett.sty
+%endif
+
+# larm fonts
+cd $RPM_BUILD_ROOT%{texmfdist}
+tar xvf %{SOURCE11}
+cd fonts/tfm/la
+for i in larm?00.tfm; do ln -s $i $(echo $i | sed "s@larm\(.\).*@larm0\100.tfm@") ; done
 
 cd $CURDIR
 
@@ -6343,9 +6345,30 @@ fi
 
 %files
 %defattr(644,root,root,755)
-# There isn't doc/fonts directory
+%dir %{texmf}
+# texlive-doc-*
+%dir %{texmf}/doc
+%dir %{texmf}/doc/texlive
+
+%dir %{texmf}/scripts
+%dir %{texmf}/tex
+%dir %{texmf}/tex/generic
+%dir %{texmf}/tex/generic/config
+%dir %{texmf}/web2c
+%dir %{texmfdist}
 %dir %{texmfdist}/doc
 %dir %{texmfdist}/doc/fonts
+%dir %{texmfdist}/doc/generic
+%dir %{texmfdist}/doc/latex
+%dir %{texmfdist}/metapost
+%dir %{texmfdist}/scripts
+%dir %{texmfdist}/source
+%dir %{texmfdist}/source/generic
+%dir %{texmfdist}/source/latex
+%dir %{texmfdist}/tex
+%dir %{texmfdist}/tex/generic
+%dir %{texmfdist}/tex/generic/misc
+%dir %{texmfdist}/tex/latex
 # %doc %{texmfdist}/doc/fontname
 
 # ***********
@@ -6358,14 +6381,10 @@ fi
 %ghost %{texmf}/ls-R
 %ghost %{texmfdist}/ls-R
 
-%config(noreplace) %verify(not md5 mtime size) %{texmfdist}/tex/cslatex/base/fonttext.cfg
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/tex/generic/config/language.dat
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/tex/generic/config/language.def
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/tex/generic/config/language.us
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/tex/generic/config/language.us.def
-%config(noreplace) %verify(not md5 mtime size) %{texmfdist}/tex/latex/base/fontmath.cfg
-%config(noreplace) %verify(not md5 mtime size) %{texmfdist}/tex/latex/base/fonttext.cfg
-%config(noreplace) %verify(not md5 mtime size) %{texmfdist}/tex/latex/base/preload.cfg
 
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/fmtutil.cnf
 %config(noreplace) %verify(not md5 mtime size) %{texmf}/web2c/mktex.cnf
@@ -6387,44 +6406,67 @@ fi
 %attr(1777,root,root) %dir %{_localstatedir}/fonts
 %attr(1777,root,root) %dir %{_localstatedir}/fonts/map
 %attr(1777,root,root) %dir %{fmtdir}
+%dir %{fmtdir}/pdftex
 
 %{texmf}/doc/info
 
-%{texmfdist}/fonts/map/dvips/vntex/urwvn.map
 %{texmfdist}/fonts/map/fontname
-%{texmfdist}/fonts/enc/dvips/vntex/t5.enc
 
-%{texmf}/fonts/enc/dvips/tetex/09fbbfac.enc
-%{texmf}/fonts/enc/dvips/tetex/0ef0afca.enc
-%{texmf}/fonts/enc/dvips/tetex/10037936.enc
-%{texmf}/fonts/enc/dvips/tetex/1b6d048e.enc
-%{texmf}/fonts/enc/dvips/tetex/71414f53.enc
-%{texmf}/fonts/enc/dvips/tetex/74afc74c.enc
-%{texmf}/fonts/enc/dvips/tetex/aae443f0.enc
-%{texmf}/fonts/enc/dvips/tetex/b6a4d7c7.enc
-%{texmf}/fonts/enc/dvips/tetex/bbad153f.enc
-%{texmf}/fonts/enc/dvips/tetex/d9b29452.enc
-%{texmf}/fonts/enc/dvips/tetex/f7b6d320.enc
-%{texmf}/fonts/map/dvips/tetex/ps2pk35.map
+#%{texmf}/fonts/enc/dvips/tetex/09fbbfac.enc
+#%{texmf}/fonts/enc/dvips/tetex/0ef0afca.enc
+#%{texmf}/fonts/enc/dvips/tetex/10037936.enc
+#%{texmf}/fonts/enc/dvips/tetex/1b6d048e.enc
+#%{texmf}/fonts/enc/dvips/tetex/71414f53.enc
+#%{texmf}/fonts/enc/dvips/tetex/74afc74c.enc
+#%{texmf}/fonts/enc/dvips/tetex/aae443f0.enc
+#%{texmf}/fonts/enc/dvips/tetex/b6a4d7c7.enc
+#%{texmf}/fonts/enc/dvips/tetex/bbad153f.enc
+#%{texmf}/fonts/enc/dvips/tetex/d9b29452.enc
+#%{texmf}/fonts/enc/dvips/tetex/f7b6d320.enc
+#%{texmf}/fonts/map/dvips/tetex/ps2pk35.map
 
 %{texmfdist}/metafont
-%{texmfdist}/mft/base
+%{texmfdist}/mft
 %{texmfdist}/source/metafont
 %{texmfdist}/tex/fontinst
-%{texmfdist}/tex/generic/dehyph-exptl/*
+%{texmfdist}/tex/generic/abbr
+%{texmfdist}/tex/generic/abstyles
+%{texmfdist}/tex/generic/barr
+%{texmfdist}/tex/generic/borceux
+%{texmfdist}/tex/generic/c-pascal
+%{texmfdist}/tex/generic/dehyph-exptl
+%{texmfdist}/tex/generic/dirtree
+%{texmfdist}/tex/generic/dratex
+%{texmfdist}/tex/generic/ean
+%{texmfdist}/tex/generic/edmac
 %{texmfdist}/tex/generic/encodings
 %{texmfdist}/tex/generic/epsf
-%{texmfdist}/tex/generic/hyph-utf8/*
+%{texmfdist}/tex/generic/fenixpar
+%{texmfdist}/tex/generic/fltpoint
+%{texmfdist}/tex/generic/hyph-utf8
+%{texmfdist}/tex/generic/hyphenex
 %{texmfdist}/tex/generic/genmisc
+%{texmfdist}/tex/generic/mathabx
 %{texmfdist}/tex/generic/misc/null*
 %{texmfdist}/tex/generic/misc/texnames.sty
+%{texmfdist}/tex/generic/musixtex
+%{texmfdist}/tex/generic/shade
+%{texmfdist}/tex/generic/t2
+%{texmfdist}/tex/generic/tabto-generic
 %{texmfdist}/tex/generic/tap
+%{texmfdist}/tex/generic/tex-ewd
 %{texmfdist}/tex/generic/tex-ps
+%{texmfdist}/tex/generic/vaucanson-g
+%{texmfdist}/tex/generic/xlop
+%{texmfdist}/tex/generic/xstring
+%{texmfdist}/tex/generic/zhmetrics
+%{texmfdist}/tex/lualatex
+%{texmfdist}/tex/luatex
 %{texmfdist}/tex/texinfo
 %{texmf}/tex/fontinst
 %{texmf}/tex/generic/hyphen
 # %{texmf}/fmtutil/format.metafont.cnf
-%{texmf}/fonts/map/dvips/updmap/*
+#%%{texmf}/fonts/map/dvips/updmap/*
 %{texmf}/web2c/*.tcx
 
 #fmt %{fmtdir}/pdftex/pdfetex.fmt
@@ -6471,6 +6513,8 @@ fi
 %dir %{texmfdist}/fonts/vf/vntex
 %dir %{texmfdist}/source/fonts
 %dir %{texmf}/fonts
+%dir %{texmf}/fonts/enc
+%dir %{texmf}/fonts/map
 %dir %{texmf}/fonts/opentype
 %dir %{texmf}/fonts/opentype/public
 
@@ -6495,6 +6539,8 @@ fi
 %{texmfdist}/doc/latex/pdf-forms-tutorial-en
 %{texmfdist}/doc/latex/tlc2
 %{texlivedoc}en
+%{texmf}/doc/tetex
+%{texmf}/doc/texlive/texlive-common
 # %{texmfdist}/doc/fontinst
 
 %files -n texlive-doc-bg
@@ -6627,7 +6673,9 @@ fi
 %doc %{texmfdist}/doc/latex/fancyvrb
 %doc %{texmfdist}/doc/latex/filecontents
 %doc %{texmfdist}/doc/latex/float
+%if %{without bootstrap}
 %doc %{texmfdist}/doc/latex/floatflt
+%endif
 %doc %{texmfdist}/doc/latex/footmisc
 %doc %{texmfdist}/doc/latex/footnpag
 %doc %{texmfdist}/doc/latex/fp
@@ -6688,13 +6736,20 @@ fi
 %doc %{texmfdist}/doc/latex/wrapfig
 %doc %{texmfdist}/doc/latex/xtab
 %doc %{texmfdist}/doc/latex/yfonts
-%doc %{texmf}/doc/dvipdfm
 
 %files -n texlive-dvips-data
 %defattr(644,root,root,755)
+%doc %{texmf}/doc/dvipdfm
 %{texmfdist}/dvips
 %{texmfdist}/fonts/enc/dvips/base
+%{texmfdist}/tex/generic/dvips
+%{texmf}/dvipdfm
+%{texmf}/dvipdfmx
 %{texmf}/dvips
+%{texmf}/fonts/enc/dvips
+%{texmf}/fonts/map/dvipdfm
+%{texmf}/fonts/map/dvipdfmx
+%{texmf}/fonts/map/dvips
 
 %files -n texlive-omega-data
 %defattr(644,root,root,755)
@@ -6837,6 +6892,7 @@ fi
 %{texmfdist}/metapost/tabvar
 %{texmfdist}/metapost/textpath
 %{texmfdist}/metapost/venn
+%{texmfdist}/tex/generic/metapost
 
 %files -n xindy-data
 %defattr(644,root,root,755)
@@ -7063,8 +7119,9 @@ fi
 %files -n texlive-context-data
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/context
+%{texmfdist}/source/lambda
 %{texmfdist}/bibtex/bst/context
-%{texmfdist}/context/data
+%{texmfdist}/context
 %{texmfdist}/fonts/enc/dvips/context
 %{texmfdist}/fonts/fea/context
 %{texmfdist}/fonts/map/dvips/context
@@ -7092,13 +7149,14 @@ fi
 
 %files -n texlive-latex-data
 %defattr(644,root,root,755)
-%dir %{texmfdist}/source/latex
 %dir %{texmfdist}/scripts/pst-pdf
 %dir %{texmfdist}/tex/latex
 %dir %{texmfdist}/tex/latex/latexconfig
 %dir %{texmf}/tex/latex
 # %{texmf}/fmtutil/format.latex.cnf
+%if %{without bootstrap}
 %{texmfdist}/tex/latex/floatflt
+%endif
 %{texmfdist}/scripts/pst-pdf/ps4pdf
 %{texmfdist}/tex/generic/pstricks
 %{texmfdist}/tex/generic/shapepar
@@ -7447,6 +7505,8 @@ fi
 %{texmfdist}/tex/latex/jurarsp
 %{texmfdist}/tex/latex/koma-script
 %{texmfdist}/tex/latex/labels
+%{texmfdist}/tex/latex/latexconfig/graphics.cfg
+%{texmfdist}/tex/latex/latexconfig/hyperref.cfg
 %{texmfdist}/tex/latex/latexconfig/latex.ini
 %{texmfdist}/tex/latex/latexconfig/lualatex.ini
 %{texmfdist}/tex/latex/latexconfig/mllatex.ini
@@ -7738,7 +7798,6 @@ fi
 %files -n texlive-latex-bibtex-revtex4
 %defattr(644,root,root,755)
 %dir %{texmfdist}/source/latex/revtex
-%dir %{texmfdist}/doc/latex
 %doc %{texmfdist}/doc/latex/revtex
 # %{texmfdist}/source/latex/revtex/revtex4.dtx
 # %{texmfdist}/source/latex/revtex/revtex4.ins
@@ -8004,10 +8063,12 @@ fi
 %{texmfdist}/tex/latex/photo
 %{texmfdist}/tex/latex/topfloat
 
+%if %{without bootstrap}
 %files -n texlive-latex-foiltex
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/foiltex
 %{texmfdist}/tex/latex/foiltex
+%endif
 
 %files -n texlive-latex-formlett
 %defattr(644,root,root,755)
@@ -10169,6 +10230,91 @@ fi
 # Time printing, in German.
 %{texmfdist}/tex/latex/uhrzeit
 
+
+%{texmfdist}/source/latex/nicetext
+%{texmfdist}/tex/latex/nicetext
+%{texmfdist}/source/latex/pagecont
+%{texmfdist}/tex/latex/pagecont
+%{texmfdist}/source/latex/pax
+%{texmfdist}/tex/latex/pax
+%{texmfdist}/tex/latex/pdfcomment
+%{texmfdist}/tex/latex/pdfmarginpar
+%{texmfdist}/source/latex/pdfx
+%{texmfdist}/tex/latex/pdfx
+%{texmfdist}/tex/latex/pigpen
+%{texmfdist}/tex/latex/powerdot-FUBerlin
+%{texmfdist}/tex/latex/printlen
+%{texmfdist}/tex/latex/properties
+%{texmfdist}/tex/latex/psbao
+%{texmfdist}/source/latex/pstool
+%{texmfdist}/tex/latex/pstool
+%{texmfdist}/tex/latex/pstricks
+%{texmfdist}/source/latex/rangen
+%{texmfdist}/tex/latex/rangen
+%{texmfdist}/source/latex/rcs-multi
+%{texmfdist}/tex/latex/rcs-multi
+%{texmfdist}/tex/latex/recipe
+%{texmfdist}/tex/latex/recycle
+%{texmfdist}/source/latex/rjlparshap
+%{texmfdist}/tex/latex/rjlparshap
+%{texmfdist}/source/latex/sageep
+%{texmfdist}/tex/latex/sageep
+%{texmfdist}/tex/latex/schemabloc
+%{texmfdist}/tex/latex/selectp
+%{texmfdist}/tex/latex/sfheaders
+%{texmfdist}/source/latex/shuffle
+%{texmfdist}/tex/latex/shuffle
+%{texmfdist}/source/latex/silence
+%{texmfdist}/tex/latex/silence
+%{texmfdist}/tex/latex/spotcolor
+%{texmfdist}/source/latex/spverbatim
+%{texmfdist}/tex/latex/spverbatim
+%{texmfdist}/source/latex/steinmetz
+%{texmfdist}/tex/latex/steinmetz
+%{texmfdist}/source/latex/svn-prov
+%{texmfdist}/tex/latex/svn-prov
+%{texmfdist}/tex/latex/syllogism
+%{texmfdist}/tex/latex/tablenotes
+%{texmfdist}/tex/latex/tabls
+%{texmfdist}/tex/latex/tabularcalc
+%{texmfdist}/source/latex/tabularew
+%{texmfdist}/tex/latex/tabularew
+%{texmfdist}/tex/latex/tdclock
+%{texmfdist}/source/latex/termcal
+%{texmfdist}/tex/latex/termcal
+%{texmfdist}/source/latex/termlist
+%{texmfdist}/tex/latex/termlist
+%{texmfdist}/source/latex/texments
+%{texmfdist}/tex/latex/texments
+%{texmfdist}/tex/latex/thmbox
+%{texmfdist}/tex/latex/threeparttablex
+%{texmfdist}/tex/latex/tikz-timing
+%{texmfdist}/tex/latex/titlepic
+%{texmfdist}/tex/latex/tkz-doc
+%{texmfdist}/tex/latex/tkz-linknodes
+%{texmfdist}/tex/latex/tkz-tab
+%{texmfdist}/tex/latex/todonotes
+%{texmfdist}/tex/latex/totcount
+%{texmfdist}/tex/latex/trimspaces
+%{texmfdist}/tex/latex/ucdavisthesis
+%{texmfdist}/tex/latex/ulqda
+%{texmfdist}/tex/latex/ut-thesis
+%{texmfdist}/tex/latex/varwidth
+%{texmfdist}/tex/latex/venturis
+%{texmfdist}/tex/latex/venturis2
+%{texmfdist}/tex/latex/venturisadf
+%{texmfdist}/tex/latex/venturisold
+%{texmfdist}/tex/latex/venturissans
+%{texmfdist}/tex/latex/venturissans2
+%{texmfdist}/tex/latex/verbatimbox
+%{texmfdist}/tex/latex/verbatimcopy
+%{texmfdist}/tex/latex/version
+%{texmfdist}/tex/latex/vertbars
+%{texmfdist}/tex/latex/widetable
+%{texmfdist}/tex/latex/yagusylo
+%{texmfdist}/tex/latex/zhmetrics
+%{texmfdist}/tex/latex/zwpagelayout
+
 %files -n texlive-latex-pdfslide
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/pdfslide
@@ -10375,13 +10521,17 @@ fi
 %{texmfdist}/source/latex/pst-gr3d
 %{texmfdist}/source/latex/pst-pdf
 %{texmfdist}/source/latex/pst-poly
+%{texmfdist}/tex/generic/pst-abspos
 %{texmfdist}/tex/generic/pst-asr
 %{texmfdist}/tex/generic/pst-barcode
+%{texmfdist}/tex/generic/pst-bezier
 %{texmfdist}/tex/generic/pst-blur
+%{texmfdist}/tex/generic/pst-bspline
 %{texmfdist}/tex/generic/pst-coil
 %{texmfdist}/tex/generic/pst-cox
 %{texmfdist}/tex/generic/pst-eps
 %{texmfdist}/tex/generic/pst-fill
+%{texmfdist}/tex/generic/pst-gantt
 %{texmfdist}/tex/generic/pst-geo
 %{texmfdist}/tex/generic/pst-ghsb
 %{texmfdist}/tex/generic/pst-gr3d
@@ -10399,15 +10549,21 @@ fi
 %{texmfdist}/tex/generic/pst-solides3d
 %{texmfdist}/tex/generic/pst-spectra
 %{texmfdist}/tex/generic/pst-stru
+%{texmfdist}/tex/generic/pst-tree
 %{texmfdist}/tex/generic/pst-vue3d
+%{texmfdist}/tex/latex/pst-abspos
 %{texmfdist}/tex/latex/pst-asr
 %{texmfdist}/tex/latex/pst-barcode
+%{texmfdist}/tex/latex/pst-bezier
 %{texmfdist}/tex/latex/pst-blur
+%{texmfdist}/tex/latex/pst-bspline
+%{texmfdist}/tex/latex/pst-calendar
 %{texmfdist}/tex/latex/pst-coil
 %{texmfdist}/tex/latex/pst-cox
 %{texmfdist}/tex/latex/pst-dbicons
 %{texmfdist}/tex/latex/pst-eps
 %{texmfdist}/tex/latex/pst-fill
+%{texmfdist}/tex/latex/pst-gantt
 %{texmfdist}/tex/latex/pst-geo
 %{texmfdist}/tex/latex/pst-ghsb
 %{texmfdist}/tex/latex/pst-gr3d
@@ -10422,12 +10578,16 @@ fi
 %{texmfdist}/tex/latex/pst-pdgr
 %{texmfdist}/tex/latex/pst-poly
 %{texmfdist}/tex/latex/pst-qtree
+%{texmfdist}/tex/latex/pst-sigsys
 %{texmfdist}/tex/latex/pst-slpe
 %{texmfdist}/tex/latex/pst-solides3d
 %{texmfdist}/tex/latex/pst-soroban
 %{texmfdist}/tex/latex/pst-spectra
 %{texmfdist}/tex/latex/pst-stru
+%{texmfdist}/tex/latex/psu-thesis
+%{texmfdist}/tex/latex/pst-tree
 %{texmfdist}/tex/latex/pst-uml
+%{texmfdist}/tex/latex/pst-vowel
 %{texmfdist}/tex/latex/pst-vue3d
 
 %files -n texlive-latex-psnfss
@@ -10634,9 +10794,9 @@ fi
 %{texmfdist}/tex/generic/xkeyval
 %{texmfdist}/tex/latex/xkeyval
 
-%files -n texlive-fonts-doc
-%defattr(644,root,root,755)
-%doc %{texmfdist}/doc/fonts
+##%files -n texlive-fonts-doc
+##%defattr(644,root,root,755)
+#%%doc %{texmfdist}/doc/fonts
 
 %files -n texlive-fonts-adobe
 %defattr(644,root,root,755)
@@ -10725,7 +10885,6 @@ fi
 
 %files -n texlive-fonts-cm
 %defattr(644,root,root,755)
-%dir %{texmfdist}/doc/fonts
 # %dir %{texmfdist}/fonts/afm/bluesky
 %dir %{texmfdist}/fonts/map/dvips
 %dir %{texmfdist}/fonts/pk/ljfour/public
@@ -10837,8 +10996,8 @@ fi
 
 %files -n texlive-fonts-kpfonts
 %defattr(644,root,root,755)
-%dir %{texmfdist}/doc/fonts
 %doc %{texmfdist}/doc/fonts/kpfonts
+%{texmfdist}/fonts/map/dvips/kpfonts
 %{texmfdist}/fonts/afm/public/kpfonts
 %{texmfdist}/fonts/enc/dvips/kpfonts
 %{texmfdist}/fonts/enc/pdftex/kpfonts
@@ -10976,6 +11135,7 @@ fi
 %{texmfdist}/fonts/vf/public/arev
 %{texmfdist}/source/fonts/arev
 
+%{texmfdist}/fonts/map/dvips/vntex/arevvn.map
 %{texmfdist}/fonts/tfm/vntex/arevvn
 %{texmfdist}/fonts/type1/vntex/arevvn
 
@@ -11110,6 +11270,7 @@ fi
 %{texmfdist}/fonts/type1/public/cbfonts
 
 %doc %{texmfdist}/doc/fonts/charter
+%{texmfdist}/fonts/map/dvips/vntex/chartervn.map
 %{texmfdist}/fonts/afm/vntex/chartervn
 %{texmfdist}/fonts/tfm/vntex/chartervn
 %{texmfdist}/fonts/type1/vntex/chartervn
@@ -11140,6 +11301,7 @@ fi
 # %{texmfdist}/fonts/source/public/cmastro
 # %{texmfdist}/fonts/tfm/public/cmastro
 
+%{texmfdist}/fonts/map/dvips/vntex/cmbrightvn.map
 %{texmfdist}/fonts/tfm/vntex/cmbrightvn
 %{texmfdist}/fonts/type1/vntex/cmbrightvn
 
@@ -11158,11 +11320,12 @@ fi
 %{texmfdist}/fonts/source/public/cmpica
 %{texmfdist}/fonts/tfm/public/cmpica
 
-
+%{texmfdist}/fonts/map/dvips/vntex/comicvn.map
 %{texmfdist}/fonts/tfm/vntex/comicsansvn
 %{texmfdist}/fonts/type1/vntex/comicsansvn
 %{texmfdist}/fonts/vf/vntex/comicsansvn
 
+%{texmfdist}/fonts/map/dvips/vntex/concretevn.map
 %{texmfdist}/fonts/tfm/vntex/concretevn
 %{texmfdist}/fonts/type1/vntex/concretevn
 
@@ -11231,6 +11394,7 @@ fi
 %{texmfdist}/fonts/tfm/public/ean
 
 %doc %{texmfdist}/doc/fonts/eiad
+%{texmfdist}/fonts/source/public/eiad-ltx
 %{texmfdist}/fonts/source/public/eiad
 %{texmfdist}/fonts/tfm/public/eiad
 
@@ -11278,12 +11442,15 @@ fi
 
 %doc %{texmfdist}/doc/fonts/fge
 %{texmfdist}/fonts/source/public/fge
+%{texmfdist}/fonts/map/dvips/fge
 %{texmfdist}/fonts/tfm/public/fge
 %{texmfdist}/fonts/type1/public/fge
 %{texmfdist}/source/fonts/fge
 
+%{texmfdist}/fonts/map/dvips/figbas
 %{texmfdist}/fonts/afm/public/figbas
 %{texmfdist}/fonts/type1/public/figbas
+%{texmfdist}/fonts/tfm/public/figbas
 
 %{texmfdist}/fonts/map/dvips/foekfont
 %{texmfdist}/fonts/tfm/public/foekfont
@@ -11319,6 +11486,7 @@ fi
 
 # %{texmfdist}/fonts/afm/public/garuda
 # %{texmfdist}/fonts/map/dvips/garuda
+%{texmfdist}/fonts/map/dvips/garuda-c90
 %{texmfdist}/fonts/tfm/public/garuda-c90
 # %{texmfdist}/fonts/type1/public/garuda
 
@@ -11411,6 +11579,7 @@ fi
 %doc %{texmfdist}/doc/fonts/grotesq
 %{texmfdist}/fonts/map/dvips/grotesq
 
+%{texmfdist}/fonts/map/dvips/vntex/grotesqvn.map
 %{texmfdist}/fonts/afm/vntex/grotesqvn
 %{texmfdist}/fonts/tfm/vntex/grotesqvn
 %{texmfdist}/fonts/type1/vntex/grotesqvn
@@ -11455,6 +11624,8 @@ fi
 %{texmfdist}/fonts/source/public/ifsym
 %{texmfdist}/fonts/tfm/public/ifsym
 
+%{texmfdist}/fonts/opentype/public/inconsolata
+%{texmfdist}/fonts/map/dvips/inconsolata
 %{texmfdist}/fonts/tfm/public/inconsolata
 %{texmfdist}/fonts/type1/public/inconsolata
 
@@ -11519,6 +11690,7 @@ fi
 %{texmfdist}/fonts/tfm/public/libertine
 %{texmfdist}/fonts/type1/public/libertine
 %{texmfdist}/fonts/vf/public/libertine
+%{texmfdist}/fonts/opentype/public/libertine
 
 %doc %{texmfdist}/doc/fonts/linearA
 %{texmfdist}/fonts/afm/public/linearA
@@ -11551,6 +11723,7 @@ fi
 %{texmfdist}/fonts/tfm/public/mathpazo
 %{texmfdist}/fonts/vf/public/mathpazo
 
+%{texmfdist}/fonts/source/public/mathabx
 %{texmfdist}/fonts/tfm/public/mathabx
 
 %{texmfdist}/fonts/afm/mathdesign
@@ -11618,6 +11791,7 @@ fi
 %{texmfdist}/fonts/tfm/public/oinuit
 %{texmfdist}/fonts/type1/public/oinuit
 
+%{texmfdist}/fonts/source/public/orkhun
 %{texmfdist}/fonts/tfm/public/orkhun
 
 %{texmfdist}/fonts/source/public/osmanian
@@ -11649,10 +11823,11 @@ fi
 %{texmfdist}/fonts/opentype/public/philokalia
 
 %doc %{texmfdist}/doc/fonts/phonetic
-# %{texmfdist}/fonts/source/public/phonetic
+%{texmfdist}/fonts/source/public/phonetic
 %{texmfdist}/fonts/tfm/public/phonetic
 # %{texmfdist}/source/fonts/phonetic
 
+%{texmfdist}/fonts/source/public/pigpen
 %{texmfdist}/fonts/tfm/public/pigpen
 %{texmfdist}/fonts/type1/public/pigpen
 
@@ -11661,6 +11836,7 @@ fi
 %{texmfdist}/fonts/source/public/punk
 %{texmfdist}/fonts/tfm/public/punk
 
+%{texmfdist}/fonts/source/public/recycle
 %{texmfdist}/fonts/tfm/public/recycle
 %{texmfdist}/fonts/type1/public/recycle
 
@@ -11690,12 +11866,16 @@ fi
 
 %{texmfdist}/fonts/source/public/simpsons
 
+%{texmfdist}/fonts/source/public/shuffle
+%{texmfdist}/fonts/tfm/public/shuffle
+
 %doc %{texmfdist}/doc/fonts/skaknew
 %{texmfdist}/fonts/afm/public/skaknew
 %{texmfdist}/fonts/map/dvips/skaknew
 %{texmfdist}/fonts/map/vtex/skaknew
 %{texmfdist}/fonts/tfm/public/skaknew
 %{texmfdist}/fonts/type1/public/skaknew
+%{texmfdist}/fonts/opentype/public/skaknew
 
 %{texmfdist}/fonts/source/public/skull
 
@@ -11757,7 +11937,7 @@ fi
 %{texmfdist}/fonts/tfm/public/trajan
 %{texmfdist}/fonts/type1/public/trajan
 
-
+%{texmfdist}/fonts/map/dvips/vntex/txttvn.map
 %{texmfdist}/fonts/tfm/vntex/txttvn
 %{texmfdist}/fonts/type1/vntex/txttvn
 
@@ -11779,6 +11959,7 @@ fi
 
 %{texmfdist}/fonts/enc/dvips/vntex/*
 
+%{texmfdist}/fonts/map/dvips/vntex/vntopia.map
 %{texmfdist}/fonts/afm/vntex/vntopia
 %{texmfdist}/fonts/tfm/vntex/vntopia
 %{texmfdist}/fonts/type1/vntex/vntopia
@@ -11895,6 +12076,7 @@ fi
 
 %files -n texlive-fonts-urwvn
 %defattr(644,root,root,755)
+%{texmfdist}/fonts/map/dvips/vntex/urwvn.map
 %{texmfdist}/fonts/afm/vntex/urwvn
 %{texmfdist}/fonts/tfm/vntex/urwvn
 %{texmfdist}/fonts/type1/vntex/urwvn
@@ -11902,7 +12084,7 @@ fi
 
 %files -n texlive-fonts-vnr
 %defattr(644,root,root,755)
-%{texmfdist}/fonts/map/dvips/vntex
+%{texmfdist}/fonts/map/dvips/vntex/vnr*.map
 %{texmfdist}/fonts/source/vntex/vnr
 %{texmfdist}/fonts/tfm/vntex/vnr
 
