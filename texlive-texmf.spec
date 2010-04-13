@@ -1504,6 +1504,14 @@ Packages by Javier Bezos (additional math tools).
 %description -n texlive-latex-bezos -l hu.UTF-8
 Javier Bezos csomagjai (további matematikai eszközök).
 
+%package -n texlive-latex-bibtex-data
+Summary:	Main BibTeX files
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+
+%description -n texlive-latex-bibtex-data
+Main BibTeX files.
+
 %package -n texlive-latex-bibtex-ams
 Summary:	BibTeX style files for American Mathematical Society publications
 Summary(pl.UTF-8):	Pliki stylów BibTeXa do publikacji American Mathematical Society
@@ -5359,16 +5367,22 @@ fi
 %postun -n texlive-latex-bibtex-ams
 %texhash
 
-%post -n texlive-latex-bibtex-pl
+%post -n texlive-latex-bibtex-data
 %texhash
 
-%postun -n texlive-latex-bibtex-pl
+%postun -n texlive-latex-bibtex-data
 %texhash
 
 %post -n texlive-latex-bibtex-german
 %texhash
 
 %postun -n texlive-latex-bibtex-german
+%texhash
+
+%post -n texlive-latex-bibtex-pl
+%texhash
+
+%postun -n texlive-latex-bibtex-pl
 %texhash
 
 %post -n texlive-latex-bibtex-revtex4
@@ -7779,15 +7793,45 @@ fi
 %doc %{texmfdist}/doc/latex/bezos
 %{texmfdist}/tex/latex/bezos
 
-# %files -n texlive-latex-bibtex-ams
-# %defattr(644,root,root,755)
-# %{texmfdist}/bibtex/bst/ams
-# %{texmfdist}/bibtex/bib/ams
+%files -n texlive-latex-bibtex-ams
+%defattr(644,root,root,755)
+%{texmfdist}/bibtex/bst/amscls
+%{texmfdist}/bibtex/bst/amsrefs
+%{texmfdist}/bibtex/bib/amsrefs
+
+%files -n texlive-latex-bibtex-data
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/bibtex
+%doc %{texmfdist}/doc/latex/bibtopic
+%doc %{texmfdist}/doc/latex/bibunits
+%doc %{texmfdist}/doc/latex/footbib
+%doc %{texmfdist}/doc/latex/natbib
+
+%dir %{texmfdist}/bibtex/bib
+%{texmfdist}/bibtex/bib/adrconv
+%{texmfdist}/bibtex/bib/base
+
+%dir %{texmfdist}/bibtex/bst
+%{texmfdist}/bibtex/bst/adrconv
+%{texmfdist}/bibtex/bst/base
+%{texmfdist}/bibtex/bst/natbib
+
+%{texmfdist}/bibtex/csf/base
+
+%{texmfdist}/source/latex/adrconv
+%{texmfdist}/source/latex/bibtopic
+%{texmfdist}/source/latex/bibunits
+%{texmfdist}/source/latex/footbib
+%{texmfdist}/tex/latex/bibtopic
+%{texmfdist}/tex/latex/bibunits
+%{texmfdist}/tex/latex/footbib
+%{texmfdist}/tex/latex/natbib
 
 %files -n texlive-latex-bibtex-pl
 %defattr(644,root,root,755)
 %dir %{texmfdist}/bibtex/bib/gustlib
 %{texmfdist}/bibtex/bib/gustlib/plbib.bib
+%{texmfdist}/bibtex/csf/polish-csf
 
 %files -n texlive-latex-bibtex-german
 %defattr(644,root,root,755)
