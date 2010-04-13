@@ -1,4 +1,5 @@
 # TODO:
+# - unpackaged-files in CVS tree, please use this!
 # - latex subpackage (maybe rename latex-base and texlive-latex requires latex-base)
 # - maybe tex4ht-data splitting
 # - consider format-files where to create (texlive or texlive-texmf)
