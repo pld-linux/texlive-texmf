@@ -3,6 +3,7 @@
 # - latex subpackage (maybe rename latex-base and texlive-latex requires latex-base)
 # - maybe tex4ht-data splitting
 # - consider format-files where to create (texlive or texlive-texmf)
+# - alterqcm
 
 %include	/usr/lib/rpm/macros.perl
 # Conditional build:
@@ -37,6 +38,8 @@ Source11:	http://carme.pld-linux.org/~uzsolt/sources/texlive-fonts-larm.tar.bz2
 # Source11-md5:	df2fcc66f0c2e90785ca6c9b27dacd34
 Source12:	http://www.ctan.org/get/macros/latex/contrib/foiltex.zip
 # Source12-md5:	0a6b4e64fb883a68d9b288bf3421db25
+Source13:	http://mirror.ctan.org/macros/latex/contrib/alterqcm.zip
+# Source13-md5:	741acb5bf3436c336649cb61cf46103e
 Source50:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/Splashscreen.pm
 # Source50-md5:	5cc49f49010f27fdb02dd7053797ba19
 Source51:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLConfig.pm
