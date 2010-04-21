@@ -24,7 +24,7 @@ Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
 Version:	%{year}%{monthday}
-Release:	1
+Release:	1.1
 Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
@@ -7112,6 +7112,7 @@ fi
 
 %files -n texlive-amstex
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/amstex
 %{texmfdist}/tex/amstex/config
 %{texmfdist}/tex/plain/amsfonts
 
