@@ -2,8 +2,6 @@
 # - unpackaged-files in CVS tree, please use this!
 # - latex subpackage (maybe rename latex-base and texlive-latex requires latex-base)
 # - maybe tex4ht-data splitting
-# - consider format-files where to create (texlive or texlive-texmf)
-# - alterqcm
 
 %include	/usr/lib/rpm/macros.perl
 # Conditional build:
@@ -353,6 +351,24 @@ Az alap LaTeX csomagok dokumentációja
 %description -n texlive-doc-latex -l pl.UTF-8
 Podstawowa dokumentacja do pakietów LaTeXa.
 
+%package -n texlive-jadetex
+Summary:	LaTeX macros for converting Jade TeX output into DVI/PS/PDF
+Summary(pl.UTF-8):	Makra LaTeXa do konwersji Jade TeXa do DVI/PS/PDF
+Group:		Applications/Publishing/TeX
+Requires:	%{shortname} = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-latex = %{epoch}:%{version}-%{release}
+Requires:	%{shortname}-pdftex = %{epoch}:%{version}-%{release}
+Provides:	jadetex = %{epoch}:%{version}-%{release}
+Obsoletes:	jadetex
+
+%description -n texlive-jadetex
+JadeTeX contains the additional LaTeX macros necessary for taking Jade
+TeX output files and processing them as LaTeX files.
+
+%description -l pl.UTF-8 -n texlive-jadetex
+JadeTeX zawiera dodatkowe makra LaTeXa potrzebne do konwersji plików
+otrzymanych z Jade TeXa i przetworzenia ich jako plików LaTeXa.
+
 %package -n texlive-tex4ht-data
 Summary:	Fonts and other datas to tex4ht
 Group:		Applications/Publishing/TeX
@@ -436,6 +452,20 @@ The PHYSE format.
 
 %description -n texlive-tex-physe -l hu.UTF-8
 PHYSE formátum.
+
+%package -n texlive-phyzzx
+Summary:        A TeX format for physicists
+Summary(hu.UTF-8):      TeX formátum fizikusoknak
+Group:          Applications/Publishing/TeX
+Requires(post,postun):  %{_bindir}/texhash
+Requires:       %{name} = %{epoch}:%{version}-%{release}
+
+%description -n texlive-phyzzx
+A TeX format for physicists.
+
+%description -n texlive-phyzzx -l hu.UTF-8
+TeX formátum fizikusoknak.
+
 
 %package -n texlive-tex-velthuis
 Summary:	This package provides support for typesetting texts in Devanagari script (Sanskrit and Hindi)
@@ -4982,33 +5012,34 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/xindy
 rm -rf $RPM_BUILD_ROOT%{_datadir}/doc
 
 # Create format files
-#  for format in \
-#  	aleph \
-#  	csplain \
-#  	etex \
-#  	lambda \
-#  	lamed \
-#  	latex \
-#  	mex \
-#  	mllatex \
-#  	mptopdf \
-#  	omega \
-#  	pdfcsplain \
-#  	pdfetex \
-#  	pdflatex \
-#  	pdftex \
-#  	pdfxmltex \
-#  	physe \
-#  	phyzzx \
-#  	tex \
-#  	texsis \
-#  	xetex \
-#  	xelatex \
-#  	xmltex; do
-#  	fmtutil --fmtdir $RPM_BUILD_ROOT%{fmtdir} --byfmt=${format}
-#  done
-#  # We don't need the log files
-#  rm -f $(find $RPM_BUILD_ROOT%{fmtdir} -name "*.log")
+for format in \
+	aleph \
+ 	csplain \
+ 	etex \
+	jadetex \
+ 	lambda \
+ 	lamed \
+ 	latex \
+ 	mex \
+ 	mllatex \
+ 	mptopdf \
+ 	omega \
+ 	pdfcsplain \
+ 	pdfetex \
+ 	pdflatex \
+ 	pdftex \
+ 	pdfxmltex \
+ 	physe \
+ 	phyzzx \
+ 	tex \
+ 	texsis \
+ 	xetex \
+ 	xelatex \
+ 	xmltex; do
+ 	fmtutil --fmtdir $RPM_BUILD_ROOT%{fmtdir} --byfmt=${format}
+done
+# We don't need the log files
+rm -f $(find $RPM_BUILD_ROOT%{fmtdir} -name "*.log")
 
 cd $RPM_BUILD_ROOT%{_bindir}
 ln -sf ../share/texmf/scripts/a2ping/a2ping.pl a2ping
@@ -6487,8 +6518,8 @@ fi
 #%%{texmf}/fonts/map/dvips/updmap/*
 %{texmf}/web2c/*.tcx
 
-#fmt %{fmtdir}/pdftex/pdfetex.fmt
-#fmt %{fmtdir}/tex/tex.fmt
+%{fmtdir}/pdftex/pdfetex.fmt
+%{fmtdir}/tex/tex.fmt
 
 %files -n texlive-dirs-fonts
 %defattr(644,root,root,755)
@@ -6775,6 +6806,15 @@ fi
 %{texmfdist}/tex/generic/omegahyph
 %{texmfdist}/tex/lambda
 %{texmfdist}/tex/plain/omega
+%{fmtdir}/aleph
+%{fmtdir}/omega
+
+%files -n texlive-jadetex
+%defattr(644,root,root,755)
+# %doc %{texmf-dist}/doc/otherformats/jadetex
+%{texmfdist}/tex/jadetex
+%{texmfdist}/source/jadetex
+%{fmtdir}/pdftex/jadetex.fmt
 
 %files -n texlive-scripts
 %defattr(644,root,root,755)
@@ -6861,7 +6901,13 @@ fi
 %defattr(644,root,root,755)
 %{texmfdist}/tex/physe
 # %{texmf}/fmtutil/format.physe.cnf
-#fmt %{fmtdir}/pdftex/physe.fmt
+%{fmtdir}/pdftex/physe.fmt
+
+%files -n texlive-phyzzx
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/otherformats/phyzzx
+%{texmfdist}/tex/phyzzx
+%{fmtdir}/pdftex/phyzzx.fmt
 
 %files -n texlive-tex-velthuis
 %defattr(644,root,root,755)
@@ -7118,7 +7164,7 @@ fi
 
 %files -n texlive-format-csplain
 %defattr(644,root,root,755)
-#fmt %{fmtdir}/pdftex/csplain.fmt
+%{fmtdir}/pdftex/csplain.fmt
 
 %files -n texlive-cslatex
 %defattr(644,root,root,755)
@@ -7703,8 +7749,8 @@ fi
 %{texmfdist}/tex/plain/etex
 # %{texmf}/tex/latex/config
 %{texmf}/tex/latex/dvipdfm
-#fmt %{fmtdir}/pdftex/latex.fmt
-#fmt %{fmtdir}/pdftex/mllatex.fmt
+%{fmtdir}/pdftex/latex.fmt
+%{fmtdir}/pdftex/mllatex.fmt
 
 %files -n texlive-latex-12many
 %defattr(644,root,root,755)
