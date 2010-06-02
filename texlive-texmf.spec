@@ -68,6 +68,7 @@ URL:		http://www.tug.org/texlive/
 BuildRequires:	rpm-perlprov
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
 %if %{without bootstrap}
 BuildRequires:	%{shortname}-context
