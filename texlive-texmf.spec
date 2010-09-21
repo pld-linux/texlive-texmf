@@ -5027,6 +5027,7 @@ for format in \
  	omega \
  	pdfcsplain \
  	pdfetex \
+ 	pdfjadetex \
  	pdflatex \
  	pdftex \
  	pdfxmltex \
@@ -6816,6 +6817,7 @@ fi
 %{texmfdist}/tex/jadetex
 %{texmfdist}/source/jadetex
 %{fmtdir}/pdftex/jadetex.fmt
+%{fmtdir}/pdftex/pdfjadetex.fmt
 
 %files -n texlive-scripts
 %defattr(644,root,root,755)
