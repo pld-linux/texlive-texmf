@@ -2336,6 +2336,7 @@ This package contains:
 - fouridx: left sub- and superscripts in maths mode.
 - functan: macros for functional analysis and PDE theory
 - galois: typeset Galois connections.
+- gene-logic: typeset logic formulae, etc.
 - gnuplottex: embed Gnuplot commands in LaTeX documents.
 - hhtensor: print vectors, matrices, and tensors.
 - logpap: generate logarithmic graph paper with LaTeX.
@@ -2381,6 +2382,7 @@ Ez a csomag a következőket tartalmazza:
 - fouridx: alsó és felső indexek bal oldalon matematikai módban
 - functan: funkcionálanalízés és PDE elmélethez makrók
 - galois: Galois kapcsolatok szedése
+- gene-logic: logikai formulák
 - gnuplottex: Gnuplot parancsok beágyazása LaTeX dokumentumokba
 - hhtensor: vetkorok, mátrixok és tenzorok nyomtatása
 - logpap: logaritmikus grafikonok
@@ -2443,12 +2445,14 @@ Requires:	%{shortname}-latex
 %description -n texlive-latex-music
 This package contains:
 - abc: support ABC music notation in LaTeX.
+- gchords: typeset guitar chords.
 - guitar: guitar chords and song texts.
 - songbook: package for typesetting song lyrics and chord books.
 
 %description -n texlive-latex-music -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
 - abc: ABC hangjegyzések LaTeX-ben
+- gchords: gitár akkordok szedése
 - guitar: gitárkották és dalszövegek
 - songbook: dalszövegek és akkordkönyvek szedése
 
@@ -8879,6 +8883,7 @@ fi
 %doc %{texmfdist}/doc/latex/fouridx
 %doc %{texmfdist}/doc/latex/functan
 %doc %{texmfdist}/doc/latex/galois
+%doc %{texmfdist}/doc/latex/gene-logic
 %doc %{texmfdist}/doc/latex/gnuplottex
 %doc %{texmfdist}/doc/latex/hhtensor
 %doc %{texmfdist}/doc/latex/logpap
@@ -8944,6 +8949,7 @@ fi
 %{texmfdist}/tex/latex/fouridx
 %{texmfdist}/tex/latex/functan
 %{texmfdist}/tex/latex/galois
+%{texmfdist}/tex/latex/gene-logic
 %{texmfdist}/tex/latex/gnuplottex
 %{texmfdist}/tex/latex/hhtensor
 %{texmfdist}/tex/latex/logpap
@@ -9569,6 +9575,7 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/musixps
 %doc %{texmfdist}/doc/latex/abc
+%doc %{texmfdist}/doc/latex/gchords
 %doc %{texmfdist}/doc/latex/guitar
 %doc %{texmfdist}/doc/latex/musixlyr
 %doc %{texmfdist}/doc/latex/songbook
@@ -9580,6 +9587,7 @@ fi
 %{texmfdist}/tex/generic/musixlyr
 %{texmfdist}/tex/generic/musixps
 %{texmfdist}/tex/latex/abc
+%{texmfdist}/tex/latex/gchords
 %{texmfdist}/tex/latex/guitar
 %{texmfdist}/tex/latex/songbook
 

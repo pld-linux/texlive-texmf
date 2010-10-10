@@ -1,4 +1,3 @@
-warning: Installed (but unpackaged) file(s) found:
    /usr/share/perl5/vendor_perl/TeXLive/Splashscreen.pm
    /usr/share/perl5/vendor_perl/TeXLive/TLConfig.pm
    /usr/share/perl5/vendor_perl/TeXLive/TLMedia.pm
@@ -1080,13 +1079,6 @@ warning: Installed (but unpackaged) file(s) found:
    /usr/share/texmf-dist/doc/latex/fn2end/fn2end.pdf
    /usr/share/texmf-dist/doc/latex/fn2end/fn2end.tex
    /usr/share/texmf-dist/doc/latex/fragments/README
-   /usr/share/texmf-dist/doc/latex/gchords/README
-   /usr/share/texmf-dist/doc/latex/gchords/chordbox.tcl
-   /usr/share/texmf-dist/doc/latex/gchords/gchords_doc.pdf
-   /usr/share/texmf-dist/doc/latex/gchords/gchords_doc.tex
-   /usr/share/texmf-dist/doc/latex/gchords/get2knowu.tex
-   /usr/share/texmf-dist/doc/latex/gene-logic/gn-logic14.pdf
-   /usr/share/texmf-dist/doc/latex/gene-logic/gn-logic14.tex
    /usr/share/texmf-dist/doc/latex/germkorr/COPYING
    /usr/share/texmf-dist/doc/latex/germkorr/README
    /usr/share/texmf-dist/doc/latex/germkorr/germkorr.pdf
@@ -2861,8 +2853,6 @@ warning: Installed (but unpackaged) file(s) found:
    /usr/share/texmf-dist/tex/latex/fragments/overrightarrow.sty
    /usr/share/texmf-dist/tex/latex/fragments/removefr.tex
    /usr/share/texmf-dist/tex/latex/fragments/subscript.sty
-   /usr/share/texmf-dist/tex/latex/gchords/gchords.sty
-   /usr/share/texmf-dist/tex/latex/gene-logic/gn-logic14.sty
    /usr/share/texmf-dist/tex/latex/germkorr/germkorr.sty
    /usr/share/texmf-dist/tex/latex/getfiledate/getfiledate.sty
    /usr/share/texmf-dist/tex/latex/gmdoc-enhance/gmdoc-enhance.sty
