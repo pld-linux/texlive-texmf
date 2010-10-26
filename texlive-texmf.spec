@@ -7869,10 +7869,22 @@ fi
 %{texmfdist}/bibtex/bib/adrconv
 %{texmfdist}/bibtex/bib/base
 
+# maybe can create subpackages
 %dir %{texmfdist}/bibtex/bst
 %{texmfdist}/bibtex/bst/adrconv
+%{texmfdist}/bibtex/bst/apalike*
+%{texmfdist}/bibtex/bst/arsclassica
 %{texmfdist}/bibtex/bst/base
+%{texmfdist}/bibtex/bst/bib-fr
+%{texmfdist}/bibtex/bst/cell
+%{texmfdist}/bibtex/bst/chembst
+%{texmfdist}/bibtex/bst/chicago-annote
+%{texmfdist}/bibtex/bst/disser
+%{texmfdist}/bibtex/bst/elsarticle
 %{texmfdist}/bibtex/bst/natbib
+%{texmfdist}/bibtex/bst/psu-thesis
+%{texmfdist}/bibtex/bst/sageep
+%{texmfdist}/bibtex/bst/xepersian
 
 %{texmfdist}/bibtex/csf/base
 
