@@ -12,49 +12,8 @@
    /usr/share/perl5/vendor_perl/TeXLive/TeXCatalogue.pm
    /usr/share/perl5/vendor_perl/TeXLive/waitVariableX.pm
    /usr/share/texmf-dist/README
-   /usr/share/texmf-dist/bibtex/bst/apalike/apalike.bst
-   /usr/share/texmf-dist/bibtex/bst/apalike2/apalike2.bst
-   /usr/share/texmf-dist/bibtex/bst/arsclassica/classic.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/abbrv-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/abbrvnat-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/alpha-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/apalike-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/ieeetr-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/plain-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/plainnat-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/siam-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/unsrt-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/bib-fr/unsrtnat-fr.bst
-   /usr/share/texmf-dist/bibtex/bst/cell/cell.bst
-   /usr/share/texmf-dist/bibtex/bst/chembst/ChemCommun.bst
-   /usr/share/texmf-dist/bibtex/bst/chembst/ChemEurJ.bst
-   /usr/share/texmf-dist/bibtex/bst/chembst/InorgChem.bst
-   /usr/share/texmf-dist/bibtex/bst/chembst/JAmChemSoc.bst
-   /usr/share/texmf-dist/bibtex/bst/chembst/JAmChemSoc_all.bst
-   /usr/share/texmf-dist/bibtex/bst/chembst/cv.bst
-   /usr/share/texmf-dist/bibtex/bst/chicago-annote/chicago-annote.bst
-   /usr/share/texmf-dist/bibtex/bst/disser/disser-s.bst
-   /usr/share/texmf-dist/bibtex/bst/disser/disser.bst
-   /usr/share/texmf-dist/bibtex/bst/elsarticle/elsarticle-harv.bst
-   /usr/share/texmf-dist/bibtex/bst/elsarticle/elsarticle-num-names.bst
-   /usr/share/texmf-dist/bibtex/bst/elsarticle/elsarticle-num.bst
-   /usr/share/texmf-dist/bibtex/bst/psu-thesis/psuthesis.bst
-   /usr/share/texmf-dist/bibtex/bst/sageep/sageep.bst
-   /usr/share/texmf-dist/bibtex/bst/xepersian/acm-fa.bst
-   /usr/share/texmf-dist/bibtex/bst/xepersian/ieeetr-fa.bst
-   /usr/share/texmf-dist/bibtex/bst/xepersian/plain-fa.bst
-   /usr/share/texmf-dist/bibtex/bst/xepersian/unsrt-fa.bst
    /usr/share/texmf-dist/doc/aleph/base/News
    /usr/share/texmf-dist/doc/aleph/base/readme.txt
-   /usr/share/texmf-dist/doc/amstex/base/README
-   /usr/share/texmf-dist/doc/amstex/base/amsguide.pdf
-   /usr/share/texmf-dist/doc/amstex/base/amsguide.tex
-   /usr/share/texmf-dist/doc/amstex/base/amsppt.doc
-   /usr/share/texmf-dist/doc/amstex/base/amsppt.faq
-   /usr/share/texmf-dist/doc/amstex/base/amstinst.ps.gz
-   /usr/share/texmf-dist/doc/amstex/base/amstinst.tex
-   /usr/share/texmf-dist/doc/amstex/base/joyerr.tex
-   /usr/share/texmf-dist/doc/amstex/base/joyerr2.tex
    /usr/share/texmf-dist/doc/fonts/Type1fonts/README
    /usr/share/texmf-dist/doc/fonts/Type1fonts/figuide-examples.tar.gz
    /usr/share/texmf-dist/doc/fonts/Type1fonts/figuide-source.tex.gz
@@ -1681,8 +1640,6 @@
    /usr/share/texmf-dist/doc/otherformats/jadetex/base/pdfjadetex.1
    /usr/share/texmf-dist/doc/otherformats/jadetex/base/releasenotes.dsl
    /usr/share/texmf-dist/doc/otherformats/jadetex/base/releasenotes.xml
-   /usr/share/texmf-dist/doc/otherformats/phyzzx/base/phyzdoc.dvi
-   /usr/share/texmf-dist/doc/otherformats/phyzzx/base/phyzdoc.tex
    /usr/share/texmf-dist/doc/otherformats/psizzl/base/psizzl.commands
    /usr/share/texmf-dist/doc/otherformats/psizzl/base/psizzl.doc
    /usr/share/texmf-dist/doc/otherformats/startex/base/guide.pdf
@@ -2412,9 +2369,6 @@
    /usr/share/texmf-dist/source/generic/vntex/vntex.dtx
    /usr/share/texmf-dist/source/generic/vntex/vntex.ins
    /usr/share/texmf-dist/source/generic/xlop/manual.sty
-   /usr/share/texmf-dist/source/jadetex/base/Makefile
-   /usr/share/texmf-dist/source/jadetex/base/jadetex.dtx
-   /usr/share/texmf-dist/source/jadetex/base/jadetex.ins
    /usr/share/texmf-dist/source/latex/algorithms/algorithms.dtx
    /usr/share/texmf-dist/source/latex/algorithms/algorithms.ins
    /usr/share/texmf-dist/source/latex/asyfig/asyfig.ins
@@ -2687,12 +2641,6 @@
    /usr/share/texmf-dist/tex/csplain/base/slovak.sty
    /usr/share/texmf-dist/tex/csplain/base/t1code.tex
    /usr/share/texmf-dist/tex/csplain/base/ttimes.tex
-   /usr/share/texmf-dist/tex/jadetex/base/dsssl.def
-   /usr/share/texmf-dist/tex/jadetex/base/jadetex.ini
-   /usr/share/texmf-dist/tex/jadetex/base/jadetex.ltx
-   /usr/share/texmf-dist/tex/jadetex/base/pdfjadetex.ini
-   /usr/share/texmf-dist/tex/jadetex/base/uentities.sty
-   /usr/share/texmf-dist/tex/jadetex/base/ut1omlgc.fd
    /usr/share/texmf-dist/tex/latex/anonchap/anonchap.sty
    /usr/share/texmf-dist/tex/latex/apalike/apalike.sty
    /usr/share/texmf-dist/tex/latex/arsclassica/adhoc.sty
@@ -2947,12 +2895,6 @@
    /usr/share/texmf-dist/tex/mex/utf8mex/utf8mex.ini
    /usr/share/texmf-dist/tex/mex/utf8mex/utf8plsq.tex
    /usr/share/texmf-dist/tex/mptopdf/config/mptopdf.ini
-   /usr/share/texmf-dist/tex/phyzzx/base/myphyx.tex
-   /usr/share/texmf-dist/tex/phyzzx/base/phyzzx.fonts
-   /usr/share/texmf-dist/tex/phyzzx/base/phyzzx.local
-   /usr/share/texmf-dist/tex/phyzzx/base/phyzzx.plus
-   /usr/share/texmf-dist/tex/phyzzx/base/phyzzx.tex
-   /usr/share/texmf-dist/tex/phyzzx/config/phyzzx.ini
    /usr/share/texmf-dist/tex/startex/base/a4-article.stx
    /usr/share/texmf-dist/tex/startex/base/article.stx
    /usr/share/texmf-dist/tex/startex/base/ifi-article.stx
@@ -3140,3 +3082,14 @@
    /usr/share/texmf/xdvi/pixmaps/toolbar.xpm
    /usr/share/texmf/xdvi/pixmaps/toolbar2.xpm
    /usr/share/texmf/xdvi/xdvi.cfg
+   /var/lib/texmf/web2c/pdftex/etex.fmt
+   /var/lib/texmf/web2c/pdftex/mex.fmt
+   /var/lib/texmf/web2c/pdftex/mptopdf.fmt
+   /var/lib/texmf/web2c/pdftex/pdfcsplain.fmt
+   /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+   /var/lib/texmf/web2c/pdftex/pdftex.fmt
+   /var/lib/texmf/web2c/pdftex/pdfxmltex.fmt
+   /var/lib/texmf/web2c/pdftex/texsis.fmt
+   /var/lib/texmf/web2c/pdftex/xmltex.fmt
+   /var/lib/texmf/web2c/xetex/xelatex.fmt
+   /var/lib/texmf/web2c/xetex/xetex.fmt
