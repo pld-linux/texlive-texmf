@@ -10,8 +10,8 @@
 %define shortname texlive
 
 #
-%define		year 2009
-%define		monthday 1107
+%define		year 2010
+%define		monthday 0722
 Summary:	TeX typesetting system and MetaFont font formatter
 Summary(de.UTF-8):	TeX-Satzherstellungssystem und MetaFont-Formatierung
 Summary(es.UTF-8):	Sistema de typesetting TeX y formateador de fuentes MetaFont
@@ -27,7 +27,7 @@ Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
 Source0:	ftp://tug.org/texlive/historic/%{year}/texlive-%{version}-texmf.tar.xz
-# Source0-md5:	5c6b33235ab3330626f58ca665d53a3c
+# Source0-md5:	12dec3a323c4eb75b98a3160c62dc865
 Source1:	http://mirror.ctan.org/language/hungarian/babel/magyar.ldf
 # Source1-md5:	3a5792398d46e6a6e70ef5006c4a2e55
 Source10:	http://tug.ctan.org/get/macros/latex/contrib/floatflt.zip
@@ -78,7 +78,9 @@ BuildRequires:	%{shortname}-format-eplain
 BuildRequires:	%{shortname}-format-mex
 BuildRequires:	%{shortname}-format-pdflatex
 BuildRequires:	%{shortname}-latex
+BuildRequires:	%{shortname}-latex-ams
 BuildRequires:	%{shortname}-latex-cyrillic
+BuildRequires:	%{shortname}-latex-extend
 BuildRequires:	%{shortname}-metapost
 BuildRequires:	%{shortname}-mex
 BuildRequires:	%{shortname}-omega
@@ -2256,6 +2258,10 @@ This package contains:
 - arcs: draw arcs over and under text
 - blowup: upscale or downscale all pages of a document.
 - changebar: generate changebars in LaTeX documents.
+- capt-of: captions on more than floats.
+- changebar: generate changebars in LaTeX documents.
+- changelayout: Change the layout of individual pages and their text.
+- censor: facilities for controlling restricted text in a document.
 - draftwatermark: put a grey textual watermark on document pages.
 - flippdf: horizontal flipping of pages with pdfLaTeX.
 - flowfram: create text frames for posters, brochures or magazines.
@@ -2274,7 +2280,10 @@ This package contains:
 Ez a csomag a következőket tartalmazza:
 - arcs: ívek rajzolása szöveg fölé és alá
 - blowup: a dokumentum összes oldalának nagyítása vagy kicsinyítése
+- capt-of: Captions on more than floats.
+- censor: facilities for controlling restricted text in a document.
 - changebar: oldalsávok készítése LaTeX dokumentumokban
+- changelayout: Change the layout of individual pages and their text.
 - draftwatermark: szürke szöveges vízjel a dokumentum oldalaira
 - flippdf: oldalak vízszintes tükrözése pdfLaTeX-hel
 - flowfram: szövegkeretek poszterekhez, brossúrákhoz vagy magazinokhoz
@@ -2321,8 +2330,9 @@ Requires:	gnuplot
 
 %description -n texlive-latex-math
 This package contains:
-- bez123: Support for Bezier curves.
-- binomexp: Calculate Pascal's triangle
+- bez123: support for Bezier curves.
+- binomexp: calculate Pascal's triangle
+- cases: numbered cases environment
 - cmll: symbols for linear logic.
 - constants: automatic numbering of constants.
 - coordsys: draw cartesian coordinate systems.
@@ -2369,6 +2379,7 @@ This package contains:
 Ez a csomag a következőket tartalmazza:
 - bez123: Bezier-görbék
 - binomexp: Pascal-háromszög számítása
+- cases: számozott esetszétválasztás
 - cmll: szimbólumok lineáris logikához
 - constants: változók automatikus sorszámozása
 - coordsys: Descartes-féle koordinátarendszerek rajzolása
@@ -2422,6 +2433,7 @@ Requires:	%{shortname}-latex
 %description -n texlive-latex-misc
 This packages contains:
 - cooking: typeset recipes.
+- cookybooky: typeset recipes.
 - cuisine: typeset recipes.
 - fixme: insert "fixme" notes into draft documents.
 - recipecard: typeset recipes in note-card-sized boxes.
@@ -2430,6 +2442,7 @@ This packages contains:
 %description -n texlive-latex-misc -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
 - cooking: receptek szedése
+- cookybooky: receptek szedése
 - cuisine: receptek szedése
 - fixme: "fixme" megjegyzések elhelyezése
 - recipecard: receptek szedése jegyzet-méretű dobozokba
@@ -2468,7 +2481,9 @@ Suggests:	%{shortname}-latex-siunitx
 
 %description -n texlive-latex-physics
 This package contains:
+- braket: Dirac bra-ket and set notations.
 - circ: macros for typesetting circuit diagrams.
+- circuitikz: draw electrical networks with TikZ.
 - colorwav: colours by wavelength of visible light.
 - dyntree: construct Dynkin tree diagrams.
 - feynmf: macros and fonts for creating Feynman (and other) diagrams.
@@ -2480,7 +2495,9 @@ This package contains:
 
 %description -n texlive-latex-physics -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
+- braket: Dirac bra-ket és halmaz jelölés
 - circ: áramkörök szedése
+- circuitikz: elektromos hálózatok TikZ segítségével
 - colorwav: a látható fény színei hullámhossz szerint
 - dyntree: Dynkin fadiagramok készítése
 - feynmf: makrók és fontok Feynman (és más) diagramok készítésére
@@ -2489,6 +2506,14 @@ Ez a csomag a következőket tartalmazza:
 - listofsymbols: szimbólumok listájának létrehozása és kezelése
 - miller: miller indexek szedése
 - susy: Szuper-Szimmetria elmélettel kapcsolatos munkákhoz makrók
+
+%package -n texlive-latex-bidi
+Summary:	Support for bidirectional typesetting in plain TeX and LaTeX
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+
+%description -n texlive-latex-bidi
+Support for bidirectional typesetting in plain TeX and LaTeX.
 
 %package -n texlive-latex-biology
 Summary:	Biological packages
@@ -2545,6 +2570,7 @@ This package contains:
 - chemarrow: arrows for use in chemistry.
 - chemcompounds: simple consecutive numbering of chemical compounds.
 - chemcono: support for compound numbers in chemistry documents.
+- chemfig: draw molecules with easy syntax.
 - chemstyle: writing chemistry with style.
 - mhchem: typeset chemical formulae/equations and Risk and Safety
   phrases
@@ -2556,6 +2582,7 @@ Ez a csomag a következőket tartalmazza:
 - chemarrow: kémiában használatos nyilak
 - chemcompounds: kémiai vegyületek számozása
 - chemcono: kémiai vegyületek kémiai dokumentumokbam
+- chemfig: molekulák rajzolása
 - chemstyle: kémiai dokumentum írása
 - mhchem: kémiai formulák/egyenletek szedése
 
@@ -2617,9 +2644,9 @@ Ez a csomag a következőket tartalmazza:
 - movie15: multimédia beillesztése
 - pdfcprot: activating and setting of character protruding using
   pdflatex.
-- pdftricks: pstricks támogatás pdfTeX-ben
 - pdfsync: provide links between source and PDF.
 - pdfscreen: képernyő alapú dokumentumok
+- pdftricks: pstricks támogatás pdfTeX-ben
 
 %package -n texlive-latex-microtype
 Summary:	An interface to the micro-typographic extensions of pdfTeX
@@ -4870,7 +4897,9 @@ install -d $RPM_BUILD_ROOT%{_datadir} \
 	$RPM_BUILD_ROOT%{_localstatedir}/fonts/map\
 	$RPM_BUILD_ROOT%{fmtdir}/pdftex
 
-xz -dc %{SOURCE0} | tar xf - -C $RPM_BUILD_ROOT%{_datadir}
+cd $RPM_BUILD_ROOT%{_datadir}
+tar xf %{SOURCE0}
+# xz -dc %{SOURCE0} | tar xf - -C $RPM_BUILD_ROOT%{_datadir}
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/texlive-%{version}-texmf/texmf $RPM_BUILD_ROOT%{texmf}
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/texlive-%{version}-texmf/texmf-dist $RPM_BUILD_ROOT%{texmfdist}
 # %{__mv} $RPM_BUILD_ROOT%{_datadir}/texlive-%{version}-texmf/texmf-doc $RPM_BUILD_ROOT%{texmfdoc}
@@ -4900,20 +4929,20 @@ CURDIR=$(pwd)
 # install magyar.ldf
 install %{SOURCE1} $RPM_BUILD_ROOT%{texmfdist}/tex/generic/babel
 
-install -d $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE50} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE51} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE52} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE53} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE54} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE55} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE56} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE57} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE58} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE59} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE60} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE61} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
-install %{SOURCE62} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install -d $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE50} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE51} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE52} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE53} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE54} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE55} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE56} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE57} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE58} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE59} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE60} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE61} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
+# install %{SOURCE62} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
 
 cd $RPM_BUILD_ROOT%{texmfdist}/tex/latex
 
@@ -5292,6 +5321,12 @@ fi
 %texhash
 
 %postun -n texlive-latex-games
+%texhash
+
+%post -n texlive-latex-bidi
+%texhash
+
+%postun -n texlive-latex-bidi
 %texhash
 
 %post -n texlive-latex-biology
@@ -6424,7 +6459,7 @@ fi
 %dir %{texmfdist}/tex/generic
 %dir %{texmfdist}/tex/generic/misc
 %dir %{texmfdist}/tex/latex
-# %doc %{texmfdist}/doc/fontname
+%doc %{texmfdist}/doc/fonts/fontname
 
 # ***********
 # executables
@@ -6578,6 +6613,10 @@ fi
 %files -n texlive-doc
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/dehyph-exptl
+%doc %{texmfdist}/doc/fonts/fontinst
+%doc %{texmfdist}/doc/generic/barr
+%doc %{texmfdist}/doc/generic/borceux
+%doc %{texmfdist}/doc/generic/c-pascal
 # %dir %{texmfdoc}
 # %dir %{texmfdoc}/doc
 # %{texmfdoc}/README
@@ -6714,7 +6753,9 @@ fi
 %doc %{texmfdist}/doc/latex/anysize
 %doc %{texmfdist}/doc/latex/base
 %doc %{texmfdist}/doc/latex/beton
-%doc %{texmfdist}/doc/latex/concmath
+#%doc %{texmfdist}/doc/latex/concmath
+%doc %{texmfdist}/doc/latex/changepage
+%doc %{texmfdist}/doc/latex/cjk
 %doc %{texmfdist}/doc/latex/crop
 %doc %{texmfdist}/doc/latex/draftcopy
 %doc %{texmfdist}/doc/latex/eepic
@@ -6879,8 +6920,8 @@ fi
 
 %files -n texlive-tex-arrayjob
 %defattr(644,root,root,755)
-%doc %{texmfdist}/doc/generic/arrayjob
-%{texmfdist}/tex/generic/arrayjob
+%doc %{texmfdist}/doc/generic/arrayjobx
+%{texmfdist}/tex/generic/arrayjobx
 
 %files -n texlive-tex-insbox
 %defattr(644,root,root,755)
@@ -6972,179 +7013,179 @@ fi
 
 %files -n xindy-albanian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/albanian
+%{texmf}/xindy/modules/lang/albanian
 
 %files -n xindy-belarusian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/belarusian
+%{texmf}/xindy/modules/lang/belarusian
 
 %files -n xindy-bulgarian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/bulgarian
+%{texmf}/xindy/modules/lang/bulgarian
 
 %files -n xindy-croatian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/croatian
+%{texmf}/xindy/modules/lang/croatian
 
 %files -n xindy-czech
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/czech
+%{texmf}/xindy/modules/lang/czech
 
 %files -n xindy-danish
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/danish
+%{texmf}/xindy/modules/lang/danish
 
 %files -n xindy-dutch
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/dutch
+%{texmf}/xindy/modules/lang/dutch
 
 %files -n xindy-english
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/english
+%{texmf}/xindy/modules/lang/english
 
 %files -n xindy-esperanto
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/esperanto
+%{texmf}/xindy/modules/lang/esperanto
 
 %files -n xindy-estonian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/estonian
+%{texmf}/xindy/modules/lang/estonian
 
 %files -n xindy-finnish
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/finnish
+%{texmf}/xindy/modules/lang/finnish
 
 %files -n xindy-french
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/french
+%{texmf}/xindy/modules/lang/french
 
 %files -n xindy-general
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/general
+%{texmf}/xindy/modules/lang/general
 
 %files -n xindy-georgian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/georgian
+%{texmf}/xindy/modules/lang/georgian
 
 %files -n xindy-german
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/german
+%{texmf}/xindy/modules/lang/german
 
 %files -n xindy-greek
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/greek
+%{texmf}/xindy/modules/lang/greek
 
 %files -n xindy-gypsy
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/gypsy
+%{texmf}/xindy/modules/lang/gypsy
 
 %files -n xindy-hausa
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/hausa
+%{texmf}/xindy/modules/lang/hausa
 
 %files -n xindy-hebrew
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/hebrew
+%{texmf}/xindy/modules/lang/hebrew
 
 %files -n xindy-hungarian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/hungarian
+%{texmf}/xindy/modules/lang/hungarian
 
 %files -n xindy-icelandic
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/icelandic
+%{texmf}/xindy/modules/lang/icelandic
 
 %files -n xindy-italian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/italian
+%{texmf}/xindy/modules/lang/italian
 
 %files -n xindy-klingon
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/klingon
+%{texmf}/xindy/modules/lang/klingon
 
 %files -n xindy-kurdish
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/kurdish
+%{texmf}/xindy/modules/lang/kurdish
 
 %files -n xindy-latin
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/latin
+%{texmf}/xindy/modules/lang/latin
 
 %files -n xindy-latvian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/latvian
+%{texmf}/xindy/modules/lang/latvian
 
 %files -n xindy-lithuanian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/lithuanian
+%{texmf}/xindy/modules/lang/lithuanian
 
 %files -n xindy-lower-sorbian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/lower-sorbian
+%{texmf}/xindy/modules/lang/lower-sorbian
 
 %files -n xindy-macedonian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/macedonian
+%{texmf}/xindy/modules/lang/macedonian
 
 %files -n xindy-mongolian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/mongolian
+%{texmf}/xindy/modules/lang/mongolian
 
 %files -n xindy-norwegian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/norwegian
+%{texmf}/xindy/modules/lang/norwegian
 
 %files -n xindy-polish
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/polish
+%{texmf}/xindy/modules/lang/polish
 
 %files -n xindy-portuguese
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/portuguese
+%{texmf}/xindy/modules/lang/portuguese
 
 %files -n xindy-romanian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/romanian
+%{texmf}/xindy/modules/lang/romanian
 
 %files -n xindy-russian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/russian
+%{texmf}/xindy/modules/lang/russian
 
 %files -n xindy-serbian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/serbian
+%{texmf}/xindy/modules/lang/serbian
 
 %files -n xindy-slovak
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/slovak
+%{texmf}/xindy/modules/lang/slovak
 
 %files -n xindy-slovenian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/slovenian
+%{texmf}/xindy/modules/lang/slovenian
 
 %files -n xindy-spanish
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/spanish
+%{texmf}/xindy/modules/lang/spanish
 
 %files -n xindy-swedish
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/swedish
+%{texmf}/xindy/modules/lang/swedish
 
 %files -n xindy-turkish
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/turkish
+%{texmf}/xindy/modules/lang/turkish
 
 %files -n xindy-ukrainian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/ukrainian
+%{texmf}/xindy/modules/lang/ukrainian
 
 %files -n xindy-upper-sorbian
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/upper-sorbian
+%{texmf}/xindy/modules/lang/upper-sorbian
 
 %files -n xindy-vietnamese
 %defattr(644,root,root,755)
-%{texmf}/xindy/lang/vietnamese/
+%{texmf}/xindy/modules/lang/vietnamese/
 
 %files -n texlive-plain
 %defattr(644,root,root,755)
@@ -7213,7 +7254,7 @@ fi
 %defattr(644,root,root,755)
 %{texmfdist}/tex/context/config/cont-en.ini
 # what is the difference betwen uk and en in this particular situation?
-%{texmfdist}/tex/context/config/cont-uk.ini
+# %{texmfdist}/tex/context/config/cont-uk.ini
 
 %files -n texlive-format-context-nl
 %defattr(644,root,root,755)
@@ -7266,7 +7307,7 @@ fi
 %{texmfdist}/tex/latex/archaic
 %{texmfdist}/tex/latex/arev
 %{texmfdist}/tex/latex/armenian
-%{texmfdist}/tex/latex/ascelike
+#%{texmfdist}/tex/latex/ascelike
 %{texmfdist}/tex/latex/ascii
 %{texmfdist}/tex/latex/assignment
 %{texmfdist}/tex/latex/augie
@@ -7314,7 +7355,7 @@ fi
 %{texmfdist}/tex/latex/casyl
 %{texmfdist}/tex/latex/catechis
 %{texmfdist}/tex/latex/cbcoptic
-%{texmfdist}/tex/latex/cbfonts
+#%{texmfdist}/tex/latex/cbfonts
 %{texmfdist}/tex/latex/cclicenses
 %{texmfdist}/tex/latex/cd-cover
 %{texmfdist}/tex/latex/cd
@@ -7362,7 +7403,7 @@ fi
 %{texmfdist}/tex/latex/cyklop
 %{texmfdist}/tex/latex/dateiliste
 %{texmfdist}/tex/latex/datetime
-%{texmfdist}/tex/latex/dcpic
+#%{texmfdist}/tex/latex/dcpic
 %{texmfdist}/tex/latex/decimal
 %{texmfdist}/tex/latex/diagnose
 %{texmfdist}/tex/latex/dichokey
@@ -7384,7 +7425,7 @@ fi
 %{texmfdist}/tex/latex/duerer-latex
 %{texmfdist}/tex/latex/dvdcoll
 %{texmfdist}/tex/latex/dvipdfmx-def
-%{texmfdist}/tex/latex/eCards
+#%{texmfdist}/tex/latex/eCards
 %{texmfdist}/tex/latex/ean13isbn
 %{texmfdist}/tex/latex/easy
 %{texmfdist}/tex/latex/ebezier
@@ -7438,7 +7479,7 @@ fi
 %{texmfdist}/tex/latex/eurosym
 %{texmfdist}/tex/latex/everypage
 %{texmfdist}/tex/latex/examplep
-%{texmfdist}/tex/latex/exceltex
+#%{texmfdist}/tex/latex/exceltex
 %{texmfdist}/tex/latex/exercise
 %{texmfdist}/tex/latex/expl3
 %{texmfdist}/tex/latex/extarrows
@@ -7698,7 +7739,7 @@ fi
 %{texmfdist}/tex/latex/units
 %{texmfdist}/tex/latex/unitsdef
 %{texmfdist}/tex/latex/universa
-%{texmfdist}/tex/latex/unroman
+#%{texmfdist}/tex/latex/unroman
 %{texmfdist}/tex/latex/upmethodology
 %{texmfdist}/tex/latex/upquote
 %{texmfdist}/tex/latex/varindex
@@ -7736,7 +7777,7 @@ fi
 %{texmfdist}/tex/latex/xpackages
 %{texmfdist}/tex/latex/xq
 %{texmfdist}/tex/latex/xskak
-%{texmfdist}/tex/latex/xstring
+#%{texmfdist}/tex/latex/xstring
 %{texmfdist}/tex/latex/xtab
 %{texmfdist}/tex/latex/xtcapts
 %{texmfdist}/tex/latex/xyling
@@ -7862,11 +7903,13 @@ fi
 %doc %{texmfdist}/doc/bibtex
 %doc %{texmfdist}/doc/latex/bibtopic
 %doc %{texmfdist}/doc/latex/bibunits
+%doc %{texmfdist}/doc/latex/chembst
 %doc %{texmfdist}/doc/latex/footbib
 %doc %{texmfdist}/doc/latex/natbib
+%doc %{texmfdist}/doc/latex/cell
 
 %dir %{texmfdist}/bibtex/bib
-%{texmfdist}/bibtex/bib/adrconv
+#%{texmfdist}/bibtex/bib/adrconv
 %{texmfdist}/bibtex/bib/base
 
 # maybe can create subpackages
@@ -7884,7 +7927,7 @@ fi
 %{texmfdist}/bibtex/bst/natbib
 %{texmfdist}/bibtex/bst/psu-thesis
 %{texmfdist}/bibtex/bst/sageep
-%{texmfdist}/bibtex/bst/xepersian
+#%{texmfdist}/bibtex/bst/xepersian
 
 %{texmfdist}/bibtex/csf/base
 
@@ -7913,6 +7956,8 @@ fi
 %defattr(644,root,root,755)
 %dir %{texmfdist}/source/latex/revtex
 %doc %{texmfdist}/doc/latex/revtex
+%{texmfdist}/bibtex/bib/revtex4
+%{texmfdist}/bibtex/bst/revtex4
 # %{texmfdist}/source/latex/revtex/revtex4.dtx
 # %{texmfdist}/source/latex/revtex/revtex4.ins
 # %{texmfdist}/tex/latex/revtex/revtex4.cls
@@ -7951,21 +7996,21 @@ fi
 %{texmfdist}/bibtex/bib/abstyles
 # %{texmfdist}/bibtex/bib/achemso
 %{texmfdist}/bibtex/bib/acmtrans
-%{texmfdist}/bibtex/bib/ascelike
+# %{texmfdist}/bibtex/bib/ascelike
 %{texmfdist}/bibtex/bib/beebe
 # %{texmfdist}/bibtex/bib/bibhtml
 # %{texmfdist}/bibtex/bib/bibtopic
-%{texmfdist}/bibtex/bib/din1505
+# %{texmfdist}/bibtex/bib/din1505
 %{texmfdist}/bibtex/bib/directory
-%{texmfdist}/bibtex/bib/figbib
+# %{texmfdist}/bibtex/bib/figbib
 %{texmfdist}/bibtex/bib/frankenstein
 %{texmfdist}/bibtex/bib/gatech-thesis
 # %{texmfdist}/bibtex/bib/geomsty
 %{texmfdist}/bibtex/bib/gloss
 %{texmfdist}/bibtex/bib/harvard
-%{texmfdist}/bibtex/bib/ieeepes
-%{texmfdist}/bibtex/bib/ijmart
-%{texmfdist}/bibtex/bib/imac
+# %{texmfdist}/bibtex/bib/ieeepes
+# %{texmfdist}/bibtex/bib/ijmart
+# %{texmfdist}/bibtex/bib/imac
 %{texmfdist}/bibtex/bib/index
 %{texmfdist}/bibtex/bib/lsc
 %{texmfdist}/bibtex/bib/msc
@@ -8086,17 +8131,17 @@ fi
 %doc %{texmfdist}/doc/latex/cmbright
 %{texmfdist}/tex/latex/cmbright
 
-# %files -n texlive-latex-colortab
-# %defattr(644,root,root,755)
-# %doc %{texmfdist}/doc/generic/colortab
+%files -n texlive-latex-colortab
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/generic/colortab
 # %{texmfdist}/tex/latex/colortab
-# %{texmfdist}/tex/generic/colortab
+%{texmfdist}/tex/generic/colortab
 
 %files -n texlive-latex-comment
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/comment
 %{texmfdist}/tex/latex/comment
-%{texmfdist}/source/latex/comment
+# %{texmfdist}/source/latex/comment
 
 %files -n texlive-latex-concmath
 %defattr(644,root,root,755)
@@ -8144,21 +8189,21 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/alterqcm
 %doc %{texmfdist}/doc/latex/answers
-%doc %{texmfdist}/doc/latex/eqexam
+# %doc %{texmfdist}/doc/latex/eqexam
 %doc %{texmfdist}/doc/latex/exam
 %doc %{texmfdist}/doc/latex/examdesign
 %doc %{texmfdist}/doc/latex/mathexam
 %doc %{texmfdist}/doc/latex/probsoln
 %doc %{texmfdist}/doc/latex/qcm
 %doc %{texmfdist}/doc/latex/uebungsblatt
-%{texmfdist}/source/latex/eqexam
+# %{texmfdist}/source/latex/eqexam
 %{texmfdist}/source/latex/examdesign
 %{texmfdist}/source/latex/mathexam
 %{texmfdist}/source/latex/probsoln
 %{texmfdist}/source/latex/qcm
 %{texmfdist}/tex/latex/alterqcm
 %{texmfdist}/tex/latex/answers
-%{texmfdist}/tex/latex/eqexam
+# %{texmfdist}/tex/latex/eqexam
 %{texmfdist}/tex/latex/exam
 %{texmfdist}/tex/latex/examdesign
 %{texmfdist}/tex/latex/mathexam
@@ -8268,6 +8313,7 @@ fi
 
 %files -n texlive-latex-marvosym
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/fonts/marvosym
 %{texmfdist}/tex/latex/marvosym
 
 %files -n texlive-latex-microtype
@@ -8287,6 +8333,9 @@ fi
 %doc %{texmfdist}/doc/latex/cooking
 %{texmfdist}/source/latex/cooking
 %{texmfdist}/tex/latex/cooking
+%doc %{texmfdist}/doc/latex/cookybooky
+%{texmfdist}/source/latex/cookybooky
+%{texmfdist}/tex/latex/cookybooky
 %doc %{texmfdist}/doc/latex/cuisine
 %{texmfdist}/source/latex/cuisine
 %{texmfdist}/tex/latex/cuisine
@@ -8441,7 +8490,7 @@ fi
 %doc %{texmfdist}/doc/latex/cweb-latex
 %doc %{texmfdist}/doc/latex/dateiliste
 %doc %{texmfdist}/doc/latex/datetime
-%doc %{texmfdist}/doc/latex/dcpic
+# %doc %{texmfdist}/doc/latex/dcpic
 %doc %{texmfdist}/doc/latex/diagnose
 %doc %{texmfdist}/doc/latex/dichokey
 %doc %{texmfdist}/doc/latex/digiconfigs
@@ -8459,7 +8508,7 @@ fi
 %doc %{texmfdist}/doc/latex/dtxgallery
 %doc %{texmfdist}/doc/latex/duerer-latex
 %doc %{texmfdist}/doc/latex/dvdcoll
-%doc %{texmfdist}/doc/latex/eCards
+# %doc %{texmfdist}/doc/latex/eCards
 %doc %{texmfdist}/doc/latex/ean13isbn
 %doc %{texmfdist}/doc/latex/easy
 %doc %{texmfdist}/doc/latex/ebezier
@@ -8501,7 +8550,7 @@ fi
 %doc %{texmfdist}/doc/latex/eurosans
 %doc %{texmfdist}/doc/latex/everypage
 %doc %{texmfdist}/doc/latex/examplep
-%doc %{texmfdist}/doc/latex/exceltex
+# %doc %{texmfdist}/doc/latex/exceltex
 %doc %{texmfdist}/doc/latex/exercise
 %doc %{texmfdist}/doc/latex/expl3
 %doc %{texmfdist}/doc/latex/extarrows
@@ -8704,13 +8753,13 @@ fi
 %doc %{texmfdist}/doc/latex/refstyle
 %doc %{texmfdist}/doc/latex/relenc
 %doc %{texmfdist}/doc/latex/repeatindex
-%doc %{texmfdist}/doc/latex/rlepsf
+# %doc %{texmfdist}/doc/latex/rlepsf
 %doc %{texmfdist}/doc/latex/rmpage
 %doc %{texmfdist}/doc/latex/robustindex
 # %doc %{texmfdist}/doc/latex/rst
 %doc %{texmfdist}/doc/latex/rtkinenc
 %doc %{texmfdist}/doc/latex/rtklage
-%doc %{texmfdist}/doc/latex/sagetex
+# %doc %{texmfdist}/doc/latex/sagetex
 %doc %{texmfdist}/doc/latex/sanskrit
 %doc %{texmfdist}/doc/latex/sauerj
 %doc %{texmfdist}/doc/latex/sauterfonts
@@ -8796,7 +8845,7 @@ fi
 %doc %{texmfdist}/doc/latex/toolbox
 %doc %{texmfdist}/doc/latex/toptesi
 %doc %{texmfdist}/doc/latex/trajan
-%doc %{texmfdist}/doc/latex/translator
+# %doc %{texmfdist}/doc/latex/translator
 %doc %{texmfdist}/doc/latex/trivfloat
 %doc %{texmfdist}/doc/latex/turnstile
 %doc %{texmfdist}/doc/latex/twoup
@@ -8804,7 +8853,7 @@ fi
 %doc %{texmfdist}/doc/latex/umlaute
 %doc %{texmfdist}/doc/latex/undertilde
 %doc %{texmfdist}/doc/latex/unitsdef
-%doc %{texmfdist}/doc/latex/unroman
+# %doc %{texmfdist}/doc/latex/unroman
 %doc %{texmfdist}/doc/latex/upmethodology
 %doc %{texmfdist}/doc/latex/urlbst
 %doc %{texmfdist}/doc/latex/varindex
@@ -8883,6 +8932,8 @@ fi
 %doc %{texmfdist}/doc/latex/bez123
 %doc %{texmfdist}/doc/latex/binomexp
 # %doc %{texmfdist}/doc/latex/cmll
+%doc %{texmfdist}/doc/latex/cancel
+%doc %{texmfdist}/doc/latex/cases
 %doc %{texmfdist}/doc/latex/constants
 %doc %{texmfdist}/doc/latex/coordsys
 %doc %{texmfdist}/doc/latex/egplot
@@ -8948,6 +8999,8 @@ fi
 %{texmfdist}/tex/latex/bez123
 %{texmfdist}/tex/latex/binomexp
 %{texmfdist}/tex/latex/cmll
+%{texmfdist}/tex/latex/cancel
+%{texmfdist}/tex/latex/cases
 %{texmfdist}/tex/latex/constants
 %{texmfdist}/tex/latex/coordsys
 %{texmfdist}/tex/latex/dotseqn
@@ -8996,11 +9049,13 @@ fi
 
 %files -n texlive-latex-physics
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/braket
 %doc %{texmfdist}/doc/latex/circ
+%doc %{texmfdist}/doc/latex/circuitikz
 %doc %{texmfdist}/doc/latex/colorwav
 %doc %{texmfdist}/doc/latex/dyntree
 %doc %{texmfdist}/doc/latex/feynmf
-%doc %{texmfdist}/doc/latex/formula
+# %doc %{texmfdist}/doc/latex/formula
 %doc %{texmfdist}/doc/latex/listofsymbols
 %doc %{texmfdist}/doc/latex/miller
 %doc %{texmfdist}/doc/latex/susy
@@ -9009,14 +9064,16 @@ fi
 %{texmfdist}/source/latex/colorwav
 %{texmfdist}/source/latex/dyntree
 %{texmfdist}/source/latex/feynmf
-%{texmfdist}/source/latex/formula
+# %{texmfdist}/source/latex/formula
 %{texmfdist}/source/latex/isotope
 %{texmfdist}/source/latex/miller
+%{texmfdist}/tex/latex/braket
 %{texmfdist}/tex/latex/circ
+%{texmfdist}/tex/latex/circuitikz
 %{texmfdist}/tex/latex/colorwav
 %{texmfdist}/tex/latex/dyntree
 %{texmfdist}/tex/latex/feynmf
-%{texmfdist}/tex/latex/formula
+# %{texmfdist}/tex/latex/formula
 %{texmfdist}/tex/latex/isotope
 %{texmfdist}/tex/latex/listofsymbols
 %{texmfdist}/tex/latex/miller
@@ -9033,6 +9090,7 @@ fi
 %doc %{texmfdist}/doc/fonts/chemarrow
 %doc %{texmfdist}/doc/latex/chemcompounds
 %doc %{texmfdist}/doc/latex/chemcono
+%doc %{texmfdist}/doc/latex/chemfig
 %{texmfdist}/fonts/afm/public/chemarrow
 %{texmfdist}/fonts/map/dvips/chemarrow
 %{texmfdist}/fonts/source/public/chemarrow
@@ -9047,8 +9105,14 @@ fi
 %{texmfdist}/tex/latex/chemarrow
 %{texmfdist}/tex/latex/chemcompounds
 %{texmfdist}/tex/latex/chemcono
+%{texmfdist}/tex/latex/chemfig
 %{texmfdist}/tex/latex/chemstyle
 %{texmfdist}/tex/latex/mhchem
+
+%files -n texlive-latex-bidi
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/bidi
+%{texmfdist}/tex/latex/bidi
 
 %files -n texlive-latex-biology
 %defattr(644,root,root,755)
@@ -9108,10 +9172,12 @@ fi
 %files -n texlive-latex-games
 %defattr(644,root,root,755)
 # %doc %{texmfdist}/doc/latex/backgammon
+%doc %{texmfdist}/doc/latex/chess-problem-diagrams
 %doc %{texmfdist}/doc/latex/chessboard
 %doc %{texmfdist}/doc/latex/chessfss
+%doc %{texmfdist}/doc/latex/crossword
 %doc %{texmfdist}/doc/latex/crosswrd
-%doc %{texmfdist}/doc/latex/cwpuzzle
+# %doc %{texmfdist}/doc/latex/cwpuzzle
 %doc %{texmfdist}/doc/latex/jeopardy
 %doc %{texmfdist}/doc/latex/othello
 %doc %{texmfdist}/doc/latex/sgame
@@ -9119,7 +9185,7 @@ fi
 %doc %{texmfdist}/doc/latex/sudoku
 %doc %{texmfdist}/doc/latex/sudokubundle
 %{texmfdist}/fonts/enc/dvips/chessfss
-%{texmfdist}/fonts/map/dvips/skak
+# %{texmfdist}/fonts/map/dvips/skak
 # %{texmfdist}/fonts/source/public/backgammon
 %{texmfdist}/fonts/source/public/cchess
 %{texmfdist}/fonts/source/public/chess
@@ -9132,10 +9198,11 @@ fi
 %{texmfdist}/fonts/tfm/public/othello
 %{texmfdist}/fonts/tfm/public/skak
 # %{texmfdist}/source/latex/backgammon
+%{texmfdist}/source/latex/chess-problem-diagrams
 %{texmfdist}/source/latex/chessboard
 %{texmfdist}/source/latex/chessfss
 %{texmfdist}/source/latex/crosswrd
-%{texmfdist}/source/latex/cwpuzzle
+# %{texmfdist}/source/latex/cwpuzzle
 %{texmfdist}/source/latex/go
 %{texmfdist}/source/latex/jeopardy
 # %{texmfdist}/source/latex/othello
@@ -9144,10 +9211,12 @@ fi
 # %{texmfdist}/tex/latex/backgammon
 %{texmfdist}/tex/latex/cchess
 %{texmfdist}/tex/latex/chess
+%{texmfdist}/tex/latex/chess-problem-diagrams
 %{texmfdist}/tex/latex/chessboard
 %{texmfdist}/tex/latex/chessfss
+%{texmfdist}/tex/latex/crossword
 %{texmfdist}/tex/latex/crosswrd
-%{texmfdist}/tex/latex/cwpuzzle
+# %{texmfdist}/tex/latex/cwpuzzle
 %{texmfdist}/tex/latex/go
 %{texmfdist}/tex/latex/jeopardy
 %{texmfdist}/tex/latex/othello
@@ -9162,7 +9231,7 @@ fi
 %{texmfdist}/source/latex/adrlist
 %{texmfdist}/source/latex/altfont
 %{texmfdist}/source/latex/ascii
-%{texmfdist}/source/latex/augie
+# %{texmfdist}/source/latex/augie
 %{texmfdist}/source/latex/barcodes
 %{texmfdist}/source/latex/bbding
 %{texmfdist}/source/latex/bbm-macros
@@ -9170,14 +9239,14 @@ fi
 %{texmfdist}/source/latex/beton
 %{texmfdist}/source/latex/bibarts
 %{texmfdist}/source/latex/bibleref
-%{texmfdist}/source/latex/biblist
+# %{texmfdist}/source/latex/biblist
 %{texmfdist}/source/latex/bigfoot
 %{texmfdist}/source/latex/bizcard
 %{texmfdist}/source/latex/blindtext
 %{texmfdist}/source/latex/bookhands
 %{texmfdist}/source/latex/bophook
 %{texmfdist}/source/latex/boxhandler
-%{texmfdist}/source/latex/braille
+# %{texmfdist}/source/latex/braille
 %{texmfdist}/source/latex/breakurl
 %{texmfdist}/source/latex/brushscr
 %{texmfdist}/source/latex/burmese
@@ -9191,7 +9260,7 @@ fi
 %{texmfdist}/source/latex/chapterfolder
 %{texmfdist}/source/latex/cleveref
 %{texmfdist}/source/latex/cmcyralt
-%{texmfdist}/source/latex/cmsd
+# %{texmfdist}/source/latex/cmsd
 %{texmfdist}/source/latex/codepage
 %{texmfdist}/source/latex/confproc
 %{texmfdist}/source/latex/coverpage
@@ -9202,7 +9271,7 @@ fi
 %{texmfdist}/source/latex/dateiliste
 %{texmfdist}/source/latex/datetime
 %{texmfdist}/source/latex/decimal
-%{texmfdist}/source/latex/diagnose
+# %{texmfdist}/source/latex/diagnose
 %{texmfdist}/source/latex/docmfp
 %{texmfdist}/source/latex/doipubmed
 %{texmfdist}/source/latex/dotarrow
@@ -9210,7 +9279,7 @@ fi
 %{texmfdist}/source/latex/drac
 %{texmfdist}/source/latex/draftcopy
 %{texmfdist}/source/latex/dramatist
-%{texmfdist}/source/latex/eCards
+# %{texmfdist}/source/latex/eCards
 %{texmfdist}/source/latex/ebezier
 %{texmfdist}/source/latex/ebsthesis
 %{texmfdist}/source/latex/ecclesiastic
@@ -9244,7 +9313,7 @@ fi
 %{texmfdist}/source/latex/fancyref
 %{texmfdist}/source/latex/fancytooltips
 %{texmfdist}/source/latex/fancyvrb
-%{texmfdist}/source/latex/figsize
+# %{texmfdist}/source/latex/figsize
 %{texmfdist}/source/latex/filecontents
 %{texmfdist}/source/latex/fink
 %{texmfdist}/source/latex/flabels
@@ -9275,7 +9344,7 @@ fi
 %{texmfdist}/source/latex/hanging
 %{texmfdist}/source/latex/harvard
 %{texmfdist}/source/latex/hc
-%{texmfdist}/source/latex/hepthesis
+# %{texmfdist}/source/latex/hepthesis
 # %{texmfdist}/source/latex/hilowres
 %{texmfdist}/source/latex/histogr
 %{texmfdist}/source/latex/hpsdiss
@@ -9285,7 +9354,7 @@ fi
 %{texmfdist}/source/latex/hyphenat
 %{texmfdist}/source/latex/ibycus-babel
 %{texmfdist}/source/latex/icsv
-%{texmfdist}/source/latex/ifmslide
+# %{texmfdist}/source/latex/ifmslide
 %{texmfdist}/source/latex/ifplatform
 %{texmfdist}/source/latex/ijmart
 %{texmfdist}/source/latex/imtekda
@@ -9353,7 +9422,7 @@ fi
 %{texmfdist}/source/latex/talk
 %{texmfdist}/source/latex/tcldoc
 %{texmfdist}/source/latex/tdsfrmath
-%{texmfdist}/source/latex/technics
+# %{texmfdist}/source/latex/technics
 %{texmfdist}/source/latex/ted
 %{texmfdist}/source/latex/tengwarscript
 %{texmfdist}/source/latex/tensor
@@ -9379,8 +9448,8 @@ fi
 %{texmfdist}/source/latex/undertilde
 %{texmfdist}/source/latex/units
 %{texmfdist}/source/latex/unitsdef
-%{texmfdist}/source/latex/unroman
-%{texmfdist}/source/latex/upmethodology
+# %{texmfdist}/source/latex/unroman
+# %{texmfdist}/source/latex/upmethodology
 %{texmfdist}/source/latex/urlbst
 %{texmfdist}/source/latex/varindex
 %{texmfdist}/source/latex/vector
@@ -9461,7 +9530,7 @@ fi
 # %{texmfdist}/bibtex/bib/apacite
 # %{texmfdist}/bibtex/bib/asaetr
 %{texmfdist}/bibtex/bib/computational-complexity
-%{texmfdist}/bibtex/bib/dtk
+# %{texmfdist}/bibtex/bib/dtk
 %{texmfdist}/bibtex/bib/philosophersimprint
 %{texmfdist}/bibtex/bst/aiaa
 %{texmfdist}/bibtex/bst/apacite
@@ -9477,9 +9546,9 @@ fi
 %{texmfdist}/source/latex/apacite
 # %{texmfdist}/source/latex/asaetr
 %{texmfdist}/source/latex/computational-complexity
-%{texmfdist}/source/latex/dtk
+# %{texmfdist}/source/latex/dtk
 %{texmfdist}/source/latex/elsarticle
-%{texmfdist}/source/latex/lexikon
+# %{texmfdist}/source/latex/lexikon
 %{texmfdist}/source/latex/lps
 %{texmfdist}/source/latex/manuscript
 %{texmfdist}/source/latex/mentis
@@ -9712,7 +9781,7 @@ fi
 %{texmfdist}/tex/latex/expdlist
 %{texmfdist}/tex/latex/leading
 %{texmfdist}/tex/latex/listliketab
-%{texmfdist}/tex/latex/ltablex
+# %{texmfdist}/tex/latex/ltablex
 %{texmfdist}/tex/latex/makebox
 %{texmfdist}/tex/latex/makecell
 %{texmfdist}/tex/latex/marginnote
@@ -9844,7 +9913,10 @@ fi
 # %doc %{texmfdist}/doc/fonts/umrand
 %doc %{texmfdist}/doc/latex/arcs
 %doc %{texmfdist}/doc/latex/blowup
+%doc %{texmfdist}/doc/latex/capt-of
 %doc %{texmfdist}/doc/latex/changebar
+%doc %{texmfdist}/doc/latex/changelayout
+%doc %{texmfdist}/doc/latex/censor
 %doc %{texmfdist}/doc/latex/draftwatermark
 %doc %{texmfdist}/doc/latex/flippdf
 %doc %{texmfdist}/doc/latex/flowfram
@@ -9879,7 +9951,10 @@ fi
 %{texmfdist}/source/latex/ushort
 %{texmfdist}/tex/latex/arcs
 %{texmfdist}/tex/latex/blowup
+%{texmfdist}/tex/latex/capt-of
+%{texmfdist}/tex/latex/censor
 %{texmfdist}/tex/latex/changebar
+%{texmfdist}/tex/latex/changelayout
 %{texmfdist}/tex/latex/draftwatermark
 %{texmfdist}/tex/latex/flippdf
 %{texmfdist}/tex/latex/flowfram
@@ -9903,7 +9978,7 @@ fi
 %{texmfdist}/source/alatex/base
 %dir %{texmfdist}/source/cslatex
 %{texmfdist}/source/cslatex/base
-%{texmfdist}/source/generic/xypic
+# %{texmfdist}/source/generic/xypic
 # %{texmfdist}/source/latex/GuIT
 # Definitive source of Plain TeX on CTAN.
 %{texmfdist}/source/latex/base
@@ -9919,7 +9994,7 @@ fi
 # Ridgeway's fonts.
 %{texmfdist}/source/latex/wnri
 %dir %{texmfdist}/source/plain
-%{texmfdist}/source/plain/jsmisc
+# %{texmfdist}/source/plain/jsmisc
 %{texmfdist}/tex/alatex
 %{texmfdist}/tex/generic/enctex
 # Create a calendar, in German.
@@ -10025,7 +10100,7 @@ fi
 %{texmfdist}/source/latex/multibbl
 %{texmfdist}/tex/latex/multibbl
 # Support for Mongolian "horizontal" (Xewtee Dorwoljin) script.
-%{texmfdist}/source/latex/mxd
+# %{texmfdist}/source/latex/mxd
 %{texmfdist}/tex/latex/mxd
 # A pair of Georgian fonts.
 %{texmfdist}/tex/latex/mxedruli
@@ -10166,9 +10241,9 @@ fi
 %{texmfdist}/tex/latex/repeatindex
 # %{texmfdist}/tex/latex/resume
 # Rewrite labels in EPS graphics.
-%{texmfdist}/tex/latex/rlepsf
+# %{texmfdist}/tex/latex/rlepsf
 # A package to help change page layout parameters in LaTeX.
-%{texmfdist}/source/latex/rmpage
+# %{texmfdist}/source/latex/rmpage
 %{texmfdist}/tex/latex/rmpage
 # Create index with pagerefs.
 %{texmfdist}/tex/latex/robustindex
@@ -10180,8 +10255,8 @@ fi
 %{texmfdist}/tex/latex/rtkinenc
 %{texmfdist}/tex/latex/rtklage
 # Embed Sage code and plots into LaTeX.
-%{texmfdist}/source/latex/sagetex
-%{texmfdist}/tex/latex/sagetex
+# %{texmfdist}/source/latex/sagetex
+# %{texmfdist}/tex/latex/sagetex
 # Sanskrit support.
 %{texmfdist}/source/latex/sanskrit
 %{texmfdist}/tex/latex/sanskrit
@@ -10302,8 +10377,8 @@ fi
 %{texmfdist}/source/latex/svninfo
 %{texmfdist}/tex/latex/svninfo
 # Graphical/textual representations of swimming performances
-%{texmfdist}/source/latex/swimgraf
-%{texmfdist}/tex/latex/swimgraf
+# %{texmfdist}/source/latex/swimgraf
+# %{texmfdist}/tex/latex/swimgraf
 %{texmfdist}/tex/latex/symbol
 # Easy drawing of syntactic proofs.
 %{texmfdist}/tex/latex/synproof
@@ -10333,7 +10408,7 @@ fi
 %{texmfdist}/source/latex/trajan
 %{texmfdist}/tex/latex/trajan
 # Provide an open platform for packages to be localized.
-%{texmfdist}/tex/latex/translator
+# %{texmfdist}/tex/latex/translator
 # Quick float definitions in LaTeX.
 %{texmfdist}/source/latex/trivfloat
 %{texmfdist}/tex/latex/trivfloat
@@ -10347,9 +10422,7 @@ fi
 %{texmfdist}/tex/latex/typogrid
 # Time printing, in German.
 %{texmfdist}/tex/latex/uhrzeit
-
-
-%{texmfdist}/source/latex/nicetext
+# %{texmfdist}/source/latex/nicetext
 %{texmfdist}/tex/latex/nicetext
 %{texmfdist}/source/latex/pagecont
 %{texmfdist}/tex/latex/pagecont
@@ -10367,8 +10440,8 @@ fi
 %{texmfdist}/source/latex/pstool
 %{texmfdist}/tex/latex/pstool
 %{texmfdist}/tex/latex/pstricks
-%{texmfdist}/source/latex/rangen
-%{texmfdist}/tex/latex/rangen
+# %{texmfdist}/source/latex/rangen
+# %{texmfdist}/tex/latex/rangen
 %{texmfdist}/source/latex/rcs-multi
 %{texmfdist}/tex/latex/rcs-multi
 %{texmfdist}/tex/latex/recipe
@@ -10622,7 +10695,7 @@ fi
 %{texmfdist}/source/generic/pst-diffraction
 %{texmfdist}/source/generic/pst-eps
 %{texmfdist}/source/generic/pst-fill
-%{texmfdist}/source/generic/pst-fractal
+# %{texmfdist}/source/generic/pst-fractal
 %{texmfdist}/source/generic/pst-fun
 %{texmfdist}/source/generic/pst-func
 %{texmfdist}/source/generic/pst-lens
@@ -10638,7 +10711,7 @@ fi
 %{texmfdist}/source/latex/auto-pst-pdf
 %{texmfdist}/source/latex/pst-gr3d
 %{texmfdist}/source/latex/pst-pdf
-%{texmfdist}/source/latex/pst-poly
+# %{texmfdist}/source/latex/pst-poly
 %{texmfdist}/tex/generic/pst-abspos
 %{texmfdist}/tex/generic/pst-asr
 %{texmfdist}/tex/generic/pst-barcode
@@ -10833,6 +10906,23 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/pstricks
 %doc %{texmfdist}/doc/generic/pstricks-add
+%doc %{texmfdist}/doc/generic/pst-abspos
+%doc %{texmfdist}/doc/generic/pst-am
+%doc %{texmfdist}/doc/generic/pst-bezier
+%doc %{texmfdist}/doc/generic/pst-bspline
+%doc %{texmfdist}/doc/generic/pst-electricfield
+%doc %{texmfdist}/doc/generic/pst-gantt
+%doc %{texmfdist}/doc/generic/pst-knot
+%doc %{texmfdist}/doc/generic/pst-magneticfield
+%doc %{texmfdist}/doc/generic/pst-mirror
+%doc %{texmfdist}/doc/generic/pst-node
+%doc %{texmfdist}/doc/generic/pst-platon
+%doc %{texmfdist}/doc/generic/pst-plot
+%doc %{texmfdist}/doc/generic/pst-sigsys
+%doc %{texmfdist}/doc/generic/pst-support
+%doc %{texmfdist}/doc/generic/pst-thick
+%doc %{texmfdist}/doc/generic/pst-tree
+%doc %{texmfdist}/doc/generic/pstricks-tutorial
 %{texmfdist}/tex/generic/pstricks
 %{texmfdist}/tex/latex/pstricks-add
 %{texmfdist}/source/generic/pstricks-add
@@ -11046,8 +11136,8 @@ fi
 %files -n texlive-fonts-concmath
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/fonts/concmath
-%{texmfdist}/fonts/source/public/concmath
-%{texmfdist}/fonts/tfm/public/concmath
+# %{texmfdist}/fonts/source/public/concmath
+# %{texmfdist}/fonts/tfm/public/concmath
 %{texmfdist}/source/latex/concmath
 %{texmfdist}/tex/latex/concmath
 
@@ -11258,10 +11348,10 @@ fi
 %{texmfdist}/fonts/type1/vntex/arevvn
 
 %{texmfdist}/fonts/afm/arkandis
-%{texmfdist}/fonts/opentype/arkandis
+# %{texmfdist}/fonts/opentype/arkandis
 %{texmfdist}/fonts/vf/arkandis
 %{texmfdist}/fonts/tfm/arkandis
-%{texmfdist}/fonts/truetype/arkandis
+# %{texmfdist}/fonts/truetype/arkandis
 %{texmfdist}/fonts/type1/arkandis
 
 %{texmfdist}/fonts/source/public/ar
@@ -11438,18 +11528,18 @@ fi
 %{texmfdist}/fonts/source/public/cmpica
 %{texmfdist}/fonts/tfm/public/cmpica
 
-%{texmfdist}/fonts/map/dvips/vntex/comicvn.map
-%{texmfdist}/fonts/tfm/vntex/comicsansvn
-%{texmfdist}/fonts/type1/vntex/comicsansvn
-%{texmfdist}/fonts/vf/vntex/comicsansvn
+# %{texmfdist}/fonts/map/dvips/vntex/comicvn.map
+# %{texmfdist}/fonts/tfm/vntex/comicsansvn
+# %{texmfdist}/fonts/type1/vntex/comicsansvn
+# %{texmfdist}/fonts/vf/vntex/comicsansvn
 
 %{texmfdist}/fonts/map/dvips/vntex/concretevn.map
 %{texmfdist}/fonts/tfm/vntex/concretevn
 %{texmfdist}/fonts/type1/vntex/concretevn
 
 %{texmfdist}/fonts/afm/ibm
-%{texmfdist}/fonts/tfm/ibm
-%{texmfdist}/fonts/vf/ibm
+# %{texmfdist}/fonts/tfm/ibm
+# %{texmfdist}/fonts/vf/ibm
 %{texmfdist}/fonts/map/dvips/courier
 %{texmfdist}/fonts/tfm/cspsfonts-adobe
 %{texmfdist}/fonts/vf/cspsfonts-adobe
@@ -11863,8 +11953,8 @@ fi
 %{texmfdist}/fonts/tfm/public/montex
 %{texmfdist}/fonts/type1/public/montex
 
-%{texmfdist}/fonts/tfm/vntex/mscorevn
-%{texmfdist}/fonts/vf/vntex/mscorevn
+# %{texmfdist}/fonts/tfm/vntex/mscorevn
+# %{texmfdist}/fonts/vf/vntex/mscorevn
 
 %doc %{texmfdist}/doc/generic/musixtex
 %{texmfdist}/fonts/map/dvips/musixtex
