@@ -2262,14 +2262,18 @@ This package contains:
 - changebar: generate changebars in LaTeX documents.
 - changelayout: Change the layout of individual pages and their text.
 - censor: facilities for controlling restricted text in a document.
+- dashundergaps: Underline with dotted or dashed lines.
+- dblfloatfix: Fixes for twocolumn floats.
 - draftwatermark: put a grey textual watermark on document pages.
 - flippdf: horizontal flipping of pages with pdfLaTeX.
 - flowfram: create text frames for posters, brochures or magazines.
 - isorot: rotation of document elements.
 - lettrine: typeset dropped capitals.
+- mdframed: Framed environments that can split at page boundaries.
 - niceframe: support for fancy frames.
 - notes: mark sections of a document.
 - objectz: macros for typesetting Object Z.
+- pageslts: Variants of last page labels.
 - parallel: typeset parallel texts.
 - quotchap: decorative chapter headings.
 - rotpages: typeset sets of pages upside-down and backwards.
@@ -2284,14 +2288,18 @@ Ez a csomag a következőket tartalmazza:
 - censor: facilities for controlling restricted text in a document.
 - changebar: oldalsávok készítése LaTeX dokumentumokban
 - changelayout: Change the layout of individual pages and their text.
+- dashundergaps: Underline with dotted or dashed lines.
+- dblfloatfix: Fixes for twocolumn floats.
 - draftwatermark: szürke szöveges vízjel a dokumentum oldalaira
 - flippdf: oldalak vízszintes tükrözése pdfLaTeX-hel
 - flowfram: szövegkeretek poszterekhez, brossúrákhoz vagy magazinokhoz
 - isorot: dokumentum-elemek forgatása
 - lettrine: ejtett kapitálisok szedése
+- mdframed: Framed environments that can split at page boundaries.
 - niceframe: különféle keretek
 - notes: dokumentum részeinek kiemelése, megjelölése
 - objectz: Object Z objektumok szedése
+- pageslts: Variants of last page labels.
 - parallel: párhuzamos szövegek szedése
 - quotchap: decorative chapter headings.
 - rotpages: typeset sets of pages upside-down and backwards.
@@ -2336,6 +2344,7 @@ This package contains:
 - cmll: symbols for linear logic.
 - constants: automatic numbering of constants.
 - coordsys: draw cartesian coordinate systems.
+- diagmac2: Diagram macros, using pict2e
 - dotseqn: flush left equations with dotted leaders to the numbers.
 - egplot: encapsulate Gnuplot sources in LaTeX documents.
 - eqlist: description lists with equal indentation.
@@ -2359,6 +2368,7 @@ This package contains:
 - nath: natural mathematics notation.
 - noitcrul: improved underlines in mathematics.
 - numprint: print numbers with separators and exponent if necessary.
+- oubraces: braces over and under a formula.
 - permute: support for symmetric groups.
 - petri-nets: A set TeX/LaTeX packages for drawing Petri nets.
 - qsymbols: maths symbol abbreviations.
@@ -2383,6 +2393,7 @@ Ez a csomag a következőket tartalmazza:
 - cmll: szimbólumok lineáris logikához
 - constants: változók automatikus sorszámozása
 - coordsys: Descartes-féle koordinátarendszerek rajzolása
+- diagmac2: Diagram macros, using pict2e
 - dotseqn: TODO
 - egplot: Gnuplot források LaTeX dokumentumokba ágyazása
 - eqlist: leíró lista egyenlő behúzással
@@ -2407,6 +2418,7 @@ Ez a csomag a következőket tartalmazza:
 - nath: természetes matematikai jelölés
 - noitcrul: kibővített aláhúzások matematikában
 - numprint: számok írása elválasztókkal és kitevőkkel, ha szükséges
+- oubraces: braces over and under a formula.
 - permute: szimmetriacsoportok
 - petri-nets: A set TeX/LaTeX packages for drawing Petri nets.
 - qsymbols: matematikai szimbólumok rövidítése
@@ -2486,6 +2498,7 @@ This package contains:
 - circuitikz: draw electrical networks with TikZ.
 - colorwav: colours by wavelength of visible light.
 - dyntree: construct Dynkin tree diagrams.
+- eltex: Simple circuit diagrams in LaTeX picture mode.
 - feynmf: macros and fonts for creating Feynman (and other) diagrams.
 - formula: typesetting physical units.
 - isotope: a package for type setting isotopes
@@ -2500,6 +2513,7 @@ Ez a csomag a következőket tartalmazza:
 - circuitikz: elektromos hálózatok TikZ segítségével
 - colorwav: a látható fény színei hullámhossz szerint
 - dyntree: Dynkin fadiagramok készítése
+- eltex: Simple circuit diagrams in LaTeX picture mode.
 - feynmf: makrók és fontok Feynman (és más) diagramok készítésére
 - formula: fizikai egységek szedése
 - isotope: izotópok szedése
@@ -8936,6 +8950,7 @@ fi
 %doc %{texmfdist}/doc/latex/cases
 %doc %{texmfdist}/doc/latex/constants
 %doc %{texmfdist}/doc/latex/coordsys
+%doc %{texmfdist}/doc/latex/diagmac2
 %doc %{texmfdist}/doc/latex/egplot
 %doc %{texmfdist}/doc/latex/eqlist
 # %doc %{texmfdist}/doc/latex/eqnarray
@@ -8959,6 +8974,7 @@ fi
 %doc %{texmfdist}/doc/latex/nath
 %doc %{texmfdist}/doc/latex/noitcrul
 %doc %{texmfdist}/doc/latex/numprint
+%doc %{texmfdist}/doc/latex/oubraces
 %doc %{texmfdist}/doc/latex/permute
 %doc %{texmfdist}/doc/latex/petri-nets
 %doc %{texmfdist}/doc/latex/qsymbols
@@ -9003,6 +9019,7 @@ fi
 %{texmfdist}/tex/latex/cases
 %{texmfdist}/tex/latex/constants
 %{texmfdist}/tex/latex/coordsys
+%{texmfdist}/tex/latex/diagmac2
 %{texmfdist}/tex/latex/dotseqn
 %{texmfdist}/tex/latex/egplot
 %{texmfdist}/tex/latex/eqlist
@@ -9028,6 +9045,7 @@ fi
 %{texmfdist}/tex/latex/nath
 %{texmfdist}/tex/latex/noitcrul
 %{texmfdist}/tex/latex/numprint
+%{texmfdist}/tex/latex/oubraces
 %{texmfdist}/tex/latex/permute
 %{texmfdist}/tex/latex/petri-nets
 %{texmfdist}/tex/latex/qsymbols
@@ -9054,6 +9072,7 @@ fi
 %doc %{texmfdist}/doc/latex/circuitikz
 %doc %{texmfdist}/doc/latex/colorwav
 %doc %{texmfdist}/doc/latex/dyntree
+%doc %{texmfdist}/doc/latex/eltex
 %doc %{texmfdist}/doc/latex/feynmf
 # %doc %{texmfdist}/doc/latex/formula
 %doc %{texmfdist}/doc/latex/listofsymbols
@@ -9072,6 +9091,7 @@ fi
 %{texmfdist}/tex/latex/circuitikz
 %{texmfdist}/tex/latex/colorwav
 %{texmfdist}/tex/latex/dyntree
+%{texmfdist}/tex/latex/eltex
 %{texmfdist}/tex/latex/feynmf
 # %{texmfdist}/tex/latex/formula
 %{texmfdist}/tex/latex/isotope
@@ -9917,14 +9937,19 @@ fi
 %doc %{texmfdist}/doc/latex/changebar
 %doc %{texmfdist}/doc/latex/changelayout
 %doc %{texmfdist}/doc/latex/censor
+%doc %{texmfdist}/doc/latex/dashundergaps
+%doc %{texmfdist}/doc/latex/dblfloatfix
 %doc %{texmfdist}/doc/latex/draftwatermark
 %doc %{texmfdist}/doc/latex/flippdf
 %doc %{texmfdist}/doc/latex/flowfram
 %doc %{texmfdist}/doc/latex/isorot
 %doc %{texmfdist}/doc/latex/lettrine
+%doc %{texmfdist}/doc/latex/mdframed
+%doc %{texmfdist}/doc/latex/minibox
 %doc %{texmfdist}/doc/latex/niceframe
 %doc %{texmfdist}/doc/latex/notes
 %doc %{texmfdist}/doc/latex/objectz
+%doc %{texmfdist}/doc/latex/pageslts
 %doc %{texmfdist}/doc/latex/parallel
 %doc %{texmfdist}/doc/latex/quotchap
 %doc %{texmfdist}/doc/latex/rotpages
@@ -9943,10 +9968,12 @@ fi
 %{texmfdist}/source/latex/flowfram
 %{texmfdist}/source/latex/isorot
 %{texmfdist}/source/latex/lettrine
+%{texmfdist}/source/latex/minibox
 %{texmfdist}/source/latex/niceframe
 %{texmfdist}/source/latex/notes
 %{texmfdist}/source/latex/objectz
 %{texmfdist}/source/latex/parallel
+%{texmfdist}/source/latex/pageslts
 %{texmfdist}/source/latex/quotchap
 %{texmfdist}/source/latex/ushort
 %{texmfdist}/tex/latex/arcs
@@ -9955,14 +9982,19 @@ fi
 %{texmfdist}/tex/latex/censor
 %{texmfdist}/tex/latex/changebar
 %{texmfdist}/tex/latex/changelayout
+%{texmfdist}/tex/latex/dashundergaps
+%{texmfdist}/tex/latex/dblfloatfix
 %{texmfdist}/tex/latex/draftwatermark
 %{texmfdist}/tex/latex/flippdf
 %{texmfdist}/tex/latex/flowfram
 %{texmfdist}/tex/latex/isorot
 %{texmfdist}/tex/latex/lettrine
+%{texmfdist}/tex/latex/mdframed
+%{texmfdist}/tex/latex/minibox
 %{texmfdist}/tex/latex/niceframe
 %{texmfdist}/tex/latex/notes
 %{texmfdist}/tex/latex/objectz
+%{texmfdist}/tex/latex/pageslts
 %{texmfdist}/tex/latex/parallel
 %{texmfdist}/tex/latex/quotchap
 %{texmfdist}/tex/latex/rotpages
