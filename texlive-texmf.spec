@@ -2270,6 +2270,7 @@ This package contains:
 - isorot: rotation of document elements.
 - lettrine: typeset dropped capitals.
 - mdframed: Framed environments that can split at page boundaries.
+- multibox: Multiple boxes and frames for the picture environment.
 - niceframe: support for fancy frames.
 - notes: mark sections of a document.
 - objectz: macros for typesetting Object Z.
@@ -2279,6 +2280,7 @@ This package contains:
 - rotpages: typeset sets of pages upside-down and backwards.
 - sectionbox: create fancy boxed ((sub)sub)sections.
 - shadethm: theorem environments that are shaded
+- tablenotes: Notes in tables at end document.
 
 %description -n texlive-latex-effects -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
@@ -2296,6 +2298,7 @@ Ez a csomag a következőket tartalmazza:
 - isorot: dokumentum-elemek forgatása
 - lettrine: ejtett kapitálisok szedése
 - mdframed: Framed environments that can split at page boundaries.
+- multibox: Multiple boxes and frames for the picture environment.
 - niceframe: különféle keretek
 - notes: dokumentum részeinek kiemelése, megjelölése
 - objectz: Object Z objektumok szedése
@@ -2305,6 +2308,7 @@ Ez a csomag a következőket tartalmazza:
 - rotpages: typeset sets of pages upside-down and backwards.
 - sectionbox: create fancy boxed ((sub)sub)sections.
 - shadethm: theorem environments that are shaded
+- tablenotes: Notes in tables at end document.
 
 %package -n texlive-latex-math-sources
 Summary:	Sources of latex-math
@@ -2380,6 +2384,7 @@ This package contains:
 - subdepth: unify maths subscript height.
 - subeqn: package for subequation numbering.
 - subeqnarray: equation array with sub numbering.
+- subsupscripts: A range of sub- and superscript commands.
 - tree-dvips: trees and other linguists' macros.
 - trfsigns: typeset transform signs.
 - trsym: symbols for transformations.
@@ -2430,6 +2435,7 @@ Ez a csomag a következőket tartalmazza:
 - subdepth: matematikai indexek méretének egységesítése
 - subeqn: alegyenletek sorszámozása
 - subeqnarray: egyenletek al-sorszámozása
+- subsupscripts: A range of sub- and superscript commands.
 - tree-dvips: trees and other linguists' macros
 - trfsigns: transzformációs jelek szedése
 - trsym: szimbólumok transzformációkhoz
@@ -2448,6 +2454,7 @@ This packages contains:
 - cookybooky: typeset recipes.
 - cuisine: typeset recipes.
 - fixme: insert "fixme" notes into draft documents.
+- recipe: A LaTeX class to typeset recipes.
 - recipecard: typeset recipes in note-card-sized boxes.
 - todo: make a to-do list for a document.
 
@@ -2457,6 +2464,7 @@ Ez a csomag a következőket tartalmazza:
 - cookybooky: receptek szedése
 - cuisine: receptek szedése
 - fixme: "fixme" megjegyzések elhelyezése
+- recipe: A LaTeX class to typeset recipes.
 - recipecard: receptek szedése jegyzet-méretű dobozokba
 - todo: dokumentumok teendőinek listája
 
@@ -2613,7 +2621,9 @@ This package contains:
 - bytefield: Create illustrations for network protocol specifications.
 - lsc: typesetting Live Sequence Charts.
 - method: typeset method and variable declarations.
+- minted: highlighted source code for LaTeX.
 - msc: draw MSC diagrams.
+- multiobjective: Symbols for multibojective optimisation etc.
 - nag: detecting and warning about obsolete LaTeX commands
 # - progkeys: typeset programs, recognising keywords.
 - register: typeset programmable elements in digital hardware
@@ -2626,7 +2636,9 @@ Ez a csomag a következőket tartalmazza:
 - bytefield: hálózati protokoll specifikációk szemléltetése
 - lsc: Live Sequence Charts
 - method: eljárások és változók deklarációjának szedése
+- minted: highlighted source code for LaTeX.
 - msc: MSC diagramok
+- multiobjective: Symbols for multibojective optimisation etc.
 - nag: elavult LaTeX parancsok detektálása és figyelmeztetés
 # - progkeys: programok szedése, kulcsszavakkal
 - register: programozható elemek (regiszterek) szedése
@@ -8338,23 +8350,25 @@ fi
 
 %files -n texlive-latex-misc
 %defattr(644,root,root,755)
-%doc %{texmfdist}/doc/latex/fixme
-%{texmfdist}/source/latex/fixme
-%{texmfdist}/tex/latex/fixme
-%doc %{texmfdist}/doc/latex/recipecard
-%{texmfdist}/source/latex/recipecard
-%{texmfdist}/tex/latex/recipecard
 %doc %{texmfdist}/doc/latex/cooking
-%{texmfdist}/source/latex/cooking
-%{texmfdist}/tex/latex/cooking
 %doc %{texmfdist}/doc/latex/cookybooky
-%{texmfdist}/source/latex/cookybooky
-%{texmfdist}/tex/latex/cookybooky
 %doc %{texmfdist}/doc/latex/cuisine
-%{texmfdist}/source/latex/cuisine
-%{texmfdist}/tex/latex/cuisine
+%doc %{texmfdist}/doc/latex/fixme
+%doc %{texmfdist}/doc/latex/recipe
+%doc %{texmfdist}/doc/latex/recipecard
 %doc %{texmfdist}/doc/latex/todo
+%{texmfdist}/source/latex/cooking
+%{texmfdist}/source/latex/cookybooky
+%{texmfdist}/source/latex/cuisine
+%{texmfdist}/source/latex/fixme
+%{texmfdist}/source/latex/recipecard
 %{texmfdist}/source/latex/todo
+%{texmfdist}/tex/latex/cooking
+%{texmfdist}/tex/latex/cookybooky
+%{texmfdist}/tex/latex/cuisine
+%{texmfdist}/tex/latex/fixme
+%{texmfdist}/tex/latex/recipe
+%{texmfdist}/tex/latex/recipecard
 %{texmfdist}/tex/latex/todo
 
 %files -n texlive-latex-mflogo
@@ -8986,6 +9000,7 @@ fi
 %doc %{texmfdist}/doc/latex/subdepth
 %doc %{texmfdist}/doc/latex/subeqn
 %doc %{texmfdist}/doc/latex/subeqnarray
+%doc %{texmfdist}/doc/latex/subsupscripts
 %doc %{texmfdist}/doc/latex/trfsigns
 %doc %{texmfdist}/doc/latex/trsym
 %doc %{texmfdist}/doc/latex/ulsy
@@ -9058,6 +9073,7 @@ fi
 %{texmfdist}/tex/latex/subdepth
 %{texmfdist}/tex/latex/subeqn
 %{texmfdist}/tex/latex/subeqnarray
+%{texmfdist}/tex/latex/subsupscripts
 %{texmfdist}/tex/latex/trfsigns
 %{texmfdist}/tex/latex/trsym
 %{texmfdist}/tex/latex/ulsy
@@ -9170,13 +9186,17 @@ fi
 %doc %{texmfdist}/doc/latex/bytefield
 %doc %{texmfdist}/doc/latex/lsc
 %doc %{texmfdist}/doc/latex/method
+%doc %{texmfdist}/doc/latex/minted
 %doc %{texmfdist}/doc/latex/msc
+%doc %{texmfdist}/doc/latex/multiobjective
 # %doc %{texmfdist}/doc/latex/progkeys
 %doc %{texmfdist}/doc/latex/register
 %doc %{texmfdist}/doc/latex/uml
 %{texmfdist}/source/latex/alg
 %{texmfdist}/source/latex/bytefield
 %{texmfdist}/source/latex/method
+%{texmfdist}/source/latex/minted
+%{texmfdist}/source/latex/multiobjective
 # %{texmfdist}/source/latex/progkeys
 %{texmfdist}/source/latex/register
 %{texmfdist}/source/latex/uml
@@ -9184,7 +9204,9 @@ fi
 %{texmfdist}/tex/latex/bytefield
 %{texmfdist}/tex/latex/lsc
 %{texmfdist}/tex/latex/method
+%{texmfdist}/tex/latex/minted
 %{texmfdist}/tex/latex/msc
+%{texmfdist}/tex/latex/multiobjective
 # %{texmfdist}/tex/latex/progkeys
 %{texmfdist}/tex/latex/register
 %{texmfdist}/tex/latex/uml
@@ -9831,6 +9853,7 @@ fi
 %doc %{texmfdist}/doc/latex/ppower4
 %doc %{texmfdist}/doc/latex/sciposter
 %doc %{texmfdist}/doc/latex/tpslifonts
+%doc %{texmfdist}/doc/latex/presentations
 %{texmfdist}/scripts/ppower4
 %{texmfdist}/source/latex/powerdot
 %{texmfdist}/tex/latex/powerdot
@@ -9946,6 +9969,7 @@ fi
 %doc %{texmfdist}/doc/latex/lettrine
 %doc %{texmfdist}/doc/latex/mdframed
 %doc %{texmfdist}/doc/latex/minibox
+%doc %{texmfdist}/doc/latex/multibox
 %doc %{texmfdist}/doc/latex/niceframe
 %doc %{texmfdist}/doc/latex/notes
 %doc %{texmfdist}/doc/latex/objectz
@@ -9955,6 +9979,7 @@ fi
 %doc %{texmfdist}/doc/latex/rotpages
 %doc %{texmfdist}/doc/latex/sectionbox
 %doc %{texmfdist}/doc/latex/shadethm
+%doc %{texmfdist}/doc/latex/tablenotes
 %doc %{texmfdist}/doc/latex/ushort
 %{texmfdist}/fonts/source/public/niceframe
 # %{texmfdist}/fonts/source/public/umrand
@@ -9991,6 +10016,7 @@ fi
 %{texmfdist}/tex/latex/lettrine
 %{texmfdist}/tex/latex/mdframed
 %{texmfdist}/tex/latex/minibox
+%{texmfdist}/tex/latex/multibox
 %{texmfdist}/tex/latex/niceframe
 %{texmfdist}/tex/latex/notes
 %{texmfdist}/tex/latex/objectz
@@ -10000,6 +10026,7 @@ fi
 %{texmfdist}/tex/latex/rotpages
 %{texmfdist}/tex/latex/sectionbox
 %{texmfdist}/tex/latex/shadethm
+%{texmfdist}/tex/latex/tablenotes
 # %{texmfdist}/tex/latex/umrand
 %{texmfdist}/tex/latex/ushort
 
@@ -10476,7 +10503,6 @@ fi
 # %{texmfdist}/tex/latex/rangen
 %{texmfdist}/source/latex/rcs-multi
 %{texmfdist}/tex/latex/rcs-multi
-%{texmfdist}/tex/latex/recipe
 %{texmfdist}/tex/latex/recycle
 %{texmfdist}/source/latex/rjlparshap
 %{texmfdist}/tex/latex/rjlparshap
@@ -10497,7 +10523,6 @@ fi
 %{texmfdist}/source/latex/svn-prov
 %{texmfdist}/tex/latex/svn-prov
 %{texmfdist}/tex/latex/syllogism
-%{texmfdist}/tex/latex/tablenotes
 %{texmfdist}/tex/latex/tabls
 %{texmfdist}/tex/latex/tabularcalc
 %{texmfdist}/source/latex/tabularew
@@ -10718,6 +10743,7 @@ fi
 %doc %{texmfdist}/doc/generic/pst-vue3d
 %doc %{texmfdist}/doc/latex/auto-pst-pdf
 %doc %{texmfdist}/doc/latex/pst-pdf
+%doc %{texmfdist}/doc/latex/pst-calendar
 %{texmfdist}/scripts/pst-pdf
 %{texmfdist}/source/generic/pst-barcode
 %{texmfdist}/source/generic/pst-blur
