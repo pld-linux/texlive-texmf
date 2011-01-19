@@ -2265,8 +2265,11 @@ This package contains:
 - dashundergaps: Underline with dotted or dashed lines.
 - dblfloatfix: Fixes for twocolumn floats.
 - draftwatermark: put a grey textual watermark on document pages.
+- endnotes: Place footnotes at the end.
+- fancypar: Decoration of individual paragraphs.
 - flippdf: horizontal flipping of pages with pdfLaTeX.
 - flowfram: create text frames for posters, brochures or magazines.
+- grid: Grid typesetting in LaTeX.
 - isorot: rotation of document elements.
 - lettrine: typeset dropped capitals.
 - mdframed: Framed environments that can split at page boundaries.
@@ -2293,8 +2296,11 @@ Ez a csomag a következőket tartalmazza:
 - dashundergaps: Underline with dotted or dashed lines.
 - dblfloatfix: Fixes for twocolumn floats.
 - draftwatermark: szürke szöveges vízjel a dokumentum oldalaira
+- endnotes: Place footnotes at the end.
+- fancypar: Decoration of individual paragraphs.
 - flippdf: oldalak vízszintes tükrözése pdfLaTeX-hel
 - flowfram: szövegkeretek poszterekhez, brossúrákhoz vagy magazinokhoz
+- grid: Grid typesetting in LaTeX.
 - isorot: dokumentum-elemek forgatása
 - lettrine: ejtett kapitálisok szedése
 - mdframed: Framed environments that can split at page boundaries.
@@ -2454,6 +2460,7 @@ This packages contains:
 - cookybooky: typeset recipes.
 - cuisine: typeset recipes.
 - fixme: insert "fixme" notes into draft documents.
+- knittingpattern: Create knitting patterns.
 - recipe: A LaTeX class to typeset recipes.
 - recipecard: typeset recipes in note-card-sized boxes.
 - todo: make a to-do list for a document.
@@ -2464,6 +2471,7 @@ Ez a csomag a következőket tartalmazza:
 - cookybooky: receptek szedése
 - cuisine: receptek szedése
 - fixme: "fixme" megjegyzések elhelyezése
+- knittingpattern: kötésminták
 - recipe: A LaTeX class to typeset recipes.
 - recipecard: receptek szedése jegyzet-méretű dobozokba
 - todo: dokumentumok teendőinek listája
@@ -2656,6 +2664,7 @@ This package contains:
 - attachfile: attach arbitrary files to a PDF document
 - cooltooltips: associate a pop-up window and tooltip with PDF
   hyperlinks
+- flashmovie: Directly embed flash movies into PDF files.
 - movie15: multimedia inclusion package.
 - pdfcprot: activating and setting of character protruding using
   pdflatex.
@@ -2667,6 +2676,7 @@ This package contains:
 Ez a csomag a következőket tartalmazza:
 - attachfile: fájlok csatolása PDF dokumentumokba
 - cooltooltips: felugró ablakok és súgók társítása PDF linkekhez
+- flashmovie: Directly embed flash movies into PDF files.
 - movie15: multimédia beillesztése
 - pdfcprot: activating and setting of character protruding using
   pdflatex.
@@ -3390,6 +3400,17 @@ Tabbing with accented letters.
 
 %description -n texlive-latex-Tabbing -l hu.UTF-8
 Tabbing környezet ékezetes betűk használatával.
+
+%package -n texlive-latex-tutorial
+Summary:	LaTeX documentation (tutorial) for beginners
+Summary(hu.UTF-8):	LaTeX dokumentáció (tutorial) kezdőknek
+Group:		Documentation
+
+%description -n texlive-latex-tutorial
+LaTeX documentation (tutorial) for beginners.
+
+%description -n texlive-latex-tutorial -l hu.UTF-8
+LaTeX dokumentáció (tutorial) kezdőknek.
 
 %package -n texlive-latex-txfonts
 Summary:	TX fonts LaTeX support
@@ -6932,16 +6953,22 @@ fi
 
 %files -n texlive-xetex-data
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/euenc
+%doc %{texmfdist}/doc/latex/fontspec
 %doc %{texmfdist}/doc/xelatex
 %doc %{texmfdist}/doc/xetex
 #fmt %dir %{fmtdir}/xetex
+%{texmfdist}/scripts/xetex
+%{texmfdist}/source/latex/euenc
+%{texmfdist}/source/latex/fontspec
+%{texmfdist}/source/xelatex
 %{texmfdist}/tex/generic/ifxetex
 %{texmfdist}/tex/generic/xetexconfig
+%{texmfdist}/tex/latex/euenc
+%{texmfdist}/tex/latex/fontspec
 %{texmfdist}/tex/latex/latexconfig/xelatex.ini
-%{texmfdist}/tex/xetex
 %{texmfdist}/tex/xelatex
-%{texmfdist}/scripts/xetex
-%{texmfdist}/source/xelatex
+%{texmfdist}/tex/xetex
 #fmt %{fmtdir}/xetex/*.fmt
 
 %files -n texlive-tex-arrayjob
@@ -7506,7 +7533,6 @@ fi
 %{texmfdist}/tex/latex/everypage
 %{texmfdist}/tex/latex/examplep
 #%{texmfdist}/tex/latex/exceltex
-%{texmfdist}/tex/latex/exercise
 %{texmfdist}/tex/latex/expl3
 %{texmfdist}/tex/latex/extarrows
 %{texmfdist}/tex/latex/extract
@@ -8218,12 +8244,14 @@ fi
 # %doc %{texmfdist}/doc/latex/eqexam
 %doc %{texmfdist}/doc/latex/exam
 %doc %{texmfdist}/doc/latex/examdesign
+%doc %{texmfdist}/doc/latex/exercise
 %doc %{texmfdist}/doc/latex/mathexam
 %doc %{texmfdist}/doc/latex/probsoln
 %doc %{texmfdist}/doc/latex/qcm
 %doc %{texmfdist}/doc/latex/uebungsblatt
 # %{texmfdist}/source/latex/eqexam
 %{texmfdist}/source/latex/examdesign
+%{texmfdist}/source/latex/exercise
 %{texmfdist}/source/latex/mathexam
 %{texmfdist}/source/latex/probsoln
 %{texmfdist}/source/latex/qcm
@@ -8232,6 +8260,7 @@ fi
 # %{texmfdist}/tex/latex/eqexam
 %{texmfdist}/tex/latex/exam
 %{texmfdist}/tex/latex/examdesign
+%{texmfdist}/tex/latex/exercise
 %{texmfdist}/tex/latex/mathexam
 %{texmfdist}/tex/latex/probsoln
 %{texmfdist}/tex/latex/qcm
@@ -8354,9 +8383,16 @@ fi
 %doc %{texmfdist}/doc/latex/cookybooky
 %doc %{texmfdist}/doc/latex/cuisine
 %doc %{texmfdist}/doc/latex/fixme
+%doc %{texmfdist}/doc/latex/knittingpattern
 %doc %{texmfdist}/doc/latex/recipe
 %doc %{texmfdist}/doc/latex/recipecard
 %doc %{texmfdist}/doc/latex/todo
+%doc %{texmfdist}/doc/fonts/knitting
+%{texmfdist}/fonts/afm/public/knitting
+%{texmfdist}/fonts/map/dvips/knitting
+%{texmfdist}/fonts/tfm/public/knitting
+%{texmfdist}/fonts/type1/public/knitting
+%{texmfdist}/fonts/source/public/knitting
 %{texmfdist}/source/latex/cooking
 %{texmfdist}/source/latex/cookybooky
 %{texmfdist}/source/latex/cuisine
@@ -8367,6 +8403,8 @@ fi
 %{texmfdist}/tex/latex/cookybooky
 %{texmfdist}/tex/latex/cuisine
 %{texmfdist}/tex/latex/fixme
+%{texmfdist}/tex/latex/knitting
+%{texmfdist}/tex/latex/knittingpattern
 %{texmfdist}/tex/latex/recipe
 %{texmfdist}/tex/latex/recipecard
 %{texmfdist}/tex/latex/todo
@@ -8579,7 +8617,6 @@ fi
 %doc %{texmfdist}/doc/latex/everypage
 %doc %{texmfdist}/doc/latex/examplep
 # %doc %{texmfdist}/doc/latex/exceltex
-%doc %{texmfdist}/doc/latex/exercise
 %doc %{texmfdist}/doc/latex/expl3
 %doc %{texmfdist}/doc/latex/extarrows
 %doc %{texmfdist}/doc/latex/extract
@@ -9164,6 +9201,7 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/attachfile
 %doc %{texmfdist}/doc/latex/cooltooltips
+%doc %{texmfdist}/doc/latex/flashmovie
 %doc %{texmfdist}/doc/latex/movie15
 %doc %{texmfdist}/doc/latex/pdfcprot
 %doc %{texmfdist}/doc/latex/pdfscreen
@@ -9174,6 +9212,7 @@ fi
 %{texmfdist}/source/latex/pdfcprot
 %{texmfdist}/tex/latex/attachfile
 %{texmfdist}/tex/latex/cooltooltips
+%{texmfdist}/tex/latex/flashmovie
 %{texmfdist}/tex/latex/movie15
 %{texmfdist}/tex/latex/pdfcprot
 %{texmfdist}/tex/latex/pdfscreen
@@ -9347,7 +9386,6 @@ fi
 %{texmfdist}/source/latex/euproposal
 %{texmfdist}/source/latex/euro
 %{texmfdist}/source/latex/everypage
-%{texmfdist}/source/latex/exercise
 %{texmfdist}/source/latex/expl3
 %{texmfdist}/source/latex/extract
 %{texmfdist}/source/latex/facsimile
@@ -9963,8 +10001,11 @@ fi
 %doc %{texmfdist}/doc/latex/dashundergaps
 %doc %{texmfdist}/doc/latex/dblfloatfix
 %doc %{texmfdist}/doc/latex/draftwatermark
+%doc %{texmfdist}/doc/latex/endnotes
+%doc %{texmfdist}/doc/latex/fancypar
 %doc %{texmfdist}/doc/latex/flippdf
 %doc %{texmfdist}/doc/latex/flowfram
+%doc %{texmfdist}/doc/latex/grid
 %doc %{texmfdist}/doc/latex/isorot
 %doc %{texmfdist}/doc/latex/lettrine
 %doc %{texmfdist}/doc/latex/mdframed
@@ -9989,9 +10030,11 @@ fi
 %{texmfdist}/source/latex/blowup
 %{texmfdist}/source/latex/changebar
 %{texmfdist}/source/latex/draftwatermark
+%{texmfdist}/source/latex/fancypar
 %{texmfdist}/source/latex/flippdf
 %{texmfdist}/source/latex/flowfram
 %{texmfdist}/source/latex/isorot
+%{texmfdist}/source/latex/grid
 %{texmfdist}/source/latex/lettrine
 %{texmfdist}/source/latex/minibox
 %{texmfdist}/source/latex/niceframe
@@ -10010,8 +10053,11 @@ fi
 %{texmfdist}/tex/latex/dashundergaps
 %{texmfdist}/tex/latex/dblfloatfix
 %{texmfdist}/tex/latex/draftwatermark
+%{texmfdist}/tex/latex/endnotes
+%{texmfdist}/tex/latex/fancypar
 %{texmfdist}/tex/latex/flippdf
 %{texmfdist}/tex/latex/flowfram
+%{texmfdist}/tex/latex/grid
 %{texmfdist}/tex/latex/isorot
 %{texmfdist}/tex/latex/lettrine
 %{texmfdist}/tex/latex/mdframed
@@ -10877,6 +10923,12 @@ fi
 %defattr(644,root,root,755)
 %{texmfdist}/source/latex/Tabbing
 %{texmfdist}/doc/latex/Tabbing
+
+%files -n texlive-latex-tutorial
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/first-latex-doc
+%doc %{texmfdist}/doc/latex/firststeps
+%doc %{texmfdist}/doc/latex/intro-scientific
 
 %files -n texlive-latex-txfonts
 %defattr(644,root,root,755)
