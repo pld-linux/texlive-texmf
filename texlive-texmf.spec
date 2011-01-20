@@ -2176,6 +2176,7 @@ This package contains:
 - mciteplus: enhanced multiple citations.
 - minipage-marginpar: minipages with marginal notes.
 - miniplot: a package for easy figure arrangement.
+- modref: Customisation of cross-references in LaTeX.
 - multicap: format captions inside multicols
 - newvbtm: define your own verbatim-like environment.
 - notes2bib: integrating notes into the bibliography.
@@ -2187,6 +2188,7 @@ This package contains:
 - rccol: decimal-centered optionally rounded numbers in tabular.
 - romannum: generate roman numerals instead of arabic digits.
 - schedule: weekly schedules.
+- spreadtab: Spreadsheet features for LaTeX tabular environments.
 - subfloat: sub-numbering for figures and tables.
 - umoline: underline text allowing line breaking.
 - umrand: package for fancy box frames.
@@ -2229,6 +2231,7 @@ Ez a csomag a következőket tartalmazza:
 - mciteplus: kibővített többszörös hivatkozás
 - minipage-marginpar: minipage-ek széljegyzetekkel
 - miniplot: egy csomag ábrák könnyű elhelyezéséhez
+- modref: Customisation of cross-references in LaTeX.
 - multicap: formázott cimkék multicols környezetben
 - newvbtm: saját verbatim-szerű környezetek
 - notes2bib: megjegyzések elhelyezése bibliográfiába
@@ -2240,6 +2243,7 @@ Ez a csomag a következőket tartalmazza:
 - rccol: decimal-centered optionally rounded numbers in tabular.
 - romannum: generate roman numerals instead of arabic digits.
 - schedule: heti időbeosztás (órarend)
+- spreadtab: Spreadsheet features for LaTeX tabular environments.
 - subfloat: sub-numbering for figures and tables.
 - umoline: aláhúzott szövegben sortörés engedélyezése
 - umrand: package for fancy box frames.
@@ -2368,6 +2372,7 @@ This package contains:
 - gene-logic: typeset logic formulae, etc.
 - gnuplottex: embed Gnuplot commands in LaTeX documents.
 - hhtensor: print vectors, matrices, and tensors.
+- ionumbers: Restyle numbers in maths mode.
 - logpap: generate logarithmic graph paper with LaTeX.
 - makeplot: easy plots from Matlab in LaTeX.
 - maybemath: make math bold or italic according to context.
@@ -2418,6 +2423,7 @@ Ez a csomag a következőket tartalmazza:
 - gene-logic: logikai formulák
 - gnuplottex: Gnuplot parancsok beágyazása LaTeX dokumentumokba
 - hhtensor: vetkorok, mátrixok és tenzorok nyomtatása
+- ionumbers: Restyle numbers in maths mode.
 - logpap: logaritmikus grafikonok
 - makeplot: könnyű ábrázolások Matlab-ból LaTeX-be
 - maybemath: matematikai félkövér ill. dőlt szöveg környezettől
@@ -2461,8 +2467,10 @@ This packages contains:
 - cuisine: typeset recipes.
 - fixme: insert "fixme" notes into draft documents.
 - knittingpattern: Create knitting patterns.
+- plantslabels: Write labels for plants.
 - recipe: A LaTeX class to typeset recipes.
 - recipecard: typeset recipes in note-card-sized boxes.
+- simplecd: Simple CD, DVD covers for printing.
 - todo: make a to-do list for a document.
 
 %description -n texlive-latex-misc -l hu.UTF-8
@@ -2472,8 +2480,10 @@ Ez a csomag a következőket tartalmazza:
 - cuisine: receptek szedése
 - fixme: "fixme" megjegyzések elhelyezése
 - knittingpattern: kötésminták
+- plantslabels: Write labels for plants.
 - recipe: A LaTeX class to typeset recipes.
 - recipecard: receptek szedése jegyzet-méretű dobozokba
+- simplecd: Simple CD, DVD covers for printing.
 - todo: dokumentumok teendőinek listája
 
 %package -n texlive-latex-music
@@ -7581,7 +7591,6 @@ fi
 %{texmfdist}/tex/latex/fundus
 %{texmfdist}/tex/latex/gaceta
 %{texmfdist}/tex/latex/gastex
-%{texmfdist}/tex/latex/gatech-thesis
 %{texmfdist}/tex/latex/gauss
 %{texmfdist}/tex/latex/gb4e
 %{texmfdist}/tex/latex/gcard
@@ -7977,7 +7986,6 @@ fi
 %{texmfdist}/bibtex/bst/disser
 %{texmfdist}/bibtex/bst/elsarticle
 %{texmfdist}/bibtex/bst/natbib
-%{texmfdist}/bibtex/bst/psu-thesis
 %{texmfdist}/bibtex/bst/sageep
 #%{texmfdist}/bibtex/bst/xepersian
 
@@ -8056,7 +8064,6 @@ fi
 %{texmfdist}/bibtex/bib/directory
 # %{texmfdist}/bibtex/bib/figbib
 %{texmfdist}/bibtex/bib/frankenstein
-%{texmfdist}/bibtex/bib/gatech-thesis
 # %{texmfdist}/bibtex/bib/geomsty
 %{texmfdist}/bibtex/bib/gloss
 %{texmfdist}/bibtex/bib/harvard
@@ -8095,7 +8102,6 @@ fi
 %{texmfdist}/bibtex/bst/figbib
 %{texmfdist}/bibtex/bst/finbib
 %{texmfdist}/bibtex/bst/frankenstein
-%{texmfdist}/bibtex/bst/gatech-thesis
 %{texmfdist}/bibtex/bst/gloss
 %{texmfdist}/bibtex/bst/gost
 %{texmfdist}/bibtex/bst/gustlib
@@ -8384,8 +8390,10 @@ fi
 %doc %{texmfdist}/doc/latex/cuisine
 %doc %{texmfdist}/doc/latex/fixme
 %doc %{texmfdist}/doc/latex/knittingpattern
+%doc %{texmfdist}/doc/latex/plantslabels
 %doc %{texmfdist}/doc/latex/recipe
 %doc %{texmfdist}/doc/latex/recipecard
+%doc %{texmfdist}/doc/latex/simplecd
 %doc %{texmfdist}/doc/latex/todo
 %doc %{texmfdist}/doc/fonts/knitting
 %{texmfdist}/fonts/afm/public/knitting
@@ -8398,6 +8406,7 @@ fi
 %{texmfdist}/source/latex/cuisine
 %{texmfdist}/source/latex/fixme
 %{texmfdist}/source/latex/recipecard
+%{texmfdist}/source/latex/simplecd
 %{texmfdist}/source/latex/todo
 %{texmfdist}/tex/latex/cooking
 %{texmfdist}/tex/latex/cookybooky
@@ -8405,8 +8414,10 @@ fi
 %{texmfdist}/tex/latex/fixme
 %{texmfdist}/tex/latex/knitting
 %{texmfdist}/tex/latex/knittingpattern
+%{texmfdist}/tex/latex/plantslabels
 %{texmfdist}/tex/latex/recipe
 %{texmfdist}/tex/latex/recipecard
+%{texmfdist}/tex/latex/simplecd
 %{texmfdist}/tex/latex/todo
 
 %files -n texlive-latex-mflogo
@@ -8649,7 +8660,6 @@ fi
 %doc %{texmfdist}/doc/latex/fundus
 %doc %{texmfdist}/doc/latex/gaceta
 %doc %{texmfdist}/doc/latex/gastex
-%doc %{texmfdist}/doc/latex/gatech-thesis
 %doc %{texmfdist}/doc/latex/gauss
 %doc %{texmfdist}/doc/latex/gb4e
 %doc %{texmfdist}/doc/latex/gcard
@@ -8984,6 +8994,7 @@ fi
 %{texmfdist}/source/latex/qsymbols
 %{texmfdist}/source/latex/subdepth
 %{texmfdist}/source/latex/faktor
+%{texmfdist}/source/latex/ionumbers
 %{texmfdist}/source/latex/sseq
 %{texmfdist}/source/latex/trsym
 %{texmfdist}/source/latex/petri-nets
@@ -9015,6 +9026,7 @@ fi
 %doc %{texmfdist}/doc/latex/gene-logic
 %doc %{texmfdist}/doc/latex/gnuplottex
 %doc %{texmfdist}/doc/latex/hhtensor
+%doc %{texmfdist}/doc/latex/ionumbers
 %doc %{texmfdist}/doc/latex/logpap
 %doc %{texmfdist}/doc/latex/makeplot
 %doc %{texmfdist}/doc/latex/maybemath
@@ -9086,6 +9098,7 @@ fi
 %{texmfdist}/tex/latex/gene-logic
 %{texmfdist}/tex/latex/gnuplottex
 %{texmfdist}/tex/latex/hhtensor
+%{texmfdist}/tex/latex/ionumbers
 %{texmfdist}/tex/latex/logpap
 %{texmfdist}/tex/latex/makeplot
 %{texmfdist}/tex/latex/maybemath
@@ -9568,9 +9581,13 @@ fi
 %doc %{texmfdist}/doc/latex/computational-complexity
 %doc %{texmfdist}/doc/latex/dtk
 %doc %{texmfdist}/doc/latex/elsarticle
+%doc %{texmfdist}/doc/latex/gatech-thesis
+%doc %{texmfdist}/doc/latex/jmlr
 %doc %{texmfdist}/doc/latex/lettre
 %doc %{texmfdist}/doc/latex/lexikon
 %doc %{texmfdist}/doc/latex/lps
+%doc %{texmfdist}/doc/latex/macqassign
+%doc %{texmfdist}/doc/latex/magaz
 %doc %{texmfdist}/doc/latex/manuscript
 %doc %{texmfdist}/doc/latex/maple
 %doc %{texmfdist}/doc/latex/mentis
@@ -9589,22 +9606,28 @@ fi
 %doc %{texmfdist}/doc/latex/play
 %doc %{texmfdist}/doc/latex/poemscol
 %doc %{texmfdist}/doc/latex/pracjourn
+%doc %{texmfdist}/doc/latex/psu-thesis
 %doc %{texmfdist}/doc/latex/ptptex
 %doc %{texmfdist}/doc/latex/refman
+%doc %{texmfdist}/doc/latex/ryethesis
 %doc %{texmfdist}/doc/latex/rsc
+%doc %{texmfdist}/doc/latex/seuthesis
 %doc %{texmfdist}/doc/latex/screenplay
 %doc %{texmfdist}/doc/latex/script
 %doc %{texmfdist}/doc/latex/shipunov
 %doc %{texmfdist}/doc/latex/sides
 %doc %{texmfdist}/doc/latex/siggraph
+%doc %{texmfdist}/doc/latex/soton
 %doc %{texmfdist}/doc/latex/stage
 %doc %{texmfdist}/doc/latex/tufte-latex
 %doc %{texmfdist}/doc/latex/tugboat
 %doc %{texmfdist}/doc/latex/uaclasses
 %doc %{texmfdist}/doc/latex/ucthesis
+%doc %{texmfdist}/doc/latex/ucdavisthesis
 %doc %{texmfdist}/doc/latex/uiucthesis
 %doc %{texmfdist}/doc/latex/umich-thesis
 %doc %{texmfdist}/doc/latex/umthesis
+%doc %{texmfdist}/doc/latex/ut-thesis
 %doc %{texmfdist}/doc/latex/uwthesis
 # %{texmfdist}/bibtex/bib/aiaa
 # %{texmfdist}/bibtex/bib/apacite
@@ -9617,7 +9640,10 @@ fi
 %{texmfdist}/bibtex/bst/asaetr
 %{texmfdist}/bibtex/bst/computational-complexity
 %{texmfdist}/bibtex/bst/dtk
+%{texmfdist}/bibtex/bib/gatech-thesis
+%{texmfdist}/bibtex/bst/psu-thesis
 %{texmfdist}/bibtex/bst/rsc
+%{texmfdist}/bibtex/bst/seuthesis
 %{texmfdist}/source/latex/IEEEconf
 %{texmfdist}/source/latex/aastex
 %{texmfdist}/source/latex/acmconf
@@ -9629,6 +9655,7 @@ fi
 # %{texmfdist}/source/latex/dtk
 %{texmfdist}/source/latex/elsarticle
 # %{texmfdist}/source/latex/lexikon
+%{texmfdist}/source/latex/jmlr
 %{texmfdist}/source/latex/lps
 %{texmfdist}/source/latex/manuscript
 %{texmfdist}/source/latex/mentis
@@ -9646,11 +9673,14 @@ fi
 %{texmfdist}/source/latex/poemscol
 %{texmfdist}/source/latex/pracjourn
 %{texmfdist}/source/latex/refman
+%{texmfdist}/source/latex/ryethesis
 %{texmfdist}/source/latex/rsc
 %{texmfdist}/source/latex/screenplay
+%{texmfdist}/source/latex/seuthesis
 %{texmfdist}/source/latex/siggraph
 %{texmfdist}/source/latex/tugboat
 %{texmfdist}/source/latex/uaclasses
+%{texmfdist}/source/latex/ucdavisthesis
 %{texmfdist}/source/latex/uiucthesis
 %{texmfdist}/tex/latex/IEEEconf
 %{texmfdist}/tex/latex/aastex
@@ -9662,9 +9692,13 @@ fi
 %{texmfdist}/tex/latex/computational-complexity
 %{texmfdist}/tex/latex/dtk
 %{texmfdist}/tex/latex/elsarticle
+%{texmfdist}/tex/latex/gatech-thesis
+%{texmfdist}/tex/latex/jmlr
 %{texmfdist}/tex/latex/lettre
 %{texmfdist}/tex/latex/lexikon
 %{texmfdist}/tex/latex/lps
+%{texmfdist}/tex/latex/macqassign
+%{texmfdist}/tex/latex/magaz
 %{texmfdist}/tex/latex/manuscript
 %{texmfdist}/tex/latex/maple
 %{texmfdist}/tex/latex/mentis
@@ -9685,22 +9719,28 @@ fi
 %{texmfdist}/tex/latex/play
 %{texmfdist}/tex/latex/poemscol
 %{texmfdist}/tex/latex/pracjourn
+%{texmfdist}/tex/latex/psu-thesis
 %{texmfdist}/tex/latex/ptptex
 %{texmfdist}/tex/latex/refman
 %{texmfdist}/tex/latex/rsc
+%{texmfdist}/tex/latex/ryethesis
 %{texmfdist}/tex/latex/screenplay
 %{texmfdist}/tex/latex/script
+%{texmfdist}/tex/latex/seuthesis
 %{texmfdist}/tex/latex/shipunov
 %{texmfdist}/tex/latex/sides
 %{texmfdist}/tex/latex/siggraph
+%{texmfdist}/tex/latex/soton
 %{texmfdist}/tex/latex/stage
 %{texmfdist}/tex/latex/tufte-latex
 %{texmfdist}/tex/latex/tugboat
 %{texmfdist}/tex/latex/uaclasses
+%{texmfdist}/tex/latex/ucdavisthesis
 %{texmfdist}/tex/latex/ucthesis
 %{texmfdist}/tex/latex/uiucthesis
 %{texmfdist}/tex/latex/umich-thesis
 %{texmfdist}/tex/latex/umthesis
+%{texmfdist}/tex/latex/ut-thesis
 %{texmfdist}/tex/latex/uwthesis
 
 %files -n texlive-latex-lang
@@ -9764,6 +9804,7 @@ fi
 %doc %{texmfdist}/doc/latex/booklet
 %doc %{texmfdist}/doc/latex/bullcntr
 %doc %{texmfdist}/doc/latex/chappg
+%doc %{texmfdist}/doc/latex/cjw
 %doc %{texmfdist}/doc/latex/clefval
 %doc %{texmfdist}/doc/latex/colortbl
 %doc %{texmfdist}/doc/latex/combine
@@ -9783,6 +9824,7 @@ fi
 %doc %{texmfdist}/doc/latex/mciteplus
 %doc %{texmfdist}/doc/latex/minipage-marginpar
 %doc %{texmfdist}/doc/latex/miniplot
+%doc %{texmfdist}/doc/latex/modref
 %doc %{texmfdist}/doc/latex/multicap
 %doc %{texmfdist}/doc/latex/newvbtm
 %doc %{texmfdist}/doc/latex/notes2bib
@@ -9792,6 +9834,7 @@ fi
 %doc %{texmfdist}/doc/latex/polytable
 %doc %{texmfdist}/doc/latex/rccol
 %doc %{texmfdist}/doc/latex/romannum
+%doc %{texmfdist}/doc/latex/spreadtab
 # %doc %{texmfdist}/doc/latex/schedule
 %doc %{texmfdist}/doc/latex/subfloat
 %doc %{texmfdist}/doc/latex/umoline
@@ -9827,6 +9870,7 @@ fi
 %{texmfdist}/source/latex/mcaption
 %{texmfdist}/source/latex/mcite
 %{texmfdist}/source/latex/minipage-marginpar
+%{texmfdist}/source/latex/modref
 %{texmfdist}/source/latex/multicap
 %{texmfdist}/source/latex/newvbtm
 %{texmfdist}/source/latex/notes2bib
@@ -9870,6 +9914,7 @@ fi
 %{texmfdist}/tex/latex/mciteplus
 %{texmfdist}/tex/latex/minipage-marginpar
 %{texmfdist}/tex/latex/miniplot
+%{texmfdist}/tex/latex/modref
 %{texmfdist}/tex/latex/multicap
 %{texmfdist}/tex/latex/newvbtm
 %{texmfdist}/tex/latex/notes2bib
@@ -9880,6 +9925,7 @@ fi
 %{texmfdist}/tex/latex/polytable
 %{texmfdist}/tex/latex/rccol
 %{texmfdist}/tex/latex/romannum
+%{texmfdist}/tex/latex/spreadtab
 # %{texmfdist}/tex/latex/schedule
 %{texmfdist}/tex/latex/subfloat
 %{texmfdist}/tex/latex/umoline
@@ -10590,9 +10636,7 @@ fi
 %{texmfdist}/tex/latex/todonotes
 %{texmfdist}/tex/latex/totcount
 %{texmfdist}/tex/latex/trimspaces
-%{texmfdist}/tex/latex/ucdavisthesis
 %{texmfdist}/tex/latex/ulqda
-%{texmfdist}/tex/latex/ut-thesis
 %{texmfdist}/tex/latex/varwidth
 %{texmfdist}/tex/latex/venturis
 %{texmfdist}/tex/latex/venturis2
@@ -10879,7 +10923,6 @@ fi
 %{texmfdist}/tex/latex/pst-soroban
 %{texmfdist}/tex/latex/pst-spectra
 %{texmfdist}/tex/latex/pst-stru
-%{texmfdist}/tex/latex/psu-thesis
 %{texmfdist}/tex/latex/pst-tree
 %{texmfdist}/tex/latex/pst-uml
 %{texmfdist}/tex/latex/pst-vowel
@@ -10926,6 +10969,8 @@ fi
 
 %files -n texlive-latex-tutorial
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/cursolatex
+%doc %{texmfdist}/doc/latex/dtxtut
 %doc %{texmfdist}/doc/latex/first-latex-doc
 %doc %{texmfdist}/doc/latex/firststeps
 %doc %{texmfdist}/doc/latex/intro-scientific
