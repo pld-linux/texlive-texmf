@@ -2142,6 +2142,8 @@ Obsoletes:	tetex-latex-ltablex
 
 %description -n texlive-latex-extend
 This package contains:
+- a4wide: "Wide" a4 layout.
+- a5comb: Support for a5 paper sizes.
 - addlines: a user-friendly wrapper around \enlargethispage.
 - alnumsec: alphanumeric section numbering.
 - arydshln: horizontal and vertical dashed lines in arrays and
@@ -2182,6 +2184,8 @@ This package contains:
 - notes2bib: integrating notes into the bibliography.
 - ntabbing: simple tabbing extension for automatic line numbering.
 - numline: LaTeX macros for numbering lines.
+- pagecont: Page numbering that continues between documents.
+- pagerange: Flexible and configurable page range typesetting.
 - pbox: a variable-width \parbox command.
 - pinlabel: a TeX labelling package.
 - polytable: tabular-like environments with named columns.
@@ -2197,6 +2201,8 @@ This package contains:
 
 %description -n texlive-latex-extend -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
+- a4wide: "Wide" a4 layout.
+- a5comb: Support for a5 paper sizes.
 - addlines: felhasználóbarát wrapper \enlargethispage-hez
 - alnumsec: alfanumerikus section számozás
 - arydshln: vízszintes és függőleges pontozott vonalak array és
@@ -2237,6 +2243,8 @@ Ez a csomag a következőket tartalmazza:
 - notes2bib: megjegyzések elhelyezése bibliográfiába
 - ntabbing: tabbing környezet automatikus sorszámozással
 - numline: LaTeX makrók sorok számozására
+- pagecont: Page numbering that continues between documents.
+- pagerange: Flexible and configurable page range typesetting.
 - pbox: változtatható szélességű \parbox
 - pinlabel: a TeX labelling package.
 - polytable: tabular-like environments with named columns.
@@ -2260,6 +2268,8 @@ Requires:	%{shortname}-latex
 %description -n texlive-latex-effects
 This package contains:
 - arcs: draw arcs over and under text
+- background: Placement of background material on pages of a document.
+- bclogo: Creating colourful boxes with logos.
 - blowup: upscale or downscale all pages of a document.
 - changebar: generate changebars in LaTeX documents.
 - capt-of: captions on more than floats.
@@ -2292,6 +2302,8 @@ This package contains:
 %description -n texlive-latex-effects -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
 - arcs: ívek rajzolása szöveg fölé és alá
+- background: Placement of background material on pages of a document.
+- bclogo: Creating colourful boxes with logos.
 - blowup: a dokumentum összes oldalának nagyítása vagy kicsinyítése
 - capt-of: Captions on more than floats.
 - censor: facilities for controlling restricted text in a document.
@@ -2462,6 +2474,7 @@ Requires:	%{shortname}-latex
 
 %description -n texlive-latex-misc
 This packages contains:
+- advdate: Print a date relative to "today".
 - cooking: typeset recipes.
 - cookybooky: typeset recipes.
 - cuisine: typeset recipes.
@@ -2472,9 +2485,11 @@ This packages contains:
 - recipecard: typeset recipes in note-card-sized boxes.
 - simplecd: Simple CD, DVD covers for printing.
 - todo: make a to-do list for a document.
+- todonotes: Marking things to do in a LaTeX document.
 
 %description -n texlive-latex-misc -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
+- advdate: Print a date relative to "today".
 - cooking: receptek szedése
 - cookybooky: receptek szedése
 - cuisine: receptek szedése
@@ -2485,6 +2500,7 @@ Ez a csomag a következőket tartalmazza:
 - recipecard: receptek szedése jegyzet-méretű dobozokba
 - simplecd: Simple CD, DVD covers for printing.
 - todo: dokumentumok teendőinek listája
+- todonotes: Marking things to do in a LaTeX document.
 
 %package -n texlive-latex-music
 Summary:	Musical packages
@@ -2637,6 +2653,7 @@ Requires:	%{shortname}-latex
 This package contains:
 - alg: LaTeX environments for typesetting algorithms.
 - bytefield: Create illustrations for network protocol specifications.
+- colordoc: Coloured syntax highlights in documentation.
 - lsc: typesetting Live Sequence Charts.
 - method: typeset method and variable declarations.
 - minted: highlighted source code for LaTeX.
@@ -2652,6 +2669,7 @@ This package contains:
 Ez a csomag a következőket tartalmazza:
 - alg: LaTeX környezetek algoritmusok szedésére
 - bytefield: hálózati protokoll specifikációk szemléltetése
+- colordoc: Coloured syntax highlights in documentation.
 - lsc: Live Sequence Charts
 - method: eljárások és változók deklarációjának szedése
 - minted: highlighted source code for LaTeX.
@@ -2676,11 +2694,13 @@ This package contains:
   hyperlinks
 - flashmovie: Directly embed flash movies into PDF files.
 - movie15: multimedia inclusion package.
+- ocgtools: Manipulate OCG layers in PDF presentations.
 - pdfcprot: activating and setting of character protruding using
   pdflatex.
 - pdfsync: provide links between source and PDF.
 - pdftricks: support for pstricks in pdfTeX. . pdfscreen: support
   screen-based document design.
+- tdclock: A ticking digital clock package for PDF output.
 
 %description -n texlive-latex-pdftools -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
@@ -2688,11 +2708,13 @@ Ez a csomag a következőket tartalmazza:
 - cooltooltips: felugró ablakok és súgók társítása PDF linkekhez
 - flashmovie: Directly embed flash movies into PDF files.
 - movie15: multimédia beillesztése
+- ocgtools: Manipulate OCG layers in PDF presentations.
 - pdfcprot: activating and setting of character protruding using
   pdflatex.
 - pdfsync: provide links between source and PDF.
 - pdfscreen: képernyő alapú dokumentumok
 - pdftricks: pstricks támogatás pdfTeX-ben
+- tdclock: A ticking digital clock package for PDF output.
 
 %package -n texlive-latex-microtype
 Summary:	An interface to the micro-typographic extensions of pdfTeX
@@ -7270,11 +7292,12 @@ fi
 %files -n texlive-amstex
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/amstex
-%{texmfdist}/tex/amstex/config
+%{texmfdist}/tex/amstex
 %{texmfdist}/tex/plain/amsfonts
 
 %files -n texlive-format-csplain
 %defattr(644,root,root,755)
+%{texmfdist}/tex/csplain
 %{fmtdir}/pdftex/csplain.fmt
 
 %files -n texlive-cslatex
@@ -7296,6 +7319,7 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/context
 %{texmfdist}/source/lambda
+%{texmfdist}/source/context
 %{texmfdist}/bibtex/bst/context
 %{texmfdist}/context
 %{texmfdist}/fonts/enc/dvips/context
@@ -7307,6 +7331,7 @@ fi
 %{texmfdist}/scripts/context
 %{texmfdist}/tex/context
 %{texmfdist}/tex/generic/context
+%{texmfdist}/tex/latex/context
 %{texmf}/web2c/context.cnf
 
 %files -n texlive-format-context-de
@@ -7945,7 +7970,11 @@ fi
 %files -n texlive-latex-beamer
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/beamer
+%doc %{texmfdist}/doc/latex/beamerposter
+%doc %{texmfdist}/doc/latex/beamer-FUBerlin
 %{texmfdist}/tex/latex/beamer-contrib
+%{texmfdist}/tex/latex/beamerposter
+%{texmfdist}/tex/latex/beamer-FUBerlin
 %{texmfdist}/tex/latex/beamer
 
 %files -n texlive-latex-bezos
@@ -8385,17 +8414,19 @@ fi
 
 %files -n texlive-latex-misc
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/advdate
 %doc %{texmfdist}/doc/latex/cooking
 %doc %{texmfdist}/doc/latex/cookybooky
 %doc %{texmfdist}/doc/latex/cuisine
 %doc %{texmfdist}/doc/latex/fixme
+%doc %{texmfdist}/doc/fonts/knitting
 %doc %{texmfdist}/doc/latex/knittingpattern
 %doc %{texmfdist}/doc/latex/plantslabels
 %doc %{texmfdist}/doc/latex/recipe
 %doc %{texmfdist}/doc/latex/recipecard
 %doc %{texmfdist}/doc/latex/simplecd
 %doc %{texmfdist}/doc/latex/todo
-%doc %{texmfdist}/doc/fonts/knitting
+%doc %{texmfdist}/doc/latex/todonotes
 %{texmfdist}/fonts/afm/public/knitting
 %{texmfdist}/fonts/map/dvips/knitting
 %{texmfdist}/fonts/tfm/public/knitting
@@ -8408,6 +8439,8 @@ fi
 %{texmfdist}/source/latex/recipecard
 %{texmfdist}/source/latex/simplecd
 %{texmfdist}/source/latex/todo
+%{texmfdist}/source/latex/todonotes
+%{texmfdist}/tex/latex/advdate
 %{texmfdist}/tex/latex/cooking
 %{texmfdist}/tex/latex/cookybooky
 %{texmfdist}/tex/latex/cuisine
@@ -8419,6 +8452,7 @@ fi
 %{texmfdist}/tex/latex/recipecard
 %{texmfdist}/tex/latex/simplecd
 %{texmfdist}/tex/latex/todo
+%{texmfdist}/tex/latex/todonotes
 
 %files -n texlive-latex-mflogo
 %defattr(644,root,root,755)
@@ -9216,26 +9250,32 @@ fi
 %doc %{texmfdist}/doc/latex/cooltooltips
 %doc %{texmfdist}/doc/latex/flashmovie
 %doc %{texmfdist}/doc/latex/movie15
+%doc %{texmfdist}/doc/latex/ocgtools
 %doc %{texmfdist}/doc/latex/pdfcprot
 %doc %{texmfdist}/doc/latex/pdfscreen
 %doc %{texmfdist}/doc/latex/pdfsync
 %doc %{texmfdist}/doc/latex/pdftricks
+%doc %{texmfdist}/doc/latex/tdclock
 %{texmfdist}/source/latex/attachfile
 %{texmfdist}/source/latex/cooltooltips
+%{texmfdist}/source/latex/ocgtools
 %{texmfdist}/source/latex/pdfcprot
 %{texmfdist}/tex/latex/attachfile
 %{texmfdist}/tex/latex/cooltooltips
 %{texmfdist}/tex/latex/flashmovie
 %{texmfdist}/tex/latex/movie15
+%{texmfdist}/tex/latex/ocgtools
 %{texmfdist}/tex/latex/pdfcprot
 %{texmfdist}/tex/latex/pdfscreen
 %{texmfdist}/tex/latex/pdfsync
 %{texmfdist}/tex/latex/pdftricks
+%{texmfdist}/tex/latex/tdclock
 
 %files -n texlive-latex-informatic
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/alg
 %doc %{texmfdist}/doc/latex/bytefield
+%doc %{texmfdist}/doc/latex/colordoc
 %doc %{texmfdist}/doc/latex/lsc
 %doc %{texmfdist}/doc/latex/method
 %doc %{texmfdist}/doc/latex/minted
@@ -9246,6 +9286,7 @@ fi
 %doc %{texmfdist}/doc/latex/uml
 %{texmfdist}/source/latex/alg
 %{texmfdist}/source/latex/bytefield
+%{texmfdist}/source/latex/colordoc
 %{texmfdist}/source/latex/method
 %{texmfdist}/source/latex/minted
 %{texmfdist}/source/latex/multiobjective
@@ -9254,6 +9295,7 @@ fi
 %{texmfdist}/source/latex/uml
 %{texmfdist}/tex/latex/alg
 %{texmfdist}/tex/latex/bytefield
+%{texmfdist}/tex/latex/colordoc
 %{texmfdist}/tex/latex/lsc
 %{texmfdist}/tex/latex/method
 %{texmfdist}/tex/latex/minted
@@ -9596,6 +9638,7 @@ fi
 %doc %{texmfdist}/doc/latex/nostarch
 %doc %{texmfdist}/doc/latex/nrc
 %doc %{texmfdist}/doc/latex/octavo
+%doc %{texmfdist}/doc/latex/onrannual
 %doc %{texmfdist}/doc/latex/paper
 %doc %{texmfdist}/doc/latex/papertex
 %doc %{texmfdist}/doc/latex/pbsheet
@@ -9709,6 +9752,7 @@ fi
 %{texmfdist}/tex/latex/nostarch
 %{texmfdist}/tex/latex/nrc
 %{texmfdist}/tex/latex/octavo
+%{texmfdist}/tex/latex/onrannual
 %{texmfdist}/tex/latex/paper
 %{texmfdist}/tex/latex/papertex
 %{texmfdist}/tex/latex/pbsheet
@@ -9795,6 +9839,8 @@ fi
 %files -n texlive-latex-extend
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/HA-prosper
+%doc %{texmfdist}/doc/latex/a4wide
+%doc %{texmfdist}/doc/latex/a5comb
 %doc %{texmfdist}/doc/latex/addlines
 %doc %{texmfdist}/doc/latex/alnumsec
 %doc %{texmfdist}/doc/latex/arydshln
@@ -9829,6 +9875,8 @@ fi
 %doc %{texmfdist}/doc/latex/newvbtm
 %doc %{texmfdist}/doc/latex/notes2bib
 %doc %{texmfdist}/doc/latex/ntabbing
+%doc %{texmfdist}/doc/latex/pagecont
+%doc %{texmfdist}/doc/latex/pagerange
 %doc %{texmfdist}/doc/latex/pbox
 %doc %{texmfdist}/doc/latex/pinlabel
 %doc %{texmfdist}/doc/latex/polytable
@@ -9874,6 +9922,7 @@ fi
 %{texmfdist}/source/latex/multicap
 %{texmfdist}/source/latex/newvbtm
 %{texmfdist}/source/latex/notes2bib
+%{texmfdist}/source/latex/pagecont
 %{texmfdist}/source/latex/pbox
 %{texmfdist}/source/latex/polytable
 %{texmfdist}/source/latex/rccol
@@ -9883,6 +9932,8 @@ fi
 %{texmfdist}/source/latex/umoline
 %{texmfdist}/source/latex/underlin
 %{texmfdist}/tex/latex/HA-prosper
+%{texmfdist}/tex/latex/a4wide
+%{texmfdist}/tex/latex/a5comb
 %{texmfdist}/tex/latex/addlines
 %{texmfdist}/tex/latex/alnumsec
 %{texmfdist}/tex/latex/arydshln
@@ -9920,6 +9971,8 @@ fi
 %{texmfdist}/tex/latex/notes2bib
 %{texmfdist}/tex/latex/ntabbing
 # %{texmfdist}/tex/latex/numline
+%{texmfdist}/tex/latex/pagecont
+%{texmfdist}/tex/latex/pagerange
 %{texmfdist}/tex/latex/pbox
 %{texmfdist}/tex/latex/pinlabel
 %{texmfdist}/tex/latex/polytable
@@ -9934,6 +9987,7 @@ fi
 %files -n texlive-latex-presentation
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/powerdot
+%doc %{texmfdist}/doc/latex/powerdot-FUBerlin
 %doc %{texmfdist}/doc/latex/ppower4
 %doc %{texmfdist}/doc/latex/sciposter
 %doc %{texmfdist}/doc/latex/tpslifonts
@@ -9941,6 +9995,7 @@ fi
 %{texmfdist}/scripts/ppower4
 %{texmfdist}/source/latex/powerdot
 %{texmfdist}/tex/latex/powerdot
+%{texmfdist}/tex/latex/powerdot-FUBerlin
 %{texmfdist}/tex/latex/ppower4
 %{texmfdist}/tex/latex/sciposter
 %{texmfdist}/tex/latex/tpslifonts
@@ -10039,6 +10094,8 @@ fi
 %defattr(644,root,root,755)
 # %doc %{texmfdist}/doc/fonts/umrand
 %doc %{texmfdist}/doc/latex/arcs
+%doc %{texmfdist}/doc/latex/background
+%doc %{texmfdist}/doc/latex/bclogo
 %doc %{texmfdist}/doc/latex/blowup
 %doc %{texmfdist}/doc/latex/capt-of
 %doc %{texmfdist}/doc/latex/changebar
@@ -10073,6 +10130,7 @@ fi
 %{texmfdist}/fonts/tfm/public/niceframe
 # %{texmfdist}/fonts/tfm/public/umrand
 %{texmfdist}/source/latex/arcs
+%{texmfdist}/source/latex/background
 %{texmfdist}/source/latex/blowup
 %{texmfdist}/source/latex/changebar
 %{texmfdist}/source/latex/draftwatermark
@@ -10091,6 +10149,8 @@ fi
 %{texmfdist}/source/latex/quotchap
 %{texmfdist}/source/latex/ushort
 %{texmfdist}/tex/latex/arcs
+%{texmfdist}/tex/latex/background
+%{texmfdist}/tex/latex/bclogo
 %{texmfdist}/tex/latex/blowup
 %{texmfdist}/tex/latex/capt-of
 %{texmfdist}/tex/latex/censor
@@ -10575,8 +10635,6 @@ fi
 %{texmfdist}/tex/latex/uhrzeit
 # %{texmfdist}/source/latex/nicetext
 %{texmfdist}/tex/latex/nicetext
-%{texmfdist}/source/latex/pagecont
-%{texmfdist}/tex/latex/pagecont
 %{texmfdist}/source/latex/pax
 %{texmfdist}/tex/latex/pax
 %{texmfdist}/tex/latex/pdfcomment
@@ -10584,7 +10642,6 @@ fi
 %{texmfdist}/source/latex/pdfx
 %{texmfdist}/tex/latex/pdfx
 %{texmfdist}/tex/latex/pigpen
-%{texmfdist}/tex/latex/powerdot-FUBerlin
 %{texmfdist}/tex/latex/printlen
 %{texmfdist}/tex/latex/properties
 %{texmfdist}/tex/latex/psbao
@@ -10619,7 +10676,6 @@ fi
 %{texmfdist}/tex/latex/tabularcalc
 %{texmfdist}/source/latex/tabularew
 %{texmfdist}/tex/latex/tabularew
-%{texmfdist}/tex/latex/tdclock
 %{texmfdist}/source/latex/termcal
 %{texmfdist}/tex/latex/termcal
 %{texmfdist}/source/latex/termlist
@@ -10633,7 +10689,6 @@ fi
 %{texmfdist}/tex/latex/tkz-doc
 %{texmfdist}/tex/latex/tkz-linknodes
 %{texmfdist}/tex/latex/tkz-tab
-%{texmfdist}/tex/latex/todonotes
 %{texmfdist}/tex/latex/totcount
 %{texmfdist}/tex/latex/trimspaces
 %{texmfdist}/tex/latex/ulqda
@@ -10735,6 +10790,7 @@ fi
 %files -n texlive-latex-pst-eucl
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/pst-eucl
+%lang(bg) %doc %{texmfdist}/doc/latex/pst-eucl-translation-bg
 %{texmfdist}/tex/generic/pst-eucl
 %{texmfdist}/tex/latex/pst-eucl
 
@@ -10974,6 +11030,7 @@ fi
 %doc %{texmfdist}/doc/latex/first-latex-doc
 %doc %{texmfdist}/doc/latex/firststeps
 %doc %{texmfdist}/doc/latex/intro-scientific
+%lang(pt) %doc %{texmfdist}/doc/latex/beamer-tut-pt
 
 %files -n texlive-latex-txfonts
 %defattr(644,root,root,755)
@@ -11100,6 +11157,7 @@ fi
 
 %files -n texlive-tex-spanish
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/spanish
 %doc %{texmfdist}/doc/latex/spanish-mx
 %dir %{texmfdist}/source/latex/mapcodes
 %dir %{texmfdist}/source/latex/polyglot
@@ -11157,9 +11215,9 @@ fi
 %{texmfdist}/tex/generic/xkeyval
 %{texmfdist}/tex/latex/xkeyval
 
-##%files -n texlive-fonts-doc
-##%defattr(644,root,root,755)
-#%%doc %{texmfdist}/doc/fonts
+%files -n texlive-fonts-doc
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/fonts
 
 %files -n texlive-fonts-adobe
 %defattr(644,root,root,755)
