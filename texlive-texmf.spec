@@ -1285,6 +1285,14 @@ Requires:	%{shortname}-latex
 %description -n texlive-latex-colortab
 Shade cells of tables and halign.
 
+%package -n texlive-latex-ctex
+Summary:	LaTeX classes and packages for Chinese typesetting
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+
+%description -n texlive-latex-ctex
+LaTeX classes and packages for Chinese typesetting.
+
 %package -n texlive-latex-12many
 Summary:	Generalising mathematical index sets
 Summary(hu.UTF-8):	A matematikai halmazok indexelésének általánosítása
@@ -2151,9 +2159,11 @@ This package contains:
 - babelbib: multilingual bibliographies.
 - bibtopicprefix: prefix references to bibliographies produced by
   bibtopic.
+- blkarray: Extended array and tabular.
 - boites: boxes that may break across pages
 - booklet: aids for printing simple booklets.
 - bullcntr: display list item counter as regular pattern of bullets.
+- ccicons: LaTeX support for Creative Commons icons.
 - chappg: page numbering by chapter.
 - cjw: a bundle of packages and classes.
 - clefval: key/value support with a hash.
@@ -2164,6 +2174,7 @@ This package contains:
 - curve2e: extensions for package pict2e.
 - dashbox: draw dashed boxes.
 - dashline: draw dashed rules.
+- dox: Extend the doc package.
 - etaremune: reverse-counting enumerate environment.
 - expdlist: expanded description environments.
 - HA-prosper: patches and improvements for prosper.
@@ -2194,6 +2205,7 @@ This package contains:
 - schedule: weekly schedules.
 - spreadtab: Spreadsheet features for LaTeX tabular environments.
 - subfloat: sub-numbering for figures and tables.
+- thmbox: Decorate theorem statements.
 - umoline: underline text allowing line breaking.
 - umrand: package for fancy box frames.
 - underlin: underlined running heads.
@@ -2210,9 +2222,11 @@ Ez a csomag a következőket tartalmazza:
 - babelbib: többnyelvű bibliográfiák
 - bibtopicprefix: prefix hivatkozás bibtopic által készített
   bibliográfiára
+- blkarray: Extended array and tabular.
 - boites: dobozok, amelyek törhetők oldalak között
 - booklet: booklet formátumban történő nyomtatás
 - bullcntr: lista elemek számlálójának megjelenítése mint...
+- ccicons: LaTeX support for Creative Commons icons.
 - chappg: oldalszámozás chapter alapján
 - cjw: csomagok és osztályok tömkelege
 - clefval: kulcs/érték párok hash-sel
@@ -2223,6 +2237,7 @@ Ez a csomag a következőket tartalmazza:
 - curve2e: pict2e csomaghoz kiegészítések
 - dashbox: pontozott dobozok
 - dashline: pontozott vonalak
+- dox: Extend the doc package.
 - etaremune: visszafele sorszámazó enumerate környezet
 - expdlist: kibővített description környezetek
 - HA-prosper: foltok és bővítések a prosper-hez
@@ -2253,6 +2268,7 @@ Ez a csomag a következőket tartalmazza:
 - schedule: heti időbeosztás (órarend)
 - spreadtab: Spreadsheet features for LaTeX tabular environments.
 - subfloat: sub-numbering for figures and tables.
+- thmbox: Decorate theorem statements.
 - umoline: aláhúzott szövegben sortörés engedélyezése
 - umrand: package for fancy box frames.
 - underlin: aláhúzott élőfej
@@ -2276,6 +2292,7 @@ This package contains:
 - changebar: generate changebars in LaTeX documents.
 - changelayout: Change the layout of individual pages and their text.
 - censor: facilities for controlling restricted text in a document.
+- comma: Formats a number by inserting commas.
 - dashundergaps: Underline with dotted or dashed lines.
 - dblfloatfix: Fixes for twocolumn floats.
 - draftwatermark: put a grey textual watermark on document pages.
@@ -2295,6 +2312,8 @@ This package contains:
 - parallel: typeset parallel texts.
 - quotchap: decorative chapter headings.
 - rotpages: typeset sets of pages upside-down and backwards.
+- rlepsf: Rewrite labels in EPS graphics.
+- roundbox: Round boxes in LaTeX.
 - sectionbox: create fancy boxed ((sub)sub)sections.
 - shadethm: theorem environments that are shaded
 - tablenotes: Notes in tables at end document.
@@ -2309,6 +2328,7 @@ Ez a csomag a következőket tartalmazza:
 - censor: facilities for controlling restricted text in a document.
 - changebar: oldalsávok készítése LaTeX dokumentumokban
 - changelayout: Change the layout of individual pages and their text.
+- comma: Formats a number by inserting commas.
 - dashundergaps: Underline with dotted or dashed lines.
 - dblfloatfix: Fixes for twocolumn floats.
 - draftwatermark: szürke szöveges vízjel a dokumentum oldalaira
@@ -2327,6 +2347,7 @@ Ez a csomag a következőket tartalmazza:
 - pageslts: Variants of last page labels.
 - parallel: párhuzamos szövegek szedése
 - quotchap: decorative chapter headings.
+- rlepsf: Rewrite labels in EPS graphics.
 - rotpages: typeset sets of pages upside-down and backwards.
 - sectionbox: create fancy boxed ((sub)sub)sections.
 - shadethm: theorem environments that are shaded
@@ -2366,6 +2387,7 @@ Requires:	gnuplot
 This package contains:
 - bez123: support for Bezier curves.
 - binomexp: calculate Pascal's triangle
+- bigints: Writing big integrals.
 - cases: numbered cases environment
 - cmll: symbols for linear logic.
 - constants: automatic numbering of constants.
@@ -2416,6 +2438,7 @@ This package contains:
 %description -n texlive-latex-math -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
 - bez123: Bezier-görbék
+- bigints: Writing big integrals.
 - binomexp: Pascal-háromszög számítása
 - cases: számozott esetszétválasztás
 - cmll: szimbólumok lineáris logikához
@@ -2475,11 +2498,16 @@ Requires:	%{shortname}-latex
 %description -n texlive-latex-misc
 This packages contains:
 - advdate: Print a date relative to "today".
+- chronology: Provides a horizontal timeline.
 - cooking: typeset recipes.
 - cookybooky: typeset recipes.
 - cuisine: typeset recipes.
 - fixme: insert "fixme" notes into draft documents.
 - knittingpattern: Create knitting patterns.
+- liturg: Support for typesetting Catholic liturgical texts.
+- mailmerge: Repeating text field substitution.
+- menu: Typesetting menus.
+- papermas: Compute the mass of a printed version of a document.
 - plantslabels: Write labels for plants.
 - recipe: A LaTeX class to typeset recipes.
 - recipecard: typeset recipes in note-card-sized boxes.
@@ -2490,11 +2518,16 @@ This packages contains:
 %description -n texlive-latex-misc -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
 - advdate: Print a date relative to "today".
+- chronology: Provides a horizontal timeline.
 - cooking: receptek szedése
 - cookybooky: receptek szedése
 - cuisine: receptek szedése
 - fixme: "fixme" megjegyzések elhelyezése
 - knittingpattern: kötésminták
+- liturg: Support for typesetting Catholic liturgical texts.
+- mailmerge: Repeating text field substitution.
+- menu: Typesetting menus.
+- papermas: Compute the mass of a printed version of a document.
 - plantslabels: Write labels for plants.
 - recipe: A LaTeX class to typeset recipes.
 - recipecard: receptek szedése jegyzet-méretű dobozokba
@@ -2990,6 +3023,7 @@ Requires:	%{shortname}-latex
 
 %description -n texlive-latex-programming
 This package contains:
+- boolexpr: A boolean expression evaluator and a switch command.
 - cmdtrack: check used commands.
 - cool: COntent-Oriented LaTeX
 - coollist: manipulate COntent Oriented LaTeX Lists.
@@ -3002,6 +3036,7 @@ This package contains:
 - dprogress: LaTeX-relevant log information for debugging.
 - environ: a new interface for environments in LaTeX.
 - export: import and export values of LaTeX registers.
+- filehook: Hooks for input files.
 - fmtcount: display the value of a LaTeX counter in a variety of
   formats.
 - forarray: using array structures in LaTeX.
@@ -3009,14 +3044,19 @@ This package contains:
 - inversepath: calculate inverse file paths.
 - labelcas: check the existence of labels, and fork accordingly.
 - lcg: generate random integers.
+- listings-ext: Automated input of source.
+- locality: Various macros for keeping things local.
 - makecmds: the new \makecommand command always (re)defines a command.
 - multido: a loop facility for Generic TeX.
 - namespc: rudimentary c++-like namespaces in LaTeX.
+- newcommand: Generate new LaTeX command definitions.
 - patchcmd: change the definition of an existing command.
 - progress: creates an overview of a document's state.
 - randtext: randomise the order of characters in strings.
 - regcount: display the allocation status of the TeX registers.
 - robustcommand: declare robust command, with \newcommand checks.
+- skeycommand: Create commands using parameters and keyval in parallel
+- skeyval: Extensions to xkeyval.
 - splitindex: unlimited number of indexes.
 - stack: tools to define and use stacks.
 - stringstrings: string manipulation for cosmetic and programming
@@ -3026,6 +3066,7 @@ This package contains:
 
 %description -n texlive-latex-programming -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
+- boolexpr: A boolean expression evaluator and a switch command.
 - cmdtrack: használt parancsok ellenőrzése
 - cool: tartalom-orientált (COntent-Oriented) LaTeX
 - coollist: COntent Oriented LaTeX listák manipulációja
@@ -3038,12 +3079,16 @@ Ez a csomag a következőket tartalmazza:
 - dprogress: LaTeX-releváns log információ debuggoláshoz
 - export: LaTeX regiszterek értékeinek importálása és exportálása
 - environ: egy új felület környezetek létrehozására
+- filehook: Hooks for input files.
 - fmtcount: LaTeX számlálók megjelenítése különböző formátumokban
 - forarray: tömb struktúrák LaTeX-ben
 - forloop: iteráció LaTeX-ben
 - inversepath: fájlútvonalak visszafele relatív meghatározása
 - labelcas: cimkék létezésének ellenőrzése
 - lcg: véletlen egész számok generálása
+- listings-ext: Automated input of source.
+- locality: Various macros for keeping things local.
+- newcommand: Generate new LaTeX command definitions.
 - makecmds: új \makecommand, amely mindig (újra)definiál parancsot
 - multido: ciklusok szervezése LaTeX-ben
 - namespc: c++-szerű névterek LaTeX-ben
@@ -3052,6 +3097,8 @@ Ez a csomag a következőket tartalmazza:
 - randtext: sztring karaktereinek összekeverése
 - regcount: display the allocation status of the TeX registers.
 - robustcommand: declare robust command, with \newcommand checks.
+- skeycommand: Create commands using parameters and keyval in parallel
+- skeyval: Extensions to xkeyval.
 - splitindex: unlimited number of indexes.
 - stack: verem használata
 - stringstrings: sztring manipuláció
@@ -5420,6 +5467,12 @@ fi
 %postun -n texlive-latex-chem
 %texhash
 
+%post -n texlive-latex-ctex
+%texhash
+
+%postun -n texlive-latex-ctex
+%texhash
+
 %post -n texlive-latex-informatic
 %texhash
 
@@ -6691,29 +6744,32 @@ fi
 
 %files -n texlive-doc
 %defattr(644,root,root,755)
-%doc %{texmfdist}/doc/generic/dehyph-exptl
-%doc %{texmfdist}/doc/fonts/fontinst
-%doc %{texmfdist}/doc/generic/barr
-%doc %{texmfdist}/doc/generic/borceux
-%doc %{texmfdist}/doc/generic/c-pascal
 # %dir %{texmfdoc}
 # %dir %{texmfdoc}/doc
 # %{texmfdoc}/README
 # %{texmfdoc}/ls-R
-%{texmfdist}/doc/generic/FAQ-en
-%{texmfdist}/doc/latex/guide-to-latex
-%{texmfdist}/doc/latex/l2tabu-english
-%{texmfdist}/doc/latex/latex-course
-%{texmfdist}/doc/latex/latex-doc-ptr
-%{texmfdist}/doc/latex/latex-graphics-companion
-%{texmfdist}/doc/latex/latex-veryshortguide
-%{texmfdist}/doc/latex/latex-web-companion
-%{texmfdist}/doc/latex/lshort-english
-%{texmfdist}/doc/latex/pdf-forms-tutorial-en
-%{texmfdist}/doc/latex/tlc2
-%{texlivedoc}en
-%{texmf}/doc/tetex
-%{texmf}/doc/texlive/texlive-common
+%doc %{texlivedoc}en
+%doc %{texmfdist}/doc/fonts/fontinst
+%doc %{texmfdist}/doc/generic/FAQ-en
+%doc %{texmfdist}/doc/generic/barr
+%doc %{texmfdist}/doc/generic/borceux
+%doc %{texmfdist}/doc/generic/c-pascal
+%doc %{texmfdist}/doc/generic/dehyph-exptl
+%doc %{texmfdist}/doc/generic/epsf
+%doc %{texmfdist}/doc/generic/fltpoint
+%doc %{texmfdist}/doc/generic/hyph-utf8
+%doc %{texmfdist}/doc/latex/guide-to-latex
+%doc %{texmfdist}/doc/latex/l2tabu-english
+%doc %{texmfdist}/doc/latex/latex-course
+%doc %{texmfdist}/doc/latex/latex-doc-ptr
+%doc %{texmfdist}/doc/latex/latex-graphics-companion
+%doc %{texmfdist}/doc/latex/latex-veryshortguide
+%doc %{texmfdist}/doc/latex/latex-web-companion
+%doc %{texmfdist}/doc/latex/lshort-english
+%doc %{texmfdist}/doc/latex/pdf-forms-tutorial-en
+%doc %{texmfdist}/doc/latex/tlc2
+%doc %{texmf}/doc/tetex
+%doc %{texmf}/doc/texlive/texlive-common
 # %{texmfdist}/doc/fontinst
 
 %files -n texlive-doc-bg
@@ -6980,11 +7036,13 @@ fi
 
 %files -n texlive-tex4ht-data
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/generic/tex4ht
 %{texmfdist}/tex4ht
 %{texmfdist}/tex/generic/tex4ht
 
 %files -n texlive-xetex-data
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/generic/ifxetex
 %doc %{texmfdist}/doc/latex/euenc
 %doc %{texmfdist}/doc/latex/fontspec
 %doc %{texmfdist}/doc/xelatex
@@ -7387,7 +7445,6 @@ fi
 %{texmfdist}/tex/latex/antiqua
 %{texmfdist}/tex/latex/anyfontsize
 %{texmfdist}/tex/latex/anysize
-%{texmfdist}/tex/latex/apa
 %{texmfdist}/tex/latex/apl
 %{texmfdist}/tex/latex/ar
 %{texmfdist}/tex/latex/arabi
@@ -8015,7 +8072,6 @@ fi
 %{texmfdist}/bibtex/bst/disser
 %{texmfdist}/bibtex/bst/elsarticle
 %{texmfdist}/bibtex/bst/natbib
-%{texmfdist}/bibtex/bst/sageep
 #%{texmfdist}/bibtex/bst/xepersian
 
 %{texmfdist}/bibtex/csf/base
@@ -8146,7 +8202,6 @@ fi
 %{texmfdist}/bibtex/bst/jneurosci
 %{texmfdist}/bibtex/bst/jurarsp
 %{texmfdist}/bibtex/bst/kluwer
-%{texmfdist}/bibtex/bst/mslapa
 %{texmfdist}/bibtex/bst/multibib
 %{texmfdist}/bibtex/bst/munich
 %{texmfdist}/bibtex/bst/nature
@@ -8233,6 +8288,12 @@ fi
 %files -n texlive-latex-concmath
 %defattr(644,root,root,755)
 %{texmfdist}/tex/latex/concmath
+
+%files -n texlive-latex-ctex
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/ctex-faq
+%doc %{texmfdist}/doc/latex/ctex
+%{texmfdist}/tex/latex/ctex
 
 %files -n texlive-latex-currvita
 %defattr(644,root,root,755)
@@ -8415,12 +8476,17 @@ fi
 %files -n texlive-latex-misc
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/advdate
+%doc %{texmfdist}/doc/latex/chronology
 %doc %{texmfdist}/doc/latex/cooking
 %doc %{texmfdist}/doc/latex/cookybooky
 %doc %{texmfdist}/doc/latex/cuisine
 %doc %{texmfdist}/doc/latex/fixme
 %doc %{texmfdist}/doc/fonts/knitting
 %doc %{texmfdist}/doc/latex/knittingpattern
+%doc %{texmfdist}/doc/latex/liturg
+%doc %{texmfdist}/doc/latex/mailmerge
+%doc %{texmfdist}/doc/latex/menu
+%doc %{texmfdist}/doc/latex/papermas
 %doc %{texmfdist}/doc/latex/plantslabels
 %doc %{texmfdist}/doc/latex/recipe
 %doc %{texmfdist}/doc/latex/recipecard
@@ -8432,21 +8498,30 @@ fi
 %{texmfdist}/fonts/tfm/public/knitting
 %{texmfdist}/fonts/type1/public/knitting
 %{texmfdist}/fonts/source/public/knitting
+%{texmfdist}/source/latex/chronology
 %{texmfdist}/source/latex/cooking
 %{texmfdist}/source/latex/cookybooky
 %{texmfdist}/source/latex/cuisine
 %{texmfdist}/source/latex/fixme
+%{texmfdist}/source/latex/mailmerge
+%{texmfdist}/source/latex/menu
+%{texmfdist}/source/latex/papermas
 %{texmfdist}/source/latex/recipecard
 %{texmfdist}/source/latex/simplecd
 %{texmfdist}/source/latex/todo
 %{texmfdist}/source/latex/todonotes
 %{texmfdist}/tex/latex/advdate
+%{texmfdist}/tex/latex/chronology
 %{texmfdist}/tex/latex/cooking
 %{texmfdist}/tex/latex/cookybooky
 %{texmfdist}/tex/latex/cuisine
 %{texmfdist}/tex/latex/fixme
 %{texmfdist}/tex/latex/knitting
 %{texmfdist}/tex/latex/knittingpattern
+%{texmfdist}/tex/latex/liturg
+%{texmfdist}/tex/latex/mailmerge
+%{texmfdist}/tex/latex/menu
+%{texmfdist}/tex/latex/papermas
 %{texmfdist}/tex/latex/plantslabels
 %{texmfdist}/tex/latex/recipe
 %{texmfdist}/tex/latex/recipecard
@@ -8527,7 +8602,6 @@ fi
 %doc %{texmfdist}/doc/latex/amsrefs
 %doc %{texmfdist}/doc/latex/animate
 %doc %{texmfdist}/doc/latex/anyfontsize
-%doc %{texmfdist}/doc/latex/apa
 %doc %{texmfdist}/doc/latex/ar
 %doc %{texmfdist}/doc/latex/arabi
 %doc %{texmfdist}/doc/latex/arabtex
@@ -8797,7 +8871,6 @@ fi
 %doc %{texmfdist}/doc/latex/montex
 %doc %{texmfdist}/doc/latex/moresize
 %doc %{texmfdist}/doc/latex/msg
-%doc %{texmfdist}/doc/latex/mslapa
 %doc %{texmfdist}/doc/latex/mtgreek
 %doc %{texmfdist}/doc/latex/multibbl
 %doc %{texmfdist}/doc/latex/multirow
@@ -8862,7 +8935,6 @@ fi
 %doc %{texmfdist}/doc/latex/refstyle
 %doc %{texmfdist}/doc/latex/relenc
 %doc %{texmfdist}/doc/latex/repeatindex
-# %doc %{texmfdist}/doc/latex/rlepsf
 %doc %{texmfdist}/doc/latex/rmpage
 %doc %{texmfdist}/doc/latex/robustindex
 # %doc %{texmfdist}/doc/latex/rst
@@ -9040,6 +9112,7 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/fonts/eco
 %doc %{texmfdist}/doc/latex/bez123
+%doc %{texmfdist}/doc/latex/bigints
 %doc %{texmfdist}/doc/latex/binomexp
 # %doc %{texmfdist}/doc/latex/cmll
 %doc %{texmfdist}/doc/latex/cancel
@@ -9111,6 +9184,7 @@ fi
 %{texmfdist}/source/latex/trfsigns
 %{texmfdist}/source/latex/ulsy
 %{texmfdist}/tex/latex/bez123
+%{texmfdist}/tex/latex/bigints
 %{texmfdist}/tex/latex/binomexp
 %{texmfdist}/tex/latex/cmll
 %{texmfdist}/tex/latex/cancel
@@ -9618,12 +9692,15 @@ fi
 %doc %{texmfdist}/doc/latex/acmconf
 %doc %{texmfdist}/doc/latex/active-conf
 %doc %{texmfdist}/doc/latex/aiaa
+%doc %{texmfdist}/doc/latex/apa
 %doc %{texmfdist}/doc/latex/apacite
 %doc %{texmfdist}/doc/latex/asaetr
 %doc %{texmfdist}/doc/latex/computational-complexity
 %doc %{texmfdist}/doc/latex/dtk
 %doc %{texmfdist}/doc/latex/elsarticle
+%doc %{texmfdist}/doc/latex/erdc
 %doc %{texmfdist}/doc/latex/gatech-thesis
+%doc %{texmfdist}/doc/latex/historische-zeitschrift
 %doc %{texmfdist}/doc/latex/jmlr
 %doc %{texmfdist}/doc/latex/lettre
 %doc %{texmfdist}/doc/latex/lexikon
@@ -9633,6 +9710,7 @@ fi
 %doc %{texmfdist}/doc/latex/manuscript
 %doc %{texmfdist}/doc/latex/maple
 %doc %{texmfdist}/doc/latex/mentis
+%doc %{texmfdist}/doc/latex/mslapa
 %doc %{texmfdist}/doc/latex/nature
 %doc %{texmfdist}/doc/latex/nih
 %doc %{texmfdist}/doc/latex/nostarch
@@ -9654,6 +9732,7 @@ fi
 %doc %{texmfdist}/doc/latex/refman
 %doc %{texmfdist}/doc/latex/ryethesis
 %doc %{texmfdist}/doc/latex/rsc
+%doc %{texmfdist}/doc/latex/sageep
 %doc %{texmfdist}/doc/latex/seuthesis
 %doc %{texmfdist}/doc/latex/screenplay
 %doc %{texmfdist}/doc/latex/script
@@ -9684,8 +9763,10 @@ fi
 %{texmfdist}/bibtex/bst/computational-complexity
 %{texmfdist}/bibtex/bst/dtk
 %{texmfdist}/bibtex/bib/gatech-thesis
+%{texmfdist}/bibtex/bst/mslapa
 %{texmfdist}/bibtex/bst/psu-thesis
 %{texmfdist}/bibtex/bst/rsc
+%{texmfdist}/bibtex/bst/sageep
 %{texmfdist}/bibtex/bst/seuthesis
 %{texmfdist}/source/latex/IEEEconf
 %{texmfdist}/source/latex/aastex
@@ -9696,13 +9777,13 @@ fi
 # %{texmfdist}/source/latex/asaetr
 %{texmfdist}/source/latex/computational-complexity
 # %{texmfdist}/source/latex/dtk
+%{texmfdist}/source/latex/erdc
 %{texmfdist}/source/latex/elsarticle
 # %{texmfdist}/source/latex/lexikon
 %{texmfdist}/source/latex/jmlr
 %{texmfdist}/source/latex/lps
 %{texmfdist}/source/latex/manuscript
 %{texmfdist}/source/latex/mentis
-%{texmfdist}/source/latex/menu
 %{texmfdist}/source/latex/nostarch
 %{texmfdist}/source/latex/nrc
 %{texmfdist}/source/latex/octavo
@@ -9718,6 +9799,7 @@ fi
 %{texmfdist}/source/latex/refman
 %{texmfdist}/source/latex/ryethesis
 %{texmfdist}/source/latex/rsc
+%{texmfdist}/source/latex/sageep
 %{texmfdist}/source/latex/screenplay
 %{texmfdist}/source/latex/seuthesis
 %{texmfdist}/source/latex/siggraph
@@ -9730,12 +9812,17 @@ fi
 %{texmfdist}/tex/latex/acmconf
 %{texmfdist}/tex/latex/active-conf
 %{texmfdist}/tex/latex/aiaa
+%{texmfdist}/tex/latex/apa
 %{texmfdist}/tex/latex/apacite
 %{texmfdist}/tex/latex/asaetr
+%{texmfdist}/tex/latex/biblatex-apa
+%{texmfdist}/tex/latex/biblatex-nature
 %{texmfdist}/tex/latex/computational-complexity
 %{texmfdist}/tex/latex/dtk
 %{texmfdist}/tex/latex/elsarticle
+%{texmfdist}/tex/latex/erdc
 %{texmfdist}/tex/latex/gatech-thesis
+%{texmfdist}/tex/latex/historische-zeitschrift
 %{texmfdist}/tex/latex/jmlr
 %{texmfdist}/tex/latex/lettre
 %{texmfdist}/tex/latex/lexikon
@@ -9745,7 +9832,7 @@ fi
 %{texmfdist}/tex/latex/manuscript
 %{texmfdist}/tex/latex/maple
 %{texmfdist}/tex/latex/mentis
-%{texmfdist}/tex/latex/menu
+%{texmfdist}/tex/latex/mslapa
 %{texmfdist}/tex/latex/muthesis
 %{texmfdist}/tex/latex/nature
 %{texmfdist}/tex/latex/nih
@@ -9768,6 +9855,7 @@ fi
 %{texmfdist}/tex/latex/refman
 %{texmfdist}/tex/latex/rsc
 %{texmfdist}/tex/latex/ryethesis
+%{texmfdist}/tex/latex/sageep
 %{texmfdist}/tex/latex/screenplay
 %{texmfdist}/tex/latex/script
 %{texmfdist}/tex/latex/seuthesis
@@ -9846,9 +9934,11 @@ fi
 %doc %{texmfdist}/doc/latex/arydshln
 %doc %{texmfdist}/doc/latex/babelbib
 %doc %{texmfdist}/doc/latex/bibtopicprefix
+%doc %{texmfdist}/doc/latex/blkarray
 %doc %{texmfdist}/doc/latex/boites
 %doc %{texmfdist}/doc/latex/booklet
 %doc %{texmfdist}/doc/latex/bullcntr
+%doc %{texmfdist}/doc/latex/ccicons
 %doc %{texmfdist}/doc/latex/chappg
 %doc %{texmfdist}/doc/latex/cjw
 %doc %{texmfdist}/doc/latex/clefval
@@ -9858,6 +9948,7 @@ fi
 %doc %{texmfdist}/doc/latex/ctable
 %doc %{texmfdist}/doc/latex/curve2e
 %doc %{texmfdist}/doc/latex/dashrule
+%doc %{texmfdist}/doc/latex/dox
 %doc %{texmfdist}/doc/latex/etaremune
 %doc %{texmfdist}/doc/latex/expdlist
 %doc %{texmfdist}/doc/latex/leading
@@ -9885,6 +9976,7 @@ fi
 %doc %{texmfdist}/doc/latex/spreadtab
 # %doc %{texmfdist}/doc/latex/schedule
 %doc %{texmfdist}/doc/latex/subfloat
+%doc %{texmfdist}/doc/latex/thmbox
 %doc %{texmfdist}/doc/latex/umoline
 %doc %{texmfdist}/doc/latex/underlin
 %{texmfdist}/bibtex/bst/babelbib
@@ -9898,6 +9990,7 @@ fi
 %{texmfdist}/source/latex/boites
 %{texmfdist}/source/latex/booklet
 %{texmfdist}/source/latex/bullcntr
+%{texmfdist}/source/latex/ccicons
 %{texmfdist}/source/latex/chappg
 %{texmfdist}/source/latex/cjw
 %{texmfdist}/source/latex/clefval
@@ -9908,6 +10001,7 @@ fi
 %{texmfdist}/source/latex/curve2e
 %{texmfdist}/source/latex/dashbox
 %{texmfdist}/source/latex/dashrule
+%{texmfdist}/source/latex/dox
 %{texmfdist}/source/latex/etaremune
 %{texmfdist}/source/latex/expdlist
 %{texmfdist}/source/latex/leading
@@ -9929,6 +10023,7 @@ fi
 %{texmfdist}/source/latex/romannum
 # %{texmfdist}/source/latex/schedule
 %{texmfdist}/source/latex/subfloat
+%{texmfdist}/source/latex/thmbox
 %{texmfdist}/source/latex/umoline
 %{texmfdist}/source/latex/underlin
 %{texmfdist}/tex/latex/HA-prosper
@@ -9939,9 +10034,11 @@ fi
 %{texmfdist}/tex/latex/arydshln
 %{texmfdist}/tex/latex/babelbib
 %{texmfdist}/tex/latex/bibtopicprefix
+%{texmfdist}/tex/latex/blkarray
 %{texmfdist}/tex/latex/boites
 %{texmfdist}/tex/latex/booklet
 %{texmfdist}/tex/latex/bullcntr
+%{texmfdist}/tex/latex/ccicons
 %{texmfdist}/tex/latex/chappg
 %{texmfdist}/tex/latex/cjw
 %{texmfdist}/tex/latex/clefval
@@ -9952,6 +10049,7 @@ fi
 %{texmfdist}/tex/latex/curve2e
 %{texmfdist}/tex/latex/dashbox
 %{texmfdist}/tex/latex/dashrule
+%{texmfdist}/tex/latex/dox
 %{texmfdist}/tex/latex/etaremune
 %{texmfdist}/tex/latex/expdlist
 %{texmfdist}/tex/latex/leading
@@ -9981,6 +10079,7 @@ fi
 %{texmfdist}/tex/latex/spreadtab
 # %{texmfdist}/tex/latex/schedule
 %{texmfdist}/tex/latex/subfloat
+%{texmfdist}/tex/latex/thmbox
 %{texmfdist}/tex/latex/umoline
 %{texmfdist}/tex/latex/underlin
 
@@ -10002,6 +10101,7 @@ fi
 
 %files -n texlive-latex-programming
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/boolexpr
 %doc %{texmfdist}/doc/latex/cool
 %doc %{texmfdist}/doc/latex/coollist
 %doc %{texmfdist}/doc/latex/coolstr
@@ -10013,22 +10113,32 @@ fi
 %doc %{texmfdist}/doc/latex/dprogress
 %doc %{texmfdist}/doc/latex/environ
 %doc %{texmfdist}/doc/latex/export
+%doc %{texmfdist}/doc/latex/filehook
 %doc %{texmfdist}/doc/latex/fmtcount
 %doc %{texmfdist}/doc/latex/forarray
 %doc %{texmfdist}/doc/latex/forloop
 %doc %{texmfdist}/doc/latex/inversepath
 %doc %{texmfdist}/doc/latex/labelcas
+%doc %{texmfdist}/doc/latex/listings-ext
+%doc %{texmfdist}/doc/latex/locality
 %doc %{texmfdist}/doc/latex/makecmds
 %doc %{texmfdist}/doc/latex/nag
 %doc %{texmfdist}/doc/latex/namespc
+%doc %{texmfdist}/doc/latex/newcommand
+%doc %{texmfdist}/doc/latex/patchcmd
 %doc %{texmfdist}/doc/latex/progress
 %doc %{texmfdist}/doc/latex/randtext
 %doc %{texmfdist}/doc/latex/regcount
 %doc %{texmfdist}/doc/latex/robustcommand
+%doc %{texmfdist}/doc/latex/skeycommand
+%doc %{texmfdist}/doc/latex/skeyval
 %doc %{texmfdist}/doc/latex/splitindex
 %doc %{texmfdist}/doc/latex/stringstrings
 %doc %{texmfdist}/doc/latex/substr
 %doc %{texmfdist}/doc/latex/typedref
+%dir %{texmfdist}/scripts/listings-ext
+%attr(755,root,root) %{texmfdist}/scripts/listings-ext/listings-ext.sh
+%{texmfdist}/source/latex/boolexpr
 %{texmfdist}/source/latex/cmdtrack
 %{texmfdist}/source/latex/cool
 %{texmfdist}/source/latex/coollist
@@ -10041,12 +10151,15 @@ fi
 %{texmfdist}/source/latex/dprogress
 %{texmfdist}/source/latex/environ
 %{texmfdist}/source/latex/export
+%{texmfdist}/source/latex/filehook
 %{texmfdist}/source/latex/fmtcount
 %{texmfdist}/source/latex/forarray
 %{texmfdist}/source/latex/forloop
 %{texmfdist}/source/latex/inversepath
 %{texmfdist}/source/latex/labelcas
 %{texmfdist}/source/latex/lcg
+%{texmfdist}/source/latex/listings-ext
+%{texmfdist}/source/latex/locality
 %{texmfdist}/source/latex/makecmds
 %{texmfdist}/source/latex/nag
 %{texmfdist}/source/latex/namespc
@@ -10057,6 +10170,7 @@ fi
 %{texmfdist}/source/latex/stack
 %{texmfdist}/source/latex/stringstrings
 %{texmfdist}/source/latex/typedref
+%{texmfdist}/tex/latex/boolexpr
 %{texmfdist}/tex/latex/cmdtrack
 %{texmfdist}/tex/latex/cool
 %{texmfdist}/tex/latex/coollist
@@ -10069,12 +10183,15 @@ fi
 %{texmfdist}/tex/latex/dprogress
 %{texmfdist}/tex/latex/environ
 %{texmfdist}/tex/latex/export
+%{texmfdist}/tex/latex/filehook
 %{texmfdist}/tex/latex/fmtcount
 %{texmfdist}/tex/latex/forarray
 %{texmfdist}/tex/latex/forloop
 %{texmfdist}/tex/latex/inversepath
 %{texmfdist}/tex/latex/labelcas
 %{texmfdist}/tex/latex/lcg
+%{texmfdist}/tex/latex/listings-ext
+%{texmfdist}/tex/latex/locality
 %{texmfdist}/tex/latex/makecmds
 %{texmfdist}/tex/latex/multido
 %{texmfdist}/tex/latex/nag
@@ -10084,6 +10201,8 @@ fi
 %{texmfdist}/tex/latex/randtext
 %{texmfdist}/tex/latex/regcount
 %{texmfdist}/tex/latex/robustcommand
+%{texmfdist}/tex/latex/skeycommand
+%{texmfdist}/tex/latex/skeyval
 %{texmfdist}/tex/latex/splitindex
 %{texmfdist}/tex/latex/stack
 %{texmfdist}/tex/latex/stringstrings
@@ -10093,6 +10212,7 @@ fi
 %files -n texlive-latex-effects
 %defattr(644,root,root,755)
 # %doc %{texmfdist}/doc/fonts/umrand
+%doc %{texmfdist}/doc/generic/rlepsf
 %doc %{texmfdist}/doc/latex/arcs
 %doc %{texmfdist}/doc/latex/background
 %doc %{texmfdist}/doc/latex/bclogo
@@ -10101,6 +10221,7 @@ fi
 %doc %{texmfdist}/doc/latex/changebar
 %doc %{texmfdist}/doc/latex/changelayout
 %doc %{texmfdist}/doc/latex/censor
+%doc %{texmfdist}/doc/latex/comma
 %doc %{texmfdist}/doc/latex/dashundergaps
 %doc %{texmfdist}/doc/latex/dblfloatfix
 %doc %{texmfdist}/doc/latex/draftwatermark
@@ -10121,6 +10242,7 @@ fi
 %doc %{texmfdist}/doc/latex/parallel
 %doc %{texmfdist}/doc/latex/quotchap
 %doc %{texmfdist}/doc/latex/rotpages
+%doc %{texmfdist}/doc/latex/roundbox
 %doc %{texmfdist}/doc/latex/sectionbox
 %doc %{texmfdist}/doc/latex/shadethm
 %doc %{texmfdist}/doc/latex/tablenotes
@@ -10148,6 +10270,7 @@ fi
 %{texmfdist}/source/latex/pageslts
 %{texmfdist}/source/latex/quotchap
 %{texmfdist}/source/latex/ushort
+%{texmfdist}/tex/generic/rlepsf
 %{texmfdist}/tex/latex/arcs
 %{texmfdist}/tex/latex/background
 %{texmfdist}/tex/latex/bclogo
@@ -10156,6 +10279,7 @@ fi
 %{texmfdist}/tex/latex/censor
 %{texmfdist}/tex/latex/changebar
 %{texmfdist}/tex/latex/changelayout
+%{texmfdist}/tex/latex/comma
 %{texmfdist}/tex/latex/dashundergaps
 %{texmfdist}/tex/latex/dblfloatfix
 %{texmfdist}/tex/latex/draftwatermark
@@ -10175,6 +10299,7 @@ fi
 %{texmfdist}/tex/latex/pageslts
 %{texmfdist}/tex/latex/parallel
 %{texmfdist}/tex/latex/quotchap
+%{texmfdist}/tex/latex/roundbox
 %{texmfdist}/tex/latex/rotpages
 %{texmfdist}/tex/latex/sectionbox
 %{texmfdist}/tex/latex/shadethm
@@ -10302,8 +10427,6 @@ fi
 # A package for LaTeX localisation.
 %{texmfdist}/source/latex/msg
 %{texmfdist}/tex/latex/msg
-# Michael Landy's APA citation style.
-%{texmfdist}/tex/latex/mslapa
 # Use italic and upright greek letters with mathtime.
 %{texmfdist}/source/latex/mtgreek
 %{texmfdist}/tex/latex/mtgreek
@@ -10451,8 +10574,6 @@ fi
 # Repeat items in an index after a page or column break
 %{texmfdist}/tex/latex/repeatindex
 # %{texmfdist}/tex/latex/resume
-# Rewrite labels in EPS graphics.
-# %{texmfdist}/tex/latex/rlepsf
 # A package to help change page layout parameters in LaTeX.
 # %{texmfdist}/source/latex/rmpage
 %{texmfdist}/tex/latex/rmpage
@@ -10655,8 +10776,6 @@ fi
 %{texmfdist}/tex/latex/recycle
 %{texmfdist}/source/latex/rjlparshap
 %{texmfdist}/tex/latex/rjlparshap
-%{texmfdist}/source/latex/sageep
-%{texmfdist}/tex/latex/sageep
 %{texmfdist}/tex/latex/schemabloc
 %{texmfdist}/tex/latex/selectp
 %{texmfdist}/tex/latex/sfheaders
@@ -10682,7 +10801,6 @@ fi
 %{texmfdist}/tex/latex/termlist
 %{texmfdist}/source/latex/texments
 %{texmfdist}/tex/latex/texments
-%{texmfdist}/tex/latex/thmbox
 %{texmfdist}/tex/latex/threeparttablex
 %{texmfdist}/tex/latex/tikz-timing
 %{texmfdist}/tex/latex/titlepic
@@ -11025,11 +11143,14 @@ fi
 
 %files -n texlive-latex-tutorial
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/latex/comprehensive
 %doc %{texmfdist}/doc/latex/cursolatex
 %doc %{texmfdist}/doc/latex/dtxtut
 %doc %{texmfdist}/doc/latex/first-latex-doc
 %doc %{texmfdist}/doc/latex/firststeps
 %doc %{texmfdist}/doc/latex/intro-scientific
+%doc %{texmfdist}/doc/latex/math-into-latex
+%doc %{texmfdist}/doc/latex/mathmode
 %lang(pt) %doc %{texmfdist}/doc/latex/beamer-tut-pt
 
 %files -n texlive-latex-txfonts
