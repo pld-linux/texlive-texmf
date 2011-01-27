@@ -1293,6 +1293,14 @@ Requires(post,postun):	%{_bindir}/texhash
 %description -n texlive-latex-ctex
 LaTeX classes and packages for Chinese typesetting.
 
+%package -n texlive-ptex
+Summary:	A TeX system for publishing in Japanese
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+
+%description -n texlive-ptex
+A TeX system for publishing in Japanese. 
+
 %package -n texlive-latex-12many
 Summary:	Generalising mathematical index sets
 Summary(hu.UTF-8):	A matematikai halmazok indexelésének általánosítása
@@ -2160,6 +2168,7 @@ This package contains:
 - bibtopicprefix: prefix references to bibliographies produced by
   bibtopic.
 - blkarray: Extended array and tabular.
+- block: A block letter style for the letter class.
 - boites: boxes that may break across pages
 - booklet: aids for printing simple booklets.
 - bullcntr: display list item counter as regular pattern of bullets.
@@ -2175,9 +2184,12 @@ This package contains:
 - dashbox: draw dashed boxes.
 - dashline: draw dashed rules.
 - dox: Extend the doc package.
+- easylist: Lists using a single active character.
 - etaremune: reverse-counting enumerate environment.
 - expdlist: expanded description environments.
 - HA-prosper: patches and improvements for prosper.
+- import: Establish input relative to a directory.
+- layaureo: A package to improve the A4 page layout.
 - leading: define leading with a length.
 - listliketab: typeset lists as tables.
 - ltablex: table package extensions.
@@ -2206,10 +2218,14 @@ This package contains:
 - spreadtab: Spreadsheet features for LaTeX tabular environments.
 - subfloat: sub-numbering for figures and tables.
 - thmbox: Decorate theorem statements.
+- twoinone: Print two pages on a single page.
 - umoline: underline text allowing line breaking.
 - umrand: package for fancy box frames.
 - underlin: underlined running heads.
+- underscore: Control the behaviour of "_" in text.
+- undolabl: Override existing labels.
 - ushort: shorter (and longer) underlines and underbars.
+- widetable: An environment for typesetting tables of specified width
 
 %description -n texlive-latex-extend -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
@@ -2223,6 +2239,7 @@ Ez a csomag a következőket tartalmazza:
 - bibtopicprefix: prefix hivatkozás bibtopic által készített
   bibliográfiára
 - blkarray: Extended array and tabular.
+- block: A block letter style for the letter class.
 - boites: dobozok, amelyek törhetők oldalak között
 - booklet: booklet formátumban történő nyomtatás
 - bullcntr: lista elemek számlálójának megjelenítése mint...
@@ -2238,9 +2255,12 @@ Ez a csomag a következőket tartalmazza:
 - dashbox: pontozott dobozok
 - dashline: pontozott vonalak
 - dox: Extend the doc package.
+- easylist: Lists using a single active character.
 - etaremune: visszafele sorszámazó enumerate környezet
 - expdlist: kibővített description környezetek
 - HA-prosper: foltok és bővítések a prosper-hez
+- import: Establish input relative to a directory.
+- layaureo: A package to improve the A4 page layout.
 - leading: sorközök definiálása hosszal
 - listliketab: listák táblázatként szedése
 - ltablex: table csomag kiegészítése
@@ -2269,10 +2289,14 @@ Ez a csomag a következőket tartalmazza:
 - spreadtab: Spreadsheet features for LaTeX tabular environments.
 - subfloat: sub-numbering for figures and tables.
 - thmbox: Decorate theorem statements.
+- twoinone: Print two pages on a single page.
 - umoline: aláhúzott szövegben sortörés engedélyezése
 - umrand: package for fancy box frames.
 - underlin: aláhúzott élőfej
+- underscore: Control the behaviour of "_" in text.
+- undolabl: Override existing labels.
 - ushort: shorter (and longer) underlines and underbars.
+- widetable: An environment for typesetting tables of specified width
 
 %package -n texlive-latex-effects
 Summary:	Additional effects to fonts, texts
@@ -2317,6 +2341,7 @@ This package contains:
 - sectionbox: create fancy boxed ((sub)sub)sections.
 - shadethm: theorem environments that are shaded
 - tablenotes: Notes in tables at end document.
+- xwatermark: Graphics and text watermarks on selected pages.
 
 %description -n texlive-latex-effects -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
@@ -2352,6 +2377,7 @@ Ez a csomag a következőket tartalmazza:
 - sectionbox: create fancy boxed ((sub)sub)sections.
 - shadethm: theorem environments that are shaded
 - tablenotes: Notes in tables at end document.
+- xwatermark: Graphics and text watermarks on selected pages.
 
 %package -n texlive-latex-math-sources
 Summary:	Sources of latex-math
@@ -2407,6 +2433,8 @@ This package contains:
 - gnuplottex: embed Gnuplot commands in LaTeX documents.
 - hhtensor: print vectors, matrices, and tensors.
 - ionumbers: Restyle numbers in maths mode.
+- isomath: Mathematics conformant to ISO 31.
+- isonums: Display numbers in maths mode according to ISO 31-0.
 - logpap: generate logarithmic graph paper with LaTeX.
 - makeplot: easy plots from Matlab in LaTeX.
 - maybemath: make math bold or italic according to context.
@@ -2459,6 +2487,8 @@ Ez a csomag a következőket tartalmazza:
 - gnuplottex: Gnuplot parancsok beágyazása LaTeX dokumentumokba
 - hhtensor: vetkorok, mátrixok és tenzorok nyomtatása
 - ionumbers: Restyle numbers in maths mode.
+- isomath: Mathematics conformant to ISO 31.
+- isonums: Display numbers in maths mode according to ISO 31-0.
 - logpap: logaritmikus grafikonok
 - makeplot: könnyű ábrázolások Matlab-ból LaTeX-be
 - maybemath: matematikai félkövér ill. dőlt szöveg környezettől
@@ -2503,6 +2533,8 @@ This packages contains:
 - cookybooky: typeset recipes.
 - cuisine: typeset recipes.
 - fixme: insert "fixme" notes into draft documents.
+- fwlw: Get first and last words of a page.
+- hyper: Hypertext cross referencing.
 - knittingpattern: Create knitting patterns.
 - liturg: Support for typesetting Catholic liturgical texts.
 - mailmerge: Repeating text field substitution.
@@ -2512,8 +2544,11 @@ This packages contains:
 - recipe: A LaTeX class to typeset recipes.
 - recipecard: typeset recipes in note-card-sized boxes.
 - simplecd: Simple CD, DVD covers for printing.
+- termcal: Print a class calendar.
+- thumby: Create thumb indexes for printed books.
 - todo: make a to-do list for a document.
 - todonotes: Marking things to do in a LaTeX document.
+- vruler: Numbering text.
 
 %description -n texlive-latex-misc -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
@@ -2523,6 +2558,8 @@ Ez a csomag a következőket tartalmazza:
 - cookybooky: receptek szedése
 - cuisine: receptek szedése
 - fixme: "fixme" megjegyzések elhelyezése
+- fwlw: Get first and last words of a page.
+- hyper: Hypertext cross referencing.
 - knittingpattern: kötésminták
 - liturg: Support for typesetting Catholic liturgical texts.
 - mailmerge: Repeating text field substitution.
@@ -2532,8 +2569,11 @@ Ez a csomag a következőket tartalmazza:
 - recipe: A LaTeX class to typeset recipes.
 - recipecard: receptek szedése jegyzet-méretű dobozokba
 - simplecd: Simple CD, DVD covers for printing.
+- termcal: Print a class calendar.
+- thumby: Create thumb indexes for printed books.
 - todo: dokumentumok teendőinek listája
 - todonotes: Marking things to do in a LaTeX document.
+- vruler: Numbering text.
 
 %package -n texlive-latex-music
 Summary:	Musical packages
@@ -4563,19 +4603,6 @@ URW fonts.
 %description -n texlive-fonts-urw -l pl.UTF-8
 Fonty URW.
 
-%package -n texlive-fonts-urwvn
-Summary:	URWVN fonts
-Summary(pl.UTF-8):	Fonty URWVN
-Group:		Fonts
-Requires:	%{shortname}-dirs-fonts
-Obsoletes:	tetex-fonts-urwvn
-
-%description -n texlive-fonts-urwvn
-URWVN fonts.
-
-%description -n texlive-fonts-urwvn -l pl.UTF-8
-Fonty URWVN.
-
 %package -n texlive-fonts-vnr
 Summary:	VNR fonts
 Summary(pl.UTF-8):	Fonty VNR
@@ -6582,6 +6609,7 @@ fi
 %dir %{texmfdist}/doc/fonts
 %dir %{texmfdist}/doc/generic
 %dir %{texmfdist}/doc/latex
+%dir %{texmfdist}/doc/support
 %dir %{texmfdist}/metapost
 %dir %{texmfdist}/scripts
 %dir %{texmfdist}/source
@@ -6591,7 +6619,6 @@ fi
 %dir %{texmfdist}/tex/generic
 %dir %{texmfdist}/tex/generic/misc
 %dir %{texmfdist}/tex/latex
-%doc %{texmfdist}/doc/fonts/fontname
 
 # ***********
 # executables
@@ -6700,13 +6727,12 @@ fi
 %dir %{texmfdist}/fonts/afm
 %dir %{texmfdist}/fonts/afm/public
 %dir %{texmfdist}/fonts/afm/vntex
+%dir %{texmfdist}/fonts/cmap
 %dir %{texmfdist}/fonts/enc
 %dir %{texmfdist}/fonts/enc/dvips
-%dir %{texmfdist}/fonts/enc/dvips/vntex
 %dir %{texmfdist}/fonts/map
 %dir %{texmfdist}/fonts/map/dvipdfm
 %dir %{texmfdist}/fonts/map/dvips
-%dir %{texmfdist}/fonts/map/dvips/vntex
 %dir %{texmfdist}/fonts/map/fontname
 # %dir %{texmfdist}/fonts/map/public
 %dir %{texmfdist}/fonts/map/vtex
@@ -6725,14 +6751,11 @@ fi
 %dir %{texmfdist}/fonts/source/vntex
 %dir %{texmfdist}/fonts/tfm
 %dir %{texmfdist}/fonts/tfm/public
-%dir %{texmfdist}/fonts/tfm/vntex
 %dir %{texmfdist}/fonts/truetype
 %dir %{texmfdist}/fonts/type1
 %dir %{texmfdist}/fonts/type1/public
-%dir %{texmfdist}/fonts/type1/vntex
 %dir %{texmfdist}/fonts/vf
 %dir %{texmfdist}/fonts/vf/public
-%dir %{texmfdist}/fonts/vf/vntex
 %dir %{texmfdist}/source/fonts
 %dir %{texmf}/fonts
 %dir %{texmf}/fonts/enc
@@ -6750,6 +6773,7 @@ fi
 # %{texmfdoc}/ls-R
 %doc %{texlivedoc}en
 %doc %{texmfdist}/doc/fonts/fontinst
+%doc %{texmfdist}/doc/fonts/fontname
 %doc %{texmfdist}/doc/generic/FAQ-en
 %doc %{texmfdist}/doc/generic/barr
 %doc %{texmfdist}/doc/generic/borceux
@@ -6770,7 +6794,9 @@ fi
 %doc %{texmfdist}/doc/latex/tlc2
 %doc %{texmf}/doc/tetex
 %doc %{texmf}/doc/texlive/texlive-common
-# %{texmfdist}/doc/fontinst
+%doc %{texmf}/doc/texlive/texlive-sr
+%doc %{texmf}/doc/texlive/index.html
+%doc %{texmf}/doc/web2c
 
 %files -n texlive-doc-bg
 %defattr(644,root,root,755)
@@ -6789,12 +6815,11 @@ fi
 %{texmfdist}/doc/latex/lshort-german
 %{texmfdist}/doc/latex/pdf-forms-tutorial-de
 %{texlivedoc}de
-# 
-# %files -n texlive-doc-el
-# %defattr(644,root,root,755)
-# %{texmfdoc}/doc/greek
-# %{texmf}/doc/generic/elhyphen
-# 
+
+%files -n texlive-doc-el
+%defattr(644,root,root,755)
+%{texmf}/doc/generic/elhyphen
+ 
 %files -n texlive-doc-es
 %defattr(644,root,root,755)
 %{texmfdist}/doc/latex/l2tabu-spanish
@@ -6970,6 +6995,7 @@ fi
 
 %files -n texlive-dvips-data
 %defattr(644,root,root,755)
+%doc %{texmf}/doc/dvips
 %doc %{texmf}/doc/dvipdfm
 %{texmfdist}/dvips
 %{texmfdist}/fonts/enc/dvips/base
@@ -7045,18 +7071,21 @@ fi
 %doc %{texmfdist}/doc/generic/ifxetex
 %doc %{texmfdist}/doc/latex/euenc
 %doc %{texmfdist}/doc/latex/fontspec
+%doc %{texmfdist}/doc/latex/unicode-math
 %doc %{texmfdist}/doc/xelatex
 %doc %{texmfdist}/doc/xetex
 #fmt %dir %{fmtdir}/xetex
 %{texmfdist}/scripts/xetex
 %{texmfdist}/source/latex/euenc
 %{texmfdist}/source/latex/fontspec
+%{texmfdist}/source/latex/unicode-math
 %{texmfdist}/source/xelatex
 %{texmfdist}/tex/generic/ifxetex
 %{texmfdist}/tex/generic/xetexconfig
 %{texmfdist}/tex/latex/euenc
 %{texmfdist}/tex/latex/fontspec
 %{texmfdist}/tex/latex/latexconfig/xelatex.ini
+%{texmfdist}/tex/latex/unicode-math
 %{texmfdist}/tex/xelatex
 %{texmfdist}/tex/xetex
 #fmt %{fmtdir}/xetex/*.fmt
@@ -7452,7 +7481,6 @@ fi
 %{texmfdist}/tex/latex/archaic
 %{texmfdist}/tex/latex/arev
 %{texmfdist}/tex/latex/armenian
-#%{texmfdist}/tex/latex/ascelike
 %{texmfdist}/tex/latex/ascii
 %{texmfdist}/tex/latex/assignment
 %{texmfdist}/tex/latex/augie
@@ -7977,6 +8005,7 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/fonts/amsfonts
 %doc %{texmfdist}/doc/latex/amscls
+%doc %{texmfdist}/doc/latex/amslatex-primer
 %doc %{texmfdist}/doc/latex/amsmath
 %doc %{texmfdist}/doc/latex/onlyamsmath
 %{texmfdist}/tex/latex/amscls
@@ -8061,6 +8090,9 @@ fi
 
 # maybe can create subpackages
 %dir %{texmfdist}/bibtex/bst
+%{texmfdist}/bibtex/bib/biblatex
+%{texmfdist}/bibtex/bst/biblatex
+%{texmfdist}/bibtex/csf/biblatex
 %{texmfdist}/bibtex/bst/adrconv
 %{texmfdist}/bibtex/bst/apalike*
 %{texmfdist}/bibtex/bst/arsclassica
@@ -8137,11 +8169,17 @@ fi
 %doc %{texmfdist}/doc/bibtex/iopart-num
 %doc %{texmfdist}/doc/generic/t2
 %doc %{texmfdist}/doc/latex/IEEEtran
+%doc %{texmfdist}/doc/latex/biblatex-chem
+%doc %{texmfdist}/doc/latex/biblatex-chicago-notes-df
+%doc %{texmfdist}/doc/latex/biblatex-dw
+%doc %{texmfdist}/doc/latex/biblatex-historian
+%doc %{texmfdist}/doc/latex/biblatex-philosophy
+%doc %{texmfdist}/doc/latex/biblatex-science
+%doc %{texmfdist}/doc/latex/biblatex
 %{texmfdist}/bibtex/bib/IEEEtran
 %{texmfdist}/bibtex/bib/abstyles
 # %{texmfdist}/bibtex/bib/achemso
 %{texmfdist}/bibtex/bib/acmtrans
-# %{texmfdist}/bibtex/bib/ascelike
 %{texmfdist}/bibtex/bib/beebe
 # %{texmfdist}/bibtex/bib/bibhtml
 # %{texmfdist}/bibtex/bib/bibtopic
@@ -8170,7 +8208,6 @@ fi
 %{texmfdist}/bibtex/bst/aguplus
 %{texmfdist}/bibtex/bst/aichej
 %{texmfdist}/bibtex/bst/ametsoc
-%{texmfdist}/bibtex/bst/ascelike
 %{texmfdist}/bibtex/bst/beebe
 %{texmfdist}/bibtex/bst/bibhtml
 %{texmfdist}/bibtex/bst/chem-journal
@@ -8221,6 +8258,13 @@ fi
 %{texmfdist}/bibtex/bst/tugboat
 %{texmfdist}/bibtex/bst/urlbst
 %{texmfdist}/bibtex/csf/gost
+%{texmfdist}/tex/latex/biblatex-chem
+%{texmfdist}/tex/latex/biblatex-chicago-notes-df
+%{texmfdist}/tex/latex/biblatex-dw
+%{texmfdist}/tex/latex/biblatex-historian
+%{texmfdist}/tex/latex/biblatex-philosophy
+%{texmfdist}/tex/latex/biblatex-science
+%{texmfdist}/tex/latex/biblatex
 %{texmfdist}/source/bibtex/gost
 
 %files -n texlive-latex-bibtex-vancouver
@@ -8288,6 +8332,16 @@ fi
 %files -n texlive-latex-concmath
 %defattr(644,root,root,755)
 %{texmfdist}/tex/latex/concmath
+
+%files -n texlive-ptex
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/ptex
+%{texmfdist}/tex/ptex
+%{texmfdist}/tex/ptexgeneric
+%{texmfdist}/fonts/source/ptex
+%{texmfdist}/fonts/tfm/ptex
+%{texmfdist}/fonts/type1/ptex
+%{texmfdist}/fonts/vf/ptex
 
 %files -n texlive-latex-ctex
 %defattr(644,root,root,755)
@@ -8481,6 +8535,8 @@ fi
 %doc %{texmfdist}/doc/latex/cookybooky
 %doc %{texmfdist}/doc/latex/cuisine
 %doc %{texmfdist}/doc/latex/fixme
+%doc %{texmfdist}/doc/latex/fwlw
+%doc %{texmfdist}/doc/latex/hyper
 %doc %{texmfdist}/doc/fonts/knitting
 %doc %{texmfdist}/doc/latex/knittingpattern
 %doc %{texmfdist}/doc/latex/liturg
@@ -8491,8 +8547,12 @@ fi
 %doc %{texmfdist}/doc/latex/recipe
 %doc %{texmfdist}/doc/latex/recipecard
 %doc %{texmfdist}/doc/latex/simplecd
+%doc %{texmfdist}/doc/latex/termcal
+%doc %{texmfdist}/doc/latex/thumby
+%doc %{texmfdist}/doc/latex/twoinone
 %doc %{texmfdist}/doc/latex/todo
 %doc %{texmfdist}/doc/latex/todonotes
+%doc %{texmfdist}/doc/latex/vruler
 %{texmfdist}/fonts/afm/public/knitting
 %{texmfdist}/fonts/map/dvips/knitting
 %{texmfdist}/fonts/tfm/public/knitting
@@ -8508,6 +8568,7 @@ fi
 %{texmfdist}/source/latex/papermas
 %{texmfdist}/source/latex/recipecard
 %{texmfdist}/source/latex/simplecd
+%{texmfdist}/source/latex/termcal
 %{texmfdist}/source/latex/todo
 %{texmfdist}/source/latex/todonotes
 %{texmfdist}/tex/latex/advdate
@@ -8516,6 +8577,8 @@ fi
 %{texmfdist}/tex/latex/cookybooky
 %{texmfdist}/tex/latex/cuisine
 %{texmfdist}/tex/latex/fixme
+%{texmfdist}/tex/latex/fwlw
+%{texmfdist}/tex/latex/hyper
 %{texmfdist}/tex/latex/knitting
 %{texmfdist}/tex/latex/knittingpattern
 %{texmfdist}/tex/latex/liturg
@@ -8526,8 +8589,12 @@ fi
 %{texmfdist}/tex/latex/recipe
 %{texmfdist}/tex/latex/recipecard
 %{texmfdist}/tex/latex/simplecd
+%{texmfdist}/tex/latex/termcal
+%{texmfdist}/tex/latex/thumby
+%{texmfdist}/tex/latex/twoinone
 %{texmfdist}/tex/latex/todo
 %{texmfdist}/tex/latex/todonotes
+%{texmfdist}/tex/latex/vruler
 
 %files -n texlive-latex-mflogo
 %defattr(644,root,root,755)
@@ -8605,7 +8672,6 @@ fi
 %doc %{texmfdist}/doc/latex/ar
 %doc %{texmfdist}/doc/latex/arabi
 %doc %{texmfdist}/doc/latex/arabtex
-%doc %{texmfdist}/doc/latex/ascelike
 %doc %{texmfdist}/doc/latex/assignment
 %doc %{texmfdist}/doc/latex/augie
 %doc %{texmfdist}/doc/latex/aurical
@@ -9134,6 +9200,8 @@ fi
 %doc %{texmfdist}/doc/latex/gnuplottex
 %doc %{texmfdist}/doc/latex/hhtensor
 %doc %{texmfdist}/doc/latex/ionumbers
+%doc %{texmfdist}/doc/latex/isomath
+%doc %{texmfdist}/doc/latex/isonums
 %doc %{texmfdist}/doc/latex/logpap
 %doc %{texmfdist}/doc/latex/makeplot
 %doc %{texmfdist}/doc/latex/maybemath
@@ -9207,6 +9275,8 @@ fi
 %{texmfdist}/tex/latex/gnuplottex
 %{texmfdist}/tex/latex/hhtensor
 %{texmfdist}/tex/latex/ionumbers
+%{texmfdist}/tex/latex/isomath
+%{texmfdist}/tex/latex/isonums
 %{texmfdist}/tex/latex/logpap
 %{texmfdist}/tex/latex/makeplot
 %{texmfdist}/tex/latex/maybemath
@@ -9695,6 +9765,9 @@ fi
 %doc %{texmfdist}/doc/latex/apa
 %doc %{texmfdist}/doc/latex/apacite
 %doc %{texmfdist}/doc/latex/asaetr
+%doc %{texmfdist}/doc/latex/ascelike
+%doc %{texmfdist}/doc/latex/biblatex-apa
+%doc %{texmfdist}/doc/latex/biblatex-nature
 %doc %{texmfdist}/doc/latex/computational-complexity
 %doc %{texmfdist}/doc/latex/dtk
 %doc %{texmfdist}/doc/latex/elsarticle
@@ -9759,9 +9832,11 @@ fi
 %{texmfdist}/bibtex/bib/philosophersimprint
 %{texmfdist}/bibtex/bst/aiaa
 %{texmfdist}/bibtex/bst/apacite
+%{texmfdist}/bibtex/bst/ascelike
 %{texmfdist}/bibtex/bst/asaetr
 %{texmfdist}/bibtex/bst/computational-complexity
 %{texmfdist}/bibtex/bst/dtk
+%{texmfdist}/bibtex/bst/gatech-thesis
 %{texmfdist}/bibtex/bib/gatech-thesis
 %{texmfdist}/bibtex/bst/mslapa
 %{texmfdist}/bibtex/bst/psu-thesis
@@ -9815,6 +9890,7 @@ fi
 %{texmfdist}/tex/latex/apa
 %{texmfdist}/tex/latex/apacite
 %{texmfdist}/tex/latex/asaetr
+%{texmfdist}/tex/latex/ascelike
 %{texmfdist}/tex/latex/biblatex-apa
 %{texmfdist}/tex/latex/biblatex-nature
 %{texmfdist}/tex/latex/computational-complexity
@@ -9935,6 +10011,7 @@ fi
 %doc %{texmfdist}/doc/latex/babelbib
 %doc %{texmfdist}/doc/latex/bibtopicprefix
 %doc %{texmfdist}/doc/latex/blkarray
+%doc %{texmfdist}/doc/latex/block
 %doc %{texmfdist}/doc/latex/boites
 %doc %{texmfdist}/doc/latex/booklet
 %doc %{texmfdist}/doc/latex/bullcntr
@@ -9949,8 +10026,11 @@ fi
 %doc %{texmfdist}/doc/latex/curve2e
 %doc %{texmfdist}/doc/latex/dashrule
 %doc %{texmfdist}/doc/latex/dox
+%doc %{texmfdist}/doc/latex/easylist
 %doc %{texmfdist}/doc/latex/etaremune
 %doc %{texmfdist}/doc/latex/expdlist
+%doc %{texmfdist}/doc/latex/import
+%doc %{texmfdist}/doc/latex/layaureo
 %doc %{texmfdist}/doc/latex/leading
 %doc %{texmfdist}/doc/latex/listliketab
 %doc %{texmfdist}/doc/latex/makebox
@@ -9979,6 +10059,9 @@ fi
 %doc %{texmfdist}/doc/latex/thmbox
 %doc %{texmfdist}/doc/latex/umoline
 %doc %{texmfdist}/doc/latex/underlin
+%doc %{texmfdist}/doc/latex/underscore
+%doc %{texmfdist}/doc/latex/undolabl
+%doc %{texmfdist}/doc/latex/widetable
 %{texmfdist}/bibtex/bst/babelbib
 %{texmfdist}/bibtex/bst/mciteplus
 %{texmfdist}/source/latex/HA-prosper
@@ -10004,6 +10087,7 @@ fi
 %{texmfdist}/source/latex/dox
 %{texmfdist}/source/latex/etaremune
 %{texmfdist}/source/latex/expdlist
+%{texmfdist}/source/latex/layaureo
 %{texmfdist}/source/latex/leading
 %{texmfdist}/source/latex/listliketab
 %{texmfdist}/source/latex/makebox
@@ -10026,6 +10110,8 @@ fi
 %{texmfdist}/source/latex/thmbox
 %{texmfdist}/source/latex/umoline
 %{texmfdist}/source/latex/underlin
+%{texmfdist}/source/latex/undolabl
+%{texmfdist}/source/latex/widetable
 %{texmfdist}/tex/latex/HA-prosper
 %{texmfdist}/tex/latex/a4wide
 %{texmfdist}/tex/latex/a5comb
@@ -10035,6 +10121,7 @@ fi
 %{texmfdist}/tex/latex/babelbib
 %{texmfdist}/tex/latex/bibtopicprefix
 %{texmfdist}/tex/latex/blkarray
+%{texmfdist}/tex/latex/block
 %{texmfdist}/tex/latex/boites
 %{texmfdist}/tex/latex/booklet
 %{texmfdist}/tex/latex/bullcntr
@@ -10052,6 +10139,8 @@ fi
 %{texmfdist}/tex/latex/dox
 %{texmfdist}/tex/latex/etaremune
 %{texmfdist}/tex/latex/expdlist
+%{texmfdist}/tex/latex/import
+%{texmfdist}/tex/latex/layaureo
 %{texmfdist}/tex/latex/leading
 %{texmfdist}/tex/latex/listliketab
 # %{texmfdist}/tex/latex/ltablex
@@ -10082,6 +10171,9 @@ fi
 %{texmfdist}/tex/latex/thmbox
 %{texmfdist}/tex/latex/umoline
 %{texmfdist}/tex/latex/underlin
+%{texmfdist}/tex/latex/underscore
+%{texmfdist}/tex/latex/undolabl
+%{texmfdist}/tex/latex/widetable
 
 %files -n texlive-latex-presentation
 %defattr(644,root,root,755)
@@ -10247,6 +10339,7 @@ fi
 %doc %{texmfdist}/doc/latex/shadethm
 %doc %{texmfdist}/doc/latex/tablenotes
 %doc %{texmfdist}/doc/latex/ushort
+%doc %{texmfdist}/doc/latex/xwatermark
 %{texmfdist}/fonts/source/public/niceframe
 # %{texmfdist}/fonts/source/public/umrand
 %{texmfdist}/fonts/tfm/public/niceframe
@@ -10304,6 +10397,7 @@ fi
 %{texmfdist}/tex/latex/sectionbox
 %{texmfdist}/tex/latex/shadethm
 %{texmfdist}/tex/latex/tablenotes
+%{texmfdist}/tex/latex/xwatermark
 # %{texmfdist}/tex/latex/umrand
 %{texmfdist}/tex/latex/ushort
 
@@ -10795,8 +10889,6 @@ fi
 %{texmfdist}/tex/latex/tabularcalc
 %{texmfdist}/source/latex/tabularew
 %{texmfdist}/tex/latex/tabularew
-%{texmfdist}/source/latex/termcal
-%{texmfdist}/tex/latex/termcal
 %{texmfdist}/source/latex/termlist
 %{texmfdist}/tex/latex/termlist
 %{texmfdist}/source/latex/texments
@@ -10821,7 +10913,6 @@ fi
 %{texmfdist}/tex/latex/verbatimcopy
 %{texmfdist}/tex/latex/version
 %{texmfdist}/tex/latex/vertbars
-%{texmfdist}/tex/latex/widetable
 %{texmfdist}/tex/latex/yagusylo
 %{texmfdist}/tex/latex/zhmetrics
 %{texmfdist}/tex/latex/zwpagelayout
@@ -11151,6 +11242,8 @@ fi
 %doc %{texmfdist}/doc/latex/intro-scientific
 %doc %{texmfdist}/doc/latex/math-into-latex
 %doc %{texmfdist}/doc/latex/mathmode
+%doc %{texmfdist}/doc/latex/visualfaq
+%lang(fr) %doc %{texmfdist}/doc/latex/apprends-latex
 %lang(pt) %doc %{texmfdist}/doc/latex/beamer-tut-pt
 
 %files -n texlive-latex-txfonts
@@ -11214,6 +11307,7 @@ fi
 
 %files -n texlive-tex-misc
 %defattr(644,root,root,755)
+%{texmfdist}/source/generic/multido
 %{texmfdist}/source/generic/tap
 %doc %{texmfdist}/doc/generic/multido
 %doc %{texmfdist}/doc/generic/tap
@@ -11303,7 +11397,7 @@ fi
 
 %files -n texlive-tex-texdraw
 %defattr(644,root,root,755)
-# %doc %{texmfdist}/doc/texdraw
+%doc %{texmfdist}/doc/support/texdraw
 %{texmfdist}/tex/generic/texdraw
 
 %files -n texlive-tex-thumbpdf
@@ -11322,6 +11416,17 @@ fi
 %files -n texlive-latex-vietnam
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/vntex
+%{texmfdist}/fonts/afm/vntex/chartervn
+%{texmfdist}/fonts/afm/vntex/grotesqvn
+%{texmfdist}/fonts/afm/vntex/urwvn
+%{texmfdist}/fonts/afm/vntex/vntopia
+%{texmfdist}/fonts/enc/dvips/vntex/
+%{texmfdist}/fonts/enc/pdftex/vntex
+%{texmfdist}/fonts/map/dvips/vntex
+%{texmfdist}/fonts/tfm/vntex
+%{texmfdist}/fonts/type1/vntex
+%{texmfdist}/fonts/vf/vntex
+%{texmfdist}/source/generic/vntex
 %{texmfdist}/tex/latex/vntex
 
 %files -n texlive-tex-xypic
@@ -11342,6 +11447,7 @@ fi
 
 %files -n texlive-fonts-adobe
 %defattr(644,root,root,755)
+%{texmfdist}/fonts/cmap/adobemapping
 %{texmfdist}/fonts/type1/adobe
 %{texmfdist}/fonts/afm/adobe
 %{texmfdist}/fonts/tfm/adobe
@@ -11677,10 +11783,6 @@ fi
 %{texmfdist}/fonts/vf/public/arev
 %{texmfdist}/source/fonts/arev
 
-%{texmfdist}/fonts/map/dvips/vntex/arevvn.map
-%{texmfdist}/fonts/tfm/vntex/arevvn
-%{texmfdist}/fonts/type1/vntex/arevvn
-
 %{texmfdist}/fonts/afm/arkandis
 # %{texmfdist}/fonts/opentype/arkandis
 %{texmfdist}/fonts/vf/arkandis
@@ -11812,11 +11914,6 @@ fi
 %{texmfdist}/fonts/type1/public/cbfonts
 
 %doc %{texmfdist}/doc/fonts/charter
-%{texmfdist}/fonts/map/dvips/vntex/chartervn.map
-%{texmfdist}/fonts/afm/vntex/chartervn
-%{texmfdist}/fonts/tfm/vntex/chartervn
-%{texmfdist}/fonts/type1/vntex/chartervn
-%{texmfdist}/fonts/vf/vntex/chartervn
 
 %{texmfdist}/fonts/source/public/cherokee
 %{texmfdist}/fonts/tfm/public/cherokee
@@ -11843,9 +11940,6 @@ fi
 # %{texmfdist}/fonts/source/public/cmastro
 # %{texmfdist}/fonts/tfm/public/cmastro
 
-%{texmfdist}/fonts/map/dvips/vntex/cmbrightvn.map
-%{texmfdist}/fonts/tfm/vntex/cmbrightvn
-%{texmfdist}/fonts/type1/vntex/cmbrightvn
 
 # %{texmfdist}/fonts/type1/public/cmex
 
@@ -11861,15 +11955,6 @@ fi
 # %doc %{texmfdist}/doc/fonts/cmpica
 %{texmfdist}/fonts/source/public/cmpica
 %{texmfdist}/fonts/tfm/public/cmpica
-
-# %{texmfdist}/fonts/map/dvips/vntex/comicvn.map
-# %{texmfdist}/fonts/tfm/vntex/comicsansvn
-# %{texmfdist}/fonts/type1/vntex/comicsansvn
-# %{texmfdist}/fonts/vf/vntex/comicsansvn
-
-%{texmfdist}/fonts/map/dvips/vntex/concretevn.map
-%{texmfdist}/fonts/tfm/vntex/concretevn
-%{texmfdist}/fonts/type1/vntex/concretevn
 
 %{texmfdist}/fonts/afm/ibm
 # %{texmfdist}/fonts/tfm/ibm
@@ -12121,10 +12206,6 @@ fi
 %doc %{texmfdist}/doc/fonts/grotesq
 %{texmfdist}/fonts/map/dvips/grotesq
 
-%{texmfdist}/fonts/map/dvips/vntex/grotesqvn.map
-%{texmfdist}/fonts/afm/vntex/grotesqvn
-%{texmfdist}/fonts/tfm/vntex/grotesqvn
-%{texmfdist}/fonts/type1/vntex/grotesqvn
 
 %{texmfdist}/fonts/afm/public/grverb
 %{texmfdist}/fonts/map/dvips/grverb
@@ -12170,6 +12251,7 @@ fi
 %{texmfdist}/fonts/map/dvips/inconsolata
 %{texmfdist}/fonts/tfm/public/inconsolata
 %{texmfdist}/fonts/type1/public/inconsolata
+%{texmfdist}/fonts/enc/dvips/inconsolata
 
 %doc %{texmfdist}/doc/fonts/initials
 %{texmfdist}/fonts/afm/public/initials
@@ -12286,9 +12368,6 @@ fi
 %{texmfdist}/fonts/source/public/montex
 %{texmfdist}/fonts/tfm/public/montex
 %{texmfdist}/fonts/type1/public/montex
-
-# %{texmfdist}/fonts/tfm/vntex/mscorevn
-# %{texmfdist}/fonts/vf/vntex/mscorevn
 
 %doc %{texmfdist}/doc/generic/musixtex
 %{texmfdist}/fonts/map/dvips/musixtex
@@ -12479,9 +12558,6 @@ fi
 %{texmfdist}/fonts/tfm/public/trajan
 %{texmfdist}/fonts/type1/public/trajan
 
-%{texmfdist}/fonts/map/dvips/vntex/txttvn.map
-%{texmfdist}/fonts/tfm/vntex/txttvn
-%{texmfdist}/fonts/type1/vntex/txttvn
 
 %{texmfdist}/fonts/map/dvips/uhc
 
@@ -12499,13 +12575,6 @@ fi
 %{texmfdist}/fonts/tfm/public/velthuis
 %{texmfdist}/fonts/type1/public/velthuis
 
-%{texmfdist}/fonts/enc/dvips/vntex/*
-
-%{texmfdist}/fonts/map/dvips/vntex/vntopia.map
-%{texmfdist}/fonts/afm/vntex/vntopia
-%{texmfdist}/fonts/tfm/vntex/vntopia
-%{texmfdist}/fonts/type1/vntex/vntopia
-%{texmfdist}/fonts/vf/vntex/vntopia
 
 %{texmfdist}/fonts/map/dvips/wadalab
 
@@ -12616,14 +12685,6 @@ fi
 %{texmfdist}/fonts/tfm/urw
 %{texmfdist}/fonts/vf/urw
 
-%files -n texlive-fonts-urwvn
-%defattr(644,root,root,755)
-%{texmfdist}/fonts/map/dvips/vntex/urwvn.map
-%{texmfdist}/fonts/afm/vntex/urwvn
-%{texmfdist}/fonts/tfm/vntex/urwvn
-%{texmfdist}/fonts/type1/vntex/urwvn
-%{texmfdist}/fonts/vf/vntex/urwvn
-
 %files -n texlive-fonts-vnr
 %defattr(644,root,root,755)
 %{texmfdist}/fonts/map/dvips/vntex/vnr*.map
@@ -12648,6 +12709,7 @@ fi
 
 %files -n texlive-fonts-xypic
 %defattr(644,root,root,755)
+%{texmfdist}/fonts/afm/public/xypic
 %{texmfdist}/fonts/map/dvips/xypic
 %{texmfdist}/fonts/source/public/xypic
 %{texmfdist}/fonts/tfm/public/xypic
