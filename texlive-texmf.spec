@@ -2209,6 +2209,7 @@ This package contains:
 - etaremune: reverse-counting enumerate environment.
 - expdlist: expanded description environments.
 - fix2col: Fix miscellaneous two column mode features.
+- fncylab: Alter the format of \label references.
 - ftcap: Allows \caption at the beginning of a table-environment.
 - ftnxtra: Extends the applicability of the \footnote command.
 - HA-prosper: patches and improvements for prosper.
@@ -2246,6 +2247,7 @@ This package contains:
 - spreadtab: Spreadsheet features for LaTeX tabular environments.
 - subfloat: sub-numbering for figures and tables.
 - thmbox: Decorate theorem statements.
+- titlepic: Add picture to title page of a document.
 - twoinone: Print two pages on a single page.
 - umoline: underline text allowing line breaking.
 - umrand: package for fancy box frames.
@@ -2254,6 +2256,7 @@ This package contains:
 - undolabl: Override existing labels.
 - ushort: shorter (and longer) underlines and underbars.
 - widetable: An environment for typesetting tables of specified width
+- zwpagelayout: Page layout and crop-marks.
 
 %description -n texlive-latex-extend -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
@@ -2292,6 +2295,7 @@ Ez a csomag a következőket tartalmazza:
 - etaremune: visszafele sorszámazó enumerate környezet
 - expdlist: kibővített description környezetek
 - fix2col: Fix miscellaneous two column mode features.
+- fncylab: Alter the format of \label references.
 - ftcap: Allows \caption at the beginning of a table-environment.
 - ftnxtra: Extends the applicability of the \footnote command.
 - HA-prosper: foltok és bővítések a prosper-hez
@@ -2329,6 +2333,7 @@ Ez a csomag a következőket tartalmazza:
 - spreadtab: Spreadsheet features for LaTeX tabular environments.
 - subfloat: sub-numbering for figures and tables.
 - thmbox: Decorate theorem statements.
+- titlepic: Add picture to title page of a document.
 - twoinone: Print two pages on a single page.
 - umoline: aláhúzott szövegben sortörés engedélyezése
 - umrand: package for fancy box frames.
@@ -2337,6 +2342,7 @@ Ez a csomag a következőket tartalmazza:
 - undolabl: Override existing labels.
 - ushort: shorter (and longer) underlines and underbars.
 - widetable: An environment for typesetting tables of specified width
+- zwpagelayout: Page layout and crop-marks.
 
 %package -n texlive-latex-effects
 Summary:	Additional effects to fonts, texts
@@ -2508,7 +2514,9 @@ This package contains:
 - subeqn: package for subequation numbering.
 - subeqnarray: equation array with sub numbering.
 - subsupscripts: A range of sub- and superscript commands.
+- tikz-3dplot: Coordinate transformation styles for 3d plotting in TikZ.
 - tree-dvips: trees and other linguists' macros.
+- tkz-linknodes: Link nodes in mathematical environments.
 - trfsigns: typeset transform signs.
 - trsym: symbols for transformations.
 - ulsy: extra mathematical characters.
@@ -2565,6 +2573,8 @@ Ez a csomag a következőket tartalmazza:
 - subeqn: alegyenletek sorszámozása
 - subeqnarray: egyenletek al-sorszámozása
 - subsupscripts: A range of sub- and superscript commands.
+- tikz-3dplot: Coordinate transformation styles for 3d plotting in TikZ.
+- tkz-linknodes: Link nodes in mathematical environments.
 - tree-dvips: trees and other linguists' macros
 - trfsigns: transzformációs jelek szedése
 - trsym: szimbólumok transzformációkhoz
@@ -2586,6 +2596,8 @@ This packages contains:
 - cuisine: typeset recipes.
 - envbig: Printing addresses on envelopes.
 - fixme: insert "fixme" notes into draft documents.
+- fn2end: Convert footnotes to endnotes.
+- fnpara: Footnotes in paragraphs.
 - fwlw: Get first and last words of a page.
 - hyper: Hypertext cross referencing.
 - knittingpattern: Create knitting patterns.
@@ -2599,9 +2611,11 @@ This packages contains:
 - simplecd: Simple CD, DVD covers for printing.
 - termcal: Print a class calendar.
 - thumby: Create thumb indexes for printed books.
+- tkz-tab: Tables of signs and variations using PGF/TikZ.
 - todo: make a to-do list for a document.
 - todonotes: Marking things to do in a LaTeX document.
 - vruler: Numbering text.
+- wordlike: Simulating word processor layout.
 
 %description -n texlive-latex-misc -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
@@ -2612,6 +2626,8 @@ Ez a csomag a következőket tartalmazza:
 - cuisine: receptek szedése
 - envbig: Printing addresses on envelopes.
 - fixme: "fixme" megjegyzések elhelyezése
+- fn2end: Convert footnotes to endnotes.
+- fnpara: Footnotes in paragraphs.
 - fwlw: Get first and last words of a page.
 - hyper: Hypertext cross referencing.
 - knittingpattern: kötésminták
@@ -2625,9 +2641,11 @@ Ez a csomag a következőket tartalmazza:
 - simplecd: Simple CD, DVD covers for printing.
 - termcal: Print a class calendar.
 - thumby: Create thumb indexes for printed books.
+- tkz-tab: Tables of signs and variations using PGF/TikZ.
 - todo: dokumentumok teendőinek listája
 - todonotes: Marking things to do in a LaTeX document.
 - vruler: Numbering text.
+- wordlike: Simulating word processor layout.
 
 %package -n texlive-latex-music
 Summary:	Musical packages
@@ -3180,7 +3198,9 @@ This package contains:
 - stringstrings: string manipulation for cosmetic and programming
   application
 - substr: deal with substrings in strings.
+- totcount: Find the last value of a counter.
 - typedref: eliminate errors by enforcing the types of labels.
+- ydoc: Macros for documentation of LaTeX classes and packages.
 
 %description -n texlive-latex-programming -l hu.UTF-8
 Ez a csomag a következőket tartalmazza:
@@ -3227,7 +3247,9 @@ Ez a csomag a következőket tartalmazza:
 - stack: verem használata
 - stringstrings: sztring manipuláció
 - substr: részszövegek keresése
+- totcount: Find the last value of a counter.
 - typedref: eliminate errors by enforcing the types of labels.
+- ydoc: Macros for documentation of LaTeX classes and packages.
 
 %package -n texlive-latex-prosper
 Summary:	LaTeX class for high quality slides
@@ -3973,6 +3995,15 @@ Requires:	%{shortname}
 
 %description -n texlive-latex-variations
 Typeset tables of variations of functions.
+
+%package -n texlive-latex-thai
+Summary:	Thai language support
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+Requires:	%{shortname}
+
+%description -n texlive-latex-thai
+Thai language support.
 
 %package -n texlive-latex-vietnam
 Summary:	Vietnamese language support
@@ -5272,6 +5303,8 @@ rm -rf $RPM_BUILD_ROOT%{texmf}/doc/gzip
 # packaged in asymptote
 rm -rf $RPM_BUILD_ROOT%{texmf}/asymptote
 rm -rf $RPM_BUILD_ROOT%{texmf}/doc/asymptote
+rm -rf $RPM_BUILD_ROOT%{texmf}/tex/latex/asymptote
+rm -rf $RPM_BUILD_ROOT%{texmfdist}/doc/support/asymptote*
 
 # move format logs to BUILD, so $RPM_BUILD_ROOT is not polluted
 # and we can still analyze them
@@ -6268,6 +6301,12 @@ fi
 %postun -n texlive-tex-ukrhyph
 %texhash
 
+%post -n texlive-latex-thai
+%texhash
+
+%postun -n texlive-latex-thai
+%texhash
+
 %post -n texlive-latex-vietnam
 %texhash
 
@@ -7021,6 +7060,7 @@ fi
 %doc %{texmfdist}/doc/latex/extsizes
 %doc %{texmfdist}/doc/latex/fancybox
 %doc %{texmfdist}/doc/latex/fancyhdr
+%lang(it) %doc %{texmfdist}/doc/latex/fancyhdr-it
 %doc %{texmfdist}/doc/latex/fancyvrb
 %doc %{texmfdist}/doc/latex/filecontents
 %doc %{texmfdist}/doc/latex/float
@@ -7105,6 +7145,7 @@ fi
 
 %files -n texlive-omega-data
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/omega
 %{texmfdist}/omega
 %{texmfdist}/tex/generic/omegahyph
 %{texmfdist}/tex/lambda
@@ -7114,7 +7155,7 @@ fi
 
 %files -n texlive-jadetex
 %defattr(644,root,root,755)
-# %doc %{texmf-dist}/doc/otherformats/jadetex
+%doc %{texmfdist}/doc/otherformats/jadetex
 %{texmfdist}/tex/jadetex
 %{texmfdist}/source/jadetex
 %{fmtdir}/pdftex/jadetex.fmt
@@ -7464,10 +7505,11 @@ fi
 %files -n texlive-mex
 %defattr(644,root,root,755)
 %dir %{texmfdist}/tex/mex
-%dir %{texmfdist}/tex/mex/config
 %doc %{texmfdist}/doc/mex
 %{texmfdist}/source/mex
 %{texmfdist}/tex/mex/base
+%{texmfdist}/tex/mex/config
+%{texmfdist}/tex/mex/utf8mex
 # %{texmf}/fmtutil/format.mex.cnf
 # %{texmf}/fmtutil/format.utf8mex.cnf
 
@@ -8030,7 +8072,6 @@ fi
 %{texmfdist}/tex/latex/was
 %{texmfdist}/tex/latex/williams
 %{texmfdist}/tex/latex/wnri
-%{texmfdist}/tex/latex/wordlike
 %{texmfdist}/tex/latex/wrapfig
 %{texmfdist}/tex/latex/wsuipa
 %{texmfdist}/tex/latex/xargs
@@ -8598,12 +8639,14 @@ fi
 
 %files -n texlive-latex-lm
 %defattr(644,root,root,755)
+%{texmfdist}/tex/latex/cfr-lm
 %{texmfdist}/tex/latex/lm
+%{texmfdist}/fonts/vf/public/cfr-lm
 %{texmfdist}/fonts/afm/public/lm
 %{texmfdist}/fonts/enc/dvips/lm
 %{texmfdist}/fonts/map/dvips/lm
 %{texmfdist}/fonts/map/dvipdfm/lm
-# %{texmfdist}/source/fonts/lm
+%{texmfdist}/source/fonts/cfr-lm
 
 %files -n texlive-latex-lucidabr
 %defattr(644,root,root,755)
@@ -8641,6 +8684,8 @@ fi
 %doc %{texmfdist}/doc/latex/cuisine
 %doc %{texmfdist}/doc/latex/envbig
 %doc %{texmfdist}/doc/latex/fixme
+%doc %{texmfdist}/doc/latex/fn2end
+%doc %{texmfdist}/doc/latex/fnpara
 %doc %{texmfdist}/doc/latex/fwlw
 %doc %{texmfdist}/doc/latex/hyper
 %doc %{texmfdist}/doc/fonts/knitting
@@ -8655,10 +8700,12 @@ fi
 %doc %{texmfdist}/doc/latex/simplecd
 %doc %{texmfdist}/doc/latex/termcal
 %doc %{texmfdist}/doc/latex/thumby
+%doc %{texmfdist}/doc/latex/tkz-tab
 %doc %{texmfdist}/doc/latex/twoinone
 %doc %{texmfdist}/doc/latex/todo
 %doc %{texmfdist}/doc/latex/todonotes
 %doc %{texmfdist}/doc/latex/vruler
+%doc %{texmfdist}/doc/latex/wordlike
 %{texmfdist}/fonts/afm/public/knitting
 %{texmfdist}/fonts/map/dvips/knitting
 %{texmfdist}/fonts/tfm/public/knitting
@@ -8677,6 +8724,7 @@ fi
 %{texmfdist}/source/latex/termcal
 %{texmfdist}/source/latex/todo
 %{texmfdist}/source/latex/todonotes
+%{texmfdist}/source/latex/wordlike
 %{texmfdist}/tex/latex/advdate
 %{texmfdist}/tex/latex/chronology
 %{texmfdist}/tex/latex/cooking
@@ -8684,6 +8732,8 @@ fi
 %{texmfdist}/tex/latex/cuisine
 %{texmfdist}/tex/latex/envbig
 %{texmfdist}/tex/latex/fixme
+%{texmfdist}/tex/latex/fn2end
+%{texmfdist}/tex/latex/fnpara
 %{texmfdist}/tex/latex/fwlw
 %{texmfdist}/tex/latex/hyper
 %{texmfdist}/tex/latex/knitting
@@ -8698,10 +8748,12 @@ fi
 %{texmfdist}/tex/latex/simplecd
 %{texmfdist}/tex/latex/termcal
 %{texmfdist}/tex/latex/thumby
+%{texmfdist}/tex/latex/tkz-tab
 %{texmfdist}/tex/latex/twoinone
 %{texmfdist}/tex/latex/todo
 %{texmfdist}/tex/latex/todonotes
 %{texmfdist}/tex/latex/vruler
+%{texmfdist}/tex/latex/wordlike
 
 %files -n texlive-latex-mflogo
 %defattr(644,root,root,755)
@@ -9224,7 +9276,6 @@ fi
 %doc %{texmfdist}/doc/latex/wallpaper
 %doc %{texmfdist}/doc/latex/warpcol
 %doc %{texmfdist}/doc/latex/wnri
-%doc %{texmfdist}/doc/latex/wordlike
 %doc %{texmfdist}/doc/latex/xargs
 %doc %{texmfdist}/doc/latex/xdoc
 %doc %{texmfdist}/doc/latex/xfor
@@ -9334,6 +9385,8 @@ fi
 %doc %{texmfdist}/doc/latex/subeqn
 %doc %{texmfdist}/doc/latex/subeqnarray
 %doc %{texmfdist}/doc/latex/subsupscripts
+%doc %{texmfdist}/doc/latex/tikz-3dplot
+%doc %{texmfdist}/doc/latex/tkz-linknodes
 %doc %{texmfdist}/doc/latex/trfsigns
 %doc %{texmfdist}/doc/latex/trsym
 %doc %{texmfdist}/doc/latex/ulsy
@@ -9413,6 +9466,8 @@ fi
 %{texmfdist}/tex/latex/subeqn
 %{texmfdist}/tex/latex/subeqnarray
 %{texmfdist}/tex/latex/subsupscripts
+%{texmfdist}/tex/latex/tikz-3dplot
+%{texmfdist}/tex/latex/tkz-linknodes
 %{texmfdist}/tex/latex/trfsigns
 %{texmfdist}/tex/latex/trsym
 %{texmfdist}/tex/latex/ulsy
@@ -9479,6 +9534,7 @@ fi
 %{texmfdist}/fonts/source/public/chemarrow
 %{texmfdist}/fonts/tfm/public/chemarrow
 %{texmfdist}/fonts/type1/public/chemarrow
+%{texmfdist}/source/fonts/chemarrow
 %{texmfdist}/source/latex/achemso
 %{texmfdist}/source/latex/bpchem
 %{texmfdist}/source/latex/chemcompounds
@@ -10181,6 +10237,7 @@ fi
 %doc %{texmfdist}/doc/latex/etaremune
 %doc %{texmfdist}/doc/latex/expdlist
 %doc %{texmfdist}/doc/latex/fix2col
+%doc %{texmfdist}/doc/latex/fncylab
 %doc %{texmfdist}/doc/latex/ftcap
 %doc %{texmfdist}/doc/latex/ftnxtra
 %doc %{texmfdist}/doc/latex/import
@@ -10213,11 +10270,13 @@ fi
 # %doc %{texmfdist}/doc/latex/schedule
 %doc %{texmfdist}/doc/latex/subfloat
 %doc %{texmfdist}/doc/latex/thmbox
+%doc %{texmfdist}/doc/latex/titlepic
 %doc %{texmfdist}/doc/latex/umoline
 %doc %{texmfdist}/doc/latex/underlin
 %doc %{texmfdist}/doc/latex/underscore
 %doc %{texmfdist}/doc/latex/undolabl
 %doc %{texmfdist}/doc/latex/widetable
+%doc %{texmfdist}/doc/latex/zwpagelayout
 %{texmfdist}/bibtex/bst/babelbib
 %{texmfdist}/bibtex/bst/mciteplus
 %{texmfdist}/source/latex/HA-prosper
@@ -10310,6 +10369,7 @@ fi
 %{texmfdist}/tex/latex/etaremune
 %{texmfdist}/tex/latex/expdlist
 %{texmfdist}/tex/latex/fix2col
+%{texmfdist}/tex/latex/fncylab
 %{texmfdist}/tex/latex/ftcap
 %{texmfdist}/tex/latex/ftnxtra
 %{texmfdist}/tex/latex/import
@@ -10345,11 +10405,13 @@ fi
 # %{texmfdist}/tex/latex/schedule
 %{texmfdist}/tex/latex/subfloat
 %{texmfdist}/tex/latex/thmbox
+%{texmfdist}/tex/latex/titlepic
 %{texmfdist}/tex/latex/umoline
 %{texmfdist}/tex/latex/underlin
 %{texmfdist}/tex/latex/underscore
 %{texmfdist}/tex/latex/undolabl
 %{texmfdist}/tex/latex/widetable
+%{texmfdist}/tex/latex/zwpagelayout
 
 %files -n texlive-latex-presentation
 %defattr(644,root,root,755)
@@ -10411,7 +10473,9 @@ fi
 %doc %{texmfdist}/doc/latex/splitindex
 %doc %{texmfdist}/doc/latex/stringstrings
 %doc %{texmfdist}/doc/latex/substr
+%doc %{texmfdist}/doc/latex/totcount
 %doc %{texmfdist}/doc/latex/typedref
+%doc %{texmfdist}/doc/latex/ydoc
 %dir %{texmfdist}/scripts/listings-ext
 %attr(755,root,root) %{texmfdist}/scripts/listings-ext/listings-ext.sh
 %{texmfdist}/source/latex/boolexpr
@@ -10449,7 +10513,9 @@ fi
 %{texmfdist}/source/latex/splitindex
 %{texmfdist}/source/latex/stack
 %{texmfdist}/source/latex/stringstrings
+%{texmfdist}/source/latex/totcount
 %{texmfdist}/source/latex/typedref
+%{texmfdist}/source/latex/ydoc
 %{texmfdist}/tex/latex/boolexpr
 %{texmfdist}/tex/latex/cmdtrack
 %{texmfdist}/tex/latex/codedoc
@@ -10493,7 +10559,9 @@ fi
 %{texmfdist}/tex/latex/stack
 %{texmfdist}/tex/latex/stringstrings
 %{texmfdist}/tex/latex/substr
+%{texmfdist}/tex/latex/totcount
 %{texmfdist}/tex/latex/typedref
+%{texmfdist}/tex/latex/ydoc
 
 %files -n texlive-latex-effects
 %defattr(644,root,root,755)
@@ -11092,11 +11160,7 @@ fi
 %{texmfdist}/tex/latex/texments
 %{texmfdist}/tex/latex/threeparttablex
 %{texmfdist}/tex/latex/tikz-timing
-%{texmfdist}/tex/latex/titlepic
 %{texmfdist}/tex/latex/tkz-doc
-%{texmfdist}/tex/latex/tkz-linknodes
-%{texmfdist}/tex/latex/tkz-tab
-%{texmfdist}/tex/latex/totcount
 %{texmfdist}/tex/latex/trimspaces
 %{texmfdist}/tex/latex/ulqda
 %{texmfdist}/tex/latex/varwidth
@@ -11112,7 +11176,6 @@ fi
 %{texmfdist}/tex/latex/vertbars
 %{texmfdist}/tex/latex/yagusylo
 %{texmfdist}/tex/latex/zhmetrics
-%{texmfdist}/tex/latex/zwpagelayout
 
 %files -n texlive-latex-pdfslide
 %defattr(644,root,root,755)
@@ -11444,7 +11507,10 @@ fi
 %doc %{texmfdist}/doc/latex/latex-tabellen
 %doc %{texmfdist}/doc/latex/math-into-latex
 %doc %{texmfdist}/doc/latex/mathmode
+%doc %{texmfdist}/doc/latex/titlepages
+%doc %{texmfdist}/doc/latex/tkz-doc
 %doc %{texmfdist}/doc/latex/visualfaq
+%doc %{texmfdist}/doc/latex/webguide
 %lang(es) %doc %{texmfdist}/doc/generic/es-tex-faq
 %doc %{texmfdist}/doc/latex/latexcheat
 %lang(es) %doc %{texmfdist}/doc/latex/latexcheat-esmx
@@ -11455,12 +11521,20 @@ fi
 %files -n texlive-latex-txfonts
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/fonts/txfonts
-%{texmfdist}/fonts/type1/public/txfonts
 %{texmfdist}/fonts/afm/public/txfonts
+%{texmfdist}/fonts/afm/public/txfontsb
 %{texmfdist}/fonts/enc/dvips/txfonts
-%{texmfdist}/fonts/vf/public/txfonts
+%{texmfdist}/fonts/enc/dvips/txfontsb
 %{texmfdist}/fonts/map/dvips/txfonts
+%{texmfdist}/fonts/map/dvips/txfontsb
+%{texmfdist}/fonts/tfm/public/txfontsb
+%{texmfdist}/fonts/type1/public/txfonts
+%{texmfdist}/fonts/type1/public/txfontsb
+%{texmfdist}/fonts/vf/public/txfonts
+%{texmfdist}/fonts/vf/public/txfontsb
+%{texmfdist}/source/fonts/txfontsb
 %{texmfdist}/tex/latex/txfonts
+%{texmfdist}/tex/latex/txfontsb
 
 %files -n texlive-latex-ucs
 %defattr(644,root,root,755)
@@ -11618,6 +11692,14 @@ fi
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/generic/ukrhyph
 %{texmfdist}/tex/generic/ukrhyph
+
+%files -n texlive-latex-thai
+%defattr(644,root,root,755)
+%{texmfdist}/source/latex/thailatex
+%{texmfdist}/fonts/afm/public/thailatex
+%{texmfdist}/fonts/type1/public/thailatex
+%{texmfdist}/fonts/map/dvips/garuda-c90
+%{texmfdist}/fonts/tfm/public/garuda-c90
 
 %files -n texlive-latex-vietnam
 %defattr(644,root,root,755)
@@ -11895,7 +11977,6 @@ fi
 %{texmfdist}/fonts/tfm/public/lm
 %{texmfdist}/fonts/map/dvips/lm
 %{texmfdist}/fonts/map/dvipdfm/lm
-# %{texmfdist}/source/fonts/lm
 %{texmfdist}/tex/latex/lm
 
 %files -n texlive-fonts-marvosym
@@ -12315,12 +12396,6 @@ fi
 # %{texmfdist}/fonts/source/public/futhark
 # %{texmfdist}/fonts/tfm/public/futhark
 
-# %{texmfdist}/fonts/afm/public/garuda
-# %{texmfdist}/fonts/map/dvips/garuda
-%{texmfdist}/fonts/map/dvips/garuda-c90
-%{texmfdist}/fonts/tfm/public/garuda-c90
-# %{texmfdist}/fonts/type1/public/garuda
-
 %doc %{texmfdist}/doc/fonts/genealogy
 %{texmfdist}/fonts/source/public/genealogy
 %{texmfdist}/fonts/tfm/public/genealogy
@@ -12732,9 +12807,6 @@ fi
 %{texmfdist}/fonts/opentype/public/tex-gyre
 %{texmfdist}/fonts/tfm/public/tex-gyre
 %{texmfdist}/fonts/type1/public/tex-gyre
-
-%{texmfdist}/fonts/afm/public/thailatex
-%{texmfdist}/fonts/type1/public/thailatex
 
 %{texmfdist}/fonts/map/dvips/times
 
