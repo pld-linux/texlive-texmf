@@ -375,7 +375,7 @@ Obsoletes:	jadetex
 JadeTeX contains the additional LaTeX macros necessary for taking Jade
 TeX output files and processing them as LaTeX files.
 
-%description -l pl.UTF-8 -n texlive-jadetex
+%description -n texlive-jadetex -l pl.UTF-8
 JadeTeX zawiera dodatkowe makra LaTeXa potrzebne do konwersji plików
 otrzymanych z Jade TeXa i przetworzenia ich jako plików LaTeXa.
 
