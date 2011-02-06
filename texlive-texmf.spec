@@ -3,15 +3,14 @@
 # - latex subpackage (maybe rename latex-base and texlive-latex requires latex-base)
 # - maybe tex4ht-data splitting
 
-%include	/usr/lib/rpm/macros.perl
 # Conditional build:
 %bcond_with	bootstrap	# bootstrap build
 
-%define shortname texlive
+%define		shortname	texlive
+%define		year		2010
+%define		monthday	0722
 
-#
-%define		year 2010
-%define		monthday 0722
+%include	/usr/lib/rpm/macros.perl
 Summary:	TeX typesetting system and MetaFont font formatter
 Summary(de.UTF-8):	TeX-Satzherstellungssystem und MetaFont-Formatierung
 Summary(es.UTF-8):	Sistema de typesetting TeX y formateador de fuentes MetaFont
