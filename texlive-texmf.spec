@@ -5245,9 +5245,9 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{texmfdist}/tex/generic/babel
 # install %{SOURCE61} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
 # install %{SOURCE62} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
 
-cd $RPM_BUILD_ROOT%{texmfdist}/tex/latex
+install -d $RPM_BUILD_ROOT%{texmf}/tex/latex/misc
 
-install -d misc
+cd $RPM_BUILD_ROOT%{texmfdist}/tex/latex
 
 %if %{without bootstrap}
 # floatflt
@@ -6783,7 +6783,6 @@ fi
 %dir %{texmfdist}/tex/generic
 %dir %{texmfdist}/tex/generic/misc
 %dir %{texmfdist}/tex/latex
-%dir %{texmfdist}/tex/latex/misc
 
 # ***********
 # executables
@@ -7619,6 +7618,7 @@ fi
 %dir %{texmfdist}/tex/latex
 %dir %{texmfdist}/tex/latex/latexconfig
 %dir %{texmf}/tex/latex
+%dir %{texmf}/tex/latex/misc
 # %{texmf}/fmtutil/format.latex.cnf
 %if %{without bootstrap}
 %{texmfdist}/tex/latex/floatflt
