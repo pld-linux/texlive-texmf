@@ -5247,6 +5247,8 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{texmfdist}/tex/generic/babel
 
 cd $RPM_BUILD_ROOT%{texmfdist}/tex/latex
 
+install -d misc
+
 %if %{without bootstrap}
 # floatflt
 unzip %{SOURCE10}
@@ -6781,6 +6783,7 @@ fi
 %dir %{texmfdist}/tex/generic
 %dir %{texmfdist}/tex/generic/misc
 %dir %{texmfdist}/tex/latex
+%dir %{texmfdist}/tex/latex/misc
 
 # ***********
 # executables
