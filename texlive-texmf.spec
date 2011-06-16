@@ -504,6 +504,14 @@ Macro package developed at MIT.
 %description -n texlive-tex-ytex -l hu.UTF-8
 MIT-en fejlesztett makrócsomag.
 
+%package -n texlive-makeindex-data
+Summary:	Texmf files needed for texlive-makeindex
+Group:		Applications/Publishing/TeX
+Requires(post,postun):	%{_bindir}/texhash
+
+%description -n texlive-makeindex-data
+Texmf files needed for texlive-makeindex.
+
 %package -n texlive-metapost-data
 Summary:	Texmf files needed for texlive-metapost
 Group:		Applications/Publishing/TeX
@@ -2397,6 +2405,7 @@ This package contains:
 - rlepsf: Rewrite labels in EPS graphics.
 - roundbox: Round boxes in LaTeX.
 - sectionbox: create fancy boxed ((sub)sub)sections.
+- shade: Shade pieces of text.
 - shadethm: theorem environments that are shaded
 - tablenotes: Notes in tables at end document.
 - ulem: Package for underlining.
@@ -2438,6 +2447,7 @@ Ez a csomag a következőket tartalmazza:
 - quotchap: decorative chapter headings.
 - rlepsf: Rewrite labels in EPS graphics.
 - rotpages: typeset sets of pages upside-down and backwards.
+- shade: Shade pieces of text.
 - sectionbox: create fancy boxed ((sub)sub)sections.
 - shadethm: theorem environments that are shaded
 - tablenotes: Notes in tables at end document.
@@ -2631,6 +2641,8 @@ This packages contains:
 - tkz-tab: Tables of signs and variations using PGF/TikZ.
 - todo: make a to-do list for a document.
 - todonotes: Marking things to do in a LaTeX document.
+- truncate: Truncate text to a specified width.
+- typehtml: Typeset HTML directly from LaTeX.
 - vruler: Numbering text.
 - wordlike: Simulating word processor layout.
 - xcomment: Allows selected environments to be included/excluded.
@@ -2664,6 +2676,8 @@ Ez a csomag a következőket tartalmazza:
 - tkz-tab: Tables of signs and variations using PGF/TikZ.
 - todo: dokumentumok teendőinek listája
 - todonotes: Marking things to do in a LaTeX document.
+- truncate: Truncate text to a specified width.
+- typehtml: Typeset HTML directly from LaTeX.
 - vruler: Numbering text.
 - wordlike: Simulating word processor layout.
 - xcomment: Allows selected environments to be included/excluded.
@@ -5477,6 +5491,12 @@ fi
 %postun -n texlive-tex-ytex
 %texhash
 
+%post -n texlive-makeindex-data
+%texhash
+
+%postun -n texlive-makeindex-data
+%texhash
+
 %post -n texlive-metapost-data
 %texhash
 
@@ -6863,7 +6883,6 @@ fi
 %{texmfdist}/tex/generic/misc/null*
 %{texmfdist}/tex/generic/misc/texnames.sty
 %{texmfdist}/tex/generic/musixtex
-%{texmfdist}/tex/generic/shade
 %{texmfdist}/tex/generic/t2
 %{texmfdist}/tex/generic/tabto-generic
 %{texmfdist}/tex/generic/tap
@@ -7162,6 +7181,7 @@ fi
 %doc %{texmfdist}/doc/latex/wrapfig
 %doc %{texmfdist}/doc/latex/xtab
 %doc %{texmfdist}/doc/latex/yfonts
+%doc %{texmfdist}/doc/support/latexmk
 
 %files -n texlive-dvips-data
 %defattr(644,root,root,755)
@@ -7308,6 +7328,11 @@ fi
 %files -n texlive-tex-ytex
 %defattr(644,root,root,755)
 %{texmfdist}/tex/ytex
+
+%files -n texlive-makeindex-data
+%defattr(644,root,root,755)
+%doc %{texmfdist}/doc/support/makeindex
+%{texmfdist}/makeindex
 
 %files -n texlive-metapost-data
 %defattr(644,root,root,755)
@@ -8166,6 +8191,7 @@ fi
 %files -n texlive-latex-algorithms
 %defattr(644,root,root,755)
 %doc %{texmfdist}/doc/latex/algorithms
+%{texmfdist}/source/latex/algorithms
 %{texmfdist}/tex/latex/algorithms
 
 %files -n texlive-latex-ae
@@ -8579,6 +8605,7 @@ fi
 %doc %{texmfdist}/doc/latex/qcm
 %doc %{texmfdist}/doc/latex/uebungsblatt
 # %{texmfdist}/source/latex/eqexam
+%{texmfdist}/source/latex/answers
 %{texmfdist}/source/latex/examdesign
 %{texmfdist}/source/latex/exercise
 %{texmfdist}/source/latex/mathexam
@@ -8742,9 +8769,11 @@ fi
 %doc %{texmfdist}/doc/latex/termcal
 %doc %{texmfdist}/doc/latex/thumby
 %doc %{texmfdist}/doc/latex/tkz-tab
+%doc %{texmfdist}/doc/latex/truncate
 %doc %{texmfdist}/doc/latex/twoinone
 %doc %{texmfdist}/doc/latex/todo
 %doc %{texmfdist}/doc/latex/todonotes
+%doc %{texmfdist}/doc/latex/typehtml
 %doc %{texmfdist}/doc/latex/vruler
 %doc %{texmfdist}/doc/latex/wordlike
 %{texmfdist}/fonts/afm/public/knitting
@@ -8796,6 +8825,8 @@ fi
 %{texmfdist}/tex/latex/twoinone
 %{texmfdist}/tex/latex/todo
 %{texmfdist}/tex/latex/todonotes
+%{texmfdist}/tex/latex/truncate
+%{texmfdist}/tex/latex/typehtml
 %{texmfdist}/tex/latex/vruler
 %{texmfdist}/tex/latex/wordlike
 
@@ -9438,6 +9469,9 @@ fi
 %doc %{texmfdist}/doc/latex/ulsy
 %{texmfdist}/fonts/map/dvips/cmll
 %{texmfdist}/fonts/map/dvips/esvect
+%{texmfdist}/fonts/opentype/public/stix
+%{texmfdist}/fonts/opentype/public/xits
+%{texmfdist}/source/fonts/xits
 %{texmfdist}/fonts/source/public/cmll
 %{texmfdist}/fonts/source/public/esvect
 %{texmfdist}/fonts/source/public/trsym
@@ -9524,6 +9558,7 @@ fi
 
 %files -n texlive-latex-physics
 %defattr(644,root,root,755)
+%doc %{texmfdist}/doc/fonts/feyn
 %doc %{texmfdist}/doc/latex/braket
 %doc %{texmfdist}/doc/latex/circ
 %doc %{texmfdist}/doc/latex/circuitikz
@@ -9563,6 +9598,10 @@ fi
 %{texmfdist}/tex/latex/susy
 %{texmfdist}/fonts/source/public/circ
 %{texmfdist}/fonts/tfm/public/circ
+%{texmfdist}/fonts/source/public/feyn
+%{texmfdist}/fonts/tfm/public/feyn
+%{texmfdist}/source/fonts/feyn
+
 
 %files -n texlive-latex-chem
 %defattr(644,root,root,755)
@@ -9749,6 +9788,7 @@ fi
 
 %files -n texlive-latex-sources
 %defattr(644,root,root,755)
+%{texmfdist}/source/generic/fltpoint
 %{texmfdist}/source/latex/acronym
 %{texmfdist}/source/latex/adrlist
 %{texmfdist}/source/latex/altfont
@@ -9779,6 +9819,7 @@ fi
 %{texmfdist}/source/latex/cdpbundl
 %{texmfdist}/source/latex/changes
 %{texmfdist}/source/latex/chapterfolder
+%{texmfdist}/source/latex/cjk
 %{texmfdist}/source/latex/cleveref
 %{texmfdist}/source/latex/cmcyralt
 # %{texmfdist}/source/latex/cmsd
@@ -10643,6 +10684,7 @@ fi
 %defattr(644,root,root,755)
 # %doc %{texmfdist}/doc/fonts/umrand
 %doc %{texmfdist}/doc/generic/rlepsf
+%doc %{texmfdist}/doc/generic/shade
 %doc %{texmfdist}/doc/generic/ulem
 %doc %{texmfdist}/doc/latex/arcs
 %doc %{texmfdist}/doc/latex/background
@@ -10684,6 +10726,7 @@ fi
 %doc %{texmfdist}/doc/latex/tablenotes
 %doc %{texmfdist}/doc/latex/ushort
 %doc %{texmfdist}/doc/latex/xwatermark
+%{texmfdist}/fonts/source/public/shade
 %{texmfdist}/fonts/source/public/niceframe
 # %{texmfdist}/fonts/source/public/umrand
 %{texmfdist}/fonts/tfm/public/niceframe
@@ -10707,6 +10750,7 @@ fi
 %{texmfdist}/source/latex/pageslts
 %{texmfdist}/source/latex/quotchap
 %{texmfdist}/source/latex/ushort
+%{texmfdist}/tex/generic/shade
 %{texmfdist}/tex/generic/rlepsf
 %{texmfdist}/tex/generic/ulem
 %{texmfdist}/tex/latex/arcs
@@ -11586,6 +11630,7 @@ fi
 %doc %{texmfdist}/doc/latex/lshort-russian
 %doc %{texmfdist}/doc/latex/math-into-latex
 %doc %{texmfdist}/doc/latex/mathmode
+%doc %{texmfdist}/doc/latex/tex-font-errors-cheatsheet
 %doc %{texmfdist}/doc/latex/titlepages
 %doc %{texmfdist}/doc/latex/tkz-doc
 %doc %{texmfdist}/doc/latex/visualfaq
@@ -12429,11 +12474,6 @@ fi
 %{texmfdist}/fonts/map/dvips/eurofont
 %{texmfdist}/source/fonts/eurofont
 
-%doc %{texmfdist}/doc/fonts/feyn
-%{texmfdist}/fonts/source/public/feyn
-%{texmfdist}/fonts/tfm/public/feyn
-%{texmfdist}/source/fonts/feyn
-
 %doc %{texmfdist}/doc/fonts/fge
 %{texmfdist}/fonts/source/public/fge
 %{texmfdist}/fonts/map/dvips/fge
@@ -12481,6 +12521,12 @@ fi
 %doc %{texmfdist}/doc/fonts/genealogy
 %{texmfdist}/fonts/source/public/genealogy
 %{texmfdist}/fonts/tfm/public/genealogy
+
+%{texmfdist}/source/fonts/gentium
+%{texmfdist}/fonts/afm/public/gentium
+%{texmfdist}/fonts/enc/dvips/gentium
+%{texmfdist}/fonts/map/pdftex/gentium
+%{texmfdist}/fonts/tfm/public/gentium
 
 %doc %{texmfdist}/doc/fonts/gfsartemisia
 %{texmfdist}/fonts/afm/public/gfsartemisia
