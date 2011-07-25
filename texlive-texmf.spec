@@ -7,8 +7,8 @@
 %bcond_with	bootstrap	# bootstrap build
 
 %define		shortname	texlive
-%define		year		2010
-%define		monthday	0722
+%define		year		2011
+%define		monthday	0705
 
 %include	/usr/lib/rpm/macros.perl
 Summary:	TeX typesetting system and MetaFont font formatter
@@ -21,12 +21,12 @@ Summary(pt_BR.UTF-8):	Sistema de typesetting TeX e formatador de fontes MetaFont
 Summary(tr.UTF-8):	TeX dizgi sistemi ve MetaFont yazıtipi biçimlendiricisi
 Name:		texlive-texmf
 Version:	%{year}%{monthday}
-Release:	1.1
+Release:	0.1
 Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
 Source0:	ftp://tug.org/texlive/historic/%{year}/texlive-%{version}-texmf.tar.xz
-# Source0-md5:	12dec3a323c4eb75b98a3160c62dc865
+# Source0-md5:	ed7b558be35adf00a6c2e69609cd679a
 Source1:	http://mirror.ctan.org/language/hungarian/babel/magyar.ldf
 # Source1-md5:	3a5792398d46e6a6e70ef5006c4a2e55
 Source10:	http://tug.ctan.org/get/macros/latex/contrib/floatflt.zip
@@ -80,6 +80,7 @@ BuildRequires:	%{shortname}-latex
 BuildRequires:	%{shortname}-latex-ams
 BuildRequires:	%{shortname}-latex-cyrillic
 BuildRequires:	%{shortname}-latex-extend
+BuildRequires:	%{shortname}-latex-wasysym
 BuildRequires:	%{shortname}-metapost
 BuildRequires:	%{shortname}-mex
 BuildRequires:	%{shortname}-omega
@@ -5283,8 +5284,8 @@ install -d $RPM_BUILD_ROOT%{texmfdist}/doc/latex/foiltex
 cd ..
 
 # wrong dvi in formlett, should be regenerate
-cd $RPM_BUILD_ROOT%{texmfdist}/doc/latex/formlett
-cp $RPM_BUILD_ROOT%{texmfdist}/tex/latex/formlett/formlett.sty .
+cd $RPM_BUILD_ROOT%{texmfdist}/doc/generic/formlett
+cp $RPM_BUILD_ROOT%{texmfdist}/tex/generic/formlett/formlett.sty .
 tex user_manual.tex
 yes | tex prog_manual.tex
 tex example1.tex
@@ -5370,13 +5371,13 @@ for format in \
  	csplain \
  	etex \
 	jadetex \
- 	lambda \
- 	lamed \
+	lambda \
+	lamed \
  	latex \
  	mex \
  	mllatex \
  	mptopdf \
- 	omega \
+	omega \
  	pdfcsplain \
  	pdfetex \
  	pdfjadetex \
