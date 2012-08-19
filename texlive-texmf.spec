@@ -8372,6 +8372,7 @@ fi
 %doc %{texmfdist}/doc/bibtex/iopart-num
 %doc %{texmfdist}/doc/generic/t2
 %doc %{texmfdist}/doc/latex/IEEEtran
+%doc %{texmfdist}/doc/latex/authorindex
 %doc %{texmfdist}/doc/latex/biblatex-chem
 %doc %{texmfdist}/doc/latex/biblatex-chicago-notes-df
 %doc %{texmfdist}/doc/latex/biblatex-dw
@@ -8411,6 +8412,7 @@ fi
 %{texmfdist}/bibtex/bst/aguplus
 %{texmfdist}/bibtex/bst/aichej
 %{texmfdist}/bibtex/bst/ametsoc
+%{texmfdist}/bibtex/bst/authorindex
 %{texmfdist}/bibtex/bst/beebe
 %{texmfdist}/bibtex/bst/bibhtml
 %{texmfdist}/bibtex/bst/chem-journal
@@ -8911,7 +8913,6 @@ fi
 %doc %{texmfdist}/doc/latex/assignment
 %doc %{texmfdist}/doc/latex/augie
 %doc %{texmfdist}/doc/latex/aurical
-%doc %{texmfdist}/doc/latex/authorindex
 %doc %{texmfdist}/doc/latex/autoarea
 %doc %{texmfdist}/doc/latex/autotab
 %doc %{texmfdist}/doc/latex/bangtex
