@@ -7,8 +7,8 @@
 %bcond_with	bootstrap	# bootstrap build
 
 %define		shortname	texlive
-%define		year		2011
-%define		monthday	0705
+%define		year		2012
+%define		monthday	0701
 
 %include	/usr/lib/rpm/macros.perl
 Summary:	TeX typesetting system and MetaFont font formatter
@@ -26,43 +26,43 @@ Epoch:		1
 License:	distributable
 Group:		Applications/Publishing/TeX
 Source0:	ftp://tug.org/texlive/historic/%{year}/texlive-%{version}-texmf.tar.xz
-# Source0-md5:	ed7b558be35adf00a6c2e69609cd679a
-Source1:	http://mirror.ctan.org/language/hungarian/babel/magyar.ldf
-# Source1-md5:	3a5792398d46e6a6e70ef5006c4a2e55
-Source10:	http://tug.ctan.org/get/macros/latex/contrib/floatflt.zip
-# Source10-md5:	5d9fe14d289aa81ebb6b4761169dd5f2
-Source11:	http://carme.pld-linux.org/~uzsolt/sources/texlive-fonts-larm.tar.bz2
-# Source11-md5:	df2fcc66f0c2e90785ca6c9b27dacd34
-Source12:	http://www.ctan.org/get/macros/latex/contrib/foiltex.zip
-# Source12-md5:	0a6b4e64fb883a68d9b288bf3421db25
-Source13:	http://mirror.ctan.org/macros/latex/contrib/alterqcm.zip
-# Source13-md5:	741acb5bf3436c336649cb61cf46103e
-Source50:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/Splashscreen.pm
-# Source50-md5:	5cc49f49010f27fdb02dd7053797ba19
-Source51:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLConfig.pm
-# Source51-md5:	947ee29c38c2c2cfd9a25c597a89598a
-Source52:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLMedia.pm
-# Source52-md5:	9f1e76f3528125691edd4fbcdd69c5cb
-Source53:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPDB.pm
-# Source53-md5:	47cae437999e98a7bd24f27db7b0fa34
-Source54:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPOBJ.pm
-# Source54-md5:	c573c407ae3d98f710d65d593a7d1745
-Source55:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPSRC.pm
-# Source55-md5:	834ae0ac5c59fd00ab6000ba6367a987
-Source56:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPaper.pm
-# Source56-md5:	326314fc034a5d9ef9d4a60033f7186f
-Source57:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPostActions.pm
-# Source57-md5:	17c1968725ccf4aaafb7162b7b3609fc
-Source58:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLTREE.pm
-# Source58-md5:	039cc8878f380cab3b0beffe75870c6c
-Source59:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLUtils.pm
-# Source59-md5:	2d9a84f406da62d676b495c4f10c1adc
-Source60:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLWinGoo.pm
-# Source60-md5:	825121187994692ecda0f48a5b17421a
-Source61:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TeXCatalogue.pm
-# Source61-md5:	6289d93a12aa246fc2019b0109d2167f
-Source62:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/waitVariableX.pm
-# Source62-md5:	f0fa0f2fc7aacb1e9b40eb65891a24c8
+# Source0-md5:	461ec82632654b2b34f1be3e03216bc6
+### Source1:	http://mirror.ctan.org/language/hungarian/babel/magyar.ldf
+# Source1-md5:	59ffacc5259186ec81a88ffb26249615
+### Source10:	http://tug.ctan.org/get/macros/latex/contrib/floatflt.zip
+# Source10-md5:	
+### Source11:	http://carme.pld-linux.org/~uzsolt/sources/texlive-fonts-larm.tar.bz2
+# Source11-md5:	
+### Source12:	http://www.ctan.org/get/macros/latex/contrib/foiltex.zip
+# Source12-md5:	
+### Source13:	http://mirror.ctan.org/macros/latex/contrib/alterqcm.zip
+# Source13-md5:	
+### Source50:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/Splashscreen.pm
+# Source50-md5:	
+### Source51:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLConfig.pm
+# Source51-md5:	
+### Source52:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLMedia.pm
+# Source52-md5:	
+### Source53:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPDB.pm
+# Source53-md5:	
+### Source54:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPOBJ.pm
+# Source54-md5:	
+### Source55:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPSRC.pm
+# Source55-md5:	
+### Source56:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPaper.pm
+# Source56-md5:	
+### Source57:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLPostActions.pm
+# Source57-md5:	
+### Source58:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLTREE.pm
+# Source58-md5:	
+### Source59:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLUtils.pm
+# Source59-md5:	
+### Source60:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TLWinGoo.pm
+# Source60-md5:	
+### Source61:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/TeXCatalogue.pm
+# Source61-md5:	
+### Source62:	http://sunsite2.icm.edu.pl/pub/tex/systems/texlive/tlnet/2008/tlpkg/TeXLive/waitVariableX.pm
+# Source62-md5:	
 URL:		http://www.tug.org/texlive/
 BuildRequires:	rpm-perlprov
 BuildRequires:	rpm-pythonprov
@@ -70,29 +70,29 @@ BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
 %if %{without bootstrap}
-BuildRequires:	%{shortname}-context
-BuildRequires:	%{shortname}-csplain
-BuildRequires:	%{shortname}-fonts-cmsuper
-BuildRequires:	%{shortname}-format-eplain
-BuildRequires:	%{shortname}-format-mex
-BuildRequires:	%{shortname}-format-pdflatex
-BuildRequires:	%{shortname}-latex
-BuildRequires:	%{shortname}-latex-ams
-BuildRequires:	%{shortname}-latex-cyrillic
-BuildRequires:	%{shortname}-latex-extend
-BuildRequires:	%{shortname}-latex-wasysym
-BuildRequires:	%{shortname}-metapost
-BuildRequires:	%{shortname}-mex
-BuildRequires:	%{shortname}-omega
-BuildRequires:	%{shortname}-other-utils
-BuildRequires:	%{shortname}-pdftex
-BuildRequires:	%{shortname}-phyzzx
-BuildRequires:	%{shortname}-plain
-BuildRequires:	%{shortname}-tex-babel
-BuildRequires:	%{shortname}-tex-physe
-BuildRequires:	%{shortname}-xetex
-BuildRequires:	%{shortname}-xmltex
-BuildRequires:	/usr/bin/latex
+### BuildRequires:	%{shortname}-context
+### BuildRequires:	%{shortname}-csplain
+### BuildRequires:	%{shortname}-fonts-cmsuper
+### BuildRequires:	%{shortname}-format-eplain
+### BuildRequires:	%{shortname}-format-mex
+### BuildRequires:	%{shortname}-format-pdflatex
+### BuildRequires:	%{shortname}-latex
+### BuildRequires:	%{shortname}-latex-ams
+### BuildRequires:	%{shortname}-latex-cyrillic
+### BuildRequires:	%{shortname}-latex-extend
+### BuildRequires:	%{shortname}-latex-wasysym
+### BuildRequires:	%{shortname}-metapost
+### BuildRequires:	%{shortname}-mex
+### BuildRequires:	%{shortname}-omega
+### BuildRequires:	%{shortname}-other-utils
+### BuildRequires:	%{shortname}-pdftex
+### BuildRequires:	%{shortname}-phyzzx
+### BuildRequires:	%{shortname}-plain
+### BuildRequires:	%{shortname}-tex-babel
+### BuildRequires:	%{shortname}-tex-physe
+### BuildRequires:	%{shortname}-xetex
+### BuildRequires:	%{shortname}-xmltex
+### BuildRequires:	/usr/bin/latex
 %endif
 BuildRequires:	unzip
 Requires:	%{shortname}-dirs-fonts
@@ -5243,7 +5243,7 @@ install -d $RPM_BUILD_ROOT%{texmf}/fonts/opentype/public
 CURDIR=$(pwd)
 
 # install magyar.ldf
-install %{SOURCE1} $RPM_BUILD_ROOT%{texmfdist}/tex/generic/babel
+# install %{SOURCE1} $RPM_BUILD_ROOT%{texmfdist}/tex/generic/babel
 
 # install -d $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
 # install %{SOURCE50} $RPM_BUILD_ROOT%{perl_vendorlib}/TeXLive
