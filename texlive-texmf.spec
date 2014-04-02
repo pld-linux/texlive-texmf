@@ -4234,7 +4234,7 @@ Summary:	Bitstream fonts
 Summary(pl.UTF-8):	Fonty Bitstream
 Group:		Fonts
 Requires:	%{shortname}-dirs-fonts
-Obsoletes:	tetex-fonts-bitstrea
+Obsoletes:	tetex-fonts-bitstream
 
 %description -n texlive-fonts-bitstream
 Bitstream fonts.
