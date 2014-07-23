@@ -5426,18 +5426,6 @@ if [ "$1" = "1" ]; then
 	%texhash
 fi
 
-%post -n texlive-dvips-data
-%texhash
-
-%postun -n texlive-dvips-data
-%texhash
-
-%post -n texlive-omega-data
-%texhash
-
-%postun -n texlive-omega-data
-%texhash
-
 %post -n texlive-scripts-extra
 %texhash
 
@@ -7609,7 +7597,6 @@ fi
 %exclude %{texmfdist}/tex/plain/etex
 # in texlive-omega-data
 %exclude %{texmfdist}/tex/plain/omega
-
 
 %files -n texlive-mex
 %defattr(644,root,root,755)
